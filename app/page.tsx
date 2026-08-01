@@ -29,7 +29,7 @@ const content = {
     applicationsLead: "应用成果按研究主题组织；应用总结表可继续扩展为论文、代码、数据集、演示与工程项目。",
     applications: [
       ["01", "谋算学习", "基于信息科学原理的学习：从计算智能的黑箱路线，走向结构可见、过程可解释的白盒路线。", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"],
-      ["02", "具生智能", "以自我意识的信息理论为核心，探索自主、可信、可验证的智能体与智能机器。", "https://suuttt.github.io/"],
+      ["02", "具身智能", "以自我意识的信息理论为核心，探索自主、可信、可验证的智能体与智能机器。", "https://suuttt.github.io/"],
       ["03", "结构化决策", "用结构信息解释层级决策、多智能体协同、强化学习探索与动态环境中的策略选择。", "https://dblp.org/pid/165/5653.html"],
       ["04", "结构化 AI", "从编码树到大模型与智能体，沉淀可解释的知识编辑、推理和行动能力。", "https://github.com/weiyifan1023"],
     ],
@@ -38,7 +38,7 @@ const content = {
     suntzuLead: "《孙子兵法》以战争现象为对象，把物质与信息结合为动态演化的体系对抗博弈；孙子模型把它转化为可研究、可设计、可验证的人工智能框架。",
     bookTitle: "孙子兵法的人工智能原理",
     bookSub: "物质与信息结合的公理化科学原理 · 1,115 pages",
-    bookAction: "阅读 PDF",
+    bookAction: "打开书籍页面",
     lawsTitle: "孙子五大定律 · 物质与信息结合",
     laws: ["战争是物质与信息结合的体系对抗", "战争结局由物质与信息的结合决定", "战争现象具有可度量、可推演的规律", "谋与算是信息解码与策略生成", "知彼、知己、知天、知地形成胜利条件"],
     modelTitle: "孙子模型 / 孙子机",
@@ -57,16 +57,18 @@ const content = {
     libraryTitle: "把重要成果与解释文章放进同一座知识库。",
     libraryLead: "精选原理文章、研究解读与外部成果入口，后续可按主题继续扩充。",
     library: [
-      ["幂律、全息律与黑洞", "自然演化网络的结构信息", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484862&idx=1&sn=04aad29e2970569eac3e2c16e3de4b7e"],
-      ["二分性与相变", "结构信息在经典图上的精确度量", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484854&idx=1&sn=0ae2c9e93b39178d4c2e22e298c8b490"],
-      ["获得信息，不等于获得利", "自我意识的数学定义", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484239&idx=1&sn=ed7b32ef7f916a282da9ba673ffe481c"],
-      ["学习到底是什么", "从编码树到知识树", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484196&idx=1&sn=352d1ee21305b8fefa657506c54dce08"],
-      ["谋算《孙子兵法》", "孙子兵法的信息科学原理", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484206&idx=1&sn=dadc947290f41c53e92d3a2cc7c6b7fd"],
-      ["信息是怎么生成的", "从熵极大到信息隐藏", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484572&idx=1&sn=1e5601b8c96a83ef6ccaf928167e28f3"],
-      ["控制论没做完的事", "推理就是编码", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484666&idx=1&sn=bfc4d43ed0037707c404b3e92255c03a"],
-      ["什么值得注意", "从编码树到 Transformer 的注意力原理", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484645&idx=1&sn=14fc6af2935f49d78af2758bf7fce494"],
-      ["打破香农的墙", "从香农熵到编码树，结构信息的诞生", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484707&idx=1&sn=dbcd0f5d6f3b6df0caef00c1900d9e74"],
-      ["为什么整体不等于部分之和", "复杂系统的信息科学原理", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484602&idx=1&sn=42a9b188affc0f472981d0e6c2c3351f"],
+      ["幂律、全息律与黑洞", "自然演化网络的结构信息", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484862&idx=1&sn=04aad29e2970569eac3e2c16e3de4b7e&chksm=f12d1a513e8f89ea0da6941c8dbee5705667308c9fafb6b9cdb5418e253f6b80e4d41e483007&mpshare=1&scene=1&srcid=0606Dw2APZHpnA1XXlCAq6B4&sharer_shareinfo=bd60597ba727f4cc97577db8e2114016&sharer_shareinfo_first=bd60597ba727f4cc97577db8e2114016#rd"],
+      ["二分性与相变", "结构信息在经典图上的精确度量", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484854&idx=1&sn=0ae2c9e93b39178d4c2e22e298c8b490&chksm=f1564fbbb40d7e5ce40c2fd080e0b5fef571282d6fa8aa6df246a3f9354a24916d9e64e220fc&mpshare=1&scene=1&srcid=0605weJb5j6DoX5rnJTNh1W1&sharer_shareinfo=d7d52581f647583f7ae30f7c668e9e5a5&sharer_shareinfo_first=d7d52581f647583f7ae30f7c668e9e5a5#rd"],
+      ["获得信息，不等于获得利", "自我意识的数学定义", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484239&idx=1&sn=ed7b32ef7f916a282da9ba673ffe481c&chksm=f186fcac37978ea22598edf7b80c4031dfc9aa0342b369cc01b23e7d9afd96e3adb0b1134769&mpshare=1&scene=1&srcid=0602AYmbBOhNSvAiFOW7H3cr&sharer_shareinfo=b1b674e32fd2153fed462e63c1a9c44f&sharer_shareinfo_first=b1b674e32fd2153fed462e63c1a9c44f#rd"],
+      ["学习到底是什么", "从编码树到知识树", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484196&idx=1&sn=352d1ee21305b8fefa657506c54dce08&chksm=f17baa304f70e266c722b74a5eb9cbadfbb2f23e2a1262ab5a5e93259abff4328b0414d67ea8&mpshare=1&scene=1&srcid=0602i2UnFouSru2x89MYGWw5&sharer_shareinfo=ddcde571d352e82efa35ee39d93a3e07&sharer_shareinfo_first=ddcde571d352e82efa35ee39d93a3e07#rd"],
+      ["谋算《孙子兵法》", "孙子兵法的信息科学原理", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484206&idx=1&sn=dadc947290f41c53e92d3a2cc7c6b7fd&chksm=f1cfe29120282331b9ea69df3bdb00002e264c76f40c6a8bbcbec566836adb9cb9ec80a0a96d&mpshare=1&scene=1&srcid=0513kO4604r0m3iotj2Dw0u6&sharer_shareinfo=9a5e169d891e8f47fa02be38a1df3892&sharer_shareinfo_first=9a5e169d891e8f47fa02be38a1df3892#rd"],
+      ["信息是怎么生成的", "从熵极大到信息隐藏", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484572&idx=1&sn=1e5601b8c96a83ef6ccaf928167e28f3&chksm=f1708313d468c02ce0be0e253bbc06f474c5ecf963fc0d97b863f56b11b86e7b6045f6cc32db&mpshare=1&scene=1&srcid=0513feIGsnTjFatzPjUDmEN2&sharer_shareinfo=81de45fc7120f0bf4e1907cadec86b09&sharer_shareinfo_first=81de45fc7120f0bf4e1907cadec86b09#rd"],
+      ["控制论没做完的事", "推理就是编码", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484666&idx=1&sn=bfc4d43ed0037707c404b3e92255c03a&chksm=f141331485bff97934650039a0a63616d60cb135a3ffba54a1dbbc1e4f81ad29fc6622a68b4c&mpshare=1&scene=1&srcid=0514KPilcXh4WfM52ISDY1BR&sharer_shareinfo=6a83922e1c8024e6012dc5cc0b18cbc0&sharer_shareinfo_first=6a83922e1c8024e6012dc5cc0b18cbc0#rd"],
+      ["什么值得注意", "从编码树到 Transformer 的注意力原理", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484645&idx=1&sn=14fc6af2935f49d78af2758bf7fce494&chksm=f1c6b763f0977e126898abf47648b455bdc075e96dc59364af88e09b267d4c346a7f51be1d19&mpshare=1&scene=1&srcid=0515PF0PdW5JposGbyjdxxKY&sharer_shareinfo=da62ef53dd9235c481b6d35b08d2e5a5&sharer_shareinfo_first=da62ef53dd9235c481b6d35b08d2e5a5#rd"],
+      ["打破香农的墙", "从香农熵到编码树，结构信息的诞生", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484707&idx=1&sn=dbcd0f5d6f3b6df0caef00c1900d9e74&chksm=f1eced13eff1c785799377805085553572e2bf4e24c3512c5546b105b9acf54a50867f946252&mpshare=1&scene=1&srcid=0524LSDzLzPTQH2c6YOrTc9P&sharer_shareinfo=03de703f364e12a7e8b1fd5460ea06e8&sharer_shareinfo_first=03de703f364e12a7e8b1fd5460ea06e8#rd"],
+      ["为什么整体不等于部分之和", "复杂系统的信息科学原理", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484602&idx=1&sn=42a9b188affc0f472981d0e6c2c3351f&chksm=f13f7af6f98cce6d254bec33ca2be25e9cbec6408302b37f5514cae2e727eca828ed909cf111&mpshare=1&scene=1&srcid=0524QwkxDyouaQAd12zS1Sit&sharer_shareinfo=3a4418b293b4a7f830fe6351d1881615&sharer_shareinfo_first=3a4418b293b4a7f830fe6351d1881615#rd"],
+      ["结构熵综述", "理论、方法与应用的 IJCAI 2025 survey", "https://www.ijcai.org/proceedings/2025/1183"],
+      ["结构熵综述仓库", "GitHub source of truth：论文、代码、基准与复现记录", "https://github.com/SuuTTT/structural-entropy-survey"],
     ],
     footer: "结构信息与人工智能研究资料库 · 谋算智能科学技术",
   },
@@ -103,7 +105,7 @@ const content = {
     suntzuLead: "Treating warfare as a system-level, dynamically evolving contest of matter and information, the Sun Tzu model turns the Art of War into a researchable, designable, and verifiable AI framework.",
     bookTitle: "AI Principles of Sun Tzu’s The Art of War",
     bookSub: "Axiomatic scientific principles combining matter and information · 1,115 pages",
-    bookAction: "Read the PDF",
+    bookAction: "Open book page",
     lawsTitle: "The five Sun Tzu laws · matter and information",
     laws: ["War is a system-level contest combining matter and information", "Outcomes are determined by the combination of matter and information", "War phenomena have measurable, inferable regularities", "Planning and computation decode information and generate strategy", "Knowing the adversary, self, time, and terrain creates the conditions for victory"],
     modelTitle: "The Sun Tzu model / Sun Tzu machine",
@@ -132,6 +134,8 @@ const content = {
       ["What deserves attention?", "From encoding trees to Transformer attention", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484645&idx=1&sn=14fc6af2935f49d78af2758bf7fce494"],
       ["Beyond Shannon’s wall", "From Shannon entropy to encoding trees", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484707&idx=1&sn=dbcd0f5d6f3b6df0caef00c1900d9e74"],
       ["Why the whole is not the sum of its parts", "Information science of complex systems", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484602&idx=1&sn=42a9b188affc0f472981d0e6c2c3351f"],
+      ["Structural Entropy survey", "Theory, methods, and applications · IJCAI 2025", "https://www.ijcai.org/proceedings/2025/1183"],
+      ["Structural Entropy survey repository", "104-entry source of truth with papers, code, benchmarks, and reproducibility records", "https://github.com/SuuTTT/structural-entropy-survey"],
     ],
     footer: "Structural Information & Artificial Intelligence research library · Strategic-computational intelligence",
   },
@@ -157,7 +161,7 @@ export default function Home() {
 
     <section id="applications" className="research"><div className="shell"><header className="section-head"><div><p className="overline">{c.applicationsKicker}</p><h2>{c.applicationsTitle}</h2></div><p>{c.applicationsLead}</p></header><div className="research-list">{c.applications.map(([num, title, text, href]) => <a href={href} target="_blank" rel="noreferrer" key={num}><span>{num}</span><div><h3>{title}</h3><p>{text}</p></div><b>↗</b></a>)}</div></div></section>
 
-    <section id="suntzu" className="suntzu section"><div className="shell"><header className="section-head"><div><p className="overline">{c.suntzuKicker}</p><h2>{c.suntzuTitle}</h2></div><p>{c.suntzuLead}</p></header><div className="suntzu-grid"><a className="book-card" href="/sun-tzu-ai-principles.pdf" target="_blank" rel="noreferrer"><span className="book-mark">PDF</span><h3>{c.bookTitle}</h3><p>{c.bookSub}</p><strong>{c.bookAction} ↗</strong></a><div className="laws-card"><p className="overline">{c.lawsTitle}</p><ol>{c.laws.map((law, i) => <li key={law}><span>0{i + 1}</span>{law}</li>)}</ol></div></div><div className="model-block"><div><p className="overline">{c.modelTitle}</p><p className="model-lead">{c.modelLead}</p></div><div className="model-steps">{c.model.map((step, i) => <div key={step}><span>0{i + 1}</span><p>{step}</p></div>)}</div></div></div></section>
+    <section id="suntzu" className="suntzu section"><div className="shell"><header className="section-head"><div><p className="overline">{c.suntzuKicker}</p><h2>{c.suntzuTitle}</h2></div><p>{c.suntzuLead}</p></header><div className="suntzu-grid"><a className="book-card" href="/books"><span className="book-mark">BOOKS</span><h3>{c.bookTitle}</h3><p>{c.bookSub}</p><strong>{c.bookAction} ↗</strong></a><div className="laws-card"><p className="overline">{c.lawsTitle}</p><ol>{c.laws.map((law, i) => <li key={law}><span>0{i + 1}</span>{law}</li>)}</ol></div></div><div className="model-block"><div><p className="overline">{c.modelTitle}</p><p className="model-lead">{c.modelLead}</p></div><div className="model-steps">{c.model.map((step, i) => <div key={step}><span>0{i + 1}</span><p>{step}</p></div>)}</div></div></div></section>
 
     <section id="people" className="section shell people"><header className="section-head"><div><p className="overline">{c.peopleKicker}</p><h2>{c.peopleTitle}</h2></div><p>{c.peopleLead}</p></header><div className="people-grid">{c.people.map(([name, focus, links], i) => <article key={name}><span className="portrait">{String(i + 1).padStart(2, "0")}</span><h3>{name}</h3><p>{focus}</p><div className="profile-links">{links.map(([label, href]) => <a href={href} target="_blank" rel="noreferrer" key={label}>{label} <b>↗</b></a>)}</div></article>)}</div></section>
 
