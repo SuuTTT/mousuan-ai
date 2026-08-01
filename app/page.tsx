@@ -86,7 +86,7 @@ const content = {
     nav: ["Discover", "Principles", "Applications", "Sun Tzu model", "About us", "Library"],
     ids: ["discover", "principles", "applications", "suntzu", "about", "library"],
     kicker: "Structural information · AI · MouSuan Intelligence (MSI)",
-    hero: "MouSuan Intelligence\n— scientific principles that reveal the substance of intelligence.",
+    hero: "MouSuan Intelligence:\nMathematical Principles for Revealing the Essence of Intelligence",
     intro: "MouSuan Intelligence (MSI): its dual-brain architecture is the core, combining information science with computer science into a new AI science and technology route rooted in Chinese original innovation.",
     explore: "Explore four pillars",
     watch: "About us",
