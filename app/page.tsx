@@ -28,10 +28,10 @@ const content = {
     applicationsTitle: "让原理进入学习、决策与机器。",
     applicationsLead: "应用成果按研究主题组织；应用总结表可继续扩展为论文、代码、数据集、演示与工程项目。",
     applications: [
-      ["01", "谋算学习", "基于信息科学原理的学习：从计算智能的黑箱路线，走向结构可见、过程可解释的白盒路线。", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"],
-      ["02", "具身智能", "以自我意识的信息理论为核心，探索自主、可信、可验证的智能体与智能机器。", "https://suuttt.github.io/"],
-      ["03", "结构化决策", "用结构信息解释层级决策、多智能体协同、强化学习探索与动态环境中的策略选择。", "https://dblp.org/pid/165/5653.html"],
-      ["04", "结构化 AI", "从编码树到大模型与智能体，沉淀可解释的知识编辑、推理和行动能力。", "https://github.com/weiyifan1023"],
+      ["01", "谋算学习", "基于信息科学原理的学习：从计算智能的黑箱路线，走向结构可见、过程可解释的白盒路线。", "/applications/strategic-learning"],
+      ["02", "具身智能", "以自我意识的信息理论为核心，探索自主、可信、可验证的智能体与智能机器。", "/applications/embodied-intelligence"],
+      ["03", "结构化决策", "用结构信息解释层级决策、多智能体协同、强化学习探索与动态环境中的策略选择。", "/applications/structured-decision-making"],
+      ["04", "结构化 AI", "从编码树到大模型与智能体，沉淀可解释的知识编辑、推理和行动能力。", "/applications/structured-ai"],
     ],
     suntzuKicker: "第三板块 · 孙子兵法的人工智能原理",
     suntzuTitle: "谋与算，构成智能的策略。",
@@ -104,10 +104,10 @@ const content = {
     applicationsTitle: "Put principles to work in learning, decisions, and machines.",
     applicationsLead: "Outcomes are grouped by theme and can grow into a portfolio of papers, code, datasets, demonstrations, and engineering projects.",
     applications: [
-      ["01", "Strategic-computational learning", "Learning from information-science principles: moving from black-box computational intelligence toward structured, explainable white-box systems.", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"],
-      ["02", "Embodied intelligence", "An information theory of self-awareness for autonomous, trustworthy, and verifiable agents and intelligent machines.", "https://suuttt.github.io/"],
-      ["03", "Structured decision-making", "Structural information for hierarchical decisions, multi-agent coordination, reinforcement-learning exploration, and dynamic environments.", "https://dblp.org/pid/165/5653.html"],
-      ["04", "Structured AI", "From encoding trees to foundation models and agents: interpretable knowledge editing, reasoning, and action.", "https://github.com/weiyifan1023"],
+      ["01", "Strategic-computational learning", "Learning from information-science principles: moving from black-box computational intelligence toward structured, explainable white-box systems.", "/applications/strategic-learning"],
+      ["02", "Embodied intelligence", "An information theory of self-awareness for autonomous, trustworthy, and verifiable agents and intelligent machines.", "/applications/embodied-intelligence"],
+      ["03", "Structured decision-making", "Structural information for hierarchical decisions, multi-agent coordination, reinforcement-learning exploration, and dynamic environments.", "/applications/structured-decision-making"],
+      ["04", "Structured AI", "From encoding trees to foundation models and agents: interpretable knowledge editing, reasoning, and action.", "/applications/structured-ai"],
     ],
     suntzuKicker: "PILLAR 03 · AI PRINCIPLES OF SUN TZU’S THE ART OF WAR",
     suntzuTitle: "Strategy is the intelligence of planning and computation.",
@@ -177,7 +177,7 @@ export default function Home() {
 
     <section id="principles" className="section shell"><header className="section-head"><div><p className="overline">{c.foundationKicker}</p><h2>{c.foundationTitle}</h2></div><p>{c.foundationLead}</p></header><div className="breakthroughs">{c.breakthroughs.map(([num, title, text, href]) => <a href={href} target={href.startsWith("/") ? undefined : "_blank"} rel={href.startsWith("/") ? undefined : "noreferrer"} key={num}><span>{num}</span><h3>{title}</h3><p>{text}</p><b>↗</b></a>)}</div></section>
 
-    <section id="applications" className="research"><div className="shell"><header className="section-head"><div><p className="overline">{c.applicationsKicker}</p><h2>{c.applicationsTitle}</h2></div><p>{c.applicationsLead}</p></header><div className="research-list">{c.applications.map(([num, title, text, href]) => <a href={href} target="_blank" rel="noreferrer" key={num}><span>{num}</span><div><h3>{title}</h3><p>{text}</p></div><b>↗</b></a>)}</div></div></section>
+    <section id="applications" className="research"><div className="shell"><header className="section-head"><div><p className="overline">{c.applicationsKicker}</p><h2>{c.applicationsTitle}</h2></div><p>{c.applicationsLead}</p></header><div className="research-list">{c.applications.map(([num, title, text, href]) => <a href={href} target={href.startsWith("/") ? undefined : "_blank"} rel={href.startsWith("/") ? undefined : "noreferrer"} key={num}><span>{num}</span><div><h3>{title}</h3><p>{text}</p></div><b>↗</b></a>)}</div></div></section>
 
     <section id="suntzu" className="suntzu section"><div className="shell"><header className="section-head"><div><p className="overline">{c.suntzuKicker}</p><h2>{c.suntzuTitle}</h2></div><p>{c.suntzuLead}</p></header><div className="suntzu-grid"><a className="book-card" href="/books"><span className="book-mark">BOOKS</span><h3>{c.bookTitle}</h3><p>{c.bookSub}</p><strong>{c.bookAction} ↗</strong></a><div className="laws-card"><p className="overline">{c.lawsTitle}</p><ol>{c.laws.map((law, i) => <li key={law}><span>0{i + 1}</span>{law}</li>)}</ol></div></div><div className="model-block"><div><p className="overline">{c.modelTitle}</p><p className="model-lead">{c.modelLead}</p></div><div className="model-steps">{c.model.map((step, i) => <div key={step}><span>0{i + 1}</span><p>{step}</p></div>)}</div></div></div></section>
 
