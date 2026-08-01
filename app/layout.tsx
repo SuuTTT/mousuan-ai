@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Structural Information & Artificial Intelligence | 结构信息与人工智能",
-  description: "A bilingual research hub for structural information, strategic-computational intelligence, and the Sun Tzu model.",
+  description: "A bilingual research hub for structural information, MouSuan Intelligence (MSI), and the Sun Tzu model.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
     title: "Structural Information & Artificial Intelligence | 结构信息与人工智能",
