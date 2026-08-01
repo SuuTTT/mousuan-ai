@@ -19,10 +19,10 @@ const content = {
     foundationTitle: "从信息世界，到人工智能科学。",
     foundationLead: "以层谱抽象为总方法，建立信息演算、信息解码、信息生成三大支柱，并发展观察学习、自我意识与谋算博弈的信息科学原理。",
     breakthroughs: [
-      ["2016", "结构信息", "编码树与结构熵：度量嵌入复杂系统结构中的信息，建立信息世界的层谱抽象范式。", "https://arxiv.org/abs/2001.09637"],
-      ["2024", "信息的数学原理", "信息演算理论、信息解码原理、信息生成原理：面向离散系统的信息世界数学语言。", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484707&idx=1&sn=dbcd0f5d6f3b6df0caef00c1900d9e74"],
-      ["2024", "谋算智能的信息科学原理", "以观察学习、自我意识、谋算博弈为三大支柱，从计算智能走向有原理的谋算智能。", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"],
-      ["AI", "人工智能原理", "智能的数学原理、谋算决策、自主控制与自主验证，共同构成可解释的人工智能科学技术路线。", "https://suuttt.github.io/"],
+      ["2016", "结构信息", "编码树与结构熵：度量嵌入复杂系统结构中的信息，建立信息世界的层谱抽象范式。", "/principles/structural-information"],
+      ["2024", "信息的数学原理", "信息演算理论、信息解码原理、信息生成原理：面向离散系统的信息世界数学语言。", "/principles/information-mathematics"],
+      ["2024", "谋算智能的信息科学原理", "以观察学习、自我意识、谋算博弈为三大支柱，从计算智能走向有原理的谋算智能。", "/principles/strategic-intelligence"],
+      ["AI", "人工智能原理", "智能的数学原理、谋算决策、自主控制与自主验证，共同构成可解释的人工智能科学技术路线。", "/principles/ai-principles"],
     ],
     applicationsKicker: "第二板块 · 应用成果",
     applicationsTitle: "让原理进入学习、决策与机器。",
@@ -95,10 +95,10 @@ const content = {
     foundationTitle: "From the information world to a science of AI.",
     foundationLead: "Using spectrum-of-hierarchies abstraction as the general method, we build information calculus, decoding, and generation—and the information-science principles of learning, self-awareness, and strategic games.",
     breakthroughs: [
-      ["2016", "Structural information", "Encoding trees and structural entropy measure information embedded in complex system structure and establish a spectrum-of-hierarchies abstraction.", "https://arxiv.org/abs/2001.09637"],
-      ["2024", "Mathematical principles of information", "Information calculus, information decoding, and information generation: a mathematical language for discrete information-world systems.", "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484707&idx=1&sn=dbcd0f5d6f3b6df0caef00c1900d9e74"],
-      ["2024", "Information science of strategic intelligence", "Observation-based learning, self-awareness, and strategic games form the three pillars of a principled intelligence science.", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"],
-      ["AI", "Principles of Artificial Intelligence", "Mathematical intelligence principles, strategic decisions, autonomous control, and autonomous verification form a white-box AI route.", "https://suuttt.github.io/"],
+      ["2016", "Structural information", "Encoding trees and structural entropy measure information embedded in complex system structure and establish a spectrum-of-hierarchies abstraction.", "/principles/structural-information"],
+      ["2024", "Mathematical principles of information", "Information calculus, information decoding, and information generation: a mathematical language for discrete information-world systems.", "/principles/information-mathematics"],
+      ["2024", "Information science of strategic intelligence", "Observation-based learning, self-awareness, and strategic games form the three pillars of a principled intelligence science.", "/principles/strategic-intelligence"],
+      ["AI", "Principles of Artificial Intelligence", "Mathematical intelligence principles, strategic decisions, autonomous control, and autonomous verification form a white-box AI route.", "/principles/ai-principles"],
     ],
     applicationsKicker: "PILLAR 02 · APPLIED RESEARCH OUTCOMES",
     applicationsTitle: "Put principles to work in learning, decisions, and machines.",
@@ -175,7 +175,7 @@ export default function Home() {
 
     <section className="manifesto"><p>“{c.manifesto}”</p></section>
 
-    <section id="principles" className="section shell"><header className="section-head"><div><p className="overline">{c.foundationKicker}</p><h2>{c.foundationTitle}</h2></div><p>{c.foundationLead}</p></header><div className="breakthroughs">{c.breakthroughs.map(([num, title, text, href]) => <a href={href} target="_blank" rel="noreferrer" key={num}><span>{num}</span><h3>{title}</h3><p>{text}</p><b>↗</b></a>)}</div></section>
+    <section id="principles" className="section shell"><header className="section-head"><div><p className="overline">{c.foundationKicker}</p><h2>{c.foundationTitle}</h2></div><p>{c.foundationLead}</p></header><div className="breakthroughs">{c.breakthroughs.map(([num, title, text, href]) => <a href={href} target={href.startsWith("/") ? undefined : "_blank"} rel={href.startsWith("/") ? undefined : "noreferrer"} key={num}><span>{num}</span><h3>{title}</h3><p>{text}</p><b>↗</b></a>)}</div></section>
 
     <section id="applications" className="research"><div className="shell"><header className="section-head"><div><p className="overline">{c.applicationsKicker}</p><h2>{c.applicationsTitle}</h2></div><p>{c.applicationsLead}</p></header><div className="research-list">{c.applications.map(([num, title, text, href]) => <a href={href} target="_blank" rel="noreferrer" key={num}><span>{num}</span><div><h3>{title}</h3><p>{text}</p></div><b>↗</b></a>)}</div></div></section>
 
