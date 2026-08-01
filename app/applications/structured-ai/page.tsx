@@ -8,7 +8,7 @@ export default function StructuredAIPage() {
       lead: "从编码树到大模型与智能体，把知识编辑、推理和行动放进可解释的结构信息框架。",
       sections: [["结构化知识", "模型不应只保存分散的事实。结构化 AI 关注知识之间的层级、关系和组织方式，使知识可以被定位、编辑与验证。"], ["推理与行动", "可解释推理需要展示信息如何被解码、哪些结构关系支持结论，以及结论如何转化为行动。"], ["从模型到智能体", "大模型提供广泛的语言与知识能力，结构信息为其补充可组织、可控制、可验证的内部结构，推动智能体走向自主与可信。"]],
       sourcesLabel: "原始来源与研究入口",
-      sources: [["魏一凡 · GitHub", "https://github.com/weiyifan1023"], ["魏一凡 · 个人主页", "https://weiyifan1023.github.io/"], ["结构熵综述仓库", "https://github.com/SuuTTT/structural-entropy-survey"]],
+      sources: [["卫一帆 · GitHub", "https://github.com/weiyifan1023"], ["卫一帆 · 个人主页", "https://weiyifan1023.github.io/"], ["结构熵综述仓库", "https://github.com/SuuTTT/structural-entropy-survey"]],
       closing: "本页是结构化 AI 的研究方向说明；代码与论文链接会随着项目成果继续补充。",
     }}
     en={{

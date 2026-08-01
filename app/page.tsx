@@ -59,8 +59,8 @@ const content = {
     people: [
       ["李昂生", "结构信息、信息世界数学原理与智能科学", [["代表论文", "https://arxiv.org/abs/2001.09637"], ["DBLP", "https://dblp.org/pid/66/4917.html"]]],
       ["曾祥华", "层级决策、多智能体协同与结构信息原则", [["DBLP", "https://dblp.org/pid/165/5653.html"], ["代表论文", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"]]],
-      ["魏一凡", "大语言模型、知识编辑、智能体与 AI safety", [["个人主页", "https://weiyifan1023.github.io/"], ["GitHub", "https://github.com/weiyifan1023"], ["DBLP", "https://dblp.org/pid/204/1769-1.html"]]],
-      ["苏鼎立", "结构信息决策、结构熵与智能系统工程", [["个人主页", "https://suuttt.github.io/"], ["DBLP", "https://dblp.org/pid/362/8210.html"], ["代表论文", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"]]],
+      ["卫一帆", "大语言模型、知识编辑、智能体与 AI safety", [["个人主页", "https://weiyifan1023.github.io/"], ["GitHub", "https://github.com/weiyifan1023"], ["DBLP", "https://dblp.org/pid/204/1769-1.html"]]],
+      ["苏丁力", "结构信息决策、结构熵与智能系统工程", [["个人主页", "https://suuttt.github.io/"], ["DBLP", "https://dblp.org/pid/362/8210.html"], ["代表论文", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"]]],
     ],
     libraryKicker: "第四板块 · 其它重要应用成果",
     libraryTitle: "把重要成果与解释文章放进同一座知识库。",
