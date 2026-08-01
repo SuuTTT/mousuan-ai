@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Structural Information & Artificial Intelligence | 结构信息与人工智能",
     description: "Principles · Learning · Strategy",
-    images: [{ url: "/og.png", width: 1728, height: 910, alt: "Structural Information and Artificial Intelligence" }],
+    images: [{ url: "/og-frontier-research.png", width: 1774, height: 887, alt: "Structural Information and Artificial Intelligence" }],
   },
-  twitter: { card: "summary_large_image", title: "Structural Information & Artificial Intelligence", images: ["/og.png"] },
+  twitter: { card: "summary_large_image", title: "Structural Information & Artificial Intelligence", images: ["/og-frontier-research.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
