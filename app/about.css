@@ -1,0 +1,14 @@
+.team-intro{max-width:900px;margin:-18px 0 55px;color:#4e5874;font-size:clamp(18px,1.65vw,23px);line-height:1.6}
+.directions-head{margin-bottom:18px}.directions-head .overline,.team-heading .overline{color:#5c50c6;margin-bottom:0}
+.directions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:70px}
+.direction-card{position:relative;display:flex;min-height:275px;flex-direction:column;padding:24px;background:#11142a;color:#fff;overflow:hidden;transition:transform .24s ease,box-shadow .24s ease}
+.direction-card:nth-child(2){background:#2b2257}.direction-card:nth-child(3){background:#081d3e}.direction-card:nth-child(4){background:#14243f}.direction-card:nth-child(5){background:#201a50}
+.direction-card:after{content:"";position:absolute;right:-90px;bottom:-120px;width:220px;height:220px;border:1px solid rgba(101,240,255,.35);border-radius:50%;box-shadow:0 0 80px rgba(83,105,255,.28)}
+.direction-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(10,13,40,.2)}
+.direction-num{position:relative;z-index:1;color:#c2cae3;font:15px Georgia,serif;letter-spacing:.08em}
+.direction-card h3{position:relative;z-index:1;max-width:330px;margin:44px 0 12px;font-size:25px;font-weight:500;line-height:1.08}
+.direction-card p{position:relative;z-index:1;max-width:340px;margin:0;color:#d0d6ea;font-size:14px;line-height:1.55}
+.direction-tags{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.direction-tags span{padding:5px 8px;border:1px solid rgba(218,224,255,.26);color:#e2e7f5;font-size:12px}
+.direction-card>b{position:absolute;z-index:1;right:24px;bottom:18px;color:var(--cyan);font-size:22px}.team-heading{margin-bottom:18px}.people{padding-top:115px}
+@media(max-width:900px){.directions-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.directions-grid{grid-template-columns:1fr;margin-bottom:52px}.direction-card{min-height:245px}.direction-card h3{margin-top:38px;font-size:23px}.team-intro{margin-top:-8px;margin-bottom:44px;font-size:17px}}

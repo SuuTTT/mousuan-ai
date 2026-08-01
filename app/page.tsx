@@ -6,13 +6,13 @@ type Lang = "zh" | "en";
 
 const content = {
   zh: {
-    nav: ["首页", "公理原理", "应用成果", "孙子模型", "研究者", "文库"],
-    ids: ["discover", "principles", "applications", "suntzu", "people", "library"],
+    nav: ["首页", "公理原理", "应用成果", "孙子模型", "关于我们", "文库"],
+    ids: ["discover", "principles", "applications", "suntzu", "about", "library"],
     kicker: "结构信息 · 人工智能 · 谋算智能",
     hero: "发现智能\n结构的原理。",
     intro: "谋算智能科学技术：让人工智能有原理、可解释、高效、可信、自主、可控，并形成从技术路线到智能机器与智能机器人的完整体系。",
     explore: "探索四大板块",
-    watch: "认识研究者",
+    watch: "关于我们",
     signal: "STRUCTURE / LEARNING / STRATEGY / INTELLIGENCE",
     manifesto: "智能不是一个黑箱。它可以被观察、解码、组织，并被赋予可检验的原理。一个自我意识体的智能就是它的信息：智能 = 信息。",
     foundationKicker: "第一板块 · 公理化科学原理",
@@ -44,9 +44,18 @@ const content = {
     modelTitle: "孙子模型 / 孙子机",
     modelLead: "一个自我意识主体的智能闭环：",
     model: ["自主学习 · 知彼", "自我意识 · 知己", "谋算博弈 · 设计策略", "自主决策", "自主行动", "系统验证 · 判断胜负与获利"],
-    peopleKicker: "研究者与成果",
-    peopleTitle: "理论在共同研究与应用中生长。",
-    peopleLead: "核心研究者、代表论文与外部研究成果入口。",
+    peopleKicker: "关于我们 · 李昂生教授团队",
+    peopleTitle: "把信息科学原理变成智能机器。",
+    peopleLead: "李昂生教授团队以结构信息和人工智能科学为基础，从计算到谋算，把洋人的“黑箱”变成可解释、可验证的“白盒”。",
+    teamIntro: "我们研究智能的数学原理，并将其落实为自我意识机器、孙子模型、谋算智能机器与谋算智能机器人，形成从科学原理、技术路线到智能系统的完整研究体系。",
+    directionsKicker: "我们的研究方向",
+    directions: [
+      ["01", "基于信息科学原理的人工智能技术", "从计算到谋算，把洋人的“黑箱”变“白盒”。", ["神经网络", "具身智能", "大模型", "世界模型"], "#principles"],
+      ["02", "自我意识机器", "让机器能够观察自身、表征自身，并在信息世界中形成可验证的自我意识。", [], "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484239&idx=1&sn=ed7b32ef7f916a282da9ba673ffe481c"],
+      ["03", "孙子模型（世界模型）", "以知彼、知己、知天、知地为核心，把世界理解转化为可推演的策略模型。", [], "/books"],
+      ["04", "谋算智能机器", "把信息解码、策略生成与自主决策结合为有原理的智能机器。", [], "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"],
+      ["05", "谋算智能机器人", "让机器人在复杂环境中学习、谋算、行动，并通过系统验证获得可信结果。", [], "https://suuttt.github.io/"],
+    ],
     people: [
       ["Angsheng Li", "结构信息、信息世界数学原理与智能科学", [["代表论文", "https://arxiv.org/abs/2001.09637"], ["DBLP", "https://dblp.org/pid/66/4917.html"]]],
       ["Xianghua Zeng", "层级决策、多智能体协同与结构信息原则", [["DBLP", "https://dblp.org/pid/165/5653.html"], ["代表论文", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"]]],
@@ -73,13 +82,13 @@ const content = {
     footer: "结构信息与人工智能研究资料库 · 谋算智能科学技术",
   },
   en: {
-    nav: ["Discover", "Principles", "Applications", "Sun Tzu model", "People", "Library"],
-    ids: ["discover", "principles", "applications", "suntzu", "people", "library"],
+    nav: ["Discover", "Principles", "Applications", "Sun Tzu model", "About us", "Library"],
+    ids: ["discover", "principles", "applications", "suntzu", "about", "library"],
     kicker: "Structural information · AI · Strategic-computational intelligence",
     hero: "Discover the principles\nof intelligent structure.",
     intro: "Strategic-computational intelligence: an AI technology route that is principled, explainable, efficient, trustworthy, autonomous, and controllable—from methods to intelligent machines and robots.",
     explore: "Explore four pillars",
-    watch: "Meet the researchers",
+    watch: "About us",
     signal: "STRUCTURE / LEARNING / STRATEGY / INTELLIGENCE",
     manifesto: "Intelligence need not remain a black box. It can be observed, decoded, organised, and grounded in testable principles. The intelligence of a self-aware subject is its information: intelligence = information.",
     foundationKicker: "PILLAR 01 · AXIOMATIC SCIENTIFIC PRINCIPLES",
@@ -111,9 +120,18 @@ const content = {
     modelTitle: "The Sun Tzu model / Sun Tzu machine",
     modelLead: "The intelligence loop of a self-aware subject:",
     model: ["Autonomous learning · know the adversary", "Self-awareness · know the self", "Strategic game design", "Autonomous decision", "Autonomous action", "System verification · test victory and gain"],
-    peopleKicker: "PEOPLE & OUTCOMES",
-    peopleTitle: "Theory grows through shared inquiry and application.",
-    peopleLead: "Core researchers, representative publications, and routes to other significant outcomes.",
+    peopleKicker: "ABOUT US · ANGSHENG LI’S RESEARCH TEAM",
+    peopleTitle: "Turning information-science principles into intelligent machines.",
+    peopleLead: "Professor Angsheng Li’s team builds on structural information and AI science to turn the black box of imported AI into an explainable, verifiable white-box route—from computation to strategic computation.",
+    teamIntro: "We study the mathematical principles of intelligence and carry them into self-awareness machines, the Sun Tzu model, strategic-computational machines, and strategic-computational robots—a complete path from scientific principles to intelligent systems.",
+    directionsKicker: "OUR RESEARCH DIRECTIONS",
+    directions: [
+      ["01", "AI technology based on information-science principles", "From computation to strategic computation: turn the black box into a white box.", ["Neural networks", "Embodied intelligence", "Foundation models", "World models"], "#principles"],
+      ["02", "Self-awareness machines", "Machines that observe and represent themselves, forming verifiable self-awareness in the information world.", [], "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484239&idx=1&sn=ed7b32ef7f916a282da9ba673ffe481c"],
+      ["03", "The Sun Tzu model (world model)", "Know the adversary, self, time, and terrain—and turn world understanding into an inferable strategy model.", [], "/books"],
+      ["04", "Strategic-computational machines", "Combine information decoding, strategy generation, and autonomous decisions in principled machines.", [], "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"],
+      ["05", "Strategic-computational robots", "Robots that learn, plan, act, and verify outcomes in complex environments.", [], "https://suuttt.github.io/"],
+    ],
     people: [
       ["Angsheng Li", "Structural information, information-world mathematics, and intelligence science", [["Key paper", "https://arxiv.org/abs/2001.09637"], ["DBLP", "https://dblp.org/pid/66/4917.html"]]],
       ["Xianghua Zeng", "Hierarchical decision-making, multi-agent coordination, and structural principles", [["DBLP", "https://dblp.org/pid/165/5653.html"], ["Key paper", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"]]],
@@ -153,7 +171,7 @@ export default function Home() {
   return <main>
     <nav className="nav"><a className="brand" href="#discover" onClick={goTo("discover")}><span>SI</span><b>STRUCTURAL<br />INTELLIGENCE</b></a><div className="nav-links">{c.nav.map((label, i) => <a key={label} href={`#${c.ids[i]}`} onClick={goTo(c.ids[i])}>{label}</a>)}</div><div className="lang"><button className={lang === "zh" ? "is-on" : ""} onClick={() => setLang("zh")}>中</button><i>/</i><button className={lang === "en" ? "is-on" : ""} onClick={() => setLang("en")}>EN</button></div></nav>
 
-    <section id="discover" className="hero"><div className="hero-copy"><p className="overline">{c.kicker}</p><h1>{c.hero.split("\n").map(line => <span key={line}>{line}</span>)}</h1><p className="intro">{c.intro}</p><div className="hero-actions"><a className="button light" href="#principles" onClick={goTo("principles")}>{c.explore} <b>↘</b></a><a className="text-link" href="#people" onClick={goTo("people")}>{c.watch} <b>→</b></a></div></div><div className="hero-visual" aria-hidden="true"><div className="visual-label"><span>∞</span> {c.signal}</div></div></section>
+    <section id="discover" className="hero"><div className="hero-copy"><p className="overline">{c.kicker}</p><h1>{c.hero.split("\n").map(line => <span key={line}>{line}</span>)}</h1><p className="intro">{c.intro}</p><div className="hero-actions"><a className="button light" href="#principles" onClick={goTo("principles")}>{c.explore} <b>↘</b></a><a className="text-link" href="#about" onClick={goTo("about")}>{c.watch} <b>→</b></a></div></div><div className="hero-visual" aria-hidden="true"><div className="visual-label"><span>∞</span> {c.signal}</div></div></section>
 
     <section className="manifesto"><p>“{c.manifesto}”</p></section>
 
@@ -163,7 +181,7 @@ export default function Home() {
 
     <section id="suntzu" className="suntzu section"><div className="shell"><header className="section-head"><div><p className="overline">{c.suntzuKicker}</p><h2>{c.suntzuTitle}</h2></div><p>{c.suntzuLead}</p></header><div className="suntzu-grid"><a className="book-card" href="/books"><span className="book-mark">BOOKS</span><h3>{c.bookTitle}</h3><p>{c.bookSub}</p><strong>{c.bookAction} ↗</strong></a><div className="laws-card"><p className="overline">{c.lawsTitle}</p><ol>{c.laws.map((law, i) => <li key={law}><span>0{i + 1}</span>{law}</li>)}</ol></div></div><div className="model-block"><div><p className="overline">{c.modelTitle}</p><p className="model-lead">{c.modelLead}</p></div><div className="model-steps">{c.model.map((step, i) => <div key={step}><span>0{i + 1}</span><p>{step}</p></div>)}</div></div></div></section>
 
-    <section id="people" className="section shell people"><header className="section-head"><div><p className="overline">{c.peopleKicker}</p><h2>{c.peopleTitle}</h2></div><p>{c.peopleLead}</p></header><div className="people-grid">{c.people.map(([name, focus, links], i) => <article key={name}><span className="portrait">{String(i + 1).padStart(2, "0")}</span><h3>{name}</h3><p>{focus}</p><div className="profile-links">{links.map(([label, href]) => <a href={href} target="_blank" rel="noreferrer" key={label}>{label} <b>↗</b></a>)}</div></article>)}</div></section>
+    <section id="about" className="section shell people"><header className="section-head"><div><p className="overline">{c.peopleKicker}</p><h2>{c.peopleTitle}</h2></div><p>{c.peopleLead}</p></header><p className="team-intro">{c.teamIntro}</p><div className="directions-head"><p className="overline">{c.directionsKicker}</p></div><div className="directions-grid">{c.directions.map(([num, title, text, tags, href]) => <a className="direction-card" href={href} onClick={href.startsWith("#") ? goTo(href.slice(1)) : undefined} target={href.startsWith("#") || href.startsWith("/") ? undefined : "_blank"} rel={href.startsWith("#") || href.startsWith("/") ? undefined : "noreferrer"} key={num}><span className="direction-num">{num}</span><h3>{title}</h3><p>{text}</p>{tags.length > 0 && <div className="direction-tags">{tags.map((tag) => <span key={tag}>{tag}</span>)}</div>}<b>↗</b></a>)}</div><div className="team-heading"><p className="overline">{lang === "zh" ? "核心成员" : "CORE TEAM"}</p></div><div className="people-grid">{c.people.map(([name, focus, links], i) => <article key={name}><span className="portrait">{String(i + 1).padStart(2, "0")}</span><h3>{name}</h3><p>{focus}</p><div className="profile-links">{links.map(([label, href]) => <a href={href} target="_blank" rel="noreferrer" key={label}>{label} <b>↗</b></a>)}</div></article>)}</div></section>
 
     <section id="library" className="library"><div className="shell"><header className="section-head"><div><p className="overline">{c.libraryKicker}</p><h2>{c.libraryTitle}</h2></div><p>{c.libraryLead}</p></header><div className="library-grid">{c.library.map(([title, text, href], i) => <a href={href} target="_blank" rel="noreferrer" key={title}><span>0{String(i + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{text}</p><b>↗</b></a>)}</div></div></section>
 
