@@ -3,65 +3,28 @@
 import { useState } from "react";
 
 type Lang = "zh" | "en";
+type BookLink = [string, string];
 
 const copy = {
   zh: {
-    back: "← 返回研究主页",
-    toggle: "EN",
-    eyebrow: "研究专著 · BOOKS",
-    title: "把原理读成体系。",
-    lead: "两部专著构成信息世界科学与人工智能科学的核心阅读入口。每本书都保留原始 PDF，便于审阅、引用与进一步研究。",
+    back: "← 返回研究主页", toggle: "EN", eyebrow: "李昂生教授 · 研究专著", title: "把原理读成体系。",
+    lead: "李昂生教授的三部专著构成人工智能科学与孙子模型的阅读入口。前两本已正式出版，页面提供合法购书链接；《孙子兵法的人工智能原理》保留团队提供的 PDF 阅读入口。",
     books: [
-      {
-        year: "2024",
-        title: "人工智能科学\n智能的数学原理",
-        enTitle: "Artificial Intelligence Science — Mathematical Principles of Intelligence",
-        meta: "李昂生著 · 275 pages",
-        summary: "从信息基本定律、编码树与结构熵，到观察学习、自我意识、博弈/谋算与孙子模型，建立人工智能科学的基本原理。",
-        parts: ["人工智能总论", "信息基本定律", "信息的数学原理", "智能的信息科学原理"],
-        href: "/ai-science-mathematical-principles.pdf",
-      },
-      {
-        year: "2026",
-        title: "孙子兵法的\n人工智能原理",
-        enTitle: "AI Principles of Sun Tzu’s The Art of War",
-        meta: "李昂生、潘祎诚、李永瑾、曾祥华、许可、许京奕等著 · 1,115 pages",
-        summary: "以战争现象为对象，提出物质与信息结合的公理化科学原理、孙子五大定律、信息军事科学与孙子模型。",
-        parts: ["物质与信息结合", "孙子五大定律", "信息军事科学", "孙子模型 / 孙子机"],
-        href: "/sun-tzu-ai-principles.pdf",
-      },
+      { year: "2024", kind: "购书", title: "人工智能科学\n智能的数学原理", enTitle: "Artificial Intelligence Science — Mathematical Principles of Intelligence", meta: "李昂生著 · 科学出版社 · ISBN 9787030796493 · 548 pages", summary: "从信息基本定律、编码树与结构熵，到观察学习、自我意识、博弈/谋算与孙子模型，建立人工智能科学的基本原理。", parts: ["人工智能总论", "信息基本定律", "信息的数学原理", "智能的信息科学原理"], links: [["三民网络书店", "https://www.sanmin.com.tw/product/index/013643102"], ["天珑网络书店", "https://www.tenlong.com.tw/products/9787030796493"]] as BookLink[] },
+      { year: "2024", kind: "购书", title: "人工智能原理\n从计算到谋算的模型、原理与方法", enTitle: "Principles of Artificial Intelligence — Models, Principles, and Methods from Computation to MouSuan", meta: "李昂生著 · 已出版", summary: "从计算原理、神经网络与机器学习，到博弈/谋算和人工智能的信息科学原理，讨论如何实现“有算有谋”的人工智能。", parts: ["计算原理", "神经网络", "机器学习", "博弈 / 谋算"], links: [["三民网络书店", "https://www.sanmin.com.tw/product/index/013828865"]] as BookLink[] },
+      { year: "2026", kind: "PDF", title: "孙子兵法的\n人工智能原理", enTitle: "AI Principles of Sun Tzu’s The Art of War", meta: "李昂生、潘祎诚、李永瑾、曾祥华、许可、许京奕等著 · 1,115 pages", summary: "以战争现象为对象，提出物质与信息结合的公理化科学原理、孙子五大定律、信息军事科学与孙子模型。", parts: ["物质与信息结合", "孙子五大定律", "信息军事科学", "孙子模型 / 孙子机"], links: [["打开团队提供的原始 PDF", "/sun-tzu-ai-principles.pdf"]] as BookLink[] },
     ],
-    download: "打开原始 PDF",
-    note: "PDF files are preserved as supplied. The site page is an index and reading guide; the books remain the authoritative source texts.",
+    note: "版权说明：前两本只提供出版商或书店的购书入口，不在本站托管 PDF；《孙子兵法的人工智能原理》PDF 由团队明确提供阅读入口。",
   },
   en: {
-    back: "← Back to research hub",
-    toggle: "中",
-    eyebrow: "RESEARCH MONOGRAPHS · BOOKS",
-    title: "Read the principles as a system.",
-    lead: "These two monographs form the core reading entrance to the information-world and AI-science programme. The original PDFs remain available for review, citation, and further research.",
+    back: "← Back to research hub", toggle: "中", eyebrow: "PROFESSOR ANGSHENG LI · BOOKS", title: "Read the principles as a system.",
+    lead: "Professor Angsheng Li’s three monographs form the reading entrance to AI science and the Sun Tzu model. The first two are published books with legitimate purchase links; the Sun Tzu volume remains available as a team-provided PDF.",
     books: [
-      {
-        year: "2024",
-        title: "Artificial Intelligence Science\nMathematical Principles of Intelligence",
-        enTitle: "人工智能科学 — 智能的数学原理",
-        meta: "By Angsheng Li · 275 pages",
-        summary: "From information laws, encoding trees, and structural entropy to observation-based learning, self-awareness, strategic games, and the Sun Tzu model.",
-        parts: ["General AI science", "Fundamental information laws", "Mathematical principles of information", "Information science of intelligence"],
-        href: "/ai-science-mathematical-principles.pdf",
-      },
-      {
-        year: "2026",
-        title: "AI Principles of\nSun Tzu’s The Art of War",
-        enTitle: "孙子兵法的人工智能原理",
-        meta: "By Angsheng Li, Yicheng Pan, Yongjin Li, Xianghua Zeng, Ke Xu, Jingyi Xu et al. · 1,115 pages",
-        summary: "A system of axiomatic principles combining matter and information, including the five Sun Tzu laws, information military science, and the Sun Tzu model.",
-        parts: ["Matter and information", "Five Sun Tzu laws", "Information military science", "Sun Tzu model / machine"],
-        href: "/sun-tzu-ai-principles.pdf",
-      },
+      { year: "2024", kind: "BUY", title: "Artificial Intelligence Science\nMathematical Principles of Intelligence", enTitle: "人工智能科学 — 智能的数学原理", meta: "By Angsheng Li · Science Press · ISBN 9787030796493 · 548 pages", summary: "From information laws, encoding trees, and structural entropy to observation-based learning, self-awareness, strategic games, and the Sun Tzu model.", parts: ["General AI science", "Fundamental information laws", "Mathematical principles of information", "Information science of intelligence"], links: [["Sanmin Bookstore", "https://www.sanmin.com.tw/product/index/013643102"], ["Tenlong Bookstore", "https://www.tenlong.com.tw/products/9787030796493"]] as BookLink[] },
+      { year: "2024", kind: "BUY", title: "Principles of Artificial Intelligence\nModels, Principles, and Methods from Computation to MouSuan", enTitle: "人工智能原理 — 从计算到谋算的模型、原理与方法", meta: "By Angsheng Li · Published book", summary: "From computational principles, neural networks, and machine learning to strategic games and information-science principles of AI: an AI with both calculation and planning.", parts: ["Computational principles", "Neural networks", "Machine learning", "Games / MouSuan"], links: [["Sanmin Bookstore", "https://www.sanmin.com.tw/product/index/013828865"]] as BookLink[] },
+      { year: "2026", kind: "PDF", title: "AI Principles of\nSun Tzu’s The Art of War", enTitle: "孙子兵法的人工智能原理", meta: "By Angsheng Li, Yicheng Pan, Yongjin Li, Xianghua Zeng, Ke Xu, Jingyi Xu et al. · 1,115 pages", summary: "A system of axiomatic principles combining matter and information, including the five Sun Tzu laws, information military science, and the Sun Tzu model.", parts: ["Matter and information", "Five Sun Tzu laws", "Information military science", "Sun Tzu model / machine"], links: [["Open team-provided original PDF", "/sun-tzu-ai-principles.pdf"]] as BookLink[] },
     ],
-    download: "Open original PDF",
-    note: "The PDFs are preserved as supplied. This page is an index and reading guide; the books remain the authoritative source texts.",
+    note: "Copyright note: the first two books link to publishers or bookstores only; their PDFs are not hosted here. The Sun Tzu PDF is available because the team has explicitly provided it for reading.",
   },
 };
 
@@ -71,7 +34,7 @@ export default function BooksPage() {
   return <main className="books-page">
     <header className="books-nav"><a className="brand" href="/"><span>SI</span><b>STRUCTURAL<br />INTELLIGENCE</b></a><a className="back-link" href="/">{c.back}</a><button onClick={() => setLang(lang === "zh" ? "en" : "zh")}>{c.toggle}</button></header>
     <section className="books-hero"><p className="overline">{c.eyebrow}</p><h1>{c.title}</h1><p>{c.lead}</p></section>
-    <section className="book-index shell">{c.books.map((book) => <article className="book-index-card" key={book.href}><div className="book-index-top"><span>{book.year}</span><span>PDF</span></div><h2>{book.title.split("\n").map(line => <span key={line}>{line}</span>)}</h2><p className="book-index-en">{book.enTitle}</p><p className="book-index-meta">{book.meta}</p><p className="book-index-summary">{book.summary}</p><div className="book-parts">{book.parts.map((part) => <span key={part}>{part}</span>)}</div><a className="button light book-download" href={book.href} target="_blank" rel="noreferrer">{c.download} ↗</a></article>)}</section>
+    <section className="book-index shell">{c.books.map((book) => <article className="book-index-card" key={book.title}><div className="book-index-top"><span>{book.year}</span><span>{book.kind}</span></div><h2>{book.title.split("\n").map(line => <span key={line}>{line}</span>)}</h2><p className="book-index-en">{book.enTitle}</p><p className="book-index-meta">{book.meta}</p><p className="book-index-summary">{book.summary}</p><div className="book-parts">{book.parts.map((part) => <span key={part}>{part}</span>)}</div><div className="book-links">{book.links.map(([label, href]) => <a className="button light book-download" href={href} target={href.startsWith("/") ? undefined : "_blank"} rel={href.startsWith("/") ? undefined : "noreferrer"} key={label}>{label} ↗</a>)}</div></article>)}</section>
     <p className="books-note shell">{c.note}</p>
   </main>;
 }
