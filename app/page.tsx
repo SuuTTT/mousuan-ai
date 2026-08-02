@@ -27,6 +27,16 @@ const content = {
     applicationsKicker: "第二板块 · 应用成果",
     applicationsTitle: "让原理进入学习、决策与机器",
     applicationsLead: "应用成果按研究主题组织；应用总结表可继续扩展为论文、代码、数据集、演示与工程项目。",
+    applicationsContext: [
+      "1686年，牛顿创建了关于物质及物质运动的公理化科学原理，建立了物理世界分析的数学原理，即物理世界分析的总方法——分而治之方法的数学原理，即微积分。牛顿物理世界科学原理引领了近代科学技术和工业革命，也奠定了英国的科学自信。",
+      "公元前300年左右，欧几里得针对物质对象形状建立了公理化数学原理，即《几何原本》（Elements），提出了“公理化数学”的科学思想。欧几里得的贡献奠定了希腊的科学与文明自信；牛顿延续这一思想，建立了物理世界的公理化科学原理。",
+      "结论：物理世界科学技术已经比较成熟。",
+      "问题：一切科学都必须在牛顿的物理世界科学体系下建立吗？除了牛顿的物理世界科学体系，没有其它科学了吗？",
+      "公元前515年左右，孙武《孙子兵法》创建了以战争为研究对象、包括物质和信息的现实世界体系对抗博弈的公理化特征科学原理。",
+      "《孙子兵法》计篇第一（一）：“孙子曰：兵者，国之大事。死生之地，存亡之道。不可不察也。”开宗明义，战争是关于一个国家作为整体的“存在性”，以及存在性支撑的“作用”“运动性”“需求”和“愿望”的现象。",
+      "因此，战争要解决的是一个信息问题，即信息性质的问题，而不是一个物质和物质运动的问题。这说明，在物理世界科学体系下不可能建立战争的科学原理。",
+      "《孙子兵法》恰是一个物质与信息结合的科学原理，具有公理化特征，但是没有公理化。是否存在战争的公理化科学原理？",
+    ],
     applications: [
       ["01", "谋算学习", "基于信息科学原理的学习：从计算智能的黑箱路线，走向结构可见、过程可解释的白盒路线。", "/applications/strategic-learning"],
       ["02", "具身智能", "以自我意识的信息理论为核心，探索自主、可信、可验证的智能体与智能机器。", "/applications/embodied-intelligence"],
@@ -106,6 +116,16 @@ const content = {
     applicationsKicker: "PILLAR 02 · APPLIED RESEARCH OUTCOMES",
     applicationsTitle: "Put principles to work in learning, decisions, and machines",
     applicationsLead: "Outcomes are grouped by theme and can grow into a portfolio of papers, code, datasets, demonstrations, and engineering projects.",
+    applicationsContext: [
+      "In 1686, Newton established axiomatized scientific principles for matter and motion, creating the mathematical principles for analysing the physical world: the general divide-and-conquer method, expressed mathematically as calculus. These principles led modern science and technology into the Industrial Revolution and underpinned British scientific confidence.",
+      "Around 300 BCE, Euclid modelled the shapes of material objects in the Elements and introduced the scientific idea of axiomatized mathematics. Euclid’s contribution supported Greek scientific and civilizational confidence; Newton extended this idea into axiomatized scientific principles for the physical world.",
+      "Conclusion: physical-world science and technology are comparatively mature.",
+      "Question: must every science be established within Newton’s physical-world system? Is there no other science beyond it?",
+      "Around 515 BCE, Sun Wu’s Art of War created axiomatic-featured principles for system-level contests in the real world, taking war as its object and combining matter with information.",
+      "The opening chapter states that war concerns a state’s existence as a whole, together with the functions, motion, needs, and desires that sustain it.",
+      "War therefore addresses an information problem—the nature of information—not merely a problem of matter and material motion. This suggests that a science of war cannot be established within a physical-world science system alone.",
+      "The Art of War is a scientific principle combining matter and information. It has axiomatic features but is not yet axiomatized. Does an axiomatized science of war exist?",
+    ],
     applications: [
       ["01", "MouSuan learning", "Learning from information-science principles: moving from existing black-box AI toward structured, explainable white-box systems.", "/applications/strategic-learning"],
       ["02", "Embodied intelligence", "An information theory of self-awareness for autonomous, trustworthy, and verifiable agents and intelligent machines.", "/applications/embodied-intelligence"],
@@ -183,7 +203,7 @@ export default function Home() {
 
     <section id="principles" className="section shell"><header className="section-head"><div><p className="overline">{c.foundationKicker}</p><h2>{c.foundationTitle}</h2></div><p>{c.foundationLead}</p></header><div className="breakthroughs">{c.breakthroughs.map(([num, title, text, href]) => <a href={href} target={href.startsWith("/") ? undefined : "_blank"} rel={href.startsWith("/") ? undefined : "noreferrer"} key={num}><span>{num}</span><h3>{title}</h3><p>{text}</p><b>↗</b></a>)}</div></section>
 
-    <section id="applications" className="research"><div className="shell"><header className="section-head"><div><p className="overline">{c.applicationsKicker}</p><h2>{c.applicationsTitle}</h2></div><p>{c.applicationsLead}</p></header><div className="research-list">{c.applications.map(([num, title, text, href]) => <a href={href} target={href.startsWith("/") ? undefined : "_blank"} rel={href.startsWith("/") ? undefined : "noreferrer"} key={num}><span>{num}</span><div><h3>{title}</h3><p>{text}</p></div><b>↗</b></a>)}</div></div></section>
+    <section id="applications" className="research"><div className="shell"><header className="section-head"><div><p className="overline">{c.applicationsKicker}</p><h2>{c.applicationsTitle}</h2></div><p>{c.applicationsLead}</p></header><div className="applications-context">{c.applicationsContext.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div><div className="research-list">{c.applications.map(([num, title, text, href]) => <a href={href} target={href.startsWith("/") ? undefined : "_blank"} rel={href.startsWith("/") ? undefined : "noreferrer"} key={num}><span>{num}</span><div><h3>{title}</h3><p>{text}</p></div><b>↗</b></a>)}</div></div></section>
 
     <section id="suntzu" className="suntzu section"><div className="shell"><header className="section-head"><div><p className="overline">{c.suntzuKicker}</p><h2>{c.suntzuTitle}</h2></div><p>{c.suntzuLead}</p></header><div className="suntzu-grid"><a className="book-card" href="/books"><span className="book-mark">BOOKS</span><h3>{c.bookTitle}</h3><p>{c.bookSub}</p><strong>{c.bookAction} ↗</strong></a><div className="laws-card"><p className="overline">{c.lawsTitle}</p><ol>{c.laws.map((law, i) => <li key={law}><span>0{i + 1}</span>{law}</li>)}</ol></div></div><div className="model-block"><div><p className="overline">{c.modelTitle}</p><p className="model-lead">{c.modelLead}</p></div><div className="model-steps">{c.model.map((step, i) => <div key={step}><span>0{i + 1}</span><p>{step}</p></div>)}</div></div></div></section>
 

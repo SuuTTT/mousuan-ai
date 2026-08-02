@@ -18,6 +18,39 @@
   color: #bcc6df;
 }
 
+.applications-context {
+  max-width: 980px;
+  margin: 0 0 48px;
+  padding: 24px 28px;
+  border-left: 2px solid rgba(101, 240, 255, 0.65);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.applications-context p {
+  margin: 0 0 15px;
+  color: #cbd3e8;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.applications-context p:last-child {
+  margin-bottom: 0;
+  color: #eef2ff;
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .applications-context {
+    margin-bottom: 36px;
+    padding: 18px;
+  }
+
+  .applications-context p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
 #principles .breakthroughs > a,
 #principles .breakthroughs > a:nth-child(2),
 #principles .breakthroughs > a:nth-child(3),
