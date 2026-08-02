@@ -28,12 +28,10 @@
   color: #252b47;
 }
 
-.suntzu-lead-below {
-  max-width: 900px;
-  margin: -20px 0 48px;
-  color: #59637d;
-  font-size: 17px;
-  line-height: 1.58;
+
+.book-card .book-lead {
+  margin-bottom: 16px;
+  color: #e3e7f5;
 }
 
 .suntzu-context p {
@@ -60,10 +58,6 @@
     line-height: 1.7;
   }
 
-  .suntzu-lead-below {
-    margin: -10px 0 36px;
-    font-size: 16px;
-  }
 }
 
 .portrait {
