@@ -21,7 +21,7 @@ const terms: Term[] = [
   ["公理化科学原理", "Axiomatized Science Principles", "以明确公理、定义和可验证推论组织科学知识体系。", "A scientific knowledge system organised by explicit axioms, definitions, and verifiable deductions."],
   ["信息科学", "information science", "研究信息的表示、演算、解码、生成及其在系统中的组织规律。", "The study of how information is represented, calculated, decoded, generated, and organised in systems."],
   ["谋算双脑体系结构", "MouSuan dual-brain architecture", "谋脑负责层谱抽象与全局认知，算脑负责分而治之的计算与推理，二者形成闭环。", "An architecture in which the Mou brain performs hierarchical abstraction and global cognition while the Suan brain performs divide-and-conquer calculation and reasoning."],
-  ["谋算双脑体系结构智能机器", "MouSuan dual-brain architecture intelligent machine", "以谋算双脑体系结构实现观察、解码、计算、决策、行动与验证的智能机器。", "An intelligent machine that uses the MouSuan dual-brain architecture to observe, decode, calculate, decide, act, and verify."],
+  ["谋算双脑体系结构智能机", "MouSuan dual-brain architecture intelligent machine", "以谋算双脑体系结构实现观察、解码、计算、决策、行动与验证的智能机。", "An intelligent machine that uses the MouSuan dual-brain architecture to observe, decode, calculate, decide, act, and verify."],
 ];
 
 const copy = {
