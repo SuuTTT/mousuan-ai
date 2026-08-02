@@ -14,8 +14,8 @@ const content = {
     explore: "探索四大板块",
     watch: "关于我们",
     signal: "STRUCTURE / LEARNING / STRATEGY / INTELLIGENCE",
-    manifesto: "智能不是一个黑箱。它可以被观察、解码、生成、组织、编码，并被赋予可检验的原理。一个自我意识体的智能就是它的信息：智能 = 信息。",
-    foundationKicker: "第一板块 · 公理化科学原理",
+    manifesto: "智能不是一个黑箱。它可以被观察、解码、生成、组织、编码，并被赋予可检验的原理。一个自我意识体的智能就是它的信息：智能 = 信息。信息是解码信息世界的钥匙。信息是创建智能科学原理的数学基础。",
+    foundationKicker: "第一板块 · 信息世界的公理化科学原理",
     foundationTitle: "从信息世界，到人工智能科学。",
     foundationLead: "以层谱抽象为总方法，建立信息演算、信息解码、信息生成三大支柱，形成信息世界的公理化数学原理，也即离散系统的微积分，并发展观察学习、自我意识与谋算博弈的信息科学原理。",
     breakthroughs: [
@@ -91,8 +91,8 @@ const content = {
     explore: "Explore four pillars",
     watch: "About us",
     signal: "STRUCTURE / LEARNING / STRATEGY / INTELLIGENCE",
-    manifesto: "Intelligence need not remain a black box. It can be observed, decoded, generated, organised, encoded, and grounded in testable principles. The intelligence of a self-aware subject is its information: intelligence = information.",
-    foundationKicker: "PILLAR 01 · AXIOMATIZED SCIENCE PRINCIPLES",
+    manifesto: "Intelligence need not remain a black box. It can be observed, decoded, generated, organised, encoded, and grounded in testable principles. The intelligence of a self-aware subject is its information: intelligence = information. Information is the key to decoding the information world. Information is the mathematical foundation for creating principles of intelligent science.",
+    foundationKicker: "PILLAR 01 · AXIOMATIZED PRINCIPLES OF THE INFORMATION WORLD",
     foundationTitle: "From the information world to a science of AI.",
     foundationLead: "Using hierarchical abstraction as the general method, we establish information calculus, decoding, and generation: axiomatized mathematical principles of the information world, namely the calculus of discrete systems, together with principles of learning, self-awareness, and strategic games.",
     breakthroughs: [
