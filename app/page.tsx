@@ -106,7 +106,7 @@ const content = {
     explore: "Explore four pillars",
     watch: "About us",
     signal: "STRUCTURE / LEARNING / STRATEGY / INTELLIGENCE",
-    manifesto: "Intelligence need not remain a black box. It can be observed, decoded, generated, organised, encoded, and grounded in testable principles. The intelligence of a self-aware subject is its information: intelligence = information. Information is the key to decoding the information world. Information is the mathematical foundation for creating principles of intelligent science.",
+    manifesto: "Intelligence need not remain a black box. It can be observed, decoded, generated, organised, encoded, and grounded in testable principles. The intelligence of a self-aware subject is its information: intelligence = information. Information is the key to decoding the information world. Information is the mathematical foundation for establishing the principles of intelligent science.",
     foundationKicker: "PILLAR 01 · AXIOMATIZED PRINCIPLES OF THE INFORMATION WORLD",
     foundationTitle: "From the information world to a science of AI",
     foundationLead: "Using hierarchical abstraction as the general method, we establish information calculus, decoding, and generation: axiomatized mathematical principles of the information world, namely the calculus of discrete systems, together with principles of learning, self-awareness, and strategic games.",
