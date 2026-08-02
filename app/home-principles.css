@@ -19,12 +19,21 @@
 }
 
 .suntzu-context {
-  max-width: 980px;
+  width: 100%;
+  max-width: none;
   margin: 0 0 48px;
   padding: 24px 28px;
   border-left: 2px solid rgba(92, 80, 198, 0.7);
   background: #11142a;
   color: #252b47;
+}
+
+.suntzu-lead-below {
+  max-width: 900px;
+  margin: -20px 0 48px;
+  color: #59637d;
+  font-size: 17px;
+  line-height: 1.58;
 }
 
 .suntzu-context p {
@@ -49,6 +58,11 @@
   .suntzu-context p {
     font-size: 15px;
     line-height: 1.7;
+  }
+
+  .suntzu-lead-below {
+    margin: -10px 0 36px;
+    font-size: 16px;
   }
 }
 
