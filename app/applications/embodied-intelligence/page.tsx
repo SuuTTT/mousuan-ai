@@ -4,7 +4,7 @@ export default function EmbodiedIntelligencePage() {
   return <PrinciplePage
     zh={{
       back: "← 返回研究主页", toggle: "EN", eyebrow: "应用成果 · 02 / 具身智能",
-      title: "具身智能\n让智能进入身体与环境。",
+      title: "具身智能\n让智能进入身体与环境",
       lead: "具身智能以自我意识的信息理论为核心，让智能体在真实环境中观察、学习、行动并验证结果。",
       sections: [["身体是信息接口", "智能不只存在于参数中。身体、传感器、动作和环境共同构成信息交换的边界，智能体必须在其中建立对自身与世界的表示。"], ["自我意识与行动", "具身智能体需要知道自己能做什么、当前处于什么状态、行动会带来什么变化；这种自我表示支撑自主、可信与可验证的行动。"], ["面向智能机器", "从结构信息到世界模型，研究路线把感知、学习、谋算与控制组织在同一闭环中，连接智能体、智能机器和机器人。"]],
       sourcesLabel: "原始来源与研究入口",
@@ -13,7 +13,7 @@ export default function EmbodiedIntelligencePage() {
     }}
     en={{
       back: "← Back to research hub", toggle: "中", eyebrow: "OUTCOMES · 02 / EMBODIED INTELLIGENCE",
-      title: "Embodied intelligence\nwhen intelligence enters body and world.",
+      title: "Embodied intelligence\nwhen intelligence enters body and world",
       lead: "Embodied intelligence uses an information theory of self-awareness so an agent can observe, learn, act, and verify outcomes in a real environment.",
       sections: [["The body as an information interface", "Intelligence does not live only in parameters. Body, sensors, action, and environment form an information boundary in which an agent must represent both self and world."], ["Self-awareness and action", "An embodied agent needs to know what it can do, what state it occupies, and what its actions will change. This self-representation supports autonomous, trustworthy, verifiable action."], ["Toward intelligent machines", "From structural information to world models, the route joins perception, learning, planning, and control in one loop connecting agents, intelligent machines, and robots."]],
       sourcesLabel: "ORIGINAL SOURCES",

@@ -7,7 +7,7 @@ type BookLink = [string, string];
 
 const copy = {
   zh: {
-    back: "← 返回研究主页", toggle: "EN", eyebrow: "李昂生教授 · 研究专著", title: "把原理读成体系。",
+    back: "← 返回研究主页", toggle: "EN", eyebrow: "李昂生教授 · 研究专著", title: "把原理读成体系",
     lead: "李昂生教授的三部专著构成人工智能科学与孙子模型的阅读入口。前两本已正式出版，页面提供合法购书链接；《孙子兵法的人工智能原理》保留团队提供的 PDF 阅读入口。",
     books: [
       { year: "2024", kind: "购书", title: "人工智能科学\n智能的数学原理", enTitle: "Artificial Intelligence Science — Mathematical Principles of Intelligence", meta: "李昂生著 · 科学出版社 · ISBN 9787030796493 · 548 pages", summary: "从信息基本定律、编码树与结构熵，到观察学习、自我意识、博弈/谋算与孙子模型，建立人工智能科学的基本原理。", parts: ["人工智能总论", "信息基本定律", "信息的数学原理", "智能的信息科学原理"], links: [["当当网", "https://product.dangdang.com/9787030796493.html"], ["三民网络书店", "https://www.sanmin.com.tw/product/index/013643102"], ["天珑网络书店", "https://www.tenlong.com.tw/products/9787030796493"]] as BookLink[] },
@@ -17,7 +17,7 @@ const copy = {
     note: "版权说明：前两本只提供出版商或书店的购书入口，不在本站托管 PDF；《孙子兵法的人工智能原理》PDF 由团队明确提供阅读入口。",
   },
   en: {
-    back: "← Back to research hub", toggle: "中", eyebrow: "PROFESSOR ANGSHENG LI · BOOKS", title: "Read the principles as a system.",
+    back: "← Back to research hub", toggle: "中", eyebrow: "PROFESSOR ANGSHENG LI · BOOKS", title: "Read the principles as a system",
     lead: "Professor Angsheng Li’s three monographs form the reading entrance to AI science and the Sun Tzu model. The first two are published books with legitimate purchase links; the Sun Tzu volume remains available as a team-provided PDF.",
     books: [
       { year: "2024", kind: "BUY", title: "Artificial Intelligence Science\nMathematical Principles of Intelligence", enTitle: "人工智能科学 — 智能的数学原理", meta: "By Angsheng Li · Science Press · ISBN 9787030796493 · 548 pages", summary: "From information laws, encoding trees, and structural entropy to observation-based learning, self-awareness, strategic games, and the Sun Tzu model.", parts: ["General AI science", "Fundamental information laws", "Mathematical principles of information", "Information science of intelligence"], links: [["Dangdang", "https://product.dangdang.com/9787030796493.html"], ["Sanmin Bookstore", "https://www.sanmin.com.tw/product/index/013643102"], ["Tenlong Bookstore", "https://www.tenlong.com.tw/products/9787030796493"]] as BookLink[] },
