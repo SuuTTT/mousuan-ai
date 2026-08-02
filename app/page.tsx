@@ -63,8 +63,8 @@ const content = {
     directionsKicker: "我们的研究方向",
     directions: [
       ["01", "基于信息科学原理的人工智能技术", "神经网络深度学习、具身智能、大模型与世界模型，每一项都建立在信息科学原理之上，并形成不同于已有路线的谋算智能技术。", ["神经网络深度学习", "具身智能", "大模型", "世界模型"], "#principles"],
-      ["02", "自我意识机器", "让机器能够观察自身、表征自身，并在信息世界中形成可验证的自我意识。", [], "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484239&idx=1&sn=ed7b32ef7f916a282da9ba673ffe481c"],
-      ["03", "孙子模型（世界模型）", "以知彼、知己、知天、知地为核心，把世界理解转化为可推演的策略模型。", [], "/books"],
+      ["02", "自我意识机", "机器能判定一个信息事件，即确定性、不确定性、不确定性到确定性的转化、确定性到不确定性的转化对自身是有利还是有害；并采取策略使得利可以加强，害可以转移或者转化。", [], "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484239&idx=1&sn=ed7b32ef7f916a282da9ba673ffe481c"],
+      ["03", "孙子模型（世界模型）", "以知彼、知己、知天、知地为核心，把世界理解转化为可推演的策略模型，具有科学原理的世界模型。", [], "/books"],
       ["04", "谋算智能机器", "把信息解码、策略生成与自主决策结合为有原理的谋算双脑体系结构智能机器。", [], "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"],
       ["05", "谋算智能机器人", "让机器人在复杂环境中学习、谋算、行动，并通过系统验证获得可信结果。", [], "https://suuttt.github.io/"],
     ],
@@ -152,8 +152,8 @@ const content = {
     directionsKicker: "OUR RESEARCH DIRECTIONS",
     directions: [
       ["01", "AI technology based on information-science principles", "Neural-network deep learning, embodied intelligence, foundation models, and world models are each grounded in information-science principles and form a route distinct from existing AI.", ["Neural-network deep learning", "Embodied intelligence", "Foundation models", "World models"], "#principles"],
-      ["02", "Self-awareness machines", "Machines that observe and represent themselves, forming verifiable self-awareness in the information world.", [], "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484239&idx=1&sn=ed7b32ef7f916a282da9ba673ffe481c"],
-      ["03", "The Sun Tzu model (world model)", "Know the adversary, self, time, and terrain—and turn world understanding into an inferable strategy model.", [], "/books"],
+      ["02", "Self-awareness machine", "A machine that determines whether information events and their certainty transitions benefit or harm itself, then strengthens benefits and transfers or transforms harms through strategy.", [], "https://mp.weixin.qq.com/s?__biz=MzYzOTIyNDYyNw==&mid=2247484239&idx=1&sn=ed7b32ef7f916a282da9ba673ffe481c"],
+      ["03", "The Sun Tzu model (world model)", "Know the adversary, self, time, and terrain—and turn world understanding into an inferable strategy model: a world model with scientific principles.", [], "/books"],
       ["04", "MouSuan Strategy machines", "MouSuan dual-brain architecture intelligent machines combine global cognition, cross-level reasoning, calculation, and autonomous decisions.", [], "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"],
       ["05", "MouSuan intelligent robots", "Robots that learn, plan, calculate, act, and verify outcomes in complex environments.", [], "https://suuttt.github.io/"],
     ],
