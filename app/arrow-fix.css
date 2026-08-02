@@ -17,3 +17,10 @@ footer > a:last-child {
   font-variant-emoji: text;
   text-rendering: geometricPrecision;
 }
+
+footer .contact-email {
+  color: #65f0ff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}

@@ -95,6 +95,7 @@ const content = {
       ["术语 Wiki：谋算智能中英对照", "MouSuan、层谱抽象、策略与公理化科学原理的统一术语表", "/wiki/terminology"],
     ],
     footer: "结构信息与人工智能研究资料库 · 谋算智能科学技术",
+    contact: "反馈与联系：1015011749@qq.com",
   },
   en: {
     nav: ["Discover", "Principles", "Applications", "Sun Tzu model", "About us", "Library"],
@@ -186,6 +187,7 @@ const content = {
       ["Terminology Wiki: MouSuan Strategy", "Unified Chinese-English terminology and meanings", "/wiki/terminology"],
     ],
     footer: "Structural Information & Artificial Intelligence research library · MouSuan Strategy (MSI)",
+    contact: "Feedback & contact: 1015011749@qq.com",
   },
 };
 
@@ -215,6 +217,6 @@ export default function Home() {
 
     <section id="library" className="library"><div className="shell"><header className="section-head"><div><p className="overline">{c.libraryKicker}</p><h2>{c.libraryTitle}</h2></div><p>{c.libraryLead}</p></header><div className="library-grid">{c.library.map(([title, text, href], i) => <a href={href} target="_blank" rel="noreferrer" key={title}><span>0{String(i + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{text}</p><b>↗</b></a>)}</div></div></section>
 
-    <footer><a className="brand" href="#discover" onClick={goTo("discover")}><span>SI</span><b>STRUCTURAL<br />INTELLIGENCE</b></a><p>{c.footer}</p><a href="#discover" onClick={goTo("discover")}>↑</a></footer>
+    <footer><a className="brand" href="#discover" onClick={goTo("discover")}><span>SI</span><b>STRUCTURAL<br />INTELLIGENCE</b></a><p>{c.footer}</p><a className="contact-email" href="mailto:1015011749@qq.com">{c.contact}</a><a href="#discover" onClick={goTo("discover")}>↑</a></footer>
   </main>;
 }
