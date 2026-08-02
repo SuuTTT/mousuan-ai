@@ -9,6 +9,6 @@
 .direction-card h3{position:relative;z-index:1;max-width:330px;margin:44px 0 12px;font-size:25px;font-weight:500;line-height:1.08}
 .direction-card p{position:relative;z-index:1;max-width:340px;margin:0;color:#d0d6ea;font-size:14px;line-height:1.55}
 .direction-tags{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.direction-tags span{padding:5px 8px;border:1px solid rgba(218,224,255,.26);color:#e2e7f5;font-size:12px}
-.direction-card>b{position:absolute;z-index:1;right:24px;bottom:18px;color:var(--cyan);font-size:22px}.team-heading{margin-bottom:18px}.people{padding-top:115px}
+.direction-card>b{position:absolute;z-index:1;right:24px;bottom:18px;color:var(--cyan);font-size:22px}.team-heading{margin-bottom:18px}.team-group+.team-group{margin-top:42px}.team-group-title{margin:0 0 18px;color:#5c50c6;font-size:18px;font-weight:700;letter-spacing:.02em}.people{padding-top:115px}
 @media(max-width:900px){.directions-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.directions-grid{grid-template-columns:1fr;margin-bottom:52px}.direction-card{min-height:245px}.direction-card h3{margin-top:38px;font-size:23px}.team-intro{margin-top:-8px;margin-bottom:44px;font-size:17px}}
