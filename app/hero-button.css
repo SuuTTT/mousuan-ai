@@ -1,0 +1,32 @@
+/* Starry-blue hero CTA: a luminous research action, not a white form control. */
+.hero-actions .button.light {
+  position: relative;
+  min-height: 58px;
+  padding: 16px 20px 16px 22px;
+  border: 1px solid rgba(145, 162, 255, 0.65);
+  border-radius: 2px;
+  background: linear-gradient(135deg, #1b2454 0%, #40318a 58%, #1d6a9d 100%);
+  box-shadow: 0 10px 26px rgba(39, 39, 119, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  color: #f5f7ff;
+  letter-spacing: 0.02em;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.hero-actions .button.light:hover {
+  transform: translateY(-2px);
+  border-color: rgba(101, 240, 255, 0.9);
+  box-shadow: 0 15px 32px rgba(52, 61, 170, 0.42), 0 0 22px rgba(101, 240, 255, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.hero-actions .button.light b {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  border: 1px solid rgba(219, 232, 255, 0.45);
+  border-radius: 50%;
+  color: #8ff5ff;
+  font-size: 18px;
+  line-height: 1;
+}

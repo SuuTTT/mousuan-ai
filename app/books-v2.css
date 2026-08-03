@@ -1,0 +1,5 @@
+.book-index-card:nth-child(3){background:#dcecf4}
+.book-index-card h2{margin-top:68px}
+.book-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:auto}
+.book-download{margin-top:0;background:#11142a;color:#fff}
+@media(max-width:560px){.book-links{align-items:flex-start;flex-direction:column}.book-download{align-self:flex-start}}

@@ -1,0 +1,4 @@
+.book-card h3 {
+  max-width: none;
+  font-size: clamp(30px, 2.6vw, 38px);
+}

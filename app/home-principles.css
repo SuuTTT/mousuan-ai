@@ -1,0 +1,107 @@
+/* Give the principles pillar one coherent starry-blue surface instead of white space plus loud cards. */
+#principles.section {
+  width: 100%;
+  max-width: none;
+  padding-left: max(32px, calc((100vw - 1200px) / 2));
+  padding-right: max(32px, calc((100vw - 1200px) / 2));
+  background:
+    radial-gradient(circle at 92% 18%, rgba(83, 109, 226, 0.2), transparent 34%),
+    linear-gradient(135deg, #070b20 0%, #10183b 58%, #121c45 100%);
+  color: #f5f7ff;
+}
+
+#principles .overline {
+  color: var(--cyan);
+}
+
+#principles .section-head > p {
+  color: #bcc6df;
+}
+
+.suntzu-context {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 48px;
+  padding: 24px 28px;
+  border-left: 2px solid rgba(92, 80, 198, 0.7);
+  background: #11142a;
+  color: #252b47;
+}
+
+
+.book-card .book-lead {
+  margin-bottom: 16px;
+  color: #e3e7f5;
+}
+
+.suntzu-context p {
+  margin: 0 0 15px;
+  color: #d7dcf0;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.suntzu-context p:last-child {
+  margin-bottom: 0;
+  color: #f2f4ff;
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .suntzu-context {
+    margin-bottom: 36px;
+    padding: 18px;
+  }
+
+  .suntzu-context p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+}
+
+.portrait {
+  overflow: hidden;
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+#principles .breakthroughs > a,
+#principles .breakthroughs > a:nth-child(2),
+#principles .breakthroughs > a:nth-child(3),
+#principles .breakthroughs > a:nth-child(4) {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(185, 207, 255, 0.2);
+  border-top: 2px solid rgba(101, 240, 255, 0.62);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+#principles .breakthroughs > a:nth-child(2) {
+  border-top-color: rgba(168, 139, 255, 0.8);
+}
+
+#principles .breakthroughs > a:nth-child(3) {
+  border-top-color: rgba(117, 176, 255, 0.76);
+}
+
+#principles .breakthroughs > a:nth-child(4) {
+  border-top-color: rgba(101, 240, 255, 0.5);
+}
+
+#principles .breakthroughs > a:hover {
+  background: rgba(93, 120, 231, 0.16);
+  border-color: rgba(162, 211, 255, 0.42);
+}
+
+@media (max-width: 560px) {
+  #principles.section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}

@@ -1,0 +1,26 @@
+/* Keep directional symbols in text presentation on Safari instead of emoji presentation. */
+.button b,
+.text-link b,
+.breakthroughs b,
+.research-list b,
+.book-card strong,
+.direction-card b,
+.profile-links b,
+.library-grid b,
+.principle-sources b,
+.book-download,
+.wiki-back,
+.principle-back,
+.books-nav .back-link,
+footer > a:last-child {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-variant-emoji: text;
+  text-rendering: geometricPrecision;
+}
+
+footer .contact-email {
+  color: #65f0ff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
