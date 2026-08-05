@@ -1,0 +1,20 @@
+.book-card {
+  justify-content: flex-start;
+  padding-top: 82px;
+}
+
+.book-card .book-mark {
+  line-height: 1;
+}
+
+.book-card h3 {
+  max-width: none;
+  margin-top: 0;
+  font-size: clamp(30px, 2.6vw, 38px);
+}
+
+@media (max-width: 560px) {
+  .book-card {
+    padding-top: 70px;
+  }
+}

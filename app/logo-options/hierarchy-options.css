@@ -1,0 +1,51 @@
+.round-heading {
+  width: min(1380px, calc(100% - 56px));
+  margin: 0 auto;
+  padding: 64px 0 0;
+}
+
+.round-heading > p {
+  margin: 0 0 12px;
+  color: #5966ae;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .14em;
+}
+
+.round-heading h2 {
+  margin: 0 0 12px;
+  font-size: clamp(34px, 4vw, 58px);
+  letter-spacing: -.06em;
+}
+
+.round-heading > div {
+  max-width: 760px;
+  color: #616a84;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.round-heading.previous {
+  padding-top: 48px;
+  border-top: 1px solid #d8dcea;
+}
+
+.round-heading + .logo-grid {
+  padding-top: 34px;
+}
+
+.previous-grid {
+  padding-top: 34px;
+}
+
+@media (max-width: 820px) {
+  .round-heading {
+    width: min(calc(100% - 28px), 680px);
+    padding-top: 38px;
+  }
+
+  .round-heading + .logo-grid,
+  .previous-grid {
+    padding-top: 26px;
+  }
+}

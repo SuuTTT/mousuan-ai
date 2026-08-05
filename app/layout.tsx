@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./book-title-fix.css";
+import "./section-title-fix.css";
+import "./hero-responsive-fix.css";
+import "./brand-logo.css";
 
 export const metadata: Metadata = {
-  title: "Structural Information & Artificial Intelligence | 结构信息与人工智能",
-  description: "A bilingual research hub for structural information, MouSuan Strategy (MSI), and the Sun Tzu model.",
+  title: "Structural Information & Machine Intelligence | 结构信息与机器智能",
+  description: "A bilingual research hub for structural information, MouSuan Intelligence (MSI), and Science and Technology of MouSuan Strategy.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
-    title: "Structural Information & Artificial Intelligence | 结构信息与人工智能",
-    description: "Principles · Learning · Strategy",
-    images: [{ url: "/og-frontier-research.png", width: 1774, height: 887, alt: "Structural Information and Artificial Intelligence" }],
+    title: "Structural Information & Machine Intelligence | 结构信息与机器智能",
+    description: "Principles · Learning · MouSuan Strategy",
+    images: [{ url: "/og-frontier-research.png", width: 1774, height: 887, alt: "Structural Information and Machine Intelligence" }],
   },
-  twitter: { card: "summary_large_image", title: "Structural Information & Artificial Intelligence", images: ["/og-frontier-research.png"] },
+  twitter: { card: "summary_large_image", title: "Structural Information & Machine Intelligence", images: ["/og-frontier-research.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

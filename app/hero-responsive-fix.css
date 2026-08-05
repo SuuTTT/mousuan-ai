@@ -1,0 +1,42 @@
+/* Keep the research artwork beside the hero copy on narrow desktop/tablet widths. */
+@media (min-width: 701px) and (max-width: 1080px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.18fr) minmax(340px, 0.82fr);
+  }
+
+  .hero-copy {
+    min-height: 650px;
+    padding-left: clamp(28px, 4vw, 48px);
+    padding-right: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 5.8vw, 62px);
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 14px 20px;
+  }
+
+  .hero-visual {
+    min-height: 650px;
+    background-position: 68% center;
+  }
+}
+/* Only phones use the vertical composition. */
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    min-height: 570px;
+    padding-right: 32px;
+  }
+
+  .hero-visual {
+    min-height: 340px;
+    background-position: right center;
+  }
+}

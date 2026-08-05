@@ -26,7 +26,7 @@ REPLACEMENTS = [
     ),
     (
         "Treating warfare as a system-level, dynamically evolving contest of matter and information, the Sun Tzu model turns the Art of War into a researchable, designable, and verifiable AI framework.",
-        "Treating warfare as a system-level, dynamically evolving contest of matter and information, the Sun Tzu model turns the Art of War into a researchable, designable, and verifiable AI framework. The Sun Tzu Model is a model of MouSuan Intelligence—a principled model for strategic design and effective action.",
+        "Treating warfare as a system-level, dynamically evolving contest of matter and information, the Sun Tzu model turns the Art of War into a researchable, designable, and verifiable AI framework. The Sun Tzu Model is a model of MouSuan Strategy—a principled model for strategic design and effective action.",
     ),
     (
         "有原理、可解释的世界模型；形成民用版与军用版。",
@@ -34,7 +34,7 @@ REPLACEMENTS = [
     ),
     (
         "A principled, explainable world model with civilian and military versions.",
-        "The Sun Tzu Model is a model of MouSuan Intelligence—a principled, explainable model for strategic design and effective action, with civilian and military versions.",
+        "The Sun Tzu Model is a model of MouSuan Strategy—a principled, explainable model for strategic design and effective action, with civilian and military versions.",
     ),
     ("基于信息世界科学原理的谋算双脑智能机器", "基于信息世界科学原理的谋算双脑智能机"),
     ("有原理、可解释的智能机器。", "有原理、可解释的智能机。"),
@@ -52,7 +52,7 @@ REPLACEMENTS = [
     ),
     (
         "A system of Axiomatized Science Principles combining matter and information, including the five Sun Tzu laws, information military science, and the Sun Tzu model.",
-        "A system of Axiomatized Science Principles combining matter and information, including the five Sun Tzu laws and information military science. The Sun Tzu Model is a model of MouSuan Intelligence—a principled model for strategic design and effective action.",
+        "A system of Axiomatized Science Principles combining matter and information, including the five Sun Tzu laws and information military science. The Sun Tzu Model is a model of MouSuan Strategy—a principled model for strategic design and effective action.",
     ),
     (
         "谋算智能（MouSuan Strategy, MSI）由两种互补策略生成：层谱抽象的全局认知（编码），以及面向推理与行动的演算（计算）。",

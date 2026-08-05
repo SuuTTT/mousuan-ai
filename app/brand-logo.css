@@ -1,0 +1,23 @@
+.brand .brand-symbol {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border: 0;
+}
+
+.brand .brand-symbol img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 680px) {
+  .brand .brand-symbol {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+}

@@ -1,0 +1,15 @@
+/* Keep Chinese display titles from leaving a single orphan character. */
+main[data-lang="zh"] .section-head h2.balanced-zh-title span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+main[data-lang="zh"] .section-head h2.balanced-zh-title span + span {
+  margin-left: 0.22em;
+}
+
+@media (max-width: 760px) {
+  main[data-lang="zh"] .section-head h2.balanced-zh-title span + span {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,57 @@
+/* English needs a calmer editorial treatment than the Chinese display typography. */
+html[lang="en"] body,
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3,
+main[data-lang="en"],
+main[data-lang="en"] h1,
+main[data-lang="en"] h2,
+main[data-lang="en"] h3 {
+  font-family: "Avenir Next", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+}
+
+html[lang="en"] .hero h1,
+main[data-lang="en"] .hero h1 {
+  max-width: 900px;
+  font-size: clamp(44px, 4.25vw, 70px);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.03;
+}
+
+html[lang="en"] .hero .intro,
+main[data-lang="en"] .hero .intro {
+  max-width: 610px;
+  font-size: clamp(17px, 1.25vw, 20px);
+  line-height: 1.62;
+}
+
+html[lang="en"] .manifesto,
+main[data-lang="en"] .manifesto {
+  min-height: 0;
+  padding: clamp(58px, 6vw, 96px) 32px;
+}
+
+html[lang="en"] .manifesto p,
+main[data-lang="en"] .manifesto p {
+  max-width: 980px;
+  font-size: clamp(24px, 2.25vw, 38px);
+  font-weight: 450;
+  letter-spacing: -0.035em;
+  line-height: 1.24;
+}
+
+@media (max-width: 560px) {
+  html[lang="en"] .hero h1,
+  main[data-lang="en"] .hero h1 {
+    max-width: 100%;
+    font-size: clamp(42px, 12.2vw, 54px);
+    line-height: 1.04;
+  }
+
+  html[lang="en"] .manifesto p,
+  main[data-lang="en"] .manifesto p {
+    font-size: clamp(23px, 6.8vw, 30px);
+    line-height: 1.28;
+  }
+}
