@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import bookIndex from "../app/theorems/book-index.json" with { type: "json" };
+import { resolveAnchorNavigation } from "../app/anchor-navigation.ts";
 
 async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -103,4 +104,32 @@ test("server-renders the Sun Tzu model with primary-source order and five laws",
   assert.match(html, /孙子五大定律/);
   assert.match(html, /战争能力 = 物质 × 信息²/);
   assert.equal(html.match(/href="\/books#artificial-intelligence-science"/g)?.length, 1);
+});
+
+test("all internal HTML anchors use lock-safe navigation while document fragments remain native", () => {
+  assert.deepEqual(resolveAnchorNavigation("https://example.test/", "#modules"), {
+    kind: "same-page",
+    targetId: "modules",
+  });
+  assert.deepEqual(resolveAnchorNavigation("https://example.test/team", "/#modules"), {
+    kind: "cross-page",
+    targetId: "modules",
+    destination: "/",
+  });
+  assert.deepEqual(resolveAnchorNavigation("https://example.test/", "/framework#sun"), {
+    kind: "cross-page",
+    targetId: "sun",
+    destination: "/framework",
+  });
+  assert.deepEqual(resolveAnchorNavigation("https://example.test/themes/information", "/books#artificial-intelligence-science"), {
+    kind: "cross-page",
+    targetId: "artificial-intelligence-science",
+    destination: "/books",
+  });
+  assert.deepEqual(resolveAnchorNavigation("https://example.test/framework", "/books/sun-tzu-ai-principles.pdf#page=567"), {
+    kind: "ignore",
+  });
+  assert.deepEqual(resolveAnchorNavigation("https://example.test/", "https://other.test/#modules"), {
+    kind: "ignore",
+  });
 });

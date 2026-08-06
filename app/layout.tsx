@@ -5,6 +5,7 @@ import "./section-title-fix.css";
 import "./hero-responsive-fix.css";
 import "./brand-logo.css";
 import "./theme-citation-fix.css";
+import SafeAnchorNavigation from "./SafeAnchorNavigation";
 
 export const metadata: Metadata = {
   title: "Structural Information & Machine Intelligence | 结构信息与机器智能",
@@ -19,5 +20,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-CN"><body>{children}</body></html>;
+  return <html lang="zh-CN"><body><SafeAnchorNavigation />{children}</body></html>;
 }
