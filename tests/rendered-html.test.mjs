@@ -30,11 +30,14 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /信息与智能的/);
-  assert.match(html, /四个基本问题/);
-  assert.match(html, /信息的数学基础/);
-  assert.match(html, /智能 = 信息/);
+  assert.match(html, /人工智能科学的终极目标/);
+  assert.match(html, /四个基本科学问题/);
+  for (const question of ["信息是什么？信息的数学原理是什么？", "智能是什么？", "智能从哪里来？", "怎样实现智能？"]) {
+    assert.ok(html.includes(question));
+  }
+  assert.match(html, /智能论题：智能 = 信息/);
   assert.match(html, /智能的策略就是谋和算/);
+  assert.match(html, /中文“智能”已经蕴含着这个答案/);
   assert.doesNotMatch(html, /现实世界的完备建模|COMPLETELY MODELING|complete-model/);
   assert.match(html, /href="\/themes\/information"/);
   assert.doesNotMatch(html, /href="#theme-01"|id="theme-01"/);

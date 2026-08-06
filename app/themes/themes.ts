@@ -23,7 +23,7 @@ export const themes: Theme[] = [
   {
     slug: "information",
     no: "01",
-    question: "信息的数学基础",
+    question: "信息是什么？信息的数学原理是什么？",
     title: "信息与信息的数学原理",
     englishTitle: "Information and Its Mathematical Principles",
     dimension: "智能的数学基础",
@@ -84,7 +84,7 @@ export const themes: Theme[] = [
   {
     slug: "intelligence-thesis",
     no: "02",
-    question: "智能的实质",
+    question: "智能是什么？",
     title: "智能论题",
     englishTitle: "Intelligence Thesis",
     dimension: "智能的数学实质",
@@ -108,7 +108,7 @@ export const themes: Theme[] = [
   {
     slug: "strategy-principle",
     no: "03",
-    question: "智能的策略",
+    question: "智能从哪里来？",
     title: "智能的策略原理",
     englishTitle: "Strategy Principle of Intelligence",
     dimension: "智能机构建的机器原理",
@@ -132,7 +132,7 @@ export const themes: Theme[] = [
   {
     slug: "sun-tzu-model",
     no: "04",
-    question: "智能的模型",
+    question: "怎样实现智能？",
     title: "孙子模型",
     englishTitle: "Sun Tzu Model",
     dimension: "智能的实现模型",
