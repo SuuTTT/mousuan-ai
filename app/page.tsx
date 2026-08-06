@@ -63,8 +63,7 @@ const ui = {
     reference: "查看关键原理",
     guide: "四个回答",
     sectionLabel: "FOUR FUNDAMENTAL QUESTIONS",
-    sectionTitle: "先给出答案，再逐层深入",
-    sectionText: "首页只呈现最重要的观点；点击每一主题，可进入解释、关键依据与进一步研究。",
+    sectionTitle: "信息基础与智能体系",
     enter: "进入主题",
     completeLabel: "COMPLETELY MODELING",
     completeTitle: "现实世界的完备建模",
@@ -72,13 +71,6 @@ const ui = {
     physical: "物理性质",
     information: "信息性质",
     knowledge: "完备知识",
-    depthLabel: "2—3 LEVELS",
-    depthTitle: "简单首页，分层展开",
-    depth: [
-      ["第一层", "四个基本问题", "问题、核心观点与研究入口"],
-      ["第二层", "四个主题页", "解释数学实质、策略原理与实现模型"],
-      ["第三层", "原理与研究", "关键定义、定律、定理、应用与专著"],
-    ],
     modulesLabel: "RESEARCH PROGRAMMES",
     modulesTitle: "五大研究模块",
     modulesText: "四个主题回答基本科学问题；五大模块承接具体研究、应用与工程工作。",
@@ -93,8 +85,7 @@ const ui = {
     reference: "Open key principles",
     guide: "Four answers",
     sectionLabel: "FOUR FUNDAMENTAL QUESTIONS",
-    sectionTitle: "Answers first, depth on demand",
-    sectionText: "The home page presents only the essential ideas. Each theme opens its explanation, key basis, and deeper research.",
+    sectionTitle: "Information Foundations & Intelligence",
     enter: "Open theme",
     completeLabel: "COMPLETELY MODELING",
     completeTitle: "Completely modeling the real world",
@@ -102,13 +93,6 @@ const ui = {
     physical: "Physical properties",
     information: "Informational properties",
     knowledge: "Complete knowledge",
-    depthLabel: "2—3 LEVELS",
-    depthTitle: "A simple home, unfolded in layers",
-    depth: [
-      ["Level 1", "Four questions", "Questions, central claims, and entries"],
-      ["Level 2", "Four theme pages", "Mathematical essence, strategy principle, and realisation model"],
-      ["Level 3", "Principles & research", "Key definitions, laws, theorems, applications, and books"],
-    ],
     modulesLabel: "RESEARCH PROGRAMMES",
     modulesTitle: "Five research modules",
     modulesText: "The four themes answer foundational questions; the five modules organise research, applications, and engineering work.",
@@ -132,11 +116,9 @@ export default function Home() {
 
     <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#themes">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗</b></a></div></div><aside><p>{c.guide}</p>{themes.map((theme) => <a href={theme.href} key={theme.no}><span>{theme.no}</span><strong>{t(theme.question, lang)}</strong></a>)}</aside></div></section>
 
-    <section id="themes" className="questions-themes questions-shell"><span id="hierarchy" className="questions-anchor" /><header><p>{c.sectionLabel}</p><h2>{c.sectionTitle}</h2><span>{c.sectionText}</span></header><div className="questions-theme-list">{themes.map((theme) => <a href={theme.href} key={theme.no}><div className="questions-theme-meta"><span>{theme.no}</span><small>{t(theme.dimension, lang)}</small></div><div className="questions-theme-question"><p>{t(theme.question, lang)}</p><h3>{t(theme.title, lang)}</h3></div><div className="questions-theme-answer"><strong>{t(theme.answer, lang)}</strong><p>{t(theme.statement, lang)}</p></div><b>{c.enter} ↗</b></a>)}</div></section>
+    <section id="themes" className="questions-themes questions-shell"><span id="hierarchy" className="questions-anchor" /><header style={{ gridTemplateColumns: "1fr" }}><p>{c.sectionLabel}</p><h2>{c.sectionTitle}</h2></header><div className="questions-theme-list">{themes.map((theme) => <a href={theme.href} key={theme.no}><div className="questions-theme-meta"><span>{theme.no}</span><small>{t(theme.dimension, lang)}</small></div><div className="questions-theme-question"><p>{t(theme.question, lang)}</p><h3>{t(theme.title, lang)}</h3></div><div className="questions-theme-answer"><strong>{t(theme.answer, lang)}</strong><p>{t(theme.statement, lang)}</p></div><b>{c.enter} ↗</b></a>)}</div></section>
 
     <section className="complete-model"><span id="layer-01" className="questions-anchor" /><span id="layer-02" className="questions-anchor" /><span id="layer-03" className="questions-anchor" /><div className="questions-shell"><header><p>{c.completeLabel}</p><h2>{c.completeTitle}</h2><span>{c.completeText}</span></header><div className="complete-equation"><a href="/concepts/physical-world">{c.physical}</a><b>+</b><a href="/concepts/information-world">{c.information}</a><b>=</b><a href="/concepts/complete-knowledge">{c.knowledge}</a></div></div></section>
-
-    <section className="questions-depth questions-shell"><header><p>{c.depthLabel}</p><h2>{c.depthTitle}</h2></header><ol>{c.depth.map(([level, title, text], index) => <li key={level}><span>0{index + 1}</span><small>{level}</small><strong>{title}</strong><p>{text}</p></li>)}</ol></section>
 
     <section id="modules" className="questions-modules"><div className="questions-shell"><header><p>{c.modulesLabel}</p><h2>{c.modulesTitle}</h2><span>{c.modulesText}</span></header><div>{homeModules.map(([title, text, href], index) => <a href={href} key={href}><span>0{index + 1}</span><strong>{t(title, lang)}</strong><p>{t(text, lang)}</p><b>↗</b></a>)}</div><a className="questions-team" href="/team"><span>{lang === "zh" ? "研究主体" : "RESEARCH TEAM"}</span><strong>{lang === "zh" ? "李昂生教授团队" : "Professor Angsheng Li’s team"}</strong><b>→</b></a></div></section>
 

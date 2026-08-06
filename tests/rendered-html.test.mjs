@@ -38,6 +38,7 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.doesNotMatch(html, /href="#theme-01"|id="theme-01"/);
   assert.doesNotMatch(html, /questions-books|主要著作/);
   assert.doesNotMatch(html, /智能 = 谋算/);
+  assert.doesNotMatch(html, /先给出答案|首页只呈现|简单首页|分层展开|第一层|第二层|第三层|2—3 LEVELS/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
 });
 
