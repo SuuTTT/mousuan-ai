@@ -42,4 +42,5 @@ next-env.d.ts
 /output/
 /tmp/
 /work/
+/internal-audit/
 tsconfig.tsbuildinfo
