@@ -54,7 +54,18 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.doesNotMatch(html, /href="#theme-01"|id="theme-01"/);
   assert.doesNotMatch(html, /questions-books|主要著作/);
   assert.doesNotMatch(html, /先给出答案|首页只呈现|简单首页|分层展开|第一层|第二层|第三层|2—3 LEVELS/);
+  assert.match(html, /questions-menu-toggle/);
+  assert.match(html, /aria-label="研究主页导航"/);
+  assert.doesNotMatch(html, /↗️/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
+});
+
+test("public subpages expose an explicit research-home link", async () => {
+  for (const pathname of ["/themes/information", "/concepts/physical-world", "/modules/principles", "/framework", "/team", "/theorems"]) {
+    const response = await render(pathname);
+    assert.equal(response.status, 200);
+    assert.match(await response.text(), /研究主页/);
+  }
 });
 
 test("English homepage opens with the requested information-world statement", async () => {

@@ -54,7 +54,7 @@ export default function TheoremSearch() {
   }
 
   return <main className="theorem-index">
-    <nav className="theorem-nav"><a href="/" className="theorem-brand"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/#themes">四个主题</a><a href="/framework">理论索引</a><a href="/books">三部专著</a><a href="/team">团队</a></div></nav>
+    <nav className="theorem-nav"><a href="/" className="theorem-brand"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/">研究主页</a><a href="/#themes">四个主题</a><a href="/framework">理论索引</a><a href="/books">三部专著</a><a href="/team">团队</a></div></nav>
 
     <header className="theorem-hero"><div className="theorem-shell"><p>ACADEMIC STATEMENT INDEX</p><h1>定义·定理·定律索引</h1><span>两部原著 · {entries.length} 条学术陈述</span></div></header>
 
@@ -68,12 +68,12 @@ export default function TheoremSearch() {
       <header><p><strong>{filtered.length}</strong> 条结果</p>{query && <button type="button" onClick={() => updateQuery("")}>清除关键词</button>}</header>
       <ol>{filtered.slice(0, limit).map((entry) => <li key={entry.id}>
         <div className="theorem-entry-id"><span>{entry.type}</span><strong>{entry.number}</strong></div>
-        <article><p>{entry.bookTitle}</p><h2>{entry.title}</h2><div><AcademicMathText text={entry.content} /></div><footer><span>{entry.printedPage ? `原书第 ${entry.printedPage} 页` : `PDF 第 ${entry.pdfPage} 页`}</span><a href={entry.href}>查看出处 ↗</a></footer></article>
+        <article><p>{entry.bookTitle}</p><h2>{entry.title}</h2><div><AcademicMathText text={entry.content} /></div><footer><span>{entry.printedPage ? `原书第 ${entry.printedPage} 页` : `PDF 第 ${entry.pdfPage} 页`}</span><a href={entry.href}>查看出处 ↗︎</a></footer></article>
       </li>)}</ol>
       {filtered.length === 0 && <div className="theorem-empty"><strong>未找到相关条目</strong><p>可以尝试编号、概念名称或正文关键词。</p></div>}
       {limit < filtered.length && <button className="theorem-more" type="button" onClick={() => setLimit((current) => current + 30)}>继续显示 {Math.min(30, filtered.length - limit)} 条</button>}
     </section>
 
-    <footer className="theorem-site-footer"><div className="theorem-shell"><span>《人工智能科学——智能的数学原理》</span><span>《孙子兵法的人工智能原理》</span><a href="#top">↑</a></div></footer>
+    <footer className="theorem-site-footer"><div className="theorem-shell"><span>《人工智能科学——智能的数学原理》</span><span>《孙子兵法的人工智能原理》</span><a href="/">返回研究主页</a></div></footer>
   </main>;
 }

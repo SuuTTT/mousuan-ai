@@ -31,14 +31,14 @@ function LogoCard({ option }: { option: typeof options[number] }) {
     <div className="size-test"><span>小尺寸</span><div className="mini dark"><img src={`/logo-options/${option.file}`} alt="" /></div><img className="s32" src={`/logo-options/${option.file}`} alt="" /><img className="s20" src={`/logo-options/${option.file}`} alt="" /></div>
     <p className="logo-idea">{option.idea}</p>
     <div className="logo-fit"><b>适用：</b>{option.fit}</div>
-    <a className="svg-link" href={`/logo-options/${option.file}`} download>下载 SVG ↗</a>
+    <a className="svg-link" href={`/logo-options/${option.file}`} download>下载 SVG ↗︎</a>
   </article>;
 }
 
 export default function LogoOptionsPage() {
   return <main className="logo-review">
     <header className="logo-review-hero">
-      <a href="/" className="review-back">← 返回网站</a>
+      <a href="/" className="review-back">← 返回研究主页</a>
       <p>MOUSUAN VISUAL IDENTITY · SVG CONCEPTS</p>
       <h1>谋算网站 Logo 候选</h1>
       <div className="review-intro">第二轮专门聚焦“层谱抽象”：局部结构逐层汇聚为全局认知，并呈现编码树或跨层演算。每个方案同时测试深色、浅色和 favicon 小尺寸。</div>
