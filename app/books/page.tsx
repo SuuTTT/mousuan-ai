@@ -7,7 +7,7 @@ type BookLink = [string, string];
 
 const copy = {
   zh: {
-    back: "← 返回研究主页", toggle: "EN", eyebrow: "李昂生教授 · 研究专著", title: "把原理读成体系",
+    back: "← 返回研究主页", toggle: "EN", eyebrow: "李昂生教授 · 研究专著", title: "把原理读成体系", indexLabel: "检索两部原著中的定义、定理与定律 →",
     lead: "李昂生教授的三部专著系统论述信息的数学原理、谋算智能的信息科学原理和孙子模型。前两部提供正式购书链接；《孙子兵法的人工智能原理》提供团队发布的 PDF。",
     books: [
       { year: "2024", kind: "购书", title: "人工智能科学\n智能的数学原理", enTitle: "Artificial Intelligence Science — Mathematical Principles of Intelligence", meta: "李昂生著 · 科学出版社 · ISBN 9787030796493 · 548 pages", summary: "从信息基本定律、编码树与结构熵，到观察学习、自我意识、博弈/谋算与孙子模型，建立人工智能科学的基本原理。", parts: ["人工智能总论", "信息基本定律", "信息的数学原理", "智能的信息科学原理"], links: [["当当网", "https://product.dangdang.com/9787030796493.html"], ["三民网络书店", "https://www.sanmin.com.tw/product/index/013643102"], ["天珑网络书店", "https://www.tenlong.com.tw/products/9787030796493"]] as BookLink[] },
@@ -17,7 +17,7 @@ const copy = {
     note: "版权说明：前两本只提供出版商或书店的购书入口，不在本站托管 PDF；《孙子兵法的人工智能原理》PDF 由团队明确提供阅读入口。",
   },
   en: {
-    back: "← Back to research hub", toggle: "中", eyebrow: "PROFESSOR ANGSHENG LI · BOOKS", title: "Read the principles as a system",
+    back: "← Back to research hub", toggle: "中", eyebrow: "PROFESSOR ANGSHENG LI · BOOKS", title: "Read the principles as a system", indexLabel: "Search definitions, theorems, and laws in two books →",
     lead: "Professor Angsheng Li’s three monographs form the reading entrance to AI science and the Sun Tzu model. The first two are published books with legitimate purchase links; the Sun Tzu volume remains available as a team-provided PDF.",
     books: [
       { year: "2024", kind: "BUY", title: "Artificial Intelligence Science\nMathematical Principles of Intelligence", enTitle: "人工智能科学 — 智能的数学原理", meta: "By Angsheng Li · Science Press · ISBN 9787030796493 · 548 pages", summary: "From information laws, encoding trees, and structural entropy to learning from observing, self-awareness, contest and strategic interaction, and the Sun Tzu Model.", parts: ["General AI science", "Fundamental information laws", "Mathematical principles of information", "Information science of intelligence"], links: [["Dangdang", "https://product.dangdang.com/9787030796493.html"], ["Sanmin Bookstore", "https://www.sanmin.com.tw/product/index/013643102"], ["Tenlong Bookstore", "https://www.tenlong.com.tw/products/9787030796493"]] as BookLink[] },
@@ -33,7 +33,7 @@ export default function BooksPage() {
   const c = copy[lang];
   return <main className="books-page">
     <header className="books-nav"><a className="brand" href="/"><span className="brand-symbol"><img src="/logo-encoding-tree.svg" alt="" /></span><b>STRUCTURAL<br />INTELLIGENCE</b></a><a className="back-link" href="/">{c.back}</a><button onClick={() => setLang(lang === "zh" ? "en" : "zh")}>{c.toggle}</button></header>
-    <section className="books-hero"><p className="overline">{c.eyebrow}</p><h1>{c.title}</h1><p>{c.lead}</p></section>
+    <section className="books-hero"><p className="overline">{c.eyebrow}</p><h1>{c.title}</h1><p>{c.lead}</p><a className="books-index-link" href="/theorems">{c.indexLabel}</a></section>
     <section className="book-index shell">{c.books.map((book, index) => <article id={["artificial-intelligence-science", "artificial-intelligence-principles", "sun-tzu-ai-principles"][index]} className="book-index-card" key={book.title}><div className="book-index-top"><span>{book.year}</span><span>{book.kind}</span></div><h2>{book.title.split("\n").map(line => <span key={line}>{line}</span>)}</h2><p className="book-index-en">{book.enTitle}</p><p className="book-index-meta">{book.meta}</p><p className="book-index-summary">{book.summary}</p><div className="book-parts">{book.parts.map((part) => <span key={part}>{part}</span>)}</div><div className="book-links">{book.links.map(([label, href]) => <a className="button light book-download" href={href} target={href.startsWith("/") ? undefined : "_blank"} rel={href.startsWith("/") ? undefined : "noreferrer"} key={label}>{label} ↗</a>)}</div></article>)}</section>
     <p className="books-note shell">{c.note}</p>
   </main>;

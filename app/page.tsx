@@ -55,7 +55,7 @@ const homeModules = [
 
 const ui = {
   zh: {
-    nav: [["四个主题", "#themes"], ["五大模块", "#modules"], ["理论索引", "/framework"], ["三部专著", "/books"], ["团队", "/team"]],
+    nav: [["四个主题", "#themes"], ["五大模块", "#modules"], ["理论索引", "/framework"], ["定义定理", "/theorems"], ["三部专著", "/books"], ["团队", "/team"]],
     kicker: "信息世界科学原理 · 人工智能科学",
     title: "信息与智能的\n四个基本问题",
     lead: "从信息的数学原理出发，回答智能的实质、智能的策略和智能的模型。",
@@ -77,7 +77,7 @@ const ui = {
     footer: "结构信息与机器智能 · 信息的数学原理与智能科学",
   },
   en: {
-    nav: [["Four themes", "#themes"], ["Five modules", "#modules"], ["Principle index", "/framework"], ["Books", "/books"], ["Team", "/team"]],
+    nav: [["Four themes", "#themes"], ["Five modules", "#modules"], ["Principle index", "/framework"], ["Statements", "/theorems"], ["Books", "/books"], ["Team", "/team"]],
     kicker: "Science of the information world · artificial intelligence science",
     title: "Four fundamental questions\nof information and intelligence",
     lead: "Beginning with the mathematical principles of information, the system presents the essence, strategy, and model of intelligence.",

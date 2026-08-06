@@ -65,7 +65,7 @@ const sunLaws = [
 
 export default function FrameworkPage() {
   return <main className="principle-index">
-    <nav className="index-nav"><a className="index-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/#themes">四个主题</a><a href="#information">信息</a><a href="#intelligence">智能</a><a href="#strategy">谋算</a><a href="#sun">孙子五大定律</a></div><a href="/">返回首页</a></nav>
+    <nav className="index-nav"><a className="index-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/#themes">四个主题</a><a href="#information">信息</a><a href="#intelligence">智能</a><a href="#strategy">谋算</a><a href="#sun">孙子五大定律</a><a href="/theorems">定义定理</a></div><a href="/">返回首页</a></nav>
 
     <header className="index-hero"><div className="index-shell"><p>KEY PRINCIPLES & SOURCES</p><h1>关键原理索引</h1><span>只点出理解信息与智能体系所需的重要观点；定义、证明与完整论述均回到原始专著。</span><div><a href="#information">信息的数学原理</a><b>→</b><a href="#intelligence">智能论题</a><b>→</b><a href="#strategy">策略原理</a><b>→</b><a href="#model">孙子模型</a></div></div></header>
 

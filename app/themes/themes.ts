@@ -9,7 +9,12 @@ export type Theme = {
   lead: string;
   interpretation: string;
   parts: readonly { label: string; title: string; text: string }[];
-  basis: readonly { label: string; detail: string; href: string; references?: readonly string[] }[];
+  basis: readonly {
+    label: string;
+    detail: string;
+    href: string;
+    references?: readonly { number: string; title: string; content: string; href: string }[];
+  }[];
   deeper: readonly { title: string; text: string; href: string }[];
   sunLaws?: readonly { no: string; title: string; text: string; href: string }[];
 };
@@ -35,7 +40,38 @@ export const themes: Theme[] = [
         label: "《人工智能科学——智能的数学原理》",
         detail: "§4.6.2–4.6.3、定义 8.2、定义 10.1 与定理 10.9",
         href: "/books#artificial-intelligence-science",
-        references: ["§4.6.2", "§4.6.3", "定义 8.2", "定义 10.1", "定理 10.9"],
+        references: [
+          {
+            number: "§4.6.2",
+            title: "信息科学是什么？",
+            content: "信息科学研究现实世界的确定性、不确定性，以及确定性到不确定性、不确定性到确定性转化的规律与作用。实现两类转化的动作或操作称为策略；生成策略与解码策略产生的信息均可度量。",
+            href: "/theorems?q=4.6.2",
+          },
+          {
+            number: "§4.6.3",
+            title: "信息的数学原理是什么？",
+            content: "信息世界的科学范式是层谱抽象；层谱抽象的数学原理是信息演算，即离散系统的微积分。编码树是层谱抽象的数学模型、数据结构和全局无损编码。",
+            href: "/theorems?q=4.6.3",
+          },
+          {
+            number: "定义 8.2",
+            title: "集合的编码树",
+            content: "给定有穷集合 A，其编码树是有根树 T：根节点 λ 对应整个集合 A；每个内部节点的立即后继所对应的子集构成该节点所对应子集的一个划分；每个叶子节点对应 A 中的一个独点集。",
+            href: "/theorems?q=定义+8.2",
+          },
+          {
+            number: "定义 10.1",
+            title: "解码信息",
+            content: "给定不可约非负矩阵 A 及其编码树 T，编码树 T 从信息系统 A 中解码的信息定义为 Dᵀ(A) = H¹(A) − Hᵀ(A)。",
+            href: "/theorems?q=定义+10.1",
+          },
+          {
+            number: "定理 10.9",
+            title: "压缩／解码原理",
+            content: "对任意不可约非负矩阵 A：Cᵀ(A) = H¹(A) − Hᵀ(A) = Dᵀ(A)；C(A) = H¹(A) − H(A) = D(A)；对 k ≥ 2，Cᵏ(A) = H¹(A) − Hᵏ(A) = Dᵏ(A)；对任意编码树类型 𝒯，同样有 C𝒯(A) = H¹(A) − H𝒯(A) = D𝒯(A)。",
+            href: "/theorems?q=定理+10.9",
+          },
+        ],
       },
     ],
     deeper: [

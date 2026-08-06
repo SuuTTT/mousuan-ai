@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import bookIndex from "../app/theorems/book-index.json" with { type: "json" };
 
 async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -60,7 +61,25 @@ test("information theme lists its primary references without editorial prompts",
   for (const reference of ["§4.6.2", "§4.6.3", "定义 8.2", "定义 10.1", "定理 10.9"]) {
     assert.ok(html.includes(reference));
   }
+  assert.match(html, /集合的编码树/);
+  assert.match(html, /Dᵀ\(A\) = H¹\(A\) − Hᵀ\(A\)/);
+  assert.match(html, /压缩／解码原理/);
   assert.doesNotMatch(html, /只列出理解本主题|完整论证进入原著/);
+});
+
+test("searchable academic index covers both source books", async () => {
+  assert.equal(bookIndex.length, 917);
+  assert.ok(bookIndex.some((entry) => entry.id === "ai-science-定义-8.2" && entry.title === "集合的编码树"));
+  assert.ok(bookIndex.some((entry) => entry.id === "ai-science-定理-10.9" && entry.content.includes("C T (A)")));
+  assert.ok(bookIndex.some((entry) => entry.id === "sun-tzu-定义-1.1"));
+  assert.ok(bookIndex.some((entry) => entry.id === "sun-tzu-定律-IV" && entry.content.includes("物质 × 信息²")));
+
+  const response = await render("/theorems");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /定义·定理·定律索引/);
+  assert.match(html, /917(?:<!-- -->)? 条学术陈述/);
+  assert.match(html, /关键词或编号/);
 });
 
 test("server-renders the theorem framework with source references", async () => {
