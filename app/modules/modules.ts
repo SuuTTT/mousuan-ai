@@ -18,8 +18,8 @@ export type ResearchModule = {
 
 export const researchModules: ResearchModule[] = [
   {
-    slug: "principles", no: "01", shortTitle: "公理原理",
-    title: "信息世界的公理化科学原理", englishTitle: "Axiomatized principles of the information world",
+    slug: "principles", no: "01", shortTitle: "数学原理",
+    title: "信息世界数学原理", englishTitle: "Mathematical principles of the information world",
     lead: "从信息世界的定义与定律出发，经由编码树、结构熵、信息演算、信息解码与信息生成，进入谋算智能的信息科学原理。",
     thesis: "信息的数学原理以信息演算理论、信息解码原理和信息生成原理为三大支柱。",
     items: [

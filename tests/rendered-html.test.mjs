@@ -31,13 +31,14 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /人工智能科学的终极目标/);
+  assert.match(html, /信息世界数学原理/);
   assert.match(html, /四个科学问题/);
   assert.match(html, /四个问题及其回答/);
   assert.doesNotMatch(html, /基本问题|基本回答/);
   assert.match(html, /四个回答/);
   assert.match(html, /信息的数学原理/);
   assert.match(html, /信息原理/);
+  assert.doesNotMatch(html, /信息世界(?:的)?(?:公理化)?科学原理/);
   assert.doesNotMatch(html, /信息的数学基础|信息基础/);
   for (const question of ["信息是什么？信息的数学原理是什么？", "智能是什么？", "智能从哪里来？", "怎样实现智能？"]) {
     assert.ok(html.includes(question));
@@ -86,6 +87,10 @@ test("terminology wiki records the canonical information-principle terms", async
   assert.match(html, />Information principles</);
   assert.match(html, />信息的数学原理</);
   assert.match(html, />Mathematical principles of information</);
+  assert.match(html, />信息世界数学原理</);
+  assert.match(html, />Mathematical principles of the information world</);
+  assert.match(html, />战争的科学原理</);
+  assert.match(html, /战争同时涉及物质与信息/);
   assert.doesNotMatch(html, /Information foundations?|Mathematical foundations? of information/i);
 });
 
@@ -179,6 +184,8 @@ test("server-renders the theorem framework with source references", async () => 
   assert.match(html, /定义 8\.2/);
   assert.match(html, /定理 10\.9/);
   assert.match(html, /定义 34\.5/);
+  assert.match(html, /信息世界数学原理/);
+  assert.match(html, /战争之科学原理/);
   assert.match(html, /sun-tzu-ai-principles\.pdf#page=567/);
   assert.doesNotMatch(html, /原有模块|核验原始手稿|audit-redesign/);
 });

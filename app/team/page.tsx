@@ -1,6 +1,6 @@
 const programmes = [
-  ["01", "孙子模型（谋算系统）", "基于信息世界科学原理的谋算智能系统", "以知彼、知己、知天、知地组织学习、自我意识、策略、决策、行动与验证；形成有原理、可解释的世界模型。", "/modules/sun-tzu"],
-  ["02", "孙子机（谋算机）", "基于信息世界科学原理的谋算双脑智能机", "以谋进行层谱抽象和全局认知，以算完成局部计算和逻辑推理，形成可验证的智能机器。", "/modules/mousuan-mi"],
+  ["01", "孙子模型（谋算系统）", "基于信息世界数学原理的谋算智能系统", "以知彼、知己、知天、知地组织学习、自我意识、策略、决策、行动与验证；形成有原理、可解释的世界模型。", "/modules/sun-tzu"],
+  ["02", "孙子机（谋算机）", "基于信息世界数学原理的谋算双脑智能机", "以谋进行层谱抽象和全局认知，以算完成局部计算和逻辑推理，形成可验证的智能机器。", "/modules/mousuan-mi"],
 ] as const;
 
 const directions = [
@@ -34,7 +34,7 @@ export default function TeamPage() {
 
     <section className="team-members team-shell"><header><p>CORE TEAM</p><h2>核心成员</h2><span>教授与博士生共同推进结构信息、机器智能科学与谋算智能研究。</span></header><PeopleGroup title="教授 · FACULTY" people={faculty} /><PeopleGroup title="博士生 · PHD STUDENTS" people={students} /></section>
 
-    <section className="team-programmes team-shell"><header><p>MAJOR PROGRAMMES</p><h2>重大、原始创新研究计划</h2><span>围绕信息世界科学原理，推进两个能够形成标志性系统的长期研究计划。</span></header><div>{programmes.map(([no, title, subtitle, text, href]) => <a href={href} key={no}><span>{no}</span><h3>{title}</h3><strong>{subtitle}</strong><p>{text}</p><b>进入计划 ↗︎</b></a>)}</div></section>
+    <section className="team-programmes team-shell"><header><p>MAJOR PROGRAMMES</p><h2>重大、原始创新研究计划</h2><span>围绕信息世界数学原理，推进两个能够形成标志性系统的长期研究计划。</span></header><div>{programmes.map(([no, title, subtitle, text, href]) => <a href={href} key={no}><span>{no}</span><h3>{title}</h3><strong>{subtitle}</strong><p>{text}</p><b>进入计划 ↗︎</b></a>)}</div></section>
 
     <section className="team-directions"><div className="team-shell"><header><p>FIVE RESEARCH DIRECTIONS</p><h2>五大研究方向</h2></header><div>{directions.map(([no, title, text, href]) => <a href={href} key={no}><span>{no}</span><section><h3>{title}</h3><p>{text}</p></section><b>↗︎</b></a>)}</div></div></section>
 
