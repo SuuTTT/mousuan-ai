@@ -61,7 +61,28 @@ test("English homepage opens with the requested information-world statement", as
   const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
   assert.match(source, /kicker: "Mathematical principles of the information world"/);
   assert.match(source, /indexLabel: \["信息的数学原理", "Mathematical principles of information"\]/);
+  assert.match(source, /guide: "Four questions · Four answers"/);
   assert.doesNotMatch(source, /Mathematical foundation of information|Information foundations?/i);
+});
+
+test("terminology wiki records the canonical information-principle terms", async () => {
+  const response = await render("/wiki/terminology");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, />信息原理</);
+  assert.match(html, />Information principles</);
+  assert.match(html, />信息的数学原理</);
+  assert.match(html, />Mathematical principles of information</);
+  assert.doesNotMatch(html, /Information foundations?|Mathematical foundations? of information/i);
+});
+
+test("formulae are emitted as semantic mathematical markup", async () => {
+  const response = await render("/concepts/structural-information");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /<math[^>]+aria-label="H\(A\) = minₜ Hₜ\(A\)"/);
+  assert.match(html, /<msub>/);
+  assert.match(html, /class="math-inline"/);
 });
 
 test("site-authored cognition terminology is consistent across public sections", async () => {

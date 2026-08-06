@@ -1,3 +1,5 @@
+import { MathText } from "../MathText";
+
 const sections = [
   {
     id: "information",
@@ -69,9 +71,9 @@ export default function FrameworkPage() {
 
     <header className="index-hero"><div className="index-shell"><p>KEY PRINCIPLES & SOURCES</p><h1>关键原理索引</h1><span>只点出理解信息与智能体系所需的重要观点；定义、证明与完整论述均回到原始专著。</span><div><a href="#information">信息的数学原理</a><b>→</b><a href="#intelligence">智能论题</a><b>→</b><a href="#strategy">策略原理</a><b>→</b><a href="#model">孙子模型</a></div></div></header>
 
-    <section className="index-sections index-shell">{sections.map((section) => <article id={section.id} key={section.id}><header><span>{section.no}</span><div><p>{section.question}</p><h2>{section.title}</h2><strong>{section.statement}</strong></div></header><ol>{section.points.map(([kind, point, source]) => <li key={point}><small>{kind}</small><b>{point}</b><span>{source}</span></li>)}</ol><a className="index-source" href={section.href}>进入主题与原著链接 ↗</a></article>)}</section>
+    <section className="index-sections index-shell">{sections.map((section) => <article id={section.id} key={section.id}><header><span>{section.no}</span><div><p>{section.question}</p><h2><MathText text={section.title} /></h2><strong><MathText text={section.statement} /></strong></div></header><ol>{section.points.map(([kind, point, source]) => <li key={point}><small>{kind}</small><b><MathText text={point} /></b><span>{source}</span></li>)}</ol><a className="index-source" href={section.href}>进入主题与原著链接 ↗</a></article>)}</section>
 
-    <section id="sun" className="index-sun"><div className="index-shell"><header><p>SUN TZU’S FIVE LAWS</p><h2>物质与信息结合的孙子五大定律</h2><span>《孙子兵法的人工智能原理》以这五条定律奠定同时存在物质与信息的战争之科学原理。</span></header><ol>{sunLaws.map(([no, title, text, href]) => <li key={no}><span>{no}</span><div><h3>{title}</h3><p>{text}</p></div><a href={href}>查看原文 ↗</a></li>)}</ol></div></section>
+    <section id="sun" className="index-sun"><div className="index-shell"><header><p>SUN TZU’S FIVE LAWS</p><h2>物质与信息结合的孙子五大定律</h2><span>《孙子兵法的人工智能原理》以这五条定律奠定同时存在物质与信息的战争之科学原理。</span></header><ol>{sunLaws.map(([no, title, text, href]) => <li key={no}><span>{no}</span><div><h3>{title}</h3><p><MathText text={text} /></p></div><a href={href}>查看原文 ↗</a></li>)}</ol></div></section>
 
     <section className="index-books"><div className="index-shell"><p>PRIMARY SOURCES</p><h2>引用顺序</h2><span>基础概念、信息的数学原理、智能论题和孙子模型优先引用先出版的《人工智能科学——智能的数学原理》；谋算策略的后续展开及孙子五大定律引用《孙子兵法的人工智能原理》。</span><div><a href="/books#artificial-intelligence-science"><b>01</b>《人工智能科学——智能的数学原理》<em>基础原理 ↗</em></a><a href="/books#sun-tzu-ai-principles"><b>02</b>《孙子兵法的人工智能原理》<em>孙子五大定律 ↗</em></a></div></div></section>
   </main>;

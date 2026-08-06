@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { MathText } from "./MathText";
 
 type Lang = "zh" | "en";
 type Bi = readonly [zh: string, en: string];
@@ -65,7 +66,7 @@ const ui = {
     lead: "建立信息的公理化科学原理，并从数学实质、机器原理和实现模型三个维度回答智能的基本科学问题。孙子模型统一人工智能的科学原理与工程原理：智是科学原理，能是工程原理。",
     explore: "查看四个问题",
     reference: "查看关键原理",
-    guide: "四个回答",
+    guide: "四个问题 · 四个回答",
     sectionLabel: "ULTIMATE GOALS OF AI SCIENCE",
     sectionTitle: "四个问题及其基本回答",
     sectionSummary: "信息的公理化科学原理构成数学基础；其后三项从数学实质、机器原理和实现模型三个维度回答智能的基本科学问题。",
@@ -82,7 +83,7 @@ const ui = {
     lead: "The theory establishes axiomatized scientific principles of information, then answers intelligence through its mathematical essence, machine principle, and realization model. The Sun Tzu Model unifies the scientific and engineering principles of AI: Zhi is science; Neng is engineering.",
     explore: "Explore the four questions",
     reference: "Open key principles",
-    guide: "Four answers",
+    guide: "Four questions · Four answers",
     sectionLabel: "ULTIMATE GOALS OF AI SCIENCE",
     sectionTitle: "Four Questions and Their Fundamental Answers",
     sectionSummary: "Axiomatized scientific principles of information provide the mathematical foundation; the following three answers address intelligence through its mathematical essence, machine principle, and realization model.",
@@ -108,9 +109,9 @@ export default function Home() {
   return <main className="questions-home">
     <nav className="questions-nav"><a className="questions-brand" href="#top"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div className="questions-nav-links">{c.nav.map(([label, href]) => <a href={href} key={label}>{label}</a>)}</div><div className="questions-lang"><button className={lang === "zh" ? "active" : ""} onClick={() => changeLang("zh")}>中</button><span>/</span><button className={lang === "en" ? "active" : ""} onClick={() => changeLang("en")}>EN</button></div></nav>
 
-    <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#themes">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗</b></a></div></div><aside><p>{c.guide}</p>{themes.map((theme) => <a href={theme.href} key={theme.no}><span>{theme.no}</span><strong>{t(theme.indexLabel, lang)}</strong></a>)}</aside></div></section>
+    <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#themes">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗</b></a></div></div><aside><p>{c.guide}</p>{themes.map((theme) => <a href={theme.href} key={theme.no}><span>{theme.no}</span><div><strong>{t(theme.question, lang)}</strong><small>{t(theme.indexLabel, lang)}</small></div></a>)}</aside></div></section>
 
-    <section id="themes" className="questions-themes questions-shell"><span id="hierarchy" className="questions-anchor" /><header><p>{c.sectionLabel}</p><h2>{c.sectionTitle}</h2><span>{c.sectionSummary}</span></header><div className="questions-theme-list">{themes.map((theme) => <a href={theme.href} key={theme.no}><div className="questions-theme-meta"><span>{theme.no}</span><small>{t(theme.dimension, lang)}</small></div><div className="questions-theme-question"><p>{t(theme.question, lang)}</p><h3>{t(theme.title, lang)}</h3></div><div className="questions-theme-answer"><strong>{t(theme.answer, lang).split("\n").map((line) => <span key={line} style={{ display: "block" }}>{line}</span>)}</strong><p>{t(theme.statement, lang)}</p></div><b>{c.enter} ↗</b></a>)}</div></section>
+    <section id="themes" className="questions-themes questions-shell"><span id="hierarchy" className="questions-anchor" /><header><p>{c.sectionLabel}</p><h2>{c.sectionTitle}</h2><span>{c.sectionSummary}</span></header><div className="questions-theme-list">{themes.map((theme) => <a href={theme.href} key={theme.no}><div className="questions-theme-meta"><span>{theme.no}</span><small>{t(theme.dimension, lang)}</small></div><div className="questions-theme-question"><p>{t(theme.question, lang)}</p><h3>{t(theme.title, lang)}</h3></div><div className="questions-theme-answer"><strong>{t(theme.answer, lang).split("\n").map((line) => <span key={line} style={{ display: "block" }}><MathText text={line} /></span>)}</strong><p><MathText text={t(theme.statement, lang)} /></p></div><b>{c.enter} ↗</b></a>)}</div></section>
 
     <section id="modules" className="questions-modules"><div className="questions-shell"><header><p>{c.modulesLabel}</p><h2>{c.modulesTitle}</h2><span>{c.modulesText}</span></header><div>{homeModules.map(([title, text, href], index) => <a href={href} key={href}><span>0{index + 1}</span><strong>{t(title, lang)}</strong><p>{t(text, lang)}</p><b>↗</b></a>)}</div><a className="questions-team" href="/team"><span>{lang === "zh" ? "研究主体" : "RESEARCH TEAM"}</span><strong>{lang === "zh" ? "李昂生教授团队" : "Professor Angsheng Li’s team"}</strong><b>→</b></a></div></section>
 

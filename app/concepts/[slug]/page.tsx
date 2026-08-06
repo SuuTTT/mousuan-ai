@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { MathText } from "../../MathText";
 import { conceptGroups, concepts, getConcept } from "../concepts";
 
 function KeepTail({ text, count = 6 }: { text: string; count?: number }) {
@@ -35,7 +36,7 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
       </div>
       <aside>
         <span>核心命题</span>
-        <blockquote><KeepTail text={concept.proposition} /></blockquote>
+        <blockquote><MathText text={concept.proposition} /></blockquote>
         <small>{concept.tag}</small>
       </aside>
     </header>
@@ -52,13 +53,13 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
       <div className="concept-relation" aria-label={`${concept.title}的概念关系`}>
         {concept.relation.map((item, relationIndex) => <div key={item}><span>0{relationIndex + 1}</span><strong>{item}</strong>{relationIndex < concept.relation.length - 1 && <b>→</b>}</div>)}
       </div>
-      <div className="concept-sections">{concept.sections.map((section, sectionIndex) => <article key={section.title}><span>0{sectionIndex + 1} · {section.label}</span><h3>{section.title}</h3><p><KeepTail text={section.text} /></p></article>)}</div>
+      <div className="concept-sections">{concept.sections.map((section, sectionIndex) => <article key={section.title}><span>0{sectionIndex + 1} · {section.label}</span><h3>{section.title}</h3><p><MathText text={section.text} /></p></article>)}</div>
     </section>
 
     <section className="concept-formal">
       <div className="concept-shell">
         <header><p>KEY FOUNDATIONS</p><h2>关键依据</h2><span>仅列出理解本主题所需的关键定义、定律或定理；完整论证请进入原始文献。</span></header>
-        <div>{concept.formal.map((item) => <article key={item.no}><span>{item.no}</span><h3>{item.title}</h3><p><KeepTail text={item.text} /></p></article>)}</div>
+        <div>{concept.formal.map((item) => <article key={item.no}><span>{item.no}</span><h3>{item.title}</h3><p><MathText text={item.text} /></p></article>)}</div>
       </div>
     </section>
 

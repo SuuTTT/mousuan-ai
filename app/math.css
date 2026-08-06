@@ -1,0 +1,37 @@
+.math-inline {
+  display: inline-flex;
+  align-items: baseline;
+  max-width: 100%;
+  margin-inline: .08em;
+  vertical-align: -.08em;
+  white-space: nowrap;
+}
+
+.math-inline math {
+  font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", "Times New Roman", serif;
+  font-size: 1.08em;
+  font-weight: 500;
+  letter-spacing: .01em;
+}
+
+.math-inline mtext {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "Times New Roman", serif;
+  font-style: normal;
+}
+
+.theme-formula .math-inline {
+  display: block;
+  margin-inline: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.theme-formula .math-inline math { font-size: 1em; }
+
+.concept-hero blockquote .math-inline math,
+.questions-theme-answer strong .math-inline math,
+.index-sections h2 .math-inline math { font-weight: 600; }
+
+@media (max-width: 600px) {
+  .theme-formula .math-inline math { font-size: .92em; }
+}
