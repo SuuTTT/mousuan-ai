@@ -20,7 +20,7 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
       <div><a href="/">体系首页</a><a href="/framework">理论总图</a><a href="/books">专著与编号</a></div>
     </nav>
 
-    <header className="concept-hero">
+    <header className="concept-hero" data-layer={concept.layer}>
       <div className="concept-hero-copy">
         <p><a href="/#hierarchy">体系首页</a><b>›</b><a href={`/#layer-${concept.layer}`}>{concept.layerName}</a><b>›</b><span>{concept.title}</span></p>
         <span className="concept-tag">{concept.layer} · {concept.layerEnglish}</span>
