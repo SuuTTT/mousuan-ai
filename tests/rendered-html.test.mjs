@@ -64,6 +64,21 @@ test("English homepage opens with the requested information-world statement", as
   assert.doesNotMatch(source, /Mathematical foundation of information|Information foundations?/i);
 });
 
+test("site-authored cognition terminology is consistent across public sections", async () => {
+  const files = [
+    "../app/concepts/concepts.ts",
+    "../app/themes/themes.ts",
+    "../app/modules/modules.ts",
+    "../app/principles/ai-principles/page.tsx",
+    "../app/team/page.tsx",
+  ];
+  const source = (await Promise.all(files.map((file) => readFile(new URL(file, import.meta.url), "utf8")))).join("\n");
+  assert.doesNotMatch(source, /认识/);
+  assert.match(source, /认知基础/);
+  assert.match(source, /COGNITIVE FOUNDATIONS/);
+  assert.match(source, /认知世界与改造世界/);
+});
+
 test("strategy theme uses the explicit strategy statement and one earliest-book link", async () => {
   const response = await render("/themes/strategy-principle");
   assert.equal(response.status, 200);

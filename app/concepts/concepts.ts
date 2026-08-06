@@ -16,7 +16,7 @@ export type Concept = {
 
 export const concepts: Concept[] = [
   {
-    slug: "physical-world", layer: "01", layerName: "认识基础", layerEnglish: "FOUNDATION",
+    slug: "physical-world", layer: "01", layerName: "认知基础", layerEnglish: "COGNITIVE FOUNDATIONS",
     title: "物理世界", englishTitle: "Physical world", tag: "物理性质",
     lead: "物理世界由现实世界对象的物理性质构成；一个对象的物理性质由该对象自己完全决定。",
     proposition: "一个对象的物理性质，由该对象自己完全决定。",
@@ -34,7 +34,7 @@ export const concepts: Concept[] = [
     sources: [{ label: "《人工智能科学——智能的数学原理》", detail: "定义 5.3、5.5 与定义 6.1 · 物理性质及物理科学范式", href: "/books#artificial-intelligence-science" }],
   },
   {
-    slug: "information-world", layer: "01", layerName: "认识基础", layerEnglish: "FOUNDATION",
+    slug: "information-world", layer: "01", layerName: "认知基础", layerEnglish: "COGNITIVE FOUNDATIONS",
     title: "信息世界", englishTitle: "Information world", tag: "信息性质",
     lead: "信息世界由现实世界对象和自我意识主体的信息性质构成。",
     proposition: "现实世界中一个对象的信息性质嵌入在该对象和其他对象相互作用的关系中。",
@@ -52,7 +52,7 @@ export const concepts: Concept[] = [
     sources: [{ label: "《人工智能科学——智能的数学原理》", detail: "定义 5.1、5.6 与 §5.1.4 · 信息世界及信息性质", href: "/books#artificial-intelligence-science" }],
   },
   {
-    slug: "information-system", layer: "01", layerName: "认识基础", layerEnglish: "FOUNDATION",
+    slug: "information-system", layer: "01", layerName: "认知基础", layerEnglish: "COGNITIVE FOUNDATIONS",
     title: "信息系统", englishTitle: "Information system", tag: "系统关系",
     lead: "把多个对象、对象的运动及其相互作用作为一个整体，才能研究嵌入关系中的信息。",
     proposition: "信息系统由对象、对象的运动以及对象之间的相互作用共同构成。",
@@ -72,7 +72,7 @@ export const concepts: Concept[] = [
     ],
   },
   {
-    slug: "complete-knowledge", layer: "01", layerName: "认识基础", layerEnglish: "FOUNDATION",
+    slug: "complete-knowledge", layer: "01", layerName: "认知基础", layerEnglish: "COGNITIVE FOUNDATIONS",
     title: "完备知识", englishTitle: "Complete knowledge", tag: "物质 + 信息",
     lead: "现实世界对象的物理性质和信息性质联合起来，构成该对象的完备知识。",
     proposition: "完备知识 = 物理性质 + 信息性质。",
@@ -80,7 +80,7 @@ export const concepts: Concept[] = [
     sections: [
       { label: "第一部分", title: "对象自身的知识", text: "物理性质给出对象的组成、状态和运动，是可分解、可测量、可计算的局部基础。" },
       { label: "第二部分", title: "对象关系的知识", text: "信息性质给出对象的存在、作用、运动意义以及主体意图，是系统环境中的全局知识。" },
-      { label: "统一认识", title: "物质与信息共同建模", text: "两类性质不是互相替代，而是从不同方向描述同一个现实对象；联合之后才构成进入智能科学的认识基础。" },
+      { label: "统一认知", title: "物质与信息共同建模", text: "两类性质不是互相替代，而是从不同方向描述同一个现实对象；联合之后才构成进入智能科学的认知基础。" },
     ],
     formal: [
       { no: "定义 5.3", title: "物理性质", text: "一个对象的物理性质由该对象自己完全决定。" },
@@ -96,11 +96,11 @@ export const concepts: Concept[] = [
     title: "科学范式定律", englishTitle: "Scientific paradigm law", tag: "层谱抽象",
     lead: "物理世界以分而治之为科学范式；信息世界的科学范式，即总方法，是层谱抽象。",
     proposition: "信息世界的科学范式，即总方法，就是层谱抽象。",
-    relation: ["复杂系统", "多层抽象与组织", "全局认识"],
+    relation: ["复杂系统", "多层抽象与组织", "全局认知"],
     sections: [
       { label: "物理范式", title: "分而治之", text: "把复杂问题拆解为局部对象和可计算步骤，适合分析由对象自身决定的物理性质。" },
-      { label: "信息范式", title: "层谱抽象", text: "同时观察对象、群体、层级和整体，在不同抽象尺度上保持关系结构，适合认识嵌入系统的信息。" },
-      { label: "协同关系", title: "全局与局部互补", text: "层谱抽象确定整体结构和目标，分而治之完成局部计算和推理；二者协同成为谋与算的认识基础。" },
+      { label: "信息范式", title: "层谱抽象", text: "同时观察对象、群体、层级和整体，在不同抽象尺度上保持关系结构，适合认知嵌入系统的信息。" },
+      { label: "协同关系", title: "全局与局部互补", text: "层谱抽象确定整体结构和目标，分而治之完成局部计算和推理；二者协同成为谋与算的认知基础。" },
     ],
     formal: [
       { no: "定义 6.1", title: "物理科学范式定律", text: "物理世界的科学范式是分而治之。" },
@@ -156,7 +156,7 @@ export const concepts: Concept[] = [
     proposition: "一个智能体的智能就是它的信息，即：智能 = 信息。",
     relation: ["自我意识主体", "信息", "智能"],
     sections: [
-      { label: "主体", title: "智能属于自我意识主体", text: "主体不仅接受外部信息，也认识自身的状态、需求、愿望与目标，并据此改变自身和环境。" },
+      { label: "主体", title: "智能属于自我意识主体", text: "主体不仅接受外部信息，也认知自身的状态、需求、愿望与目标，并据此改变自身和环境。" },
       { label: "本原", title: "以信息统一智能活动", text: "学习获得信息，自我意识组织主体信息，博弈与谋算使用信息设计策略；不同智能活动由信息连接。" },
       { label: "系统", title: "从命题进入可构造模型", text: "将智能定义为信息之后，可以继续建立信息度量、学习过程、策略生成以及机器实现的形式体系。" },
     ],
@@ -176,7 +176,7 @@ export const concepts: Concept[] = [
     sections: [
       { label: "谋", title: "层谱抽象与全局设计", text: "谋在多个层谱上组织对象、关系、目标和约束，识别真正决定结果的结构与时机。" },
       { label: "算", title: "分而治之与局部执行", text: "算把全局目标分解为可计算问题，通过逻辑、算法和行动完成局部求解。" },
-      { label: "协同", title: "谋指导算，算验证谋", text: "全局策略决定计算什么；局部结果持续修正全局认识。两条回路共同形成可适应的智能过程。" },
+      { label: "协同", title: "谋指导算，算验证谋", text: "全局策略决定计算什么；局部结果持续修正全局认知。两条回路共同形成可适应的智能过程。" },
     ],
     formal: [
       { no: "定义 28.5", title: "谋算的科学方法", text: "谋是层谱抽象的认知方法，算是分而治之的分析方法；博弈 = 谋算。" },
@@ -189,13 +189,13 @@ export const concepts: Concept[] = [
   },
   {
     slug: "scientific-principles", layer: "03", layerName: "智能体系", layerEnglish: "INTELLIGENCE SYSTEM",
-    title: "科学原理", englishTitle: "Scientific principles", tag: "认识与设计",
-    lead: "学习、自我意识与博弈／谋算回答智能如何形成认识、主体和策略。",
+    title: "科学原理", englishTitle: "Scientific principles", tag: "认知与设计",
+    lead: "学习、自我意识与博弈／谋算回答智能如何形成认知、主体和策略。",
     proposition: "智能科学研究学习、自我意识和博弈／谋算的共同信息原理。",
     relation: ["学习", "自我意识", "博弈／谋算"],
     sections: [
-      { label: "学习", title: "认识世界与改造世界", text: "主体从环境和行动结果中获得信息，形成可更新的结构、知识与预测。" },
-      { label: "自我意识", title: "认识自身与改造自身", text: "主体表示自己的状态、能力、需求和愿望，使行为不只响应外界，也受内部目标组织。" },
+      { label: "学习", title: "认知世界与改造世界", text: "主体从环境和行动结果中获得信息，形成可更新的结构、知识与预测。" },
+      { label: "自我意识", title: "认知自身与改造自身", text: "主体表示自己的状态、能力、需求和愿望，使行为不只响应外界，也受内部目标组织。" },
       { label: "博弈／谋算", title: "设计策略与创造结果", text: "主体在多方作用和不确定环境中组织全局策略，并通过局部计算、行动与反馈推进目标。" },
     ],
     formal: [

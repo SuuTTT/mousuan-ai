@@ -25,7 +25,7 @@ export const researchModules: ResearchModule[] = [
     items: [
       { id: "structural-information", no: "01.1", title: "结构信息", english: "Structural information", text: "编码树给出层谱抽象；结构熵度量在编码树下嵌入信息系统中的不确定性。", href: "/principles/structural-information" },
       { id: "information-mathematics", no: "01.2", title: "信息的数学原理", english: "Mathematical principles of information", text: "建立以信息演算理论、信息解码原理和信息生成原理为三大支柱的数学原理。", href: "/principles/information-mathematics" },
-      { id: "strategic-intelligence", no: "01.3", title: "谋算智能的信息科学原理", english: "Information science of MouSuan Intelligence", text: "观察学习、自我意识与谋算博弈构成智能科学的认识与策略基础。", href: "/principles/strategic-intelligence" },
+      { id: "strategic-intelligence", no: "01.3", title: "谋算智能的信息科学原理", english: "Information science of MouSuan Intelligence", text: "观察学习、自我意识与谋算博弈构成智能科学的认知与策略基础。", href: "/principles/strategic-intelligence" },
       { id: "machine-intelligence", no: "01.4", title: "机器智能原理", english: "Principles of machine intelligence", text: "把智能的数学原理连接到决策、协同行动和系统验证。", href: "/principles/ai-principles" },
     ],
   },

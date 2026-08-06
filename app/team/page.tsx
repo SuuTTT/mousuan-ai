@@ -5,7 +5,7 @@ const programmes = [
 
 const directions = [
   ["01", "基于信息科学原理的机器智能技术", "研究神经网络深度学习、具身智能、大模型与世界模型，使机器智能具有结构、原理和解释。", "/modules/applications"],
-  ["02", "自我意识机", "研究机器对自身状态、需求、愿望、利与害的认识，以及由此产生的策略和行动。", "/applications/embodied-intelligence"],
+  ["02", "自我意识机", "研究机器对自身状态、需求、愿望、利与害的认知，以及由此产生的策略和行动。", "/applications/embodied-intelligence"],
   ["03", "孙子模型（世界模型）", "把知彼、知己、知天、知地转化为可推演、可验证的谋算智能模型。", "/modules/sun-tzu"],
   ["04", "谋算智能机", "把信息解码、策略生成、决策、协同行动和系统验证结合为谋算双脑体系结构。", "/modules/mousuan-mi#machine"],
   ["05", "谋算智能机器人", "让机器人在复杂环境中学习、谋算、行动，并通过系统验证获得可信结果。", "/modules/mousuan-mi#robot"],
