@@ -73,7 +73,7 @@ const ui = {
   },
   en: {
     nav: [["Fundamental questions", "#themes"], ["Five modules", "#modules"], ["Principle index", "/framework"], ["Statements", "/theorems"], ["Books", "/books"], ["Team", "/team"]],
-    kicker: "The ultimate goals of artificial intelligence science",
+    kicker: "Mathematical principles of the information world",
     title: "Four fundamental scientific\nquestions of artificial intelligence",
     lead: "The theory establishes axiomatized scientific principles of information, then answers intelligence through its mathematical essence, machine principle, and realization model. The Sun Tzu Model unifies the scientific and engineering principles of AI: Zhi is science; Neng is engineering.",
     explore: "Explore the four questions",

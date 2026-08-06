@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 import bookIndex from "../app/theorems/book-index.json" with { type: "json" };
 import { resolveAnchorNavigation } from "../app/anchor-navigation.ts";
@@ -50,6 +51,11 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.doesNotMatch(html, /questions-books|主要著作/);
   assert.doesNotMatch(html, /先给出答案|首页只呈现|简单首页|分层展开|第一层|第二层|第三层|2—3 LEVELS/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
+});
+
+test("English homepage opens with the requested information-world statement", async () => {
+  const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  assert.match(source, /kicker: "Mathematical principles of the information world"/);
 });
 
 test("strategy theme uses the explicit strategy statement and one earliest-book link", async () => {
