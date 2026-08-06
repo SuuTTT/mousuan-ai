@@ -21,7 +21,7 @@ export const researchModules: ResearchModule[] = [
     slug: "principles", no: "01", shortTitle: "公理原理",
     title: "信息世界的公理化科学原理", englishTitle: "Axiomatized principles of the information world",
     lead: "从结构信息出发，建立信息的数学原理、谋算智能的信息科学原理与机器智能原理。",
-    thesis: "本模块回答：信息世界如何被定义、度量、解码，并进一步形成可解释的机器智能。",
+    thesis: "信息世界的定义、度量与解码，为可解释的机器智能建立科学与数学基础。",
     items: [
       { id: "structural-information", no: "01.1", title: "结构信息", english: "Structural information", text: "编码树与结构熵度量嵌入复杂系统结构中的信息，连接信息与计算。", href: "/principles/structural-information" },
       { id: "information-mathematics", no: "01.2", title: "信息的数学原理", english: "Mathematical principles of information", text: "以层谱抽象策略和局部逻辑推理为研究对象，建立信息演算、解码与生成的数学原理。", href: "/principles/information-mathematics" },
@@ -33,7 +33,7 @@ export const researchModules: ResearchModule[] = [
     slug: "applications", no: "02", shortTitle: "应用成果",
     title: "让原理进入学习、决策与机器", englishTitle: "Applied research outcomes",
     lead: "把信息世界的原理落实到学习、具身智能、决策、网络系统和生命系统。",
-    thesis: "本模块不是应用列表，而是从科学原理到可解释方法和验证对象的第二层入口。",
+    thesis: "科学原理通过可解释的方法、实验对象与验证过程进入真实的机器智能问题。",
     items: [
       { id: "learning", no: "02.1", title: "谋算学习", english: "MouSuan learning", text: "从黑箱拟合走向结构可见、过程可解释的学习路线。", href: "/applications/strategic-learning" },
       { id: "embodied", no: "02.2", title: "信息原理的具身智能", english: "Information-principled embodied intelligence", text: "以自我意识的信息模型研究自主、可信、可验证的智能体与智能机。", href: "/applications/embodied-intelligence" },
@@ -47,7 +47,7 @@ export const researchModules: ResearchModule[] = [
     slug: "sun-tzu", no: "03", shortTitle: "孙子模型",
     title: "孙子兵法的机器智能原理", englishTitle: "Machine-intelligence principles of Sun Tzu",
     lead: "把物质与信息结合的体系对抗转化为可研究、可设计、可验证的谋算智能模型。",
-    thesis: "本模块从孙子五大定律进入谋算策略、孙子模型与孙子机，而不是直接把用户送到书籍页面。",
+    thesis: "孙子五大定律连接谋算策略、孙子模型与孙子机，形成物质与信息结合的智能体系。",
     items: [
       { id: "axioms", no: "03.1", title: "物质与信息结合", english: "Matter and information", text: "以现实世界的体系对抗为对象，建立具有公理化结构的科学基础。", href: "/framework#sun" },
       { id: "laws", no: "03.2", title: "孙子五大定律", english: "Five Sun Tzu laws", text: "利益、物质与信息、力量生成、能力度量与不可逆性构成定律系统。", href: "/framework#sun" },
@@ -70,7 +70,7 @@ export const researchModules: ResearchModule[] = [
     slug: "mousuan-mi", no: "05", shortTitle: "谋算机器智能",
     title: "谋算机器智能", englishTitle: "MouSuan Machine Intelligence · MouSuan MI",
     lead: "推动行业与产业智能化、智能制造、谋算机和谋算机器人等可验证、可交付的实际应用。",
-    thesis: "本模块承接理论与应用成果，形成从科学原理、核心技术到产业系统和工程交付的转化层。",
+    thesis: "理论与应用成果进一步形成从科学原理、核心技术到产业系统和工程交付的转化体系。",
     items: [
       { id: "products", no: "05.1", title: "原理到产品", english: "Principles to products", text: "把信息科学原理、谋算策略与双脑体系结构转化为可验证、可交付的机器智能产品。", href: "/concepts/engineering-principles" },
       { id: "industry", no: "05.2", title: "行业、产业智能化", english: "Industry and industrial intelligence", text: "面向行业系统的认知、决策、协同、行动与验证。", href: "/modules/mousuan-mi#industry" },

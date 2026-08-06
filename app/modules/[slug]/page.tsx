@@ -19,7 +19,7 @@ export default async function ResearchModulePage({ params }: { params: Promise<{
 
     <section className="module-map"><div className="module-shell"><span>FIVE RESEARCH MODULES</span><nav>{researchModules.map((item) => <a aria-current={item.slug === module.slug ? "page" : undefined} href={`/modules/${item.slug}`} key={item.slug}><b>{item.no}</b>{item.shortTitle}</a>)}</nav></div></section>
 
-    <section className="module-content module-shell"><header><p>MODULE STRUCTURE</p><h2>从模块进入具体研究</h2><span>这一页恢复模块总览层；选择下列分支后，再进入具体原理、应用、模型或研究资源。</span></header><div className="module-list">{module.items.map((item) => <article id={item.id} key={item.id}><div><span>{item.no}</span><small>{item.english}</small></div><section><h3>{item.title}</h3><p>{item.text}</p></section><a href={item.href}>进入分支 <b>↗</b></a></article>)}</div></section>
+    <section className="module-content module-shell"><header><p>MODULE STRUCTURE</p><h2>研究分支</h2><span>各研究分支共同构成模块的概念结构、方法体系与研究对象。</span></header><div className="module-list">{module.items.map((item) => <article id={item.id} key={item.id}><div><span>{item.no}</span><small>{item.english}</small></div><section><h3>{item.title}</h3><p>{item.text}</p></section><a href={item.href}>深入阅读 <b>↗</b></a></article>)}</div></section>
 
     <section className="module-return"><div className="module-shell"><p>理论层级与研究模块是两种互补入口</p><div><a href="/#hierarchy"><span>THEORY HIERARCHY</span><strong>返回三层理论体系</strong><b>→</b></a><a href="/framework"><span>AXIOM MAP</span><strong>查看定义、定律与定理总图</strong><b>→</b></a></div></div></section>
 
