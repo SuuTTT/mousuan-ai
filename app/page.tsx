@@ -13,10 +13,10 @@ const levels = [
     title: ["现实世界完整建模", "Complete modelling of reality"] as Bi,
     summary: ["从对象的物理性质与信息性质出发，建立对现实世界的完备认识。", "Begin with physical and informational properties to form complete knowledge of reality."] as Bi,
     nodes: [
-      [["物理世界", "Physical world"], ["对象自身决定其物理性质；以分而治之分析，以经典数学和微积分为支撑。", "An object determines its physical properties; divide-and-conquer, classical mathematics, and calculus provide the analytical basis."], ["物理性质", "PHYSICAL PROPERTY"], "/framework#physical-property"],
-      [["信息世界", "Information world"], ["存在性、作用、运动性，以及主体的需求和愿望，构成对象的信息性质。", "Existence, role, movement, and a subject's needs and desires form informational properties."], ["信息性质", "INFORMATIONAL PROPERTY"], "/framework#information-property"],
-      [["信息系统", "Information system"], ["信息性质嵌入对象之间的关系系统，不能只通过拆分单个对象获得。", "Informational properties are embedded in systems of relations and cannot be recovered by decomposing one object alone."], ["系统关系", "SYSTEM RELATIONS"], "/framework#information-system"],
-      [["完备知识", "Complete knowledge"], ["物理性质与信息性质联合，形成现实世界对象的完备知识。", "Physical and informational properties together form complete knowledge of an object."], ["物质 + 信息", "MATTER + INFORMATION"], "/framework#complete-knowledge"],
+      [["物理世界", "Physical world"], ["对象自身决定其物理性质；以分而治之分析，以经典数学和微积分为支撑。", "An object determines its physical properties; divide-and-conquer, classical mathematics, and calculus provide the analytical basis."], ["物理性质", "PHYSICAL PROPERTY"], "/concepts/physical-world"],
+      [["信息世界", "Information world"], ["存在性、作用、运动性，以及主体的需求和愿望，构成对象的信息性质。", "Existence, role, movement, and a subject's needs and desires form informational properties."], ["信息性质", "INFORMATIONAL PROPERTY"], "/concepts/information-world"],
+      [["信息系统", "Information system"], ["信息性质嵌入对象之间的关系系统，不能只通过拆分单个对象获得。", "Informational properties are embedded in systems of relations and cannot be recovered by decomposing one object alone."], ["系统关系", "SYSTEM RELATIONS"], "/concepts/information-system"],
+      [["完备知识", "Complete knowledge"], ["物理性质与信息性质联合，形成现实世界对象的完备知识。", "Physical and informational properties together form complete knowledge of an object."], ["物质 + 信息", "MATTER + INFORMATION"], "/concepts/complete-knowledge"],
     ] as const,
     modules: [] as const,
   },
@@ -26,9 +26,9 @@ const levels = [
     title: ["信息世界的公理体系", "Axiomatic system of the information world"] as Bi,
     summary: ["以层谱抽象组织复杂系统，用结构熵度量结构，以解码信息连接结构、知识与推理。", "Organise complex systems by hierarchical abstraction, measure structure with structural entropy, and connect structure, knowledge, and reasoning through decoding information."] as Bi,
     nodes: [
-      [["科学范式定律", "Scientific paradigm law"], ["物理世界以分而治之分析；信息世界以层谱抽象进行全局认知。", "The physical world uses divide-and-conquer analysis; the information world uses hierarchical abstraction for global recognition."], ["定律", "LAW"], "/framework#laws"],
-      [["结构信息", "Structural information"], ["编码树表示层谱抽象；结构熵度量嵌入复杂系统结构中的信息。", "Encoding trees represent hierarchical abstraction; structural entropy measures information embedded in complex-system structure."], ["数学模型", "MATHEMATICAL MODEL"], "/framework#theorems"],
-      [["解码原理", "Decoding principles"], ["通过结构熵极小化与解码信息极大化，从信息系统中发现知识与规律。", "Discover knowledge and regularities through structural-entropy minimisation and decoding-information maximisation."], ["定理链", "THEOREM CHAIN"], "/framework#theorems"],
+      [["科学范式定律", "Scientific paradigm law"], ["物理世界以分而治之分析；信息世界以层谱抽象进行全局认知。", "The physical world uses divide-and-conquer analysis; the information world uses hierarchical abstraction for global recognition."], ["定律", "LAW"], "/concepts/scientific-paradigm"],
+      [["结构信息", "Structural information"], ["编码树表示层谱抽象；结构熵度量嵌入复杂系统结构中的信息。", "Encoding trees represent hierarchical abstraction; structural entropy measures information embedded in complex-system structure."], ["数学模型", "MATHEMATICAL MODEL"], "/concepts/structural-information"],
+      [["解码原理", "Decoding principles"], ["通过结构熵极小化与解码信息极大化，从信息系统中发现知识与规律。", "Discover knowledge and regularities through structural-entropy minimisation and decoding-information maximisation."], ["定理链", "THEOREM CHAIN"], "/concepts/decoding-principles"],
     ] as const,
     modules: [
       [["公理原理", "Scientific principles"], ["进入结构信息、信息的数学原理与机器智能原理。", "Explore structural information, mathematical principles of information, and machine-intelligence principles."], "/principles/structural-information"],
@@ -40,10 +40,10 @@ const levels = [
     title: ["机器智能科学与工程", "Science and engineering of machine intelligence"] as Bi,
     summary: ["以“智能 = 信息”为论题，以谋与算为策略，将学习、自我意识、博弈连接到决策、行动与验证。", "Take intelligence = information as the thesis, combine Mou and Suan as strategies, and connect learning, self-awareness, and contest to decision, action, and verification."] as Bi,
     nodes: [
-      [["智能论题", "Intelligence thesis"], ["一个自我意识主体的智能就是该主体的信息。", "The intelligence of a self-aware subject is its information."], ["本原要素", "FOUNDATIONAL ELEMENT"], "/framework#intelligence"],
-      [["谋算策略", "MouSuan strategy"], ["谋面向全局的层谱抽象与认知；算面向局部的分而治之与逻辑推理。", "Mou performs global hierarchical abstraction and recognition; Suan performs local divide-and-conquer and logical reasoning."], ["全局 ↔ 局部", "GLOBAL ↔ LOCAL"], "/framework#strategy"],
-      [["科学原理", "Scientific principles"], ["学习、自我意识与博弈／谋算构成智能科学的三根支柱。", "Learning, self-awareness, and contest/MouSuan form the three pillars of intelligent science."], ["认知与设计", "RECOGNITION & DESIGN"], "/framework#intelligence"],
-      [["工程原理", "Engineering principles"], ["决策、行动与验证把科学原理落实为可运行的智能机器。", "Decision, action, and verification turn scientific principles into operating intelligent machines."], ["行动与验证", "ACTION & VERIFICATION"], "/framework#machine"],
+      [["智能论题", "Intelligence thesis"], ["一个自我意识主体的智能就是该主体的信息。", "The intelligence of a self-aware subject is its information."], ["本原要素", "FOUNDATIONAL ELEMENT"], "/concepts/intelligence-thesis"],
+      [["谋算策略", "MouSuan strategy"], ["谋面向全局的层谱抽象与认知；算面向局部的分而治之与逻辑推理。", "Mou performs global hierarchical abstraction and recognition; Suan performs local divide-and-conquer and logical reasoning."], ["全局 ↔ 局部", "GLOBAL ↔ LOCAL"], "/concepts/mousuan-strategy"],
+      [["科学原理", "Scientific principles"], ["学习、自我意识与博弈／谋算构成智能科学的三根支柱。", "Learning, self-awareness, and contest/MouSuan form the three pillars of intelligent science."], ["认知与设计", "RECOGNITION & DESIGN"], "/concepts/scientific-principles"],
+      [["工程原理", "Engineering principles"], ["决策、行动与验证把科学原理落实为可运行的智能机器。", "Decision, action, and verification turn scientific principles into operating intelligent machines."], ["行动与验证", "ACTION & VERIFICATION"], "/concepts/engineering-principles"],
     ] as const,
     modules: [
       [["应用成果", "Applications"], ["让原理进入学习、决策、智能体与机器。", "Bring principles into learning, decision making, agents, and machines."], "/applications/structured-ai"],
