@@ -126,6 +126,7 @@ export const concepts: Concept[] = [
       { no: "定义 9.4", title: "结构熵", text: "H(A) = minₜ Hᵀ(A)，其中 T 取遍 A 的所有编码树。" },
     ],
     sources: [
+      { label: "Li & Pan · Structural Information and Dynamical Complexity of Networks", detail: "IEEE Transactions on Information Theory 62(6): 3290–3339 · 2016 · DOI 10.1109/TIT.2016.2555904", href: "https://doi.org/10.1109/TIT.2016.2555904" },
       { label: "《人工智能科学——智能的数学原理》", detail: "定义 8.2、定义 9.3–9.4 · 编码树与结构熵", href: "/books#artificial-intelligence-science" },
     ],
   },

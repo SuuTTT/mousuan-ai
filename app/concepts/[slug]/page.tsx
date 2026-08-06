@@ -63,7 +63,7 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
     </section>
 
     <section className="concept-sources concept-shell">
-      <header><p>REFERENCES</p><h2>原始文献</h2><span>基础原理优先引用先出版的《人工智能科学——智能的数学原理》；后续展开再列相关专著或论文。</span></header>
+      <header><p>REFERENCES</p><h2>原始文献</h2><span>原始文献按出版时间列示：先列早期理论来源，再列后续系统定义与展开。</span></header>
       <div>{concept.sources.map((source, sourceIndex) => <a key={`${source.label}-${sourceIndex}`} href={source.href} target={source.href.startsWith("/") ? undefined : "_blank"} rel={source.href.startsWith("/") ? undefined : "noreferrer"}><span>[{sourceIndex + 1}]</span><div><strong>{source.label}</strong><small><KeepTail text={source.detail} /></small></div><b>↗</b></a>)}</div>
     </section>
 

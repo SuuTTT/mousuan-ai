@@ -103,6 +103,16 @@ test("information theme lists its primary references without editorial prompts",
   assert.doesNotMatch(html, /只列出理解本主题|完整论证进入原著/);
 });
 
+test("structural-information concept cites the 2016 paper before the later monograph", async () => {
+  const response = await render("/concepts/structural-information");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Structural Information and Dynamical Complexity of Networks/);
+  assert.match(html, /IEEE Transactions on Information Theory 62\(6\): 3290–3339/);
+  assert.match(html, /10\.1109\/TIT\.2016\.2555904/);
+  assert.ok(html.indexOf("10.1109/TIT.2016.2555904") < html.indexOf("artificial-intelligence-science"));
+});
+
 test("searchable academic index covers both source books", async () => {
   assert.equal(bookIndex.length, 917);
   assert.ok(bookIndex.some((entry) => entry.id === "ai-science-定义-8.2" && entry.title === "集合的编码树"));

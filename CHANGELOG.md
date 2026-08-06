@@ -13,6 +13,7 @@
 - 英文首页首句统一为“Mathematical principles of the information world”。
 - 全站主题术语统一：“信息的数学基础”改为“信息的数学原理”，“信息基础”改为“信息原理”；英文对应统一为“Mathematical principles of information”和“Information principles”。
 - 网站自有文案中的“认识”统一为“认知”，英文层级名称同步统一为“Cognitive Foundations”；原著索引保留书籍原文。
+- “结构信息”概念页按时间顺序补入 Li 与 Pan 2016 年 IEEE Transactions on Information Theory 论文，随后列出《人工智能科学》中的系统定义。
 - 首页改为四个基本问题：信息及其数学原理、智能是什么、智能从哪里来、怎样实现智能。
 - 明确三个命名观点：智能论题“智能 = 信息”、智能的策略原理“智能 = 谋算”、孙子模型“智／能”。
 - 以“现实世界的完备建模”代替“完整建模”，明确物理性质与信息性质共同构成对象的完备知识。
