@@ -27,7 +27,7 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
 
     <header className="concept-hero" data-layer={concept.layer}>
       <div className="concept-hero-copy">
-        <p><a href="/#hierarchy">体系首页</a><b>›</b><a href={`/#layer-${concept.layer}`}>{concept.layerName}</a><b>›</b><span>{concept.title}</span></p>
+        <p><a href="/#themes">体系首页</a><b>›</b><a href="/#themes">{concept.layerName}</a><b>›</b><span>{concept.title}</span></p>
         <span className="concept-tag">{concept.layer} · {concept.layerEnglish}</span>
         <h1>{concept.title}</h1>
         <em>{concept.englishTitle}</em>
@@ -57,18 +57,18 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
 
     <section className="concept-formal">
       <div className="concept-shell">
-        <header><p>FORMAL BASIS</p><h2>正式定义、命题与定理</h2></header>
+        <header><p>KEY FOUNDATIONS</p><h2>关键依据</h2><span>仅列出理解本主题所需的关键定义、定律或定理；完整论证请进入原始文献。</span></header>
         <div>{concept.formal.map((item) => <article key={item.no}><span>{item.no}</span><h3>{item.title}</h3><p><KeepTail text={item.text} /></p></article>)}</div>
       </div>
     </section>
 
     <section className="concept-sources concept-shell">
-      <header><p>REFERENCES</p><h2>原始文献</h2><span>定义、命题、定理与编号均对应下列专著或原始论文。</span></header>
+      <header><p>REFERENCES</p><h2>原始文献</h2><span>基础原理优先引用先出版的《人工智能科学——智能的数学原理》；后续展开再列相关专著或论文。</span></header>
       <div>{concept.sources.map((source, sourceIndex) => <a key={`${source.label}-${sourceIndex}`} href={source.href} target={source.href.startsWith("/") ? undefined : "_blank"} rel={source.href.startsWith("/") ? undefined : "noreferrer"}><span>[{sourceIndex + 1}]</span><div><strong>{source.label}</strong><small><KeepTail text={source.detail} /></small></div><b>↗</b></a>)}</div>
     </section>
 
     <footer className="concept-footer">
-      <div className="concept-shell"><a className={!previous ? "disabled" : ""} href={previous ? `/concepts/${previous.slug}` : "/#layer-01"}><span>← 上一个概念</span><strong>{previous?.title ?? "体系起点"}</strong></a><a href="/#hierarchy"><span>返回</span><strong>三层理论体系</strong></a><a className={!next ? "disabled" : ""} href={next ? `/concepts/${next.slug}` : "/framework"}><span>下一个概念 →</span><strong>{next?.title ?? "理论总图"}</strong></a></div>
+      <div className="concept-shell"><a className={!previous ? "disabled" : ""} href={previous ? `/concepts/${previous.slug}` : "/#themes"}><span>← 上一个概念</span><strong>{previous?.title ?? "体系起点"}</strong></a><a href="/#themes"><span>返回</span><strong>四个基本问题</strong></a><a className={!next ? "disabled" : ""} href={next ? `/concepts/${next.slug}` : "/framework"}><span>下一个概念 →</span><strong>{next?.title ?? "理论总图"}</strong></a></div>
     </footer>
   </main>;
 }

@@ -1,49 +1,79 @@
-const definitions = [
-  ["physical-property", "定义 15.1", "物理性质", "一个对象的物理性质由该对象自己完全决定。", "《孙子兵法的人工智能原理》 §15.1", "/sun-tzu-ai-principles.pdf#page=395"],
-  ["information-property", "定义 15.4", "信息性质", "对象的信息性质包括存在性、作用、运动性及其背后的原因；自我意识主体还包括需求和愿望。", "《孙子兵法的人工智能原理》 §15.3", "/sun-tzu-ai-principles.pdf#page=401"],
-  ["information-system", "定义 17.10", "信息系统", "一个信息系统是一个包含多个对象及其对象的运动和对象之间的相互作用构成的系统。", "《孙子兵法的人工智能原理》 §17.10", "/sun-tzu-ai-principles.pdf#page=464"],
-  ["mousuan-definition", "定义 15.12", "谋算的定义", "一个谋策略就是一个层谱抽象策略；一个算策略就是一个分而治之策略。", "《孙子兵法的人工智能原理》 §15.11", "/sun-tzu-ai-principles.pdf#page=412"],
-] as const;
-
-const laws = [
-  ["信息定律 I", "信息性质的普遍性", "现实世界的每一个对象、每一个自我意识主体都有一个信息性质。", "《孙子兵法的人工智能原理》 §15.5", "/sun-tzu-ai-principles.pdf#page=406"],
-  ["信息定律 II", "信息性质的系统嵌入", "现实世界中一个对象的信息性质嵌入在该对象和其他对象相互作用的关系中。", "《孙子兵法的人工智能原理》 §15.6", "/sun-tzu-ai-principles.pdf#page=407"],
-  ["命题 15.6", "信息世界的科学范式定律", "信息世界的科学范式，即总方法，就是层谱抽象。", "《孙子兵法的人工智能原理》 §15.7", "/sun-tzu-ai-principles.pdf#page=408"],
-  ["系统定律 III", "信息解码策略", "解码嵌入在一个系统中的信息的方法是谋策略和算策略。", "《孙子兵法的人工智能原理》 §17.10", "/sun-tzu-ai-principles.pdf#page=466"],
-] as const;
-
-const theorems = [
-  ["定义 19.14", "编码树", "有限集合 V 的编码树是满足根节点、逐层划分与单点叶节点条件的有根树。", "《孙子兵法的人工智能原理》 §19.10", "/sun-tzu-ai-principles.pdf#page=483"],
-  ["定义 19.21", "结构熵", "H(A) = minₜ Hₜ(A)，其中 T 取遍 A 的所有编码树。", "《孙子兵法的人工智能原理》 §19.12", "/sun-tzu-ai-principles.pdf#page=487"],
-  ["定义 19.29", "解码信息", "D(A) = H₁(A) − H(A)。", "《孙子兵法的人工智能原理》 §19.14", "/sun-tzu-ai-principles.pdf#page=489"],
-  ["定理 19.44", "压缩／解码原理", "Cᵀ(A) = H₁(A) − Hᵀ(A) = Dᵀ(A)。", "《孙子兵法的人工智能原理》 §19.17", "/sun-tzu-ai-principles.pdf#page=492"],
+const sections = [
+  {
+    id: "information",
+    no: "01",
+    question: "信息是什么？信息的数学原理是什么？",
+    title: "信息的公理化科学原理",
+    statement: "信息科学研究确定性、不确定性及其相互转化；信息的数学原理以层谱抽象为总方法。",
+    points: [
+      ["科学范式", "层谱抽象", "《人工智能科学——智能的数学原理》定义 6.2"],
+      ["数学模型", "编码树", "《人工智能科学——智能的数学原理》定义 8.2"],
+      ["基本度量", "结构熵与解码信息", "《人工智能科学——智能的数学原理》第9–10章"],
+      ["核心定理", "压缩信息就是解码信息", "《人工智能科学——智能的数学原理》定理 10.9"],
+    ],
+    href: "/books#artificial-intelligence-science",
+  },
+  {
+    id: "intelligence",
+    no: "02",
+    question: "智能是什么？",
+    title: "智能论题：智能 = 信息",
+    statement: "一个主体的智能就是该主体的信息；信息是任何智能体和人工智能系统的数学基础。",
+    points: [
+      ["数学实质", "智能 =（狭义）信息", "《人工智能科学——智能的数学原理》定义 34.5"],
+      ["策略性质", "智能策略是信息生成策略或信息解码策略", "《人工智能科学——智能的数学原理》定义 34.5"],
+      ["基本模型", "生成信息与解码信息", "《人工智能科学——智能的数学原理》定义 34.6"],
+    ],
+    href: "/books#artificial-intelligence-science",
+  },
+  {
+    id: "strategy",
+    no: "03",
+    question: "智能从哪里来？",
+    title: "智能的策略原理：智能 = 谋算",
+    statement: "谋和算是两类基本智能策略；任何一个智能策略由一系列谋策略和算策略构成。",
+    points: [
+      ["谋", "层谱抽象的全局认知与跨层推理", "《人工智能科学——智能的数学原理》定义 28.5"],
+      ["算", "分而治之的局部逻辑推理", "《人工智能科学——智能的数学原理》定义 28.5"],
+      ["策略形式", "智能策略 = 谋 + 算", "《孙子兵法的人工智能原理》公式 (23.3)"],
+      ["机器原理", "谋体系结构与算体系结构协同", "《孙子兵法的人工智能原理》§15.11"],
+    ],
+    href: "/themes/strategy-principle",
+  },
+  {
+    id: "model",
+    no: "04",
+    question: "怎样实现智能？",
+    title: "孙子模型：智与能",
+    statement: "“智”给出人工智能科学原理，“能”给出人工智能工程原理；二者共同构成机器智能的实现模型。",
+    points: [
+      ["智", "学习 · 自我意识 · 博弈／谋算", "《人工智能科学——智能的数学原理》定义 34.3–34.4"],
+      ["能", "决策 · 行动 · 系统验证", "《人工智能科学——智能的数学原理》定义 34.4"],
+      ["完备策略", "学习、自我意识学习和博弈／谋算", "《人工智能科学——智能的数学原理》命题 34.2"],
+      ["策略贯穿", "模型每一步以谋和算为基本策略", "《孙子兵法的人工智能原理》"],
+    ],
+    href: "/themes/sun-tzu-model",
+  },
 ] as const;
 
 const sunLaws = [
-  ["I", "利益定律", "战争定义对象与自我意识主体的利益；每一个对象与主体在战争中都追求自己的利益。", "§21.1", "/sun-tzu-ai-principles.pdf#page=567"],
-  ["II", "物质与信息", "决定战争胜败结局的本原要素是物质和信息。", "§21.2", "/sun-tzu-ai-principles.pdf#page=577"],
-  ["III", "力量生成", "运动的物质生成能量；能量释放的同时生成力；力作用于敌人与敌目标。", "§21.3", "/sun-tzu-ai-principles.pdf#page=578"],
-  ["IV", "战争能力度量", "战争能力 = 物质 × 信息²。", "§21.5", "/sun-tzu-ai-principles.pdf#page=583"],
-  ["V", "战争的不可逆性", "亡国不可以复存，死者不可以复生。", "§21.13", "/sun-tzu-ai-principles.pdf#page=596"],
+  ["I", "利益定律", "战争定义对象与自我意识主体的利益。", "/sun-tzu-ai-principles.pdf#page=567"],
+  ["II", "物质与信息定律", "决定战争胜败结局的本原要素是物质和信息。", "/sun-tzu-ai-principles.pdf#page=577"],
+  ["III", "力量生成定律", "运动的物质生成能量，能量释放生成力。", "/sun-tzu-ai-principles.pdf#page=578"],
+  ["IV", "战争能力度量定律", "战争能力 = 物质 × 信息²。", "/sun-tzu-ai-principles.pdf#page=583"],
+  ["V", "战争不可逆定律", "亡国不可以复存，死者不可以复生。", "/sun-tzu-ai-principles.pdf#page=596"],
 ] as const;
 
-const Source = ({ children, href = "/sun-tzu-ai-principles.pdf" }: { children: React.ReactNode; href?: string }) => <a className="theory-source" href={href}>{children}<b>↗</b></a>;
-
 export default function FrameworkPage() {
-  return <main className="theory-page">
-    <nav className="theory-nav"><a className="theory-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="#definitions">定义</a><a href="#laws">定律</a><a href="#theorems">数学原理</a><a href="#intelligence">智能体系</a><a href="#sun">孙子定律</a></div><a className="theory-home" href="/">返回首页</a></nav>
-    <section className="theory-hero"><div><p>AXIOMATIZED SCIENCE OF INFORMATION</p><h1>信息世界的<br />公理化科学体系</h1><span>从对象与系统的定义出发，经由信息定律和数学定理，建立学习、自我意识、谋算与机器智能模型。</span></div><aside><strong>体系路径</strong><div><span>定义</span><b>→</b><span>定律</span><b>→</b><span>定理</span><b>→</b><span>模型</span></div></aside></section>
+  return <main className="principle-index">
+    <nav className="index-nav"><a className="index-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/#themes">四个主题</a><a href="#information">信息</a><a href="#intelligence">智能</a><a href="#strategy">谋算</a><a href="#sun">孙子五大定律</a></div><a href="/">返回首页</a></nav>
 
-    <section id="definitions" className="theory-section"><header><p>01 · DEFINITIONS</p><h2>基本定义</h2><span>对象、性质、系统与策略构成形式体系的基本研究对象。</span></header><div className="definition-orbit"><div id="complete-knowledge" className="definition-core"><em className="target-marker">当前所选</em><span>现实世界</span><strong>物质 + 信息</strong></div>{definitions.map(([id, no, title, text, source, sourceHref]) => <article id={id} key={id}><em className="target-marker">当前所选</em><span>{no}</span><h3>{title}</h3><p>{text}</p><Source href={sourceHref}>{source}</Source></article>)}</div></section>
+    <header className="index-hero"><div className="index-shell"><p>KEY PRINCIPLES & SOURCES</p><h1>关键原理索引</h1><span>只点出理解信息与智能体系所需的重要观点；定义、证明与完整论述均回到原始专著。</span><div><a href="#information">信息的数学原理</a><b>→</b><a href="#intelligence">智能论题</a><b>→</b><a href="#strategy">策略原理</a><b>→</b><a href="#model">孙子模型</a></div></div></header>
 
-    <section id="laws" className="theory-section law-section"><header><p>02 · LAWS</p><h2>信息世界基本定律</h2><span>信息性质的普遍性、系统嵌入性与层谱抽象范式构成认识信息世界的基本关系。</span></header><div className="law-axis"><div className="law-spine" aria-hidden="true"><span>对象</span><b>↓</b><span>系统</span><b>↓</b><span>认知</span></div>{laws.map(([no, title, text, source, sourceHref], index) => <article className={index % 2 ? "right" : "left"} key={no}><span>{no}</span><h3>{title}</h3><p>{text}</p><Source href={sourceHref}>{source}</Source></article>)}</div></section>
+    <section className="index-sections index-shell">{sections.map((section) => <article id={section.id} key={section.id}><header><span>{section.no}</span><div><p>{section.question}</p><h2>{section.title}</h2><strong>{section.statement}</strong></div></header><ol>{section.points.map(([kind, point, source]) => <li key={point}><small>{kind}</small><b>{point}</b><span>{source}</span></li>)}</ol><a className="index-source" href={section.href}>进入主题与原著链接 ↗</a></article>)}</section>
 
-    <section id="theorems" className="theory-section theorem-section"><header><p>03 · FORMAL CHAIN</p><h2>从编码树到解码信息的定义与定理链</h2><span>编码树给出层谱抽象，结构熵度量不确定性，解码信息由结构熵差定义，压缩／解码原理给出三者的等式关系。</span></header><div className="theorem-chain">{theorems.map(([no, title, text, source, sourceHref], index) => <article key={no}><div><span>{no}</span><small>0{index + 1}</small></div><h3>{title}</h3><p>{text}</p><Source href={sourceHref}>{source}</Source>{index < theorems.length - 1 && <b className="chain-arrow">→</b>}</article>)}</div><div className="theorem-result"><span>形式链</span><strong>信息系统</strong><b>→</b><strong>编码树</strong><b>→</b><strong>结构熵</strong><b>→</b><strong>解码信息</strong></div></section>
+    <section id="sun" className="index-sun"><div className="index-shell"><header><p>SUN TZU’S FIVE LAWS</p><h2>物质与信息结合的孙子五大定律</h2><span>《孙子兵法的人工智能原理》以这五条定律奠定同时存在物质与信息的战争之科学原理。</span></header><ol>{sunLaws.map(([no, title, text, href]) => <li key={no}><span>{no}</span><div><h3>{title}</h3><p>{text}</p></div><a href={href}>查看原文 ↗</a></li>)}</ol></div></section>
 
-    <section id="intelligence" className="intelligence-section"><div className="theory-section"><header><p>04 · INTELLIGENCE SYSTEM</p><h2>机器智能科学与工程</h2><span>智能论题、谋算策略与孙子谋算智能模型共同规定机器智能的数学基础、科学原理和工程原理。</span></header><div className="intelligence-core"><p>智能论题 · §20.10</p><h3>智能 = 信息</h3><span>一个智能体的智能就是它的信息。</span></div><div id="strategy" className="strategy-pair"><article><span>MOU · 谋</span><h3>层谱抽象策略</h3><p>一个谋策略就是一个层谱抽象策略。</p></article><b>协同</b><article><span>SUAN · 算</span><h3>分而治之策略</h3><p>一个算策略就是一个分而治之策略。</p></article></div><div className="principle-bridge"><div><p>科学原理 · 智</p><article><span>LEARNING</span><h3>观察学习</h3><small>认知世界 · 改造世界</small></article><article><span>SELF-AWARENESS</span><h3>自我意识</h3><small>认知自我 · 改造自我</small></article><article><span>MOU-SUAN</span><h3>谋算博弈设计</h3><small>规划 · 博弈策略设计</small></article></div><b>↓</b><div id="machine"><p>工程原理 · 能</p><article><span>DECISION</span><h3>自主决策</h3></article><article><span>CONTROL</span><h3>自主控制与行动</h3></article><article><span>VERIFICATION</span><h3>自主系统验证</h3></article></div></div><div className="model-reference"><Source href="/sun-tzu-ai-principles.pdf#page=502">《孙子兵法的人工智能原理》定义 20.8、命题 20.9、§20.10</Source></div></div></section>
-
-    <section id="sun" className="theory-section sun-section"><header><p>05 · SUN TZU LAWS</p><h2>孙子五大定律</h2><span>利益、物质与信息、力量生成、战争能力度量与战争不可逆性构成物质和信息结合的五条基本定律。</span></header><div className="sun-law-system"><div className="sun-center"><span>孙子模型</span><strong>谋算智能的信息模型</strong></div>{sunLaws.map(([no, title, text, section, sourceHref]) => <article key={no}><span>LAW {no}</span><h3>{title}</h3><p>{text}</p><a href={sourceHref}>《孙子兵法的人工智能原理》 {section}<b>↗</b></a></article>)}</div></section>
-
-    <section className="theory-books"><div><p>FORMAL REFERENCES</p><h2>原始专著</h2><span>定义、命题、定理、证明与完整模型均以原始专著中的编号和表述为依据。</span><div><a href="/books">《人工智能科学——智能的数学原理》<b>↗</b></a><a href="/sun-tzu-ai-principles.pdf">《孙子兵法的人工智能原理》<b>↗</b></a></div></div></section>
+    <section className="index-books"><div className="index-shell"><p>PRIMARY SOURCES</p><h2>引用顺序</h2><span>基础概念、信息的数学原理、智能论题和孙子模型优先引用先出版的《人工智能科学——智能的数学原理》；谋算策略的后续展开及孙子五大定律引用《孙子兵法的人工智能原理》。</span><div><a href="/books#artificial-intelligence-science"><b>01</b>《人工智能科学——智能的数学原理》<em>基础原理 ↗</em></a><a href="/books#sun-tzu-ai-principles"><b>02</b>《孙子兵法的人工智能原理》<em>孙子五大定律 ↗</em></a></div></div></section>
   </main>;
 }

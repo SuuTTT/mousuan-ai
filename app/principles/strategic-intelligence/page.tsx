@@ -5,20 +5,20 @@ export default function StrategicIntelligencePage() {
     zh={{
       back: "← 返回研究主页", toggle: "EN", eyebrow: "公理原理 · 03 / 谋算智能（MSI）",
       title: "谋算智能\n谋与算都是智能策略",
-      lead: "命题 15.10 将谋和算规定为两类基本的智能策略；定义 15.12 进一步规定：一个谋策略就是一个层谱抽象策略，一个算策略就是一个分而治之策略。",
-      sections: [["谋算原理 · 命题 15.10", "谋和算是两类基本的智能策略；任何一个智能策略由一系列谋策略和一系列算策略构成。"], ["谋算的定义 · 定义 15.12", "一个谋策略就是一个层谱抽象策略；一个算策略就是一个分而治之策略。"], ["科学原理", "观察学习的信息理论、自我意识的信息理论和谋算理论构成“智”的三个研究支柱。"], ["工程原理", "自主决策、自主控制与行动、自主系统验证构成“能”的三个工程步骤。"], ["智、能与智能", "“智”对应学习、自我意识与谋算博弈设计；“能”对应决策、控制与系统验证。智能是二者在同一智能模型中的统一。"], ["谋算双脑体系结构", "谋策略体系结构与算策略体系结构分工，并通过协同机制共同工作；其数学与工程实现以正式专著中的定义和模型为依据。"]],
+      lead: "《人工智能科学》定义 28.5 以谋和算给出博弈的科学方法：谋采用层谱抽象，算采用分而治之。后续专著进一步将其表述为两类基本智能策略。",
+      sections: [["谋算的科学方法 · 定义 28.5", "谋是层谱抽象的认知方法；算是分而治之的分析方法；博弈 = 谋算。"], ["智能的策略原理", "谋建立全局层谱认知并支持跨层演算与推理；算完成同一层谱内的局部逻辑推理。"], ["智能策略的构成 · 命题 15.10", "谋和算是两类基本智能策略；任何智能策略由一系列谋策略和算策略构成。"], ["机器体系结构", "智能体系由谋策略体系结构与算策略体系结构构成，二者分工并通过协同机制共同工作。"]],
       sourcesLabel: "原始论文与阅读入口",
-      sources: [["《孙子兵法的人工智能原理》原始 PDF", "/sun-tzu-ai-principles.pdf"], ["Hierarchical Decision Making Based on Structural Information Principles · JMLR", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"], ["书籍与购买链接", "/books/"], ["李昂生教授团队", "/team"]],
-      closing: "谋、算、智能模型与谋算双脑体系结构的正式含义以专著中的命题 15.10、定义 15.12、定义 20.8 和命题 20.9 为准。",
+      sources: [["《人工智能科学——智能的数学原理》", "/books#artificial-intelligence-science"], ["《孙子兵法的人工智能原理》· 命题 15.10 与定义 15.12", "/sun-tzu-ai-principles.pdf#page=411"], ["Hierarchical Decision Making Based on Structural Information Principles · JMLR", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"], ["三部研究专著", "/books"]],
+      closing: "基础定义优先采用《人工智能科学》定义 28.5；智能策略序列、跨层推理与谋算双脑体系结构的展开见后续专著。",
     }}
     en={{
       back: "← Back to research hub", toggle: "中", eyebrow: "PRINCIPLES · 03 / MOUSUAN INTELLIGENCE (MSI)",
       title: "MouSuan Intelligence\nMou and Suan as strategies",
-      lead: "Proposition 15.10 identifies Mou and Suan as two basic classes of intelligent strategy. Definition 15.12 then states: a Mou strategy is a hierarchical-abstraction strategy, and a Suan strategy is a divide-and-conquer strategy.",
-      sections: [["MouSuan principle · Proposition 15.10", "Mou and Suan are two basic classes of intelligent strategy; every intelligent strategy consists of a sequence of Mou strategies and a sequence of Suan strategies."], ["Definition of MouSuan · Definition 15.12", "A Mou strategy is a hierarchical-abstraction strategy; a Suan strategy is a divide-and-conquer strategy."], ["Scientific principles", "The information theory of learning from observing, the information theory of self-awareness, and MouSuan theory form the three Zhi research pillars."], ["Engineering principles", "Autonomous decision, autonomous control and action, and autonomous system verification form the three Neng engineering steps."], ["Zhi, Neng, and intelligence", "Zhi corresponds to learning, self-awareness, and MouSuan contest design; Neng corresponds to decision, control, and system verification. Intelligence unifies them in one model."], ["MouSuan dual-brain architecture", "The Mou-strategy and Suan-strategy architectures divide their work and cooperate; their mathematical and engineering realisation follows the formal definitions and models in the monograph."]],
+      lead: "Definition 28.5 of Artificial Intelligence Science gives Mou and Suan as the scientific methods of contest: Mou uses hierarchical abstraction, and Suan uses divide-and-conquer. The later monograph develops them as two basic classes of intelligent strategy.",
+      sections: [["Scientific method of MouSuan · Definition 28.5", "Mou is the cognitive method of hierarchical abstraction; Suan is the analytical method of divide-and-conquer; contest = MouSuan."], ["Strategy Principle of Intelligence", "Mou builds global hierarchical cognition and supports reasoning across abstraction hierarchies; Suan performs local logical reasoning within a hierarchy."], ["Composition of strategy · Proposition 15.10", "Mou and Suan are two basic classes of intelligent strategy; every intelligent strategy consists of a sequence of Mou strategies and Suan strategies."], ["Machine architecture", "An intelligent system has cooperating Mou-strategy and Suan-strategy architectures with distinct roles."]],
       sourcesLabel: "ORIGINAL SOURCES",
-      sources: [["Original PDF · AI Principles of Sun Tzu’s The Art of War", "/sun-tzu-ai-principles.pdf"], ["Hierarchical Decision Making Based on Structural Information Principles · JMLR", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"], ["Books & purchase links", "/books/"], ["Professor Angsheng Li’s team", "/team"]],
-      closing: "The formal meanings of Mou, Suan, the intelligence model, and the MouSuan dual-brain architecture follow Proposition 15.10, Definitions 15.12 and 20.8, and Proposition 20.9 of the monograph.",
+      sources: [["Artificial Intelligence Science — Mathematical Principles of Intelligence", "/books#artificial-intelligence-science"], ["AI Principles of Sun Tzu’s The Art of War · Proposition 15.10 and Definition 15.12", "/sun-tzu-ai-principles.pdf#page=411"], ["Hierarchical Decision Making Based on Structural Information Principles · JMLR", "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf"], ["Three research monographs", "/books"]],
+      closing: "The earlier Definition 28.5 is primary; the later monograph develops intelligent-strategy sequences, cross-hierarchy inference, and the MouSuan dual-brain architecture.",
     }}
   />;
 }

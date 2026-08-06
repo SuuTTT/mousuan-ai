@@ -28,12 +28,13 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /现实世界的完整建模/);
-  assert.match(html, /信息世界的公理化数学原理/);
-  assert.match(html, /机器智能体系/);
-  assert.match(html, /定理 19\.44/);
+  assert.match(html, /信息与智能的/);
+  assert.match(html, /四个基本问题/);
+  assert.match(html, /信息是什么？信息的数学原理是什么？/);
   assert.match(html, /智能 = 信息/);
-  assert.match(html, /href="\/concepts\/physical-world"/);
+  assert.match(html, /智能 = 谋算/);
+  assert.match(html, /现实世界的完备建模/);
+  assert.match(html, /href="\/themes\/information"/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
 });
 
@@ -42,10 +43,20 @@ test("server-renders the theorem framework with source references", async () => 
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /定义 19\.14/);
-  assert.match(html, /定义 19\.21/);
-  assert.match(html, /定义 19\.29/);
-  assert.match(html, /定理 19\.44/);
-  assert.match(html, /sun-tzu-ai-principles\.pdf#page=492/);
+  assert.match(html, /定义 8\.2/);
+  assert.match(html, /定理 10\.9/);
+  assert.match(html, /定义 34\.5/);
+  assert.match(html, /sun-tzu-ai-principles\.pdf#page=567/);
   assert.doesNotMatch(html, /原有模块|核验原始手稿|audit-redesign/);
+});
+
+test("server-renders the Sun Tzu model with primary-source order and five laws", async () => {
+  const response = await render("/themes/sun-tzu-model");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /定义 34\.3–34\.4/);
+  assert.match(html, /孙子五大定律/);
+  assert.match(html, /战争能力 = 物质 × 信息²/);
+  assert.ok(html.indexOf("人工智能科学") < html.indexOf("孙子兵法的人工智能原理"));
 });

@@ -9,7 +9,23 @@
 .theorem-chain h3,
 .concept-hero h1,
 .concept-sections h3,
-.concept-formal h3 {
+.concept-formal h3,
+.questions-hero h1,
+.questions-themes h2,
+.complete-model h2,
+.questions-depth h2,
+.questions-modules h2,
+.questions-theme-question h3,
+.questions-theme-answer strong,
+.theme-hero h1,
+.theme-structure h2,
+.theme-structure h3,
+.theme-basis h2,
+.theme-deeper h2,
+.theme-sun-laws h2,
+.principle-index h1,
+.principle-index h2,
+.principle-index h3 {
   text-wrap: balance;
 }
 
@@ -23,6 +39,16 @@
 .theorem-chain p,
 .concept-lead,
 .concept-sections p,
-.concept-formal p {
+.concept-formal p,
+.questions-lead,
+.questions-themes header > span,
+.questions-theme-answer p,
+.complete-model header > span,
+.theme-lead,
+.theme-interpretation p,
+.theme-structure article > p,
+.theme-basis header > span,
+.theme-basis small,
+.principle-index p {
   text-wrap: pretty;
 }

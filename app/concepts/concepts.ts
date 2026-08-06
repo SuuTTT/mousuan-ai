@@ -27,11 +27,11 @@ export const concepts: Concept[] = [
       { label: "数学原理", title: "微积分", text: "微积分是分而治之分析方法的数学原理；研究数与形的经典数学支撑物理世界科学技术体系。" },
     ],
     formal: [
-      { no: "定义 15.1", title: "物理性质", text: "一个对象的物理性质由该对象自己完全决定。" },
-      { no: "§15.1", title: "物理世界", text: "现实世界对象的物理性质构成现实世界的物理空间，称为物理世界。" },
-      { no: "科学范式", title: "分而治之", text: "物理世界的科学范式，即获取物理性质的总方法，就是分而治之分析方法。" },
+      { no: "定义 5.3", title: "物理性质", text: "一个对象的物理性质由该对象自己完全决定。" },
+      { no: "定义 5.5", title: "物理世界的科学范式", text: "获取对象物理性质的总方法是分而治之。" },
+      { no: "定义 6.1", title: "物理科学范式定律", text: "物理世界的科学范式是分而治之分析方法。" },
     ],
-    sources: [{ label: "《孙子兵法的人工智能原理》", detail: "定义 15.1 · 物理性质", href: "/sun-tzu-ai-principles.pdf#page=395" }],
+    sources: [{ label: "《人工智能科学——智能的数学原理》", detail: "定义 5.3、5.5 与定义 6.1 · 物理性质及物理科学范式", href: "/books#artificial-intelligence-science" }],
   },
   {
     slug: "information-world", layer: "01", layerName: "认识基础", layerEnglish: "FOUNDATION",
@@ -45,11 +45,11 @@ export const concepts: Concept[] = [
       { label: "系统关系", title: "信息性质在哪里", text: "对象的信息性质嵌入该对象和其他对象相互作用的关系中，不能通过只对该对象进行分而治之而获得。" },
     ],
     formal: [
-      { no: "定义 15.4", title: "信息性质", text: "对象的信息性质包括存在性、作用、运动性及其背后的原因；自我意识主体还包括需求和愿望。" },
-      { no: "信息定律 I", title: "普遍性", text: "现实世界的每一个对象、每一个自我意识主体都有一个信息性质。" },
-      { no: "信息定律 II", title: "系统嵌入", text: "一个对象的信息性质嵌入该对象和其他对象相互作用的关系中。" },
+      { no: "定义 5.1", title: "信息世界", text: "现实世界对象和自我意识主体的信息性质构成信息世界。" },
+      { no: "定义 5.6", title: "信息性质与知识", text: "对象的信息性质描述它的存在、作用、运动及其原因；对主体而言还包括需求与愿望。" },
+      { no: "§5.1.4", title: "物理性质与信息性质", text: "信息性质不能只由孤立对象自身决定，而嵌入对象之间的相互作用。" },
     ],
-    sources: [{ label: "《孙子兵法的人工智能原理》", detail: "定义 15.4；信息定律 I、II（§15.5–15.6）", href: "/sun-tzu-ai-principles.pdf#page=401" }],
+    sources: [{ label: "《人工智能科学——智能的数学原理》", detail: "定义 5.1、5.6 与 §5.1.4 · 信息世界及信息性质", href: "/books#artificial-intelligence-science" }],
   },
   {
     slug: "information-system", layer: "01", layerName: "认识基础", layerEnglish: "FOUNDATION",
@@ -63,12 +63,12 @@ export const concepts: Concept[] = [
       { label: "数学入口", title: "从系统走向结构", text: "信息系统可以进一步表示为图、代数模型和编码树，为层谱抽象、结构熵与解码信息建立数学对象。" },
     ],
     formal: [
-      { no: "定义 17.10", title: "信息系统", text: "一个信息系统是一个包含多个对象及其对象的运动和对象之间的相互作用构成的系统。" },
-      { no: "系统定律 I", title: "信息与知识", text: "嵌入系统中的信息是知识的数学基础；系统的知识是嵌入系统中的信息的语义。" },
-      { no: "系统定律 III", title: "系统解码", text: "解码嵌入在一个系统中的信息的方法是谋策略和算策略。" },
+      { no: "定义 5.15", title: "信息系统", text: "信息系统由多个对象、对象的运动以及对象之间的相互作用构成。" },
+      { no: "定义 6.25", title: "系统定律 I", text: "嵌入系统中的信息是知识的数学基础；知识是信息的语义。" },
+      { no: "定义 6.27", title: "系统定律 III", text: "系统中的信息需要通过层谱抽象与分而治之相结合的方法解码。" },
     ],
     sources: [
-      { label: "《孙子兵法的人工智能原理》", detail: "定义 17.10；系统定律 I–III（§17.10）", href: "/sun-tzu-ai-principles.pdf#page=464" },
+      { label: "《人工智能科学——智能的数学原理》", detail: "定义 5.15；定义 6.25–6.28 · 信息系统与系统定律", href: "/books#artificial-intelligence-science" },
     ],
   },
   {
@@ -83,11 +83,14 @@ export const concepts: Concept[] = [
       { label: "统一认识", title: "物质与信息共同建模", text: "两类性质不是互相替代，而是从不同方向描述同一个现实对象；联合之后才构成进入智能科学的认识基础。" },
     ],
     formal: [
-      { no: "定义 15.1", title: "物理性质", text: "一个对象的物理性质由该对象自己完全决定。" },
-      { no: "定义 15.4", title: "信息性质", text: "对象的信息性质嵌入该对象与其他对象的关系中。" },
-      { no: "定义 15.13", title: "知识", text: "一个对象的知识就是该对象的信息性质；一个自我意识主体的知识就是该主体的信息性质。" },
+      { no: "定义 5.3", title: "物理性质", text: "一个对象的物理性质由该对象自己完全决定。" },
+      { no: "定义 5.6", title: "信息性质", text: "对象的信息性质嵌入该对象与其他对象的相互作用中。" },
+      { no: "完备建模", title: "物质与信息联合", text: "一个对象的物理性质和信息性质合起来，构成了该对象的完备知识。" },
     ],
-    sources: [{ label: "《孙子兵法的人工智能原理》", detail: "定义 15.1、15.4、15.13；信息定律 II", href: "/sun-tzu-ai-principles.pdf#page=395" }],
+    sources: [
+      { label: "《人工智能科学——智能的数学原理》", detail: "定义 5.3、5.6 与 §5.1.4 · 物理性质和信息性质", href: "/books#artificial-intelligence-science" },
+      { label: "《孙子兵法的人工智能原理》", detail: "第15章 · 物质与信息结合的进一步展开", href: "/sun-tzu-ai-principles.pdf#page=395" },
+    ],
   },
   {
     slug: "scientific-paradigm", layer: "02", layerName: "数学原理", layerEnglish: "MATHEMATICAL PRINCIPLES",
@@ -101,11 +104,11 @@ export const concepts: Concept[] = [
       { label: "协同关系", title: "全局与局部互补", text: "层谱抽象确定整体结构和目标，分而治之完成局部计算和推理；二者协同成为谋与算的认识基础。" },
     ],
     formal: [
-      { no: "命题 15.6", title: "信息世界的科学范式定律", text: "信息世界的科学范式，即总方法，就是层谱抽象。" },
-      { no: "命题 15.7", title: "范式包含关系", text: "分而治之策略是层谱抽象策略的特例。" },
-      { no: "定义 15.12", title: "谋与算", text: "一个谋策略就是一个层谱抽象策略；一个算策略就是一个分而治之策略。" },
+      { no: "定义 6.1", title: "物理科学范式定律", text: "物理世界的科学范式是分而治之。" },
+      { no: "定义 6.2", title: "信息科学范式定律", text: "信息世界的科学范式，即总方法，是层谱抽象。" },
+      { no: "定义 28.5", title: "博弈的科学方法", text: "谋采用层谱抽象，算采用分而治之；二者共同构成博弈的科学方法。" },
     ],
-    sources: [{ label: "《孙子兵法的人工智能原理》", detail: "命题 15.6、15.7；定义 15.12", href: "/sun-tzu-ai-principles.pdf#page=408" }],
+    sources: [{ label: "《人工智能科学——智能的数学原理》", detail: "定义 6.1、6.2 与定义 28.5 · 两种科学范式及谋算", href: "/books#artificial-intelligence-science" }],
   },
   {
     slug: "structural-information", layer: "02", layerName: "数学原理", layerEnglish: "MATHEMATICAL PRINCIPLES",
@@ -119,14 +122,14 @@ export const concepts: Concept[] = [
       { label: "极小化", title: "信息系统的结构熵", text: "H(A) 取遍 A 的所有编码树并极小化 Hₜ(A)；达到极小值的编码树给出相应的层谱抽象结构。" },
     ],
     formal: [
-      { no: "定义 19.14", title: "编码树", text: "有限集合 V 的编码树是满足根节点、逐层划分与单点叶节点条件的有根树。" },
-      { no: "定义 19.20", title: "编码树下的结构熵", text: "Hₜ(A) 是在编码树 T 下嵌入信息系统 A 中的不确定性的量。" },
-      { no: "定义 19.21", title: "结构熵", text: "H(A) = minₜ Hₜ(A)，其中 T 取遍 A 的所有编码树。" },
+      { no: "定义 8.2", title: "编码树", text: "编码树是层谱抽象的数学定义、数学模型与数据结构。" },
+      { no: "定义 9.3", title: "编码树下的结构熵", text: "Hᵀ(A) 度量在编码树 T 下嵌入信息系统 A 中的不确定性。" },
+      { no: "定义 9.4", title: "结构熵", text: "H(A) = minₜ Hᵀ(A)，其中 T 取遍 A 的所有编码树。" },
     ],
     sources: [
+      { label: "《人工智能科学——智能的数学原理》", detail: "定义 8.2、定义 9.3–9.4 · 编码树与结构熵", href: "/books#artificial-intelligence-science" },
       { label: "Li & Pan (2016)", detail: "Structural Information and Dynamical Complexity of Networks", href: "https://ieeexplore.ieee.org/iel7/18/7473802/07456290.pdf" },
       { label: "Structural Information Learning Machinery", detail: "结构信息学习 · arXiv", href: "https://arxiv.org/abs/2001.09637" },
-      { label: "《孙子兵法的人工智能原理》", detail: "定义 19.14、19.20、19.21", href: "/sun-tzu-ai-principles.pdf#page=483" },
     ],
   },
   {
@@ -141,12 +144,12 @@ export const concepts: Concept[] = [
       { label: "层谱", title: "可定义性", text: "使 Hᵀ(A) 取得极小值的编码树给出信息系统中个体的层谱抽象定义。" },
     ],
     formal: [
-      { no: "定义 19.29", title: "解码信息", text: "D(A) = H₁(A) − H(A)。" },
-      { no: "定理 19.44", title: "压缩／解码原理", text: "Cᵀ(A) = H₁(A) − Hᵀ(A) = Dᵀ(A)。" },
-      { no: "定义 19.46", title: "层谱抽象可定义性", text: "T* = arg minₜ Hₜ(A)。" },
+      { no: "定义 10.1", title: "解码信息", text: "D(A) = H₁(A) − H(A)。" },
+      { no: "定理 10.9", title: "压缩／解码原理", text: "Cᵀ(A) = H₁(A) − Hᵀ(A) = Dᵀ(A)。" },
+      { no: "定义 12.9", title: "层谱抽象可定义性", text: "使结构熵极小的编码树给出系统的层谱抽象定义。" },
     ],
     sources: [
-      { label: "《孙子兵法的人工智能原理》", detail: "定义 19.29、19.46；定理 19.44", href: "/sun-tzu-ai-principles.pdf#page=489" },
+      { label: "《人工智能科学——智能的数学原理》", detail: "定义 10.1、定理 10.9 与定义 12.9 · 解码、压缩与层谱", href: "/books#artificial-intelligence-science" },
       { label: "Zeng et al. (2025)", detail: "Hierarchical Decision Making Based on Structural Information Principles", href: "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf" },
     ],
   },
@@ -162,11 +165,11 @@ export const concepts: Concept[] = [
       { label: "系统", title: "从命题进入可构造模型", text: "将智能定义为信息之后，可以继续建立信息度量、学习过程、策略生成以及机器实现的形式体系。" },
     ],
     formal: [
-      { no: "§20.10", title: "智能论题", text: "一个智能体的智能就是它的信息，即：智能 = 信息。" },
-      { no: "定义 20.8", title: "孙子谋算智能模型", text: "观察学习、自我意识、谋算博弈设计、决策、行动和系统验证构成六个步骤。" },
-      { no: "命题 20.9", title: "通用人工智能模型", text: "孙子谋算智能模型是一个有原理、可解释的通用人工智能模型。" },
+      { no: "定义 34.5", title: "智能论题", text: "一个智能体的智能就是它的信息，即：智能 =（狭义）信息。" },
+      { no: "定义 34.4", title: "孙子模型", text: "学习、自我意识、博弈／谋算、决策、行动与系统验证构成六个步骤。" },
+      { no: "定义 34.6", title: "人工智能基本模型", text: "生成信息与解码信息给出人工智能的基本模型。" },
     ],
-    sources: [{ label: "《孙子兵法的人工智能原理》", detail: "定义 20.8；命题 20.9；智能论题 §20.10", href: "/sun-tzu-ai-principles.pdf#page=502" }],
+    sources: [{ label: "《人工智能科学——智能的数学原理》", detail: "定义 34.4–34.6 · 孙子模型、智能论题与人工智能基本模型", href: "/books#artificial-intelligence-science" }],
   },
   {
     slug: "mousuan-strategy", layer: "03", layerName: "智能体系", layerEnglish: "INTELLIGENCE SYSTEM",
@@ -180,11 +183,14 @@ export const concepts: Concept[] = [
       { label: "协同", title: "谋指导算，算验证谋", text: "全局策略决定计算什么；局部结果持续修正全局认识。两条回路共同形成可适应的智能过程。" },
     ],
     formal: [
-      { no: "命题 15.10", title: "谋算原理", text: "谋和算是两类基本的智能策略；任何一个智能策略由一系列谋策略和算策略构成。" },
-      { no: "定义 15.12", title: "谋算的定义", text: "一个谋策略就是一个层谱抽象策略；一个算策略就是一个分而治之策略。" },
+      { no: "定义 28.5", title: "谋算的科学方法", text: "谋是层谱抽象的认知方法，算是分而治之的分析方法；博弈 = 谋算。" },
+      { no: "命题 15.10", title: "智能策略的构成", text: "谋和算是两类基本智能策略；任何智能策略由一系列谋策略与算策略构成。" },
       { no: "体系结构原理", title: "谋算双脑", text: "谋策略体系结构与算策略体系结构分工，并通过协同机制共同工作。" },
     ],
-    sources: [{ label: "《孙子兵法的人工智能原理》", detail: "命题 15.10；定义 15.12", href: "/sun-tzu-ai-principles.pdf#page=410" }],
+    sources: [
+      { label: "《人工智能科学——智能的数学原理》", detail: "定义 28.5 · 博弈的科学方法：谋与算", href: "/books#artificial-intelligence-science" },
+      { label: "《孙子兵法的人工智能原理》", detail: "命题 15.10、定义 15.12 与 §20.6.19 · 智能策略和谋算双脑的展开", href: "/sun-tzu-ai-principles.pdf#page=411" },
+    ],
   },
   {
     slug: "scientific-principles", layer: "03", layerName: "智能体系", layerEnglish: "INTELLIGENCE SYSTEM",
@@ -198,11 +204,11 @@ export const concepts: Concept[] = [
       { label: "博弈／谋算", title: "设计策略与创造结果", text: "主体在多方作用和不确定环境中组织全局策略，并通过局部计算、行动与反馈推进目标。" },
     ],
     formal: [
-      { no: "定义 20.8(1)", title: "观察学习", text: "认知世界、改造世界——知彼、知天、知地。" },
-      { no: "定义 20.8(2)", title: "自我意识", text: "认知自我、改造自我——知己。" },
-      { no: "定义 20.8(3)", title: "谋算博弈设计", text: "在现实世界环境中进行规划与博弈策略设计。" },
+      { no: "定义 34.3", title: "人工智能科学原理", text: "人工智能科学原理由学习、自我意识与博弈／谋算构成。" },
+      { no: "命题 34.2", title: "智能的完备策略", text: "学习、自我意识学习和博弈／谋算共同构成智能的完备策略。" },
+      { no: "定义 34.4", title: "孙子模型之“智”", text: "学习、自我意识与博弈／谋算是孙子模型的三个科学步骤。" },
     ],
-    sources: [{ label: "《孙子兵法的人工智能原理》", detail: "定义 20.8；学习、自我意识与谋算理论 §20.4–20.6", href: "/sun-tzu-ai-principles.pdf#page=502" }],
+    sources: [{ label: "《人工智能科学——智能的数学原理》", detail: "命题 34.2、定义 34.3–34.4 · 智能的完备策略与科学原理", href: "/books#artificial-intelligence-science" }],
   },
   {
     slug: "engineering-principles", layer: "03", layerName: "智能体系", layerEnglish: "INTELLIGENCE SYSTEM",
@@ -216,11 +222,11 @@ export const concepts: Concept[] = [
       { label: "验证", title: "用结果校正智能", text: "比较预期与实际结果，检验知识、模型和策略，再将误差反馈给学习与下一轮决策。" },
     ],
     formal: [
-      { no: "定义 20.8(4)", title: "决策", text: "对博弈策略做出决策。" },
-      { no: "定义 20.8(5)", title: "行动", text: "执行决策。" },
-      { no: "定义 20.8(6)", title: "系统验证", text: "验证是否获胜、获利。" },
+      { no: "定义 34.4(4)", title: "决策", text: "根据博弈／谋算策略做出决策。" },
+      { no: "定义 34.4(5)", title: "行动", text: "执行决策并作用于现实世界。" },
+      { no: "定义 34.4(6)", title: "系统验证", text: "根据行动结果验证系统目标是否实现。" },
     ],
-    sources: [{ label: "《孙子兵法的人工智能原理》", detail: "定义 20.8；决策、指挥控制与系统验证 §20.7–20.9", href: "/sun-tzu-ai-principles.pdf#page=502" }],
+    sources: [{ label: "《人工智能科学——智能的数学原理》", detail: "定义 34.4 · 孙子模型之“能”：决策、行动与系统验证", href: "/books#artificial-intelligence-science" }],
   },
 ];
 
