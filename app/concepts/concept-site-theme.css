@@ -17,7 +17,22 @@
 .concept-page h2,
 .concept-page h3 {
   font-family: Arial, "Noto Sans SC", "PingFang SC", sans-serif;
+  line-break: strict;
+  text-wrap: balance;
 }
+
+.concept-page p,
+.concept-lead,
+.concept-hero blockquote {
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: normal;
+  text-wrap: pretty;
+  orphans: 2;
+  widows: 2;
+}
+
+.keep-tail { white-space: nowrap; }
 
 .concept-nav {
   height: 76px;
@@ -101,6 +116,15 @@
 .concept-footer a:hover strong { color: #73e5fa; }
 .concept-footer a.disabled { color: #747b94; }
 .concept-footer span { color: #8f98b6; }
+
+@media (min-width: 621px) {
+  .concept-sections article {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 44px;
+  }
+
+  .concept-sections h3 { white-space: nowrap; }
+}
 
 @media (max-width: 620px) {
   .concept-nav { height: 68px; }

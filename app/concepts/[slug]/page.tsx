@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
 import { conceptGroups, concepts, getConcept } from "../concepts";
 
+function KeepTail({ text, count = 6 }: { text: string; count?: number }) {
+  if (text.length <= count) return <>{text}</>;
+  return <>{text.slice(0, -count)}<span className="keep-tail">{text.slice(-count)}</span></>;
+}
+
 export function generateStaticParams() {
   return concepts.map(({ slug }) => ({ slug }));
 }
@@ -26,11 +31,11 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
         <span className="concept-tag">{concept.layer} · {concept.layerEnglish}</span>
         <h1>{concept.title}</h1>
         <em>{concept.englishTitle}</em>
-        <div className="concept-lead">{concept.lead}</div>
+        <div className="concept-lead"><KeepTail text={concept.lead} /></div>
       </div>
       <aside>
         <span>核心命题</span>
-        <blockquote>{concept.proposition}</blockquote>
+        <blockquote><KeepTail text={concept.proposition} /></blockquote>
         <small>{concept.tag}</small>
       </aside>
     </header>
@@ -47,19 +52,19 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
       <div className="concept-relation" aria-label={`${concept.title}的概念关系`}>
         {concept.relation.map((item, relationIndex) => <div key={item}><span>0{relationIndex + 1}</span><strong>{item}</strong>{relationIndex < concept.relation.length - 1 && <b>→</b>}</div>)}
       </div>
-      <div className="concept-sections">{concept.sections.map((section, sectionIndex) => <article key={section.title}><span>0{sectionIndex + 1} · {section.label}</span><h3>{section.title}</h3><p>{section.text}</p></article>)}</div>
+      <div className="concept-sections">{concept.sections.map((section, sectionIndex) => <article key={section.title}><span>0{sectionIndex + 1} · {section.label}</span><h3>{section.title}</h3><p><KeepTail text={section.text} /></p></article>)}</div>
     </section>
 
     <section className="concept-formal">
       <div className="concept-shell">
         <header><p>FORMAL BASIS</p><h2>定义、定律与推导位置</h2></header>
-        <div>{concept.formal.map((item) => <article key={item.no}><span>{item.no}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+        <div>{concept.formal.map((item) => <article key={item.no}><span>{item.no}</span><h3>{item.title}</h3><p><KeepTail text={item.text} /></p></article>)}</div>
       </div>
     </section>
 
     <section className="concept-sources concept-shell">
       <header><p>REFERENCES</p><h2>主要引文与正式来源</h2><span>网站建立阅读路径；正式定义、定理与编号以专著和原始论文为准。</span></header>
-      <div>{concept.sources.map((source, sourceIndex) => <a key={`${source.label}-${sourceIndex}`} href={source.href} target={source.href.startsWith("/") ? undefined : "_blank"} rel={source.href.startsWith("/") ? undefined : "noreferrer"}><span>[{sourceIndex + 1}]</span><div><strong>{source.label}</strong><small>{source.detail}</small></div><b>↗</b></a>)}</div>
+      <div>{concept.sources.map((source, sourceIndex) => <a key={`${source.label}-${sourceIndex}`} href={source.href} target={source.href.startsWith("/") ? undefined : "_blank"} rel={source.href.startsWith("/") ? undefined : "noreferrer"}><span>[{sourceIndex + 1}]</span><div><strong>{source.label}</strong><small><KeepTail text={source.detail} /></small></div><b>↗</b></a>)}</div>
     </section>
 
     <footer className="concept-footer">
