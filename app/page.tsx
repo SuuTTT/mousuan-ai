@@ -9,8 +9,9 @@ const t = (value: Bi, lang: Lang) => value[lang === "zh" ? 0 : 1];
 const themes = [
   {
     no: "01",
+    indexLabel: ["信息的数学原理", "Mathematical principles of information"] as Bi,
     question: ["信息是什么？信息的数学原理是什么？", "What is information, and what are its mathematical principles?"] as Bi,
-    title: ["信息的公理化科学原理", "Axiomatized scientific principles of information"] as Bi,
+    title: ["信息的数学原理", "Mathematical principles of information"] as Bi,
     answer: ["层谱抽象 · 信息演算 · 信息解码 · 信息生成", "Hierarchical abstraction · information calculus · decoding · generation"] as Bi,
     statement: ["建立信息的公理化科学原理，为人工智能科学建立数学基础。", "Establish axiomatized scientific principles of information as the mathematical foundation of artificial intelligence science."] as Bi,
     dimension: ["信息原理", "INFORMATION PRINCIPLES"] as Bi,
@@ -18,6 +19,7 @@ const themes = [
   },
   {
     no: "02",
+    indexLabel: ["智能的实质", "Essence of intelligence"] as Bi,
     question: ["智能是什么？", "What is intelligence?"] as Bi,
     title: ["智能的实质", "The essence of intelligence"] as Bi,
     answer: ["智能 = 信息", "Intelligence = Information"] as Bi,
@@ -27,6 +29,7 @@ const themes = [
   },
   {
     no: "03",
+    indexLabel: ["智能的策略", "Strategy of intelligence"] as Bi,
     question: ["智能从哪里来？", "Where does intelligence come from?"] as Bi,
     title: ["智能的策略", "The strategy of intelligence"] as Bi,
     answer: ["智能 = 谋算", "Intelligence = MouSuan"] as Bi,
@@ -36,6 +39,7 @@ const themes = [
   },
   {
     no: "04",
+    indexLabel: ["智能的模型", "Model of intelligence"] as Bi,
     question: ["怎样实现智能？", "How can intelligence be realized?"] as Bi,
     title: ["智能的模型", "The model of intelligence"] as Bi,
     answer: ["孙子模型：智能的科学—工程统一模型\n智：人工智能科学原理\n能：人工智能工程原理", "Sun Tzu Model: a unified scientific–engineering model of intelligence\nZhi: scientific principles of AI\nNeng: engineering principles of AI"] as Bi,
@@ -61,7 +65,7 @@ const ui = {
     lead: "建立信息的公理化科学原理，并从数学实质、机器原理和实现模型三个维度回答智能的基本科学问题。孙子模型统一人工智能的科学原理与工程原理：智是科学原理，能是工程原理。",
     explore: "查看四个问题",
     reference: "查看关键原理",
-    guide: "四个问题",
+    guide: "四个回答",
     sectionLabel: "ULTIMATE GOALS OF AI SCIENCE",
     sectionTitle: "四个问题及其基本回答",
     sectionSummary: "信息的公理化科学原理构成数学基础；其后三项从数学实质、机器原理和实现模型三个维度回答智能的基本科学问题。",
@@ -78,7 +82,7 @@ const ui = {
     lead: "The theory establishes axiomatized scientific principles of information, then answers intelligence through its mathematical essence, machine principle, and realization model. The Sun Tzu Model unifies the scientific and engineering principles of AI: Zhi is science; Neng is engineering.",
     explore: "Explore the four questions",
     reference: "Open key principles",
-    guide: "Four questions",
+    guide: "Four answers",
     sectionLabel: "ULTIMATE GOALS OF AI SCIENCE",
     sectionTitle: "Four Questions and Their Fundamental Answers",
     sectionSummary: "Axiomatized scientific principles of information provide the mathematical foundation; the following three answers address intelligence through its mathematical essence, machine principle, and realization model.",
@@ -104,7 +108,7 @@ export default function Home() {
   return <main className="questions-home">
     <nav className="questions-nav"><a className="questions-brand" href="#top"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div className="questions-nav-links">{c.nav.map(([label, href]) => <a href={href} key={label}>{label}</a>)}</div><div className="questions-lang"><button className={lang === "zh" ? "active" : ""} onClick={() => changeLang("zh")}>中</button><span>/</span><button className={lang === "en" ? "active" : ""} onClick={() => changeLang("en")}>EN</button></div></nav>
 
-    <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#themes">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗</b></a></div></div><aside><p>{c.guide}</p>{themes.map((theme) => <a href={theme.href} key={theme.no}><span>{theme.no}</span><strong>{t(theme.question, lang)}</strong></a>)}</aside></div></section>
+    <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#themes">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗</b></a></div></div><aside><p>{c.guide}</p>{themes.map((theme) => <a href={theme.href} key={theme.no}><span>{theme.no}</span><strong>{t(theme.indexLabel, lang)}</strong></a>)}</aside></div></section>
 
     <section id="themes" className="questions-themes questions-shell"><span id="hierarchy" className="questions-anchor" /><header><p>{c.sectionLabel}</p><h2>{c.sectionTitle}</h2><span>{c.sectionSummary}</span></header><div className="questions-theme-list">{themes.map((theme) => <a href={theme.href} key={theme.no}><div className="questions-theme-meta"><span>{theme.no}</span><small>{t(theme.dimension, lang)}</small></div><div className="questions-theme-question"><p>{t(theme.question, lang)}</p><h3>{t(theme.title, lang)}</h3></div><div className="questions-theme-answer"><strong>{t(theme.answer, lang).split("\n").map((line) => <span key={line} style={{ display: "block" }}>{line}</span>)}</strong><p>{t(theme.statement, lang)}</p></div><b>{c.enter} ↗</b></a>)}</div></section>
 

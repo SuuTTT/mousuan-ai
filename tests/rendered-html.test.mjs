@@ -33,6 +33,10 @@ test("server-renders the public knowledge hierarchy", async () => {
   const html = await response.text();
   assert.match(html, /人工智能科学的终极目标/);
   assert.match(html, /四个基本科学问题/);
+  assert.match(html, /四个回答/);
+  assert.match(html, /信息的数学原理/);
+  assert.match(html, /信息原理/);
+  assert.doesNotMatch(html, /信息的数学基础|信息基础/);
   for (const question of ["信息是什么？信息的数学原理是什么？", "智能是什么？", "智能从哪里来？", "怎样实现智能？"]) {
     assert.ok(html.includes(question));
   }
@@ -56,6 +60,8 @@ test("server-renders the public knowledge hierarchy", async () => {
 test("English homepage opens with the requested information-world statement", async () => {
   const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
   assert.match(source, /kicker: "Mathematical principles of the information world"/);
+  assert.match(source, /indexLabel: \["信息的数学原理", "Mathematical principles of information"\]/);
+  assert.doesNotMatch(source, /Mathematical foundation of information|Information foundations?/i);
 });
 
 test("strategy theme uses the explicit strategy statement and one earliest-book link", async () => {
