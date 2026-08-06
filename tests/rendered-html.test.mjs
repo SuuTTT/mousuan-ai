@@ -35,14 +35,17 @@ test("server-renders the public knowledge hierarchy", async () => {
   for (const question of ["信息是什么？信息的数学原理是什么？", "智能是什么？", "智能从哪里来？", "怎样实现智能？"]) {
     assert.ok(html.includes(question));
   }
-  assert.match(html, /智能论题：智能 = 信息/);
+  assert.match(html, /智能 = 信息/);
+  assert.match(html, /智能 = 谋算/);
   assert.match(html, /智能的策略就是谋和算/);
-  assert.match(html, /中文“智能”已经蕴含着这个答案/);
+  assert.match(html, /谋体系结构和算体系结构/);
+  assert.match(html, /智：人工智能科学原理/);
+  assert.match(html, /能：人工智能工程原理/);
+  assert.match(html, /数学实质、机器原理和实现模型三个维度/);
   assert.doesNotMatch(html, /现实世界的完备建模|COMPLETELY MODELING|complete-model/);
   assert.match(html, /href="\/themes\/information"/);
   assert.doesNotMatch(html, /href="#theme-01"|id="theme-01"/);
   assert.doesNotMatch(html, /questions-books|主要著作/);
-  assert.doesNotMatch(html, /智能 = 谋算/);
   assert.doesNotMatch(html, /先给出答案|首页只呈现|简单首页|分层展开|第一层|第二层|第三层|2—3 LEVELS/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
 });

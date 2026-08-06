@@ -20,8 +20,8 @@ const themes = [
     no: "02",
     question: ["智能是什么？", "What is intelligence?"] as Bi,
     title: ["智能的实质", "The essence of intelligence"] as Bi,
-    answer: ["智能论题：智能 = 信息", "Intelligence Thesis: Intelligence = Information"] as Bi,
-    statement: ["一个主体的智能就是该主体的信息；智能论题揭示智能的数学实质。", "The intelligence of a subject is that subject’s information; the Intelligence Thesis reveals its mathematical essence."] as Bi,
+    answer: ["智能 = 信息", "Intelligence = Information"] as Bi,
+    statement: ["智能论题揭示智能的数学实质：一个主体的智能就是该主体的信息。", "The Intelligence Thesis reveals the mathematical essence of intelligence: the intelligence of a subject is that subject’s information."] as Bi,
     dimension: ["数学实质", "MATHEMATICAL ESSENCE"] as Bi,
     href: "/themes/intelligence-thesis",
   },
@@ -29,17 +29,17 @@ const themes = [
     no: "03",
     question: ["智能从哪里来？", "Where does intelligence come from?"] as Bi,
     title: ["智能的策略", "The strategy of intelligence"] as Bi,
-    answer: ["智能策略原理：智能的策略就是谋和算", "Strategy Principle: the strategies of intelligence are Mou and Suan"] as Bi,
-    statement: ["智能来源于谋和算；任何一个智能策略都由一系列谋策略和算策略构成。", "Intelligence arises from Mou and Suan; every intelligent strategy is composed of a sequence of Mou and Suan strategies."] as Bi,
-    dimension: ["策略来源", "STRATEGIC ORIGIN"] as Bi,
+    answer: ["智能 = 谋算", "Intelligence = MouSuan"] as Bi,
+    statement: ["智能策略原理：智能的策略就是谋和算。任何一个智能策略无非是谋或者算；一系列谋策略和算策略构成一个智能策略。构建智能体系的两个体系结构是谋体系结构和算体系结构，由此揭示智能机构建的机器原理。", "Strategy Principle: the strategies of intelligence are Mou and Suan. Every elementary intelligent strategy is either Mou or Suan; a sequence of Mou and Suan strategies forms an intelligent strategy. An intelligent system therefore has a Mou architecture and a Suan architecture, revealing the machine principle for constructing intelligent agents."] as Bi,
+    dimension: ["机器原理", "MACHINE PRINCIPLE"] as Bi,
     href: "/themes/strategy-principle",
   },
   {
     no: "04",
     question: ["怎样实现智能？", "How can intelligence be realized?"] as Bi,
     title: ["智能的模型", "The model of intelligence"] as Bi,
-    answer: ["孙子模型：智是科学原理，能是工程原理", "Sun Tzu Model: Zhi is science; Neng is engineering"] as Bi,
-    statement: ["“智”包括学习、自我意识与博弈／谋算；“能”包括决策、行动与系统验证。中文“智能”已经蕴含着这个答案。", "Zhi comprises learning, self-awareness, and contest/MouSuan; Neng comprises decision, action, and system verification. The Chinese word zhineng already contains this answer."] as Bi,
+    answer: ["中文“智能”\n智：人工智能科学原理\n能：人工智能工程原理", "Chinese zhineng\nZhi: scientific principles of AI\nNeng: engineering principles of AI"] as Bi,
+    statement: ["孙子模型给出怎样实现智能的模型：“智”包括学习、自我意识与博弈／谋算；“能”包括决策、行动与系统验证。", "The Sun Tzu Model explains how intelligence is realized: Zhi comprises learning, self-awareness, and contest/MouSuan; Neng comprises decision, action, and system verification."] as Bi,
     dimension: ["实现模型", "REALISATION MODEL"] as Bi,
     href: "/themes/sun-tzu-model",
   },
@@ -58,12 +58,13 @@ const ui = {
     nav: [["基本问题", "#themes"], ["五大模块", "#modules"], ["理论索引", "/framework"], ["定义定理", "/theorems"], ["三部专著", "/books"], ["团队", "/team"]],
     kicker: "人工智能科学的终极目标",
     title: "人工智能的\n四个基本科学问题",
-    lead: "建立信息的公理化科学原理，并从实质、来源和实现三个维度回答智能的基本科学问题。中文“智能”已经蕴含实现模型：智是科学原理，能是工程原理。",
+    lead: "建立信息的公理化科学原理，并从数学实质、机器原理和实现模型三个维度回答智能的基本科学问题。中文“智能”已经蕴含实现模型：智是科学原理，能是工程原理。",
     explore: "查看四个问题",
     reference: "查看关键原理",
     guide: "四个问题",
     sectionLabel: "ULTIMATE GOALS OF AI SCIENCE",
     sectionTitle: "四个问题及其基本回答",
+    sectionSummary: "信息的公理化科学原理构成数学基础；其后三项从数学实质、机器原理和实现模型三个维度回答智能的基本科学问题。",
     enter: "进入主题",
     modulesLabel: "RESEARCH PROGRAMMES",
     modulesTitle: "五大研究模块",
@@ -74,12 +75,13 @@ const ui = {
     nav: [["Fundamental questions", "#themes"], ["Five modules", "#modules"], ["Principle index", "/framework"], ["Statements", "/theorems"], ["Books", "/books"], ["Team", "/team"]],
     kicker: "The ultimate goals of artificial intelligence science",
     title: "Four fundamental scientific\nquestions of artificial intelligence",
-    lead: "The theory establishes axiomatized scientific principles of information, then answers intelligence through its essence, origin, and realization. The Chinese word zhineng already contains the model: Zhi is science; Neng is engineering.",
+    lead: "The theory establishes axiomatized scientific principles of information, then answers intelligence through its mathematical essence, machine principle, and realization model. The Chinese word zhineng already contains the model: Zhi is science; Neng is engineering.",
     explore: "Explore the four questions",
     reference: "Open key principles",
     guide: "Four questions",
     sectionLabel: "ULTIMATE GOALS OF AI SCIENCE",
     sectionTitle: "Four Questions and Their Fundamental Answers",
+    sectionSummary: "Axiomatized scientific principles of information provide the mathematical foundation; the following three answers address intelligence through its mathematical essence, machine principle, and realization model.",
     enter: "Open theme",
     modulesLabel: "RESEARCH PROGRAMMES",
     modulesTitle: "Five research modules",
@@ -104,7 +106,7 @@ export default function Home() {
 
     <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#themes">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗</b></a></div></div><aside><p>{c.guide}</p>{themes.map((theme) => <a href={theme.href} key={theme.no}><span>{theme.no}</span><strong>{t(theme.question, lang)}</strong></a>)}</aside></div></section>
 
-    <section id="themes" className="questions-themes questions-shell"><span id="hierarchy" className="questions-anchor" /><header style={{ gridTemplateColumns: "1fr" }}><p>{c.sectionLabel}</p><h2>{c.sectionTitle}</h2></header><div className="questions-theme-list">{themes.map((theme) => <a href={theme.href} key={theme.no}><div className="questions-theme-meta"><span>{theme.no}</span><small>{t(theme.dimension, lang)}</small></div><div className="questions-theme-question"><p>{t(theme.question, lang)}</p><h3>{t(theme.title, lang)}</h3></div><div className="questions-theme-answer"><strong>{t(theme.answer, lang)}</strong><p>{t(theme.statement, lang)}</p></div><b>{c.enter} ↗</b></a>)}</div></section>
+    <section id="themes" className="questions-themes questions-shell"><span id="hierarchy" className="questions-anchor" /><header><p>{c.sectionLabel}</p><h2>{c.sectionTitle}</h2><span>{c.sectionSummary}</span></header><div className="questions-theme-list">{themes.map((theme) => <a href={theme.href} key={theme.no}><div className="questions-theme-meta"><span>{theme.no}</span><small>{t(theme.dimension, lang)}</small></div><div className="questions-theme-question"><p>{t(theme.question, lang)}</p><h3>{t(theme.title, lang)}</h3></div><div className="questions-theme-answer"><strong>{t(theme.answer, lang).split("\n").map((line) => <span key={line} style={{ display: "block" }}>{line}</span>)}</strong><p>{t(theme.statement, lang)}</p></div><b>{c.enter} ↗</b></a>)}</div></section>
 
     <section id="modules" className="questions-modules"><div className="questions-shell"><header><p>{c.modulesLabel}</p><h2>{c.modulesTitle}</h2><span>{c.modulesText}</span></header><div>{homeModules.map(([title, text, href], index) => <a href={href} key={href}><span>0{index + 1}</span><strong>{t(title, lang)}</strong><p>{t(text, lang)}</p><b>↗</b></a>)}</div><a className="questions-team" href="/team"><span>{lang === "zh" ? "研究主体" : "RESEARCH TEAM"}</span><strong>{lang === "zh" ? "李昂生教授团队" : "Professor Angsheng Li’s team"}</strong><b>→</b></a></div></section>
 
