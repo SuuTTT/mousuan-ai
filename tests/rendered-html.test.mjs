@@ -34,7 +34,7 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(html, /信息的数学基础/);
   assert.match(html, /智能 = 信息/);
   assert.match(html, /智能的策略就是谋和算/);
-  assert.match(html, /现实世界的完备建模/);
+  assert.doesNotMatch(html, /现实世界的完备建模|COMPLETELY MODELING|complete-model/);
   assert.match(html, /href="\/themes\/information"/);
   assert.doesNotMatch(html, /href="#theme-01"|id="theme-01"/);
   assert.doesNotMatch(html, /questions-books|主要著作/);
