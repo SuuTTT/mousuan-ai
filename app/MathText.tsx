@@ -131,7 +131,7 @@ export function MathText({ text }: { text: string }) {
 // Keep prose outside MathML. The expression branches deliberately accept only
 // mathematical tokens, so an equation followed by a Chinese explanation stops
 // at the equation boundary instead of turning the whole sentence into math.
-const academicExpressionPattern = /([A-Za-zΑ-ω𝒯][A-Za-z0-9Α-ω𝒯₀-₉ₓᵧᵢⱼₙᵀᵏ¹²]*\s*(?:\([A-Za-z0-9Α-ω𝒯₀-₉ₓᵧᵢⱼₙᵀᵏ¹²\s,;:+−\-×·/.∑∏∫√|∥∅ℜˆ⟨⟩∗]*\)|\{[A-Za-z0-9Α-ω𝒯₀-₉ₓᵧᵢⱼₙᵀᵏ¹²\s,;:+−\-×·/.∑∏∫√|∥∅ℜˆ⟨⟩∗]*\})?\s*(?:=|≥|≤|⩾|∈|⊂|⊆|≈|≠|>|<)\s*[A-Za-z0-9Α-ω𝒯₀-₉ₓᵧᵢⱼₙᵀᵏ¹²\s(){}\[\],;:+−\-×·/.∑∏∫√=≥≤⩾∈⊂⊆≈≠<>|∥∅ℜˆ⟨⟩∗]{1,150}|[A-Za-z][₀-₉](?:\s*[,，]\s*[A-Za-z][₀-₉])+(?:\s*[,，]\s*…\s*[,，]\s*[A-Za-z]ₙ)?|[A-ZpHCDI]\([A-Za-z0-9Α-ω𝒯₀-₉ₓᵧᵢⱼₙᵀᵏ¹²\s,;:+−\-×·/.∑∏∫√|∥∅ℜˆ⟨⟩∗]{1,55}\)|(?<![A-Za-z])[A-Za-zΑ-ω](?:[₀-₉ₓᵧᵢⱼₙᵀᵏ¹²])?(?![A-Za-z]))/g;
+const academicExpressionPattern = /([A-Za-zΑ-ω𝒯][A-Za-z0-9Α-ω𝒯₀-₉ₓᵧᵢⱼₙᵀᵏ¹²]*\s*(?:\([A-Za-z0-9Α-ω𝒯₀-₉ₓᵧᵢⱼₙᵀᵏ¹²\s,;:+−\-×·/.…∑∏∫√|∥∅ℜˆ⟨⟩∗]*\)|\{[A-Za-z0-9Α-ω𝒯₀-₉ₓᵧᵢⱼₙᵀᵏ¹²\s,;:+−\-×·/.…∑∏∫√|∥∅ℜˆ⟨⟩∗]*\})?\s*(?:=|≥|≤|⩾|∈|⊂|⊆|≈|≠|>|<)\s*[A-Za-z0-9Α-ω𝒯₀-₉ₓᵧᵢⱼₙᵀᵏ¹²\s(){}\[\],;:+−\-×·/.…∑∏∫√=≥≤⩾∈⊂⊆≈≠<>|∥∅ℜˆ⟨⟩∗]{1,150}|[A-Za-z][₀-₉](?:\s*[,，]\s*[A-Za-z][₀-₉])+(?:\s*[,，]\s*…\s*[,，]\s*[A-Za-z]ₙ)?|[A-ZpHCDI]\([A-Za-z0-9Α-ω𝒯₀-₉ₓᵧᵢⱼₙᵀᵏ¹²\s,;:+−\-×·/.…∑∏∫√|∥∅ℜˆ⟨⟩∗]{1,55}\)|(?<![A-Za-z])[A-Za-zΑ-ω](?:[₀-₉ₓᵧᵢⱼₙᵀᵏ¹²])?(?![A-Za-z]))/g;
 
 export function AcademicMathText({ text }: { text: string }) {
   const normalised = normaliseAcademicOCR(text);
