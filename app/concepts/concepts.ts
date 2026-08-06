@@ -89,7 +89,6 @@ export const concepts: Concept[] = [
     ],
     sources: [
       { label: "《人工智能科学——智能的数学原理》", detail: "定义 5.3、5.6 与 §5.1.4 · 物理性质和信息性质", href: "/books#artificial-intelligence-science" },
-      { label: "《孙子兵法的人工智能原理》", detail: "第15章 · 物质与信息结合的进一步展开", href: "/sun-tzu-ai-principles.pdf#page=395" },
     ],
   },
   {
@@ -128,8 +127,6 @@ export const concepts: Concept[] = [
     ],
     sources: [
       { label: "《人工智能科学——智能的数学原理》", detail: "定义 8.2、定义 9.3–9.4 · 编码树与结构熵", href: "/books#artificial-intelligence-science" },
-      { label: "Li & Pan (2016)", detail: "Structural Information and Dynamical Complexity of Networks", href: "https://ieeexplore.ieee.org/iel7/18/7473802/07456290.pdf" },
-      { label: "Structural Information Learning Machinery", detail: "结构信息学习 · arXiv", href: "https://arxiv.org/abs/2001.09637" },
     ],
   },
   {
@@ -150,7 +147,6 @@ export const concepts: Concept[] = [
     ],
     sources: [
       { label: "《人工智能科学——智能的数学原理》", detail: "定义 10.1、定理 10.9 与定义 12.9 · 解码、压缩与层谱", href: "/books#artificial-intelligence-science" },
-      { label: "Zeng et al. (2025)", detail: "Hierarchical Decision Making Based on Structural Information Principles", href: "https://jmlr.org/papers/volume26/24-1184/24-1184.pdf" },
     ],
   },
   {
@@ -189,7 +185,6 @@ export const concepts: Concept[] = [
     ],
     sources: [
       { label: "《人工智能科学——智能的数学原理》", detail: "定义 28.5 · 博弈的科学方法：谋与算", href: "/books#artificial-intelligence-science" },
-      { label: "《孙子兵法的人工智能原理》", detail: "命题 15.10、定义 15.12 与 §20.6.19 · 智能策略和谋算双脑的展开", href: "/sun-tzu-ai-principles.pdf#page=411" },
     ],
   },
   {

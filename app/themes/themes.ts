@@ -18,7 +18,7 @@ export const themes: Theme[] = [
   {
     slug: "information",
     no: "01",
-    question: "信息是什么？信息的数学原理是什么？",
+    question: "信息的数学基础",
     title: "信息与信息的数学原理",
     englishTitle: "Information and Its Mathematical Principles",
     dimension: "智能的数学基础",
@@ -31,9 +31,7 @@ export const themes: Theme[] = [
       { label: "基本原理", title: "解码与生成", text: "解码策略使不确定性转化为确定性；生成策略使确定性转化为不确定性，二者都是可度量的信息过程。" },
     ],
     basis: [
-      { label: "《人工智能科学——智能的数学原理》", detail: "§4.6.2–4.6.3 · 信息科学与信息的数学原理", href: "/books#artificial-intelligence-science" },
-      { label: "《人工智能科学——智能的数学原理》", detail: "第8–10章 · 编码树、结构熵与解码信息原理", href: "/books#artificial-intelligence-science" },
-      { label: "《人工智能科学——智能的数学原理》", detail: "定理 10.9 · 压缩／解码原理", href: "/books#artificial-intelligence-science" },
+      { label: "《人工智能科学——智能的数学原理》", detail: "§4.6.2–4.6.3、定义 8.2、定义 10.1 与定理 10.9", href: "/books#artificial-intelligence-science" },
     ],
     deeper: [
       { title: "信息世界", text: "信息性质与信息世界", href: "/concepts/information-world" },
@@ -45,7 +43,7 @@ export const themes: Theme[] = [
   {
     slug: "intelligence-thesis",
     no: "02",
-    question: "智能是什么？",
+    question: "智能的实质",
     title: "智能论题",
     englishTitle: "Intelligence Thesis",
     dimension: "智能的数学实质",
@@ -58,8 +56,7 @@ export const themes: Theme[] = [
       { label: "解码", title: "解码信息", text: "回答问题、发现知识和消除不确定性，使嵌入系统中的信息成为主体可用的知识。" },
     ],
     basis: [
-      { label: "《人工智能科学——智能的数学原理》", detail: "定义 34.5 · 智能论题（Intelligence Thesis）", href: "/books#artificial-intelligence-science" },
-      { label: "《人工智能科学——智能的数学原理》", detail: "定义 34.6 · 人工智能基本模型", href: "/books#artificial-intelligence-science" },
+      { label: "《人工智能科学——智能的数学原理》", detail: "定义 34.5–34.6 · 智能论题与人工智能基本模型", href: "/books#artificial-intelligence-science" },
     ],
     deeper: [
       { title: "智能论题", text: "智能、信息与智能体", href: "/concepts/intelligence-thesis" },
@@ -70,13 +67,13 @@ export const themes: Theme[] = [
   {
     slug: "strategy-principle",
     no: "03",
-    question: "智能从哪里来？",
+    question: "智能的策略",
     title: "智能的策略原理",
     englishTitle: "Strategy Principle of Intelligence",
     dimension: "智能机构建的机器原理",
-    formula: "智能 = 谋算",
-    lead: "智能来源于谋和算。谋和算是两类基本的智能策略；任何一个智能策略由一系列谋策略和一系列算策略构成。",
-    interpretation: "在策略维度，书中的形式表达是“智能策略 = 谋 + 算”。谋与算可分、可合，由此决定智能体的谋体系结构与算体系结构。",
+    formula: "智能的策略就是谋和算",
+    lead: "智能的策略就是谋和算。谋和算是两类基本的智能策略；任何一个智能策略由一系列谋策略和一系列算策略构成。",
+    interpretation: "谋与算可分、可合：谋负责全局的层谱抽象与跨层推理，算负责同一层谱内的局部逻辑推理，由此决定智能体的谋体系结构与算体系结构。",
     parts: [
       { label: "谋 · 全局", title: "层谱抽象与跨层推理", text: "谋进行层谱抽象的全局认知，以及跨越抽象层谱的演算、推理与优化。" },
       { label: "算 · 局部", title: "逻辑推理与局部求解", text: "算进行分而治之分析，以及同一抽象层谱的演算、逻辑推理与优化。" },
@@ -84,8 +81,6 @@ export const themes: Theme[] = [
     ],
     basis: [
       { label: "《人工智能科学——智能的数学原理》", detail: "定义 28.5 · 博弈的科学方法：谋与算", href: "/books#artificial-intelligence-science" },
-      { label: "《孙子兵法的人工智能原理》", detail: "命题 15.10、定义 15.12 · 智能策略与谋算的定义", href: "/sun-tzu-ai-principles.pdf#page=411" },
-      { label: "《孙子兵法的人工智能原理》", detail: "§20.6.19、公式 (23.3) · 谋算策略与“智能策略 = 谋 + 算”", href: "/sun-tzu-ai-principles.pdf#page=543" },
     ],
     deeper: [
       { title: "谋算策略", text: "谋、算及双脑体系结构", href: "/concepts/mousuan-strategy" },
@@ -96,7 +91,7 @@ export const themes: Theme[] = [
   {
     slug: "sun-tzu-model",
     no: "04",
-    question: "怎样实现智能？",
+    question: "智能的模型",
     title: "孙子模型",
     englishTitle: "Sun Tzu Model",
     dimension: "智能的实现模型",
@@ -108,9 +103,7 @@ export const themes: Theme[] = [
       { label: "能 · 工程原理", title: "决策 · 行动 · 系统验证", text: "对策略做出决策，执行行动，并比较实际效果与预期结果，形成可验证的工程闭环。" },
     ],
     basis: [
-      { label: "《人工智能科学——智能的数学原理》", detail: "定义 34.3–34.4 · 人工智能科学原理与孙子模型", href: "/books#artificial-intelligence-science" },
-      { label: "《人工智能科学——智能的数学原理》", detail: "命题 34.2 · 智能的完备策略", href: "/books#artificial-intelligence-science" },
-      { label: "《孙子兵法的人工智能原理》", detail: "孙子五大定律 · 物质与信息结合的战争科学原理", href: "/sun-tzu-ai-principles.pdf#page=567" },
+      { label: "《人工智能科学——智能的数学原理》", detail: "命题 34.2、定义 34.3–34.4 · 智能的完备策略、人工智能科学原理与孙子模型", href: "/books#artificial-intelligence-science" },
     ],
     deeper: [
       { title: "智：科学原理", text: "学习、自我意识与博弈／谋算", href: "/concepts/scientific-principles" },

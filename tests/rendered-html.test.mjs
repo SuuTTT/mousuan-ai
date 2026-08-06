@@ -30,12 +30,25 @@ test("server-renders the public knowledge hierarchy", async () => {
   const html = await response.text();
   assert.match(html, /信息与智能的/);
   assert.match(html, /四个基本问题/);
-  assert.match(html, /信息是什么？信息的数学原理是什么？/);
+  assert.match(html, /信息的数学基础/);
   assert.match(html, /智能 = 信息/);
-  assert.match(html, /智能 = 谋算/);
+  assert.match(html, /智能的策略就是谋和算/);
   assert.match(html, /现实世界的完备建模/);
   assert.match(html, /href="\/themes\/information"/);
+  assert.doesNotMatch(html, /href="#theme-01"|id="theme-01"/);
+  assert.doesNotMatch(html, /questions-books|主要著作/);
+  assert.doesNotMatch(html, /智能 = 谋算/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
+});
+
+test("strategy theme uses the explicit strategy statement and one earliest-book link", async () => {
+  const response = await render("/themes/strategy-principle");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /智能的策略就是谋和算/);
+  assert.equal(html.match(/href="\/books#artificial-intelligence-science"/g)?.length, 1);
+  assert.doesNotMatch(html, /智能 = 谋算/);
 });
 
 test("server-renders the theorem framework with source references", async () => {
@@ -58,5 +71,5 @@ test("server-renders the Sun Tzu model with primary-source order and five laws",
   assert.match(html, /定义 34\.3–34\.4/);
   assert.match(html, /孙子五大定律/);
   assert.match(html, /战争能力 = 物质 × 信息²/);
-  assert.ok(html.indexOf("人工智能科学") < html.indexOf("孙子兵法的人工智能原理"));
+  assert.equal(html.match(/href="\/books#artificial-intelligence-science"/g)?.length, 1);
 });
