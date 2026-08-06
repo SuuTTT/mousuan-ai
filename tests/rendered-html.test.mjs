@@ -96,6 +96,10 @@ test("formulae are emitted as semantic mathematical markup", async () => {
   assert.match(html, /<math[^>]+aria-label="H\(A\) = minₜ Hₜ\(A\)"/);
   assert.match(html, /<msub>/);
   assert.match(html, /class="math-inline"/);
+
+  const mathCss = await readFile(new URL("../app/math.css", import.meta.url), "utf8");
+  assert.match(mathCss, /\.math-inline mtext[\s\S]*Noto Sans SC/);
+  assert.doesNotMatch(mathCss, /\.math-inline mtext[\s\S]*Noto Serif SC/);
 });
 
 test("site-authored cognition terminology is consistent across public sections", async () => {
