@@ -29,6 +29,6 @@ export default async function ThemePage({ params }: { params: Promise<{ slug: st
 
     <section className="theme-deeper theme-shell"><header><p>DEEPER READING</p><h2>继续深入</h2></header><div>{theme.deeper.map((item) => <a href={item.href} key={item.title}><span>{item.title}</span><p>{item.text}</p><b>↗︎</b></a>)}</div></section>
 
-    <footer className="theme-footer"><div className="theme-shell"><a href={previous ? `/themes/${previous.slug}` : "/#themes"}><span>← 上一主题</span><strong>{previous?.title ?? "四个基本问题"}</strong></a><a href="/"><span>返回</span><strong>研究主页</strong></a><a href={next ? `/themes/${next.slug}` : "/framework"}><span>下一主题 →</span><strong>{next?.title ?? "理论索引"}</strong></a></div></footer>
+    <footer className="theme-footer"><div className="theme-shell"><a href={previous ? `/themes/${previous.slug}` : "/#themes"}><span>← 上一主题</span><strong>{previous?.title ?? "四个问题"}</strong></a><a href="/"><span>返回</span><strong>研究主页</strong></a><a href={next ? `/themes/${next.slug}` : "/framework"}><span>下一主题 →</span><strong>{next?.title ?? "理论索引"}</strong></a></div></footer>
   </main>;
 }

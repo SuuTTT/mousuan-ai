@@ -32,7 +32,9 @@ test("server-renders the public knowledge hierarchy", async () => {
 
   const html = await response.text();
   assert.match(html, /人工智能科学的终极目标/);
-  assert.match(html, /四个基本科学问题/);
+  assert.match(html, /四个科学问题/);
+  assert.match(html, /四个问题及其回答/);
+  assert.doesNotMatch(html, /基本问题|基本回答/);
   assert.match(html, /四个回答/);
   assert.match(html, /信息的数学原理/);
   assert.match(html, /信息原理/);

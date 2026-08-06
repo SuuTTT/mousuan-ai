@@ -21,7 +21,7 @@ export default async function ResearchModulePage({ params }: { params: Promise<{
 
     <section className="module-content module-shell"><header><p>MODULE STRUCTURE</p><h2>研究分支</h2><span>各研究分支共同构成模块的概念结构、方法体系与研究对象。</span></header><div className="module-list">{module.items.map((item) => <article id={item.id} key={item.id}><div><span>{item.no}</span><small>{item.english}</small></div><section><h3>{item.title}</h3><p>{item.text}</p></section><a href={item.href}>深入阅读 <b>↗︎</b></a></article>)}</div></section>
 
-    <section className="module-return"><div className="module-shell"><p>基本问题与研究模块是两种互补入口</p><div><a href="/#themes"><span>FOUR QUESTIONS</span><strong>返回四个基本问题</strong><b>→</b></a><a href="/framework"><span>PRINCIPLE INDEX</span><strong>查看关键原理索引</strong><b>→</b></a></div></div></section>
+    <section className="module-return"><div className="module-shell"><p>四个问题与研究模块是两种互补入口</p><div><a href="/#themes"><span>FOUR QUESTIONS</span><strong>返回四个问题</strong><b>→</b></a><a href="/framework"><span>PRINCIPLE INDEX</span><strong>查看关键原理索引</strong><b>→</b></a></div></div></section>
 
     <footer className="module-footer"><div className="module-shell"><a href={previous ? `/modules/${previous.slug}` : "/#modules"}><span>← 上一模块</span><strong>{previous?.shortTitle ?? "五大模块"}</strong></a><a href="/team"><span>研究主体</span><strong>李昂生教授团队</strong></a><a href={next ? `/modules/${next.slug}` : "/team"}><span>下一模块 →</span><strong>{next?.shortTitle ?? "团队介绍"}</strong></a></div></footer>
   </main>;
