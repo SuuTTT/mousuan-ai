@@ -6,49 +6,42 @@ type Lang = "zh" | "en";
 type Bi = readonly [zh: string, en: string];
 const t = (value: Bi, lang: Lang) => value[lang === "zh" ? 0 : 1];
 
-const levels = [
+const themes = [
   {
     no: "01",
-    stage: ["认识基础", "FOUNDATION"] as Bi,
-    title: ["现实世界的完整建模", "Complete modelling of reality"] as Bi,
-    summary: ["现实世界的每一个对象都有物理性质和信息性质；两者联合起来构成该对象的完备知识。", "Every object in reality has physical and informational properties; together they form complete knowledge of that object."] as Bi,
-    nodes: [
-      [["物理世界", "Physical world"], ["一个对象的物理性质由该对象自己完全决定；物理世界的科学范式是分而治之。", "An object's physical properties are completely determined by the object itself; divide-and-conquer is the scientific paradigm of the physical world."], ["定义 15.1", "DEFINITION 15.1"], "/concepts/physical-world"],
-      [["信息世界", "Information world"], ["对象的信息性质包括存在性、作用和运动性；自我意识主体还包括需求和愿望。", "Informational properties include existence, function and movement; for a self-aware subject they also include needs and desires."], ["定义 15.4", "DEFINITION 15.4"], "/concepts/information-world"],
-      [["信息系统", "Information system"], ["一个信息系统由多个对象、对象的运动以及对象之间的相互作用构成。", "An information system consists of multiple objects, their movements, and their interactions."], ["定义 17.10", "DEFINITION 17.10"], "/concepts/information-system"],
-      [["完备知识", "Complete knowledge"], ["对象的物理性质与信息性质联合起来，构成该对象的完备知识。", "The physical and informational properties of an object together form its complete knowledge."], ["物理性质 + 信息性质", "PHYSICAL + INFORMATIONAL"], "/concepts/complete-knowledge"],
-    ] as const,
-    modules: [] as const,
+    question: ["信息是什么？信息的数学原理是什么？", "What is information, and what are its mathematical principles?"] as Bi,
+    title: ["信息与信息的数学原理", "Information and its mathematical principles"] as Bi,
+    answer: ["层谱抽象 · 信息演算 · 信息解码 · 信息生成", "Hierarchical abstraction · information calculus · decoding · generation"] as Bi,
+    statement: ["建立信息的公理化科学原理，为研究智能提供数学基础。", "Establish axiomatized scientific principles of information as the mathematical foundation of intelligence."] as Bi,
+    dimension: ["数学基础", "MATHEMATICAL FOUNDATION"] as Bi,
+    href: "/themes/information",
   },
   {
     no: "02",
-    stage: ["数学原理", "MATHEMATICAL PRINCIPLES"] as Bi,
-    title: ["信息世界的公理化数学原理", "Axiomatized mathematical principles of the information world"] as Bi,
-    summary: ["以层谱抽象为科学范式，以信息演算理论、信息解码原理和信息生成原理为三大支柱。", "Its scientific paradigm is hierarchical abstraction, with information calculus, information decoding, and information generation as three pillars."] as Bi,
-    nodes: [
-      [["科学范式定律", "Scientific paradigm law"], ["信息世界的科学范式，即总方法，就是层谱抽象。", "The scientific paradigm, or general method, of the information world is hierarchical abstraction."], ["命题 15.6", "PROPOSITION 15.6"], "/concepts/scientific-paradigm"],
-      [["结构信息", "Structural information"], ["编码树给出层谱抽象；结构熵度量在编码树下嵌入信息系统中的不确定性。", "Encoding trees define hierarchical abstraction; structural entropy measures uncertainty embedded in an information system under an encoding tree."], ["定义 19.14、19.20–19.21", "DEFINITIONS 19.14, 19.20–19.21"], "/concepts/structural-information"],
-      [["压缩／解码原理", "Compression/decoding principle"], ["同一编码树上的压缩信息等于一维结构熵与结构熵之差，也等于解码信息。", "Under the same encoding tree, compression information equals the difference between one-dimensional and structural entropy, and equals decoding information."], ["定理 19.44", "THEOREM 19.44"], "/concepts/decoding-principles"],
-    ] as const,
-    modules: [
-      [["公理原理", "Scientific principles"], ["进入结构信息、信息的数学原理与机器智能原理。", "Explore structural information, mathematical principles of information, and machine-intelligence principles."], "/modules/principles"],
-    ] as const,
+    question: ["智能是什么？", "What is intelligence?"] as Bi,
+    title: ["智能论题", "Intelligence Thesis"] as Bi,
+    answer: ["智能 = 信息", "Intelligence = Information"] as Bi,
+    statement: ["一个主体的智能就是该主体的信息，揭示智能的数学实质。", "The intelligence of a subject is that subject’s information, revealing the mathematical essence of intelligence."] as Bi,
+    dimension: ["数学实质", "MATHEMATICAL ESSENCE"] as Bi,
+    href: "/themes/intelligence-thesis",
   },
   {
     no: "03",
-    stage: ["智能体系", "INTELLIGENCE SYSTEM"] as Bi,
-    title: ["信息世界科学体系下的机器智能体系", "Machine intelligence under the science of the information world"] as Bi,
-    summary: ["以信息的数学原理为数学基础，以谋和算为智能策略，以孙子谋算智能模型统一科学原理与工程原理。", "It takes the mathematical principles of information as its foundation, Mou and Suan as intelligent strategies, and the Sun Tzu MouSuan model as the unifying scientific and engineering model."] as Bi,
-    nodes: [
-      [["智能论题", "Intelligence thesis"], ["一个智能体的智能就是它的信息，即：智能 = 信息。", "The intelligence of an intelligent agent is its information: intelligence = information."], ["§20.10", "SECTION 20.10"], "/concepts/intelligence-thesis"],
-      [["谋算策略", "MouSuan strategy"], ["一个谋策略就是一个层谱抽象策略；一个算策略就是一个分而治之策略。", "A Mou strategy is a hierarchical-abstraction strategy; a Suan strategy is a divide-and-conquer strategy."], ["定义 15.12", "DEFINITION 15.12"], "/concepts/mousuan-strategy"],
-      [["科学原理", "Scientific principles"], ["观察学习、自我意识与谋算博弈设计构成孙子谋算智能模型中“智”的三个步骤。", "Learning from observing, self-awareness, and MouSuan contest design form the three Zhi steps of the model."], ["定义 20.8(1)–(3)", "DEFINITION 20.8(1)–(3)"], "/concepts/scientific-principles"],
-      [["工程原理", "Engineering principles"], ["自主决策、自主控制与行动、自主系统验证构成“能”的三个工程步骤。", "Autonomous decision, control and action, and system verification form the three Neng engineering steps."], ["定义 20.8(4)–(6)", "DEFINITION 20.8(4)–(6)"], "/concepts/engineering-principles"],
-    ] as const,
-    modules: [
-      [["应用成果", "Applications"], ["让原理进入学习、决策、智能体与机器。", "Bring principles into learning, decision making, agents, and machines."], "/modules/applications"],
-      [["孙子模型", "Sun Tzu model"], ["以观察学习、自我意识、谋算博弈设计、决策、行动和系统验证构成六步智能模型。", "A six-step intelligent model of learning from observing, self-awareness, MouSuan contest design, decision, action, and system verification."], "/modules/sun-tzu"],
-    ] as const,
+    question: ["智能从哪里来？", "Where does intelligence come from?"] as Bi,
+    title: ["智能的策略原理", "Strategy Principle of Intelligence"] as Bi,
+    answer: ["智能 = 谋算", "Intelligence = MouSuan"] as Bi,
+    statement: ["谋进行全局的层谱抽象以及跨越抽象层谱的演算与推理；算进行局部的逻辑推理。", "Mou performs global hierarchical abstraction and reasoning across hierarchies; Suan performs local logical reasoning."] as Bi,
+    dimension: ["机器原理", "MACHINE PRINCIPLE"] as Bi,
+    href: "/themes/strategy-principle",
+  },
+  {
+    no: "04",
+    question: ["怎样实现智能？", "How can intelligence be realised?"] as Bi,
+    title: ["孙子模型", "Sun Tzu Model"] as Bi,
+    answer: ["智：科学原理　能：工程原理", "Zhi: scientific principles · Neng: engineering principles"] as Bi,
+    statement: ["学习、自我意识与博弈／谋算构成“智”；决策、行动与系统验证构成“能”。", "Learning, self-awareness, and contest/MouSuan form Zhi; decision, action, and system verification form Neng."] as Bi,
+    dimension: ["实现模型", "REALISATION MODEL"] as Bi,
+    href: "/themes/sun-tzu-model",
   },
 ] as const;
 
@@ -62,48 +55,66 @@ const homeModules = [
 
 const ui = {
   zh: {
-    nav: [["五大模块", "#modules"], ["理论总图", "/framework"], ["三部专著", "/books"], ["团队介绍", "/team"]],
-    kicker: "信息世界科学原理 · 谋算智能",
-    title: "从现实世界的完整建模\n到机器智能体系",
-    lead: "从物理性质与信息性质出发，经由信息世界的定义、定律和数学原理，建立机器智能的科学原理与工程原理。",
-    explore: "浏览理论体系",
-    axioms: "进入公理与定理",
-    guide: "体系结构",
-    guideText: "三个层次由基础概念逐步导向机器智能，每个节点均可深入阅读。",
-    enter: "进入",
-    modulesLabel: "研究组织",
+    nav: [["四个主题", "#themes"], ["五大模块", "#modules"], ["理论索引", "/framework"], ["三部专著", "/books"], ["团队", "/team"]],
+    kicker: "信息世界科学原理 · 人工智能科学",
+    title: "信息与智能的\n四个基本问题",
+    lead: "从信息的数学原理出发，回答智能是什么、智能从哪里来，以及怎样实现智能。",
+    explore: "查看四个主题",
+    reference: "查看关键原理",
+    guide: "四个回答",
+    sectionLabel: "FOUR FUNDAMENTAL QUESTIONS",
+    sectionTitle: "先给出答案，再逐层深入",
+    sectionText: "首页只呈现最重要的观点；点击每一主题，可进入解释、关键依据与进一步研究。",
+    enter: "进入主题",
+    completeLabel: "COMPLETELY MODELING",
+    completeTitle: "现实世界的完备建模",
+    completeText: "一个对象的物理性质和信息性质合起来，构成了该对象的完备知识。",
+    physical: "物理性质",
+    information: "信息性质",
+    knowledge: "完备知识",
+    depthLabel: "2—3 LEVELS",
+    depthTitle: "简单首页，分层展开",
+    depth: [
+      ["第一层", "四个基本问题", "问题、核心观点与研究入口"],
+      ["第二层", "四个主题页", "解释数学实质、策略原理与实现模型"],
+      ["第三层", "原理与研究", "关键定义、定律、定理、应用与专著"],
+    ],
+    modulesLabel: "RESEARCH PROGRAMMES",
     modulesTitle: "五大研究模块",
-    modulesText: "三层理论解释知识如何形成；五大模块分别组织科学原理、应用成果、孙子模型、知识与研究平台，以及谋算机器智能。",
-    moduleOpen: "进入模块",
-    supportLabel: "贯穿整个体系的研究基础",
-    supportTitle: "知识与研究",
-    supportText: "术语、论文、代码、专著与研究记录共同支撑定义、定律、定理及其应用。",
-    supportLinks: [["术语 Wiki", "/wiki/terminology"], ["结构熵综述", "https://www.ijcai.org/proceedings/2025/1183"], ["研究仓库", "https://github.com/SuuTTT/structural-entropy-survey"], ["专著与阅读", "/books"]],
-    evidence: "主要观点与原始来源",
-    sources: [["[1]", "李昂生《人工智能科学——智能的数学原理》", "/books#artificial-intelligence-science"], ["[2]", "李昂生等《人工智能原理——从计算到谋算的模型、原理与方法》", "/books#artificial-intelligence-principles"], ["[3]", "李昂生等《孙子兵法的人工智能原理》", "/books#sun-tzu-ai-principles"]],
-    footer: "结构信息与机器智能 · 从完整建模到谋算智能",
+    modulesText: "四个主题回答基本科学问题；五大模块承接具体研究、应用与工程工作。",
+    evidence: "主要著作",
+    footer: "结构信息与机器智能 · 信息的数学原理与智能科学",
   },
   en: {
-    nav: [["Five modules", "#modules"], ["Theory map", "/framework"], ["Three books", "/books"], ["Team", "/team"]],
-    kicker: "Science of the information world · MouSuan Intelligence",
-    title: "From complete modelling of reality\nto machine intelligence",
-    lead: "Starting from physical and informational properties, the system proceeds through definitions, laws, and mathematical principles of the information world to the scientific and engineering principles of machine intelligence.",
-    explore: "Explore the system",
-    axioms: "Open axioms & theorems",
-    guide: "System structure",
-    guideText: "Three layers move from foundational concepts to machine intelligence; each node opens deeper reading.",
-    enter: "Open",
-    modulesLabel: "RESEARCH ORGANISATION",
+    nav: [["Four themes", "#themes"], ["Five modules", "#modules"], ["Principle index", "/framework"], ["Books", "/books"], ["Team", "/team"]],
+    kicker: "Science of the information world · artificial intelligence science",
+    title: "Four fundamental questions\nof information and intelligence",
+    lead: "Beginning with the mathematical principles of information, the system asks what intelligence is, where it comes from, and how it can be realised.",
+    explore: "Explore the four themes",
+    reference: "Open key principles",
+    guide: "Four answers",
+    sectionLabel: "FOUR FUNDAMENTAL QUESTIONS",
+    sectionTitle: "Answers first, depth on demand",
+    sectionText: "The home page presents only the essential ideas. Each theme opens its explanation, key basis, and deeper research.",
+    enter: "Open theme",
+    completeLabel: "COMPLETELY MODELING",
+    completeTitle: "Completely modeling the real world",
+    completeText: "The physical and informational properties of an object together constitute complete knowledge of that object.",
+    physical: "Physical properties",
+    information: "Informational properties",
+    knowledge: "Complete knowledge",
+    depthLabel: "2—3 LEVELS",
+    depthTitle: "A simple home, unfolded in layers",
+    depth: [
+      ["Level 1", "Four questions", "Questions, central claims, and entries"],
+      ["Level 2", "Four theme pages", "Mathematical essence, strategy principle, and realisation model"],
+      ["Level 3", "Principles & research", "Key definitions, laws, theorems, applications, and books"],
+    ],
+    modulesLabel: "RESEARCH PROGRAMMES",
     modulesTitle: "Five research modules",
-    modulesText: "The three-layer theory explains how knowledge is formed; the five modules organise scientific principles, applications, the Sun Tzu model, the knowledge and research platform, and MouSuan Machine Intelligence.",
-    moduleOpen: "Open module",
-    supportLabel: "Research foundations across the system",
-    supportTitle: "Knowledge & research",
-    supportText: "Terminology, papers, code, monographs, and research records support the definitions, laws, theorems, and applications.",
-    supportLinks: [["Terminology Wiki", "/wiki/terminology"], ["Structural entropy survey", "https://www.ijcai.org/proceedings/2025/1183"], ["Research repository", "https://github.com/SuuTTT/structural-entropy-survey"], ["Books & reading", "/books"]],
-    evidence: "Key ideas & primary sources",
-    sources: [["[1]", "Angsheng Li · Artificial Intelligence Science — Mathematical Principles of Intelligence", "/books#artificial-intelligence-science"], ["[2]", "Angsheng Li et al. · Principles of Artificial Intelligence — From Computation to MouSuan", "/books#artificial-intelligence-principles"], ["[3]", "Angsheng Li et al. · AI Principles of Sun Tzu’s The Art of War", "/books#sun-tzu-ai-principles"]],
-    footer: "Structural Information & Machine Intelligence · From complete modelling to MouSuan Intelligence",
+    modulesText: "The four themes answer foundational questions; the five modules organise research, applications, and engineering work.",
+    evidence: "Principal books",
+    footer: "Structural Information & Machine Intelligence · Mathematical principles of information and intelligence science",
   },
 } as const;
 
@@ -118,13 +129,20 @@ export default function Home() {
   };
   const c = ui[lang];
 
-  return <main className="hierarchy-home">
-    <nav className="hierarchy-nav"><a className="hierarchy-brand" href="#top"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div className="hierarchy-nav-links">{c.nav.map(([label, href]) => <a href={href} key={label}>{label}</a>)}</div><div className="hierarchy-lang"><button className={lang === "zh" ? "active" : ""} onClick={() => changeLang("zh")}>中</button><span>/</span><button className={lang === "en" ? "active" : ""} onClick={() => changeLang("en")}>EN</button></div></nav>
-    <section id="top" className="hierarchy-hero"><div className="hierarchy-shell hierarchy-hero-grid"><div><p className="hierarchy-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="hierarchy-lead">{c.lead}</p><div className="hierarchy-actions"><a href="#hierarchy">{c.explore}<b>↓</b></a><a href="/framework">{c.axioms}<b>↗</b></a></div></div><aside><p>{c.guide}</p><span>{c.guideText}</span><ol>{levels.map((level) => <li key={level.no}><a href={`#layer-${level.no}`}><b>{level.no}</b><span>{t(level.title, lang)}</span></a></li>)}</ol></aside></div></section>
-    <section id="hierarchy" className="hierarchy-map hierarchy-shell">{levels.map((level, index) => <section id={`layer-${level.no}`} className="hierarchy-layer" key={level.no}><header><div className="hierarchy-layer-no"><span>{level.no}</span><small>{t(level.stage, lang)}</small></div><div><h2>{t(level.title, lang)}</h2><p>{t(level.summary, lang)}</p></div></header><div className="hierarchy-node-grid">{level.nodes.map(([title, text, tag, href]) => <a href={href} className="hierarchy-node" key={t(title, lang)}><span>{t(tag, lang)}</span><h3>{t(title, lang)}</h3><p>{t(text, lang)}</p><b>{c.enter} ↗</b></a>)}</div>{level.modules.length > 0 && <div className="hierarchy-modules">{level.modules.map(([title, text, href]) => <a href={href} key={t(title, lang)}><span>{t(level.stage, lang)}</span><div><h3>{t(title, lang)}</h3><p>{t(text, lang)}</p></div><b>→</b></a>)}</div>}{index < levels.length - 1 && <div className="hierarchy-flow" aria-hidden="true"><span>↓</span></div>}</section>)}</section>
-    <section id="modules" className="home-modules"><div className="hierarchy-shell"><header><p>{c.modulesLabel}</p><h2>{c.modulesTitle}</h2><span>{c.modulesText}</span></header><div>{homeModules.map(([title, text, href], index) => <a href={href} key={href}><span>0{index + 1}</span><div><h3>{t(title, lang)}</h3><p>{t(text, lang)}</p></div><b>{c.moduleOpen} ↗</b></a>)}</div><a className="home-team-link" href="/team"><span>{lang === "zh" ? "研究主体" : "RESEARCH TEAM"}</span><strong>{lang === "zh" ? "李昂生教授团队" : "Professor Angsheng Li’s team"}</strong><b>→</b></a></div></section>
-    <section className="hierarchy-support"><div className="hierarchy-shell"><header><p>{c.supportLabel}</p><h2>{c.supportTitle}</h2><span>{c.supportText}</span></header><div>{c.supportLinks.map(([label, href]) => <a href={href} key={label} target={href.startsWith("/") ? undefined : "_blank"} rel={href.startsWith("/") ? undefined : "noreferrer"}>{label}<b>↗</b></a>)}</div></div></section>
-    <section className="hierarchy-evidence"><div className="hierarchy-shell"><p>{c.evidence}</p><div>{c.sources.map(([no, title, href]) => <a href={href} key={no}><span>{no}</span>{title}<b>↗</b></a>)}</div></div></section>
-    <footer className="hierarchy-footer"><div className="hierarchy-shell"><span>{c.footer}</span><a href="#top">↑</a></div></footer>
+  return <main className="questions-home">
+    <nav className="questions-nav"><a className="questions-brand" href="#top"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div className="questions-nav-links">{c.nav.map(([label, href]) => <a href={href} key={label}>{label}</a>)}</div><div className="questions-lang"><button className={lang === "zh" ? "active" : ""} onClick={() => changeLang("zh")}>中</button><span>/</span><button className={lang === "en" ? "active" : ""} onClick={() => changeLang("en")}>EN</button></div></nav>
+
+    <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#themes">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗</b></a></div></div><aside><p>{c.guide}</p>{themes.map((theme) => <a href={`#theme-${theme.no}`} key={theme.no}><span>{theme.no}</span><strong>{t(theme.question, lang)}</strong></a>)}</aside></div></section>
+
+    <section id="themes" className="questions-themes questions-shell"><span id="hierarchy" className="questions-anchor" /><header><p>{c.sectionLabel}</p><h2>{c.sectionTitle}</h2><span>{c.sectionText}</span></header><div className="questions-theme-list">{themes.map((theme) => <a id={`theme-${theme.no}`} href={theme.href} key={theme.no}><div className="questions-theme-meta"><span>{theme.no}</span><small>{t(theme.dimension, lang)}</small></div><div className="questions-theme-question"><p>{t(theme.question, lang)}</p><h3>{t(theme.title, lang)}</h3></div><div className="questions-theme-answer"><strong>{t(theme.answer, lang)}</strong><p>{t(theme.statement, lang)}</p></div><b>{c.enter} ↗</b></a>)}</div></section>
+
+    <section className="complete-model"><span id="layer-01" className="questions-anchor" /><span id="layer-02" className="questions-anchor" /><span id="layer-03" className="questions-anchor" /><div className="questions-shell"><header><p>{c.completeLabel}</p><h2>{c.completeTitle}</h2><span>{c.completeText}</span></header><div className="complete-equation"><a href="/concepts/physical-world">{c.physical}</a><b>+</b><a href="/concepts/information-world">{c.information}</a><b>=</b><a href="/concepts/complete-knowledge">{c.knowledge}</a></div></div></section>
+
+    <section className="questions-depth questions-shell"><header><p>{c.depthLabel}</p><h2>{c.depthTitle}</h2></header><ol>{c.depth.map(([level, title, text], index) => <li key={level}><span>0{index + 1}</span><small>{level}</small><strong>{title}</strong><p>{text}</p></li>)}</ol></section>
+
+    <section id="modules" className="questions-modules"><div className="questions-shell"><header><p>{c.modulesLabel}</p><h2>{c.modulesTitle}</h2><span>{c.modulesText}</span></header><div>{homeModules.map(([title, text, href], index) => <a href={href} key={href}><span>0{index + 1}</span><strong>{t(title, lang)}</strong><p>{t(text, lang)}</p><b>↗</b></a>)}</div><a className="questions-team" href="/team"><span>{lang === "zh" ? "研究主体" : "RESEARCH TEAM"}</span><strong>{lang === "zh" ? "李昂生教授团队" : "Professor Angsheng Li’s team"}</strong><b>→</b></a></div></section>
+
+    <section className="questions-books"><div className="questions-shell"><p>{c.evidence}</p><div><a href="/books#artificial-intelligence-science"><span>01</span>《人工智能科学——智能的数学原理》<b>↗</b></a><a href="/books#artificial-intelligence-principles"><span>02</span>《人工智能原理——从计算到谋算的模型、原理与方法》<b>↗</b></a><a href="/books#sun-tzu-ai-principles"><span>03</span>《孙子兵法的人工智能原理》<b>↗</b></a></div></div></section>
+    <footer className="questions-footer"><div className="questions-shell"><span>{c.footer}</span><a href="#top">↑</a></div></footer>
   </main>;
 }
