@@ -28,10 +28,22 @@
 
 .theme-formula .math-inline math { font-size: 1em; }
 
+.theorem-results .math-display-equation {
+  display: flex;
+  width: fit-content;
+  margin: .9em 0;
+  padding: .35em .75em;
+  border-left: 2px solid #6356c6;
+  background: rgba(99, 86, 198, .055);
+}
+
+.theorem-results .math-display-equation math { font-size: 1.16em; }
+
 .concept-hero blockquote .math-inline math,
 .questions-theme-answer strong .math-inline math,
 .index-sections h2 .math-inline math { font-weight: 600; }
 
 @media (max-width: 600px) {
   .theme-formula .math-inline math { font-size: .92em; }
+  .theorem-results .math-display-equation { overflow-x: auto; max-width: 100%; }
 }

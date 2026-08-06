@@ -66,7 +66,7 @@
     "type": "定义",
     "number": "4.3",
     "title": "香农熵，Shannon 1948",
-    "content": "假设 p = {p1 , p2 , · · · , pn } 是一个概率分布，X 是服从分布 p 的随机变量，定义嵌入在随机变量 X 中的不确定性的量为 ∑ n H(X) = − pi log2 pi (4.3) i=1 称为随机变量 X 的熵。",
+    "content": "假设 p = {p₁, p₂, …, pₙ} 是一个概率分布，X 是服从分布 p 的随机变量。定义嵌入在随机变量 X 中的不确定性的量为 H(X) = −∑ⁿᵢ₌₁ pᵢ log₂ pᵢ，称为随机变量 X 的熵。",
     "printedPage": "72",
     "pdfPage": 106,
     "href": "/books#artificial-intelligence-science"
@@ -78,7 +78,7 @@
     "type": "定义",
     "number": "4.4",
     "title": "互信息，Shannon, 1948",
-    "content": "给定一个联合概率分布 p(x, y)，假设 X 和 Y 分别是两个随机变量，使得 (X, Y ) 服从联合概率分布 p(x, y)，定义 X 和 Y 的互信息为 ∑∑ p(x, y) I(X; Y ) = p(x, y) log2 (4.4) x y p(x)p(y)",
+    "content": "给定一个联合概率分布 p(x, y)，假设 X 和 Y 分别是两个随机变量，使得 (X, Y) 服从联合概率分布 p(x, y)。定义 X 和 Y 的互信息为 I(X; Y) = ∑ₓ ∑ᵧ p(x, y) log₂ (p(x, y) / (p(x)p(y)))。",
     "printedPage": "73",
     "pdfPage": 107,
     "href": "/books#artificial-intelligence-science"
@@ -354,7 +354,7 @@
     "type": "定义",
     "number": "5.22",
     "title": "抽象",
-    "content": "给定一个对象 x，该对象的一个抽象就是一个策略，作用于 x，提取对象 x 的一个数学属性 f，使得有很多对象 y1 , y2 , · · · , yn 等都具有属性 f。",
+    "content": "给定一个对象 x，该对象的一个抽象就是一个策略，作用于 x，提取对象 x 的一个数学属性 f，使得有很多对象 y₁, y₂, …, yₙ 等都具有属性 f。",
     "printedPage": "99",
     "pdfPage": 133,
     "href": "/books#artificial-intelligence-science"

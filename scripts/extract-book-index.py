@@ -18,6 +18,12 @@ STOP_RE = re.compile(r"^\s*(证明|证毕)\s*[:：]")
 SECTION_RE = re.compile(r"^\s*[0-9]+\.[0-9]+(?:\.[0-9]+)?\s+\S")
 PAGE_NUMBER_RE = re.compile(r"·\s*([0-9]+)\s*·")
 
+FORMULA_CONTENT_OVERRIDES = {
+    "ai-science-定义-4.3": "假设 p = {p₁, p₂, …, pₙ} 是一个概率分布，X 是服从分布 p 的随机变量。定义嵌入在随机变量 X 中的不确定性的量为 H(X) = −∑ⁿᵢ₌₁ pᵢ log₂ pᵢ，称为随机变量 X 的熵。",
+    "ai-science-定义-4.4": "给定一个联合概率分布 p(x, y)，假设 X 和 Y 分别是两个随机变量，使得 (X, Y) 服从联合概率分布 p(x, y)。定义 X 和 Y 的互信息为 I(X; Y) = ∑ₓ ∑ᵧ p(x, y) log₂ (p(x, y) / (p(x)p(y)))。",
+    "ai-science-定义-5.22": "给定一个对象 x，该对象的一个抽象就是一个策略，作用于 x，提取对象 x 的一个数学属性 f，使得有很多对象 y₁, y₂, …, yₙ 等都具有属性 f。",
+}
+
 
 @dataclass(frozen=True)
 class Book:
@@ -145,6 +151,10 @@ def parse_book(book: Book) -> list[dict[str, object]]:
     unique: dict[str, dict[str, object]] = {}
     for entry in entries:
         unique.setdefault(str(entry["id"]), entry)
+    for entry in unique.values():
+        override = FORMULA_CONTENT_OVERRIDES.get(str(entry["id"]))
+        if override:
+            entry["content"] = override
     return list(unique.values())
 
 

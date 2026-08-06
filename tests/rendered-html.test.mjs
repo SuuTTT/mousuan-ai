@@ -138,6 +138,8 @@ test("searchable academic index covers both source books", async () => {
   assert.equal(bookIndex.length, 917);
   assert.ok(bookIndex.some((entry) => entry.id === "ai-science-定义-8.2" && entry.title === "集合的编码树"));
   assert.ok(bookIndex.some((entry) => entry.id === "ai-science-定理-10.9" && entry.content.includes("C T (A)")));
+  assert.ok(bookIndex.some((entry) => entry.id === "ai-science-定义-4.4" && entry.content.includes("∑ₓ ∑ᵧ") && !entry.content.includes("(4.4) x y")));
+  assert.ok(bookIndex.some((entry) => entry.id === "ai-science-定义-5.22" && entry.content.includes("y₁, y₂, …, yₙ")));
   assert.ok(bookIndex.some((entry) => entry.id === "sun-tzu-定义-1.1"));
   assert.ok(bookIndex.some((entry) => entry.id === "sun-tzu-定律-IV" && entry.content.includes("物质 × 信息²")));
 
@@ -147,6 +149,9 @@ test("searchable academic index covers both source books", async () => {
   assert.match(html, /定义·定理·定律索引/);
   assert.match(html, /917(?:<!-- -->)? 条学术陈述/);
   assert.match(html, /关键词或编号/);
+  assert.match(html, /aria-label="I\(X; Y\) = ∑ₓ ∑ᵧ p\(x, y\) log₂/);
+  assert.match(html, /<mfrac>/);
+  assert.match(html, /aria-label="y₁, y₂, …, yₙ"/);
 });
 
 test("server-renders the theorem framework with source references", async () => {
