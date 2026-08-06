@@ -1,8 +1,8 @@
 const definitions = [
-  ["定义 15.1", "物理性质", "一个对象的物理性质由该对象自己完全决定。", "《孙子兵法的人工智能原理》 §15.1"],
-  ["定义 15.4", "信息性质", "对象的信息性质由存在性、作用和运动性构成；自我意识主体还包括需求和愿望。", "《孙子兵法的人工智能原理》 §15.4"],
-  ["定义 17.10", "信息系统", "信息系统由多个对象、对象的运动以及对象之间的相互作用构成。", "《孙子兵法的人工智能原理》 §17.10"],
-  ["定义 15.12", "谋与算", "谋是层谱抽象策略；算是分而治之策略。二者共同构成智能策略。", "《孙子兵法的人工智能原理》 §15.12"],
+  ["physical-property", "定义 15.1", "物理性质", "一个对象的物理性质由该对象自己完全决定。", "《孙子兵法的人工智能原理》 §15.1"],
+  ["information-property", "定义 15.4", "信息性质", "对象的信息性质由存在性、作用和运动性构成；自我意识主体还包括需求和愿望。", "《孙子兵法的人工智能原理》 §15.4"],
+  ["information-system", "定义 17.10", "信息系统", "信息系统由多个对象、对象的运动以及对象之间的相互作用构成。", "《孙子兵法的人工智能原理》 §17.10"],
+  ["mousuan-definition", "定义 15.12", "谋与算", "谋是层谱抽象策略；算是分而治之策略。二者共同构成智能策略。", "《孙子兵法的人工智能原理》 §15.12"],
 ] as const;
 
 const laws = [
@@ -34,7 +34,7 @@ export default function FrameworkPage() {
     <nav className="theory-nav"><a className="theory-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="#definitions">定义</a><a href="#laws">定律</a><a href="#theorems">定理</a><a href="#intelligence">智能体系</a><a href="#sun">孙子定律</a></div><a className="theory-home" href="/">返回首页</a></nav>
     <section className="theory-hero"><div><p>AXIOMATIZED SCIENCE OF INFORMATION</p><h1>信息世界的<br />公理化科学体系</h1><span>从对象与系统的定义出发，经由信息定律和数学定理，建立学习、自我意识、谋算与机器智能模型。</span></div><aside><strong>体系路径</strong><div><span>定义</span><b>→</b><span>定律</span><b>→</b><span>定理</span><b>→</b><span>模型</span></div></aside></section>
 
-    <section id="definitions" className="theory-section"><header><p>01 · DEFINITIONS</p><h2>基本定义</h2><span>先确定对象、性质、系统和策略，公理体系才有清晰的研究对象。</span></header><div className="definition-orbit"><div className="definition-core"><span>现实世界</span><strong>物质 + 信息</strong></div>{definitions.map(([no, title, text, source]) => <article key={no}><span>{no}</span><h3>{title}</h3><p>{text}</p><Source>{source}</Source></article>)}</div></section>
+    <section id="definitions" className="theory-section"><header><p>01 · DEFINITIONS</p><h2>基本定义</h2><span>先确定对象、性质、系统和策略，公理体系才有清晰的研究对象。</span></header><div className="definition-orbit"><div id="complete-knowledge" className="definition-core"><em className="target-marker">当前所选</em><span>现实世界</span><strong>物质 + 信息</strong></div>{definitions.map(([id, no, title, text, source]) => <article id={id} key={id}><em className="target-marker">当前所选</em><span>{no}</span><h3>{title}</h3><p>{text}</p><Source>{source}</Source></article>)}</div></section>
 
     <section id="laws" className="theory-section law-section"><header><p>02 · LAWS</p><h2>信息世界基本定律</h2><span>定律把对象的性质、关系系统和认知策略连接成因果结构。</span></header><div className="law-axis"><div className="law-spine" aria-hidden="true"><span>对象</span><b>↓</b><span>系统</span><b>↓</b><span>认知</span></div>{laws.map(([no, title, text, source], index) => <article className={index % 2 ? "right" : "left"} key={no}><span>{no}</span><h3>{title}</h3><p>{text}</p><Source>{source}</Source></article>)}</div></section>
 

@@ -1,0 +1,51 @@
+.definition-orbit article,
+.definition-core {
+  scroll-margin-top: 110px;
+}
+
+.target-marker {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  right: 14px;
+  margin: 0;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #6558c8;
+  color: #fff;
+  font: 700 10px/1 Arial, "Noto Sans SC", sans-serif;
+  font-style: normal;
+  letter-spacing: .06em;
+}
+
+.definition-orbit article:target {
+  border-color: #6558c8;
+  box-shadow: 0 0 0 4px rgba(101, 88, 200, .15), 0 20px 50px rgba(32, 35, 75, .16);
+  animation: definition-target-pulse 1s ease-out;
+}
+
+.definition-orbit article:target .target-marker,
+.definition-core:target .target-marker {
+  display: block;
+}
+
+.definition-core:target {
+  box-shadow: 0 0 0 8px rgba(114, 228, 249, .3), 0 0 0 18px #f5f6fa, 0 20px 45px rgba(17, 23, 53, .3);
+  animation: definition-core-pulse 1s ease-out;
+}
+
+.definition-core .target-marker {
+  top: -18px;
+  right: -14px;
+}
+
+@keyframes definition-target-pulse {
+  0% { box-shadow: 0 0 0 16px rgba(101, 88, 200, .32), 0 20px 50px rgba(32, 35, 75, .16); }
+  100% { box-shadow: 0 0 0 4px rgba(101, 88, 200, .15), 0 20px 50px rgba(32, 35, 75, .16); }
+}
+
+@keyframes definition-core-pulse {
+  0% { box-shadow: 0 0 0 18px rgba(114, 228, 249, .45), 0 0 0 28px #f5f6fa, 0 20px 45px rgba(17, 23, 53, .3); }
+  100% { box-shadow: 0 0 0 8px rgba(114, 228, 249, .3), 0 0 0 18px #f5f6fa, 0 20px 45px rgba(17, 23, 53, .3); }
+}
