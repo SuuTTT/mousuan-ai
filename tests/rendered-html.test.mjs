@@ -38,10 +38,12 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(html, /智能 = 信息/);
   assert.match(html, /智能 = 谋算/);
   assert.match(html, /智能的策略就是谋和算/);
-  assert.match(html, /谋体系结构和算体系结构/);
+  assert.match(html, /谋体系结构与算体系结构/);
+  assert.match(html, /孙子模型：智能的科学—工程统一模型/);
   assert.match(html, /智：人工智能科学原理/);
   assert.match(html, /能：人工智能工程原理/);
   assert.match(html, /数学实质、机器原理和实现模型三个维度/);
+  assert.doesNotMatch(html, /中文“智能”|无非是谋或者算|已经蕴含实现模型/);
   assert.doesNotMatch(html, /现实世界的完备建模|COMPLETELY MODELING|complete-model/);
   assert.match(html, /href="\/themes\/information"/);
   assert.doesNotMatch(html, /href="#theme-01"|id="theme-01"/);
@@ -108,6 +110,7 @@ test("server-renders the Sun Tzu model with primary-source order and five laws",
   const html = await response.text();
   assert.match(html, /定义 34\.3–34\.4/);
   assert.match(html, /孙子五大定律/);
+  assert.match(html, /智能的科学—工程统一模型/);
   assert.match(html, /战争能力 = 物质 × 信息²/);
   assert.equal(html.match(/href="\/books#artificial-intelligence-science"/g)?.length, 1);
 });
