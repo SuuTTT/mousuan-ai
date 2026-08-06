@@ -9,7 +9,7 @@ export type Theme = {
   lead: string;
   interpretation: string;
   parts: readonly { label: string; title: string; text: string }[];
-  basis: readonly { label: string; detail: string; href: string }[];
+  basis: readonly { label: string; detail: string; href: string; references?: readonly string[] }[];
   deeper: readonly { title: string; text: string; href: string }[];
   sunLaws?: readonly { no: string; title: string; text: string; href: string }[];
 };
@@ -31,7 +31,12 @@ export const themes: Theme[] = [
       { label: "基本原理", title: "解码与生成", text: "解码策略使不确定性转化为确定性；生成策略使确定性转化为不确定性，二者都是可度量的信息过程。" },
     ],
     basis: [
-      { label: "《人工智能科学——智能的数学原理》", detail: "§4.6.2–4.6.3、定义 8.2、定义 10.1 与定理 10.9", href: "/books#artificial-intelligence-science" },
+      {
+        label: "《人工智能科学——智能的数学原理》",
+        detail: "§4.6.2–4.6.3、定义 8.2、定义 10.1 与定理 10.9",
+        href: "/books#artificial-intelligence-science",
+        references: ["§4.6.2", "§4.6.3", "定义 8.2", "定义 10.1", "定理 10.9"],
+      },
     ],
     deeper: [
       { title: "信息世界", text: "信息性质与信息世界", href: "/concepts/information-world" },

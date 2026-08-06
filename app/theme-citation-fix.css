@@ -1,0 +1,53 @@
+.theme-basis article {
+  display: grid;
+  grid-template-columns: 40px 1fr 20px;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid #c1c6d4;
+}
+
+.theme-basis article > span {
+  color: #6255c5;
+  font: 14px Georgia, serif;
+}
+
+.theme-basis article strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.theme-basis article small {
+  display: block;
+  color: #60687c;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.theme-basis article ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #555e75;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.theme-basis article li::before {
+  content: "— ";
+  color: #6255c5;
+}
+
+.theme-basis article > a {
+  color: #6255c5;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .theme-basis article ol {
+    grid-template-columns: 1fr;
+  }
+}

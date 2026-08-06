@@ -4,6 +4,7 @@ import "./book-title-fix.css";
 import "./section-title-fix.css";
 import "./hero-responsive-fix.css";
 import "./brand-logo.css";
+import "./theme-citation-fix.css";
 
 export const metadata: Metadata = {
   title: "Structural Information & Machine Intelligence | 结构信息与机器智能",

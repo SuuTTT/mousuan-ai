@@ -24,7 +24,7 @@ export default async function ThemePage({ params }: { params: Promise<{ slug: st
 
     {theme.sunLaws && <section className="theme-sun-laws"><div className="theme-shell"><header><p>SUN TZU’S FIVE LAWS</p><h2>物质与信息结合的孙子五大定律</h2><span>这五大定律奠定了同时存在物质与信息的战争之科学原理。</span></header><ol>{theme.sunLaws.map((law) => <li key={law.no}><span>{law.no}</span><div><h3>{law.title}</h3><p>{law.text}</p></div><a href={law.href}>原文 ↗</a></li>)}</ol></div></section>}
 
-    <section className="theme-basis"><div className="theme-shell"><header><p>KEY BASIS</p><h2>关键依据</h2><span>只列出理解本主题所需的重要定义、命题或定律；完整论证进入原著。</span></header><div>{theme.basis.map((source, sourceIndex) => <a href={source.href} key={`${source.label}-${sourceIndex}`}><span>[{sourceIndex + 1}]</span><div><strong>{source.label}</strong><small>{source.detail}</small></div><b>↗</b></a>)}</div></div></section>
+    <section className="theme-basis"><div className="theme-shell"><header><p>KEY BASIS</p><h2>关键依据</h2></header><div>{theme.basis.map((source, sourceIndex) => <article key={`${source.label}-${sourceIndex}`}><span>[{sourceIndex + 1}]</span><div><strong>{source.label}</strong>{source.references ? <ol>{source.references.map((reference) => <li key={reference}>{reference}</li>)}</ol> : <small>{source.detail}</small>}</div><a href={source.href} aria-label={`查看${source.label}`}>↗</a></article>)}</div></div></section>
 
     <section className="theme-deeper theme-shell"><header><p>DEEPER READING</p><h2>继续深入</h2></header><div>{theme.deeper.map((item) => <a href={item.href} key={item.title}><span>{item.title}</span><p>{item.text}</p><b>↗</b></a>)}</div></section>
 

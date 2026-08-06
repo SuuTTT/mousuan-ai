@@ -52,6 +52,17 @@ test("strategy theme uses the explicit strategy statement and one earliest-book 
   assert.doesNotMatch(html, /智能 = 谋算/);
 });
 
+test("information theme lists its primary references without editorial prompts", async () => {
+  const response = await render("/themes/information");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  for (const reference of ["§4.6.2", "§4.6.3", "定义 8.2", "定义 10.1", "定理 10.9"]) {
+    assert.ok(html.includes(reference));
+  }
+  assert.doesNotMatch(html, /只列出理解本主题|完整论证进入原著/);
+});
+
 test("server-renders the theorem framework with source references", async () => {
   const response = await render("/framework");
   assert.equal(response.status, 200);
