@@ -48,7 +48,7 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
     </section>
 
     <section className="concept-explanation concept-shell">
-      <header><p>CONCEPT MODEL</p><h2>{concept.tag}</h2><span>本页只解释当前概念，并标明它如何连接到上一层与下一层。</span></header>
+      <header><p>CONCEPT MODEL</p><h2>{concept.tag}</h2><span>概念的对象、关系与数学位置</span></header>
       <div className="concept-relation" aria-label={`${concept.title}的概念关系`}>
         {concept.relation.map((item, relationIndex) => <div key={item}><span>0{relationIndex + 1}</span><strong>{item}</strong>{relationIndex < concept.relation.length - 1 && <b>→</b>}</div>)}
       </div>
@@ -57,13 +57,13 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
 
     <section className="concept-formal">
       <div className="concept-shell">
-        <header><p>FORMAL BASIS</p><h2>定义、定律与推导位置</h2></header>
+        <header><p>FORMAL BASIS</p><h2>正式定义、命题与定理</h2></header>
         <div>{concept.formal.map((item) => <article key={item.no}><span>{item.no}</span><h3>{item.title}</h3><p><KeepTail text={item.text} /></p></article>)}</div>
       </div>
     </section>
 
     <section className="concept-sources concept-shell">
-      <header><p>REFERENCES</p><h2>主要引文与正式来源</h2><span>网站建立阅读路径；正式定义、定理与编号以专著和原始论文为准。</span></header>
+      <header><p>REFERENCES</p><h2>原始文献</h2><span>定义、命题、定理与编号均对应下列专著或原始论文。</span></header>
       <div>{concept.sources.map((source, sourceIndex) => <a key={`${source.label}-${sourceIndex}`} href={source.href} target={source.href.startsWith("/") ? undefined : "_blank"} rel={source.href.startsWith("/") ? undefined : "noreferrer"}><span>[{sourceIndex + 1}]</span><div><strong>{source.label}</strong><small><KeepTail text={source.detail} /></small></div><b>↗</b></a>)}</div>
     </section>
 

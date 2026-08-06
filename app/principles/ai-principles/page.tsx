@@ -4,21 +4,21 @@ export default function AIPrinciplesPage() {
   return <PrinciplePage
     zh={{
       back: "← 返回研究主页", toggle: "EN", eyebrow: "公理原理 · 04 / 机器智能原理",
-      title: "机器智能原理\n把黑箱路线变成\n白盒路线",
-      lead: "以智能的数学原理为基础，把谋算决策、自主控制与自主验证组织为一条可解释的机器智能科学技术路线。",
-      sections: [["从计算到谋算", "神经网络、大模型与世界模型不应只是不可解释的工具；它们需要被放进信息科学原理中，成为可以观察、解码、推演和验证的系统。"], ["从原理到机器", "自我意识机器、孙子模型、谋算智能机与谋算双脑体系结构智能机，是把数学原理落实到智能实体的研究载体。"], ["智、能与智能", "“智”是认知与策略设计的科学原理，即策略性设计；“能”是有效行动的工程原理、能动性与执行能力，即高效行动。智能是二者的统一，智能需要行动。英文暂用 Intelligence，也可表述为 recognition and agency。"], ["谋算双脑", "谋脑负责层谱抽象的全局认知与推理，算脑负责分而治之的演算与推理；两脑协同，让机器同时具备理解整体、计算局部和有效行动的能力。"], ["白盒智能", "白盒不是放弃性能，而是让智能的表示、决策、行动和验证过程具有结构依据，能够解释、控制和持续改进。"]],
+      title: "机器智能原理\n从科学原理到工程实现",
+      lead: "孙子谋算智能模型以观察学习、自我意识、谋算博弈设计、决策、行动和系统验证构成六个步骤，并将“智”的科学原理与“能”的工程原理统一起来。",
+      sections: [["智能论题", "一个智能体的智能就是它的信息，即：智能 = 信息。孙子谋算智能模型的六个步骤都以信息为数学基础。"], ["科学原理 · 智", "观察学习、自我意识和谋算博弈设计构成前三个步骤，分别对应认知世界与改造世界、认知自我与改造自我，以及规划与博弈策略设计。"], ["工程原理 · 能", "自主决策、自主控制与行动、自主系统验证构成后三个步骤，把科学原理落实为工程过程。"], ["通用模型 · 命题 20.9", "孙子谋算智能模型是一个有原理、可解释的通用人工智能模型，并给出观察学习机、自我意识机、谋算博弈设计机、谋算智能机、谋算机器人和谋算智能系统的框架。"], ["谋算双脑体系结构", "谋策略体系结构与算策略体系结构分工协同，使层谱抽象与分而治之在同一机器智能系统中结合。"]],
       sourcesLabel: "原始来源与研究入口",
-      sources: [["《人工智能科学——智能的数学原理》购书入口", "/books"], ["关于我们 · 李昂生教授团队", "/#about"], ["结构熵综述仓库", "https://github.com/SuuTTT/structural-entropy-survey"]],
-      closing: "这是团队机器智能技术路线的概览页；专著、论文与仓库构成完整的研究资料。",
+      sources: [["《孙子兵法的人工智能原理》原始 PDF", "/sun-tzu-ai-principles.pdf"], ["三部研究专著", "/books"], ["李昂生教授团队", "/team"], ["结构熵综述仓库", "https://github.com/SuuTTT/structural-entropy-survey"]],
+      closing: "术语与编号采用定义 20.8、命题 20.9 与 §20.10；完整论证、定义与模型见原始专著。",
     }}
     en={{
       back: "← Back to research hub", toggle: "中", eyebrow: "PRINCIPLES · 04 / PRINCIPLES OF MACHINE INTELLIGENCE",
-      title: "Principles of machine intelligence\nturning black boxes into white boxes",
-      lead: "Grounded in mathematical principles of intelligence, this route combines MouSuan decision-making, autonomous control, and autonomous verification into an explainable machine-intelligence science and technology programme.",
-      sections: [["From computation to MouSuan Intelligence", "Neural networks, foundation models, and world models should not remain inexplicable tools. They belong inside information science: systems that can be observed, decoded, generated, inferred, and verified."], ["From principles to machines", "Self-awareness machines, the Sun Tzu Model, MouSuan intelligent machines, and MouSuan dual-brain (left–right brain) architecture intelligent machines are research carriers for bringing mathematical principles into machine intelligence."], ["Zhi, Neng, and intelligence", "Zhi refers to recognition and to the scientific principles of cognition and strategic design; Neng refers to agency and to the engineering principles and capability for efficient action. Chinese 智能 is provisionally rendered as Intelligence and can also be expressed as recognition and agency. It is their unity and requires action."], ["The MouSuan dual brain", "The Mou brain performs hierarchically abstracting global recognition and reasoning; the Suan brain performs divide-and-conquer calculation and reasoning. Together they connect whole-system understanding with local computation and efficient action."], ["White-box intelligence", "White-box does not mean giving up performance. It means that representation, decision, action, and verification have structural grounds and can be explained, controlled, and improved."]],
+      title: "Principles of machine intelligence\nfrom science to engineering",
+      lead: "The Sun Tzu MouSuan intelligence model consists of six steps—learning from observing, self-awareness, MouSuan contest design, decision, action, and system verification—and unifies the scientific principles of Zhi with the engineering principles of Neng.",
+      sections: [["Intelligence thesis", "The intelligence of an intelligent agent is its information: intelligence = information. Information is the mathematical basis of all six steps of the model."], ["Scientific principles · Zhi", "Learning from observing, self-awareness, and MouSuan contest design form the first three steps: knowing and changing the world, knowing and changing oneself, and planning and contest-strategy design."], ["Engineering principles · Neng", "Autonomous decision, autonomous control and action, and autonomous system verification form the last three steps and realise the scientific principles as engineering processes."], ["General model · Proposition 20.9", "The Sun Tzu MouSuan intelligence model is a principled, explainable general AI model and provides frameworks for learning-from-observing machines, self-awareness machines, MouSuan contest-design machines, intelligent machines, robots, and intelligent systems."], ["MouSuan dual-brain architecture", "Mou-strategy and Suan-strategy architectures divide their work and cooperate, combining hierarchical abstraction and divide-and-conquer in one machine-intelligence system."]],
       sourcesLabel: "ORIGINAL SOURCES",
-      sources: [["Artificial Intelligence Science — purchase entry", "/books"], ["About us · Angsheng Li’s research team", "/#about"], ["Structural Entropy survey repository", "https://github.com/SuuTTT/structural-entropy-survey"]],
-      closing: "This is an overview of the team’s machine-intelligence route; the monograph, papers, and repository contain the full research record.",
+      sources: [["Original PDF · AI Principles of Sun Tzu’s The Art of War", "/sun-tzu-ai-principles.pdf"], ["Three research monographs", "/books"], ["Professor Angsheng Li’s team", "/team"], ["Structural Entropy survey repository", "https://github.com/SuuTTT/structural-entropy-survey"]],
+      closing: "Terminology and numbering follow Definition 20.8, Proposition 20.9, and §20.10; complete arguments, definitions, and models appear in the original monograph.",
     }}
   />;
 }

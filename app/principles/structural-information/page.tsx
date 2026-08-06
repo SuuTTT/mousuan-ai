@@ -4,21 +4,21 @@ export default function StructuralInformationPage() {
   return <PrinciplePage
     zh={{
       back: "← 返回研究主页", toggle: "EN", eyebrow: "公理原理 · 01 / 结构信息",
-      title: "结构信息\n让结构本身成为信息",
-      lead: "结构信息研究复杂系统中的组织关系：用编码树和结构熵度量结构中嵌入的信息，并以层谱抽象建立信息世界的共同语言。",
-      sections: [["研究问题", "香农熵描述随机性，却不能完整表达复杂系统的组织结构。结构信息关注节点、社区、层级与整体之间的关系，回答“结构如何携带信息”。"], ["核心原理", "编码树把一个复杂系统逐层组织为可解码的层级结构；结构熵则度量观察者沿编码树进行结构描述时所需的信息量。结构越有组织，结构信息越可被压缩、解释和推演。"], ["研究路线", "结构信息是连通信息与计算之间的桥梁。它从图与网络出发，发展结构信息学习、层级发现、结构化表示与决策方法，为可解释的机器智能、世界模型和谋算智能提供结构基础。"]],
+      title: "结构信息\n编码树、结构熵与解码信息",
+      lead: "编码树给出信息系统的层谱抽象；结构熵度量在编码树下嵌入信息系统中的不确定性；解码信息由一维结构熵与结构熵之差定义。",
+      sections: [["编码树 · 定义 19.14", "有限集合 V 的编码树是满足根节点、逐层划分与单点叶节点条件的有根树。编码树是层谱抽象的数学模型与数据结构。"], ["结构熵 · 定义 19.20–19.21", "Hₜ(A) 度量在编码树 T 下嵌入信息系统 A 中的不确定性；信息系统的结构熵定义为 H(A) = minₜ Hₜ(A)。"], ["解码信息 · 定义 19.29", "信息系统 A 的解码信息定义为 D(A) = H₁(A) − H(A)。定理 19.44 进一步证明，在同一编码树下，压缩信息等于解码信息。"]],
       sourcesLabel: "原始来源与延伸阅读",
       sources: [["2016 TIT PDF：结构信息与网络动力学复杂性", "https://ieeexplore.ieee.org/iel7/18/7473802/07456290.pdf"], ["Structural Information Learning Machinery · arXiv", "https://arxiv.org/abs/2001.09637"], ["结构熵综述仓库", "https://github.com/SuuTTT/structural-entropy-survey"]],
-      closing: "本页是研究主页的解释性入口；原始论文与代码仓库仍是正式引用来源。",
+      closing: "上述定义与公式采用《孙子兵法的人工智能原理》第 19 章中的编号；结构信息论的原始研究以 2016 年 IEEE Transactions on Information Theory 论文为正式论文来源。",
     }}
     en={{
       back: "← Back to research hub", toggle: "中", eyebrow: "PRINCIPLES · 01 / STRUCTURAL INFORMATION",
-      title: "Structural information\nwhen structure itself becomes information",
-      lead: "Structural information studies the organisation of complex systems: encoding trees and structural entropy measure information embedded in structure and provide a common language for the information world.",
-      sections: [["The question", "Shannon entropy describes randomness, but it does not fully express organisation. Structural information studies relations among nodes, communities, hierarchies, and wholes: how does structure carry information?"], ["The principle", "An encoding tree organises a complex system into a decodable hierarchy; structural entropy measures the information required to describe that structure. The more organised the structure, the more it can be compressed, explained, and inferred."], ["The route", "Structural information is the bridge connecting information and computation. From graphs and networks, we develop structural-information learning, hierarchy discovery, structured representations, and decisions—the basis for explainable machine intelligence, world models, and MouSuan Intelligence."]],
+      title: "Structural information\nencoding trees, entropy, and decoding",
+      lead: "An encoding tree defines a hierarchical abstraction of an information system; structural entropy measures uncertainty embedded in the system under that tree; decoding information is defined by the difference between one-dimensional and structural entropy.",
+      sections: [["Encoding tree · Definition 19.14", "An encoding tree of a finite set V is a rooted tree satisfying root, recursive partition, and singleton-leaf conditions. It is the mathematical model and data structure of hierarchical abstraction."], ["Structural entropy · Definitions 19.20–19.21", "Hᵀ(A) measures uncertainty embedded in information system A under encoding tree T; the structural entropy of the system is H(A) = minᵀ Hᵀ(A)."], ["Decoding information · Definition 19.29", "The decoding information of A is D(A) = H₁(A) − H(A). Theorem 19.44 further proves that compression information equals decoding information under the same encoding tree."]],
       sourcesLabel: "ORIGINAL SOURCES",
       sources: [["2016 TIT PDF: Structural Information and Dynamical Complexity of Networks", "https://ieeexplore.ieee.org/iel7/18/7473802/07456290.pdf"], ["Structural Information Learning Machinery · arXiv", "https://arxiv.org/abs/2001.09637"], ["Structural Entropy survey repository", "https://github.com/SuuTTT/structural-entropy-survey"]],
-      closing: "This page is an explanatory entry point; the original paper and repository remain the authoritative citation sources.",
+      closing: "The numbering and formulae above follow Chapter 19 of AI Principles of Sun Tzu’s The Art of War; the 2016 IEEE Transactions on Information Theory paper remains the original research citation for structural information theory.",
     }}
   />;
 }

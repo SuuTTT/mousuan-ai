@@ -8,7 +8,7 @@ type BookLink = [string, string];
 const copy = {
   zh: {
     back: "← 返回研究主页", toggle: "EN", eyebrow: "李昂生教授 · 研究专著", title: "把原理读成体系",
-    lead: "李昂生教授的三部专著构成人工智能科学与孙子模型的阅读入口。前两本已正式出版，页面提供合法购书链接；《孙子兵法的人工智能原理》保留团队提供的 PDF 阅读入口。",
+    lead: "李昂生教授的三部专著系统论述信息的数学原理、谋算智能的信息科学原理和孙子模型。前两部提供正式购书链接；《孙子兵法的人工智能原理》提供团队发布的 PDF。",
     books: [
       { year: "2024", kind: "购书", title: "人工智能科学\n智能的数学原理", enTitle: "Artificial Intelligence Science — Mathematical Principles of Intelligence", meta: "李昂生著 · 科学出版社 · ISBN 9787030796493 · 548 pages", summary: "从信息基本定律、编码树与结构熵，到观察学习、自我意识、博弈/谋算与孙子模型，建立人工智能科学的基本原理。", parts: ["人工智能总论", "信息基本定律", "信息的数学原理", "智能的信息科学原理"], links: [["当当网", "https://product.dangdang.com/9787030796493.html"], ["三民网络书店", "https://www.sanmin.com.tw/product/index/013643102"], ["天珑网络书店", "https://www.tenlong.com.tw/products/9787030796493"]] as BookLink[] },
       { year: "2024", kind: "购书", title: "人工智能原理\n从计算到谋算的模型、原理与方法", enTitle: "Principles of Artificial Intelligence — Models, Principles, and Methods from Computation to MouSuan", meta: "李昂生 等 著 · 已出版", summary: "从计算原理、神经网络与机器学习，到博弈（体系对抗、策略互动与战争语境）/谋算和人工智能的信息科学原理，讨论如何实现“有算有谋”的人工智能。", parts: ["计算原理", "神经网络", "机器学习", "博弈 / 谋算"], links: [["三民网络书店", "https://www.sanmin.com.tw/product/index/013828865"]] as BookLink[] },

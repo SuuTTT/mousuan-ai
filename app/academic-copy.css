@@ -1,0 +1,28 @@
+.hierarchy-layer h2,
+.hierarchy-node h3,
+.hierarchy-modules h3,
+.module-hero h1,
+.module-list h3,
+.principle-hero h1,
+.principle-sections h2,
+.theory-section h2,
+.theorem-chain h3,
+.concept-hero h1,
+.concept-sections h3,
+.concept-formal h3 {
+  text-wrap: balance;
+}
+
+.hierarchy-layer header p,
+.hierarchy-node p,
+.module-hero > div > div,
+.module-hero aside p,
+.module-list p,
+.principle-hero p,
+.principle-sections p,
+.theorem-chain p,
+.concept-lead,
+.concept-sections p,
+.concept-formal p {
+  text-wrap: pretty;
+}
