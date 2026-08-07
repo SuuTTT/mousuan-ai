@@ -79,6 +79,25 @@ test("public subpages expose an explicit research-home link", async () => {
   }
 });
 
+test("team page presents contribution-led member profiles without rank prefixes", async () => {
+  const response = await render("/team");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  for (const contribution of [
+    "现实世界科学的两个世界理论",
+    "信息世界十大定律",
+    "信息演算理论、信息解码原理和信息生成原理",
+    "学习的信息理论、自我意识的信息理论和谋算博弈理论",
+    "智能实现的孙子模型",
+    "物质与信息结合的孙子五大定律",
+  ]) assert.match(html, new RegExp(contribution));
+  for (const name of ["李昂生", "潘祎诚", "许可", "曾祥华", "卫一帆", "苏丁力"]) assert.match(html, new RegExp(`>${name}<`));
+  assert.match(html, /aria-label="智能 = 信息"/);
+  assert.match(html, /aria-label="智能 = 谋算"/);
+  assert.match(html, /aria-label="智能 = 智 \+ 能"/);
+  assert.doesNotMatch(html, /教授 · FACULTY|博士生 · PHD STUDENTS|李昂生教授/);
+});
+
 test("English homepage opens with the requested information-world statement", async () => {
   const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
   assert.match(source, /kicker: "Mathematical principles of the information world"/);

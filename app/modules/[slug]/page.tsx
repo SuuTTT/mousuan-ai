@@ -23,6 +23,6 @@ export default async function ResearchModulePage({ params }: { params: Promise<{
 
     <section className="module-return"><div className="module-shell"><p>科学问题与研究模块是两种互补入口</p><div><a href="/#questions"><span>FOUR QUESTIONS</span><strong>返回四个问题</strong><b>→</b></a><a href="/framework"><span>PRINCIPLE INDEX</span><strong>查看关键原理索引</strong><b>→</b></a></div></div></section>
 
-    <footer className="module-footer"><div className="module-shell"><a href={previous ? `/modules/${previous.slug}` : "/#modules"}><span>← 上一模块</span><strong>{previous?.shortTitle ?? "五大模块"}</strong></a><a href="/team"><span>研究主体</span><strong>李昂生教授团队</strong></a><a href={next ? `/modules/${next.slug}` : "/team"}><span>下一模块 →</span><strong>{next?.shortTitle ?? "团队介绍"}</strong></a></div></footer>
+    <footer className="module-footer"><div className="module-shell"><a href={previous ? `/modules/${previous.slug}` : "/#modules"}><span>← 上一模块</span><strong>{previous?.shortTitle ?? "五大模块"}</strong></a><a href="/team"><span>研究主体</span><strong>李昂生团队</strong></a><a href={next ? `/modules/${next.slug}` : "/team"}><span>下一模块 →</span><strong>{next?.shortTitle ?? "团队介绍"}</strong></a></div></footer>
   </main>;
 }
