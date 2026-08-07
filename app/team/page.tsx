@@ -29,7 +29,7 @@ function PeopleGroup({ title, people }: { title: string; people: typeof faculty 
 
 export default function TeamPage() {
   return <main className="team-page">
-    <nav className="team-nav"><a className="team-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/">研究主页</a><a href="/#themes">四个问题</a><a href="/#modules">五大模块</a><a href="/books">三部专著</a></div></nav>
+    <nav className="team-nav"><a className="team-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/">研究主页</a><a href="/#questions">四个问题</a><a href="/#definitions">三个定义</a><a href="/#modules">五大模块</a><a href="/books">三部专著</a></div></nav>
     <header className="team-hero"><div><p>ABOUT US · 李昂生教授团队</p><h1>把信息科学原理<br />变成智能机</h1><span>团队以结构信息、信息的数学原理、机器智能技术和智能科学为基础，从计算到谋算，把已有黑箱变成有原理、可解释、可验证的机器智能。</span></div><aside><strong>研究路线</strong><p>谋算双脑体系结构连接信息科学与计算科学，并落实为观察学习机、自我意识机、孙子模型、谋算智能机与谋算智能机器人。</p></aside></header>
 
     <section className="team-members team-shell"><header><p>CORE TEAM</p><h2>核心成员</h2><span>教授与博士生共同推进结构信息、机器智能科学与谋算智能研究。</span></header><PeopleGroup title="教授 · FACULTY" people={faculty} /><PeopleGroup title="博士生 · PHD STUDENTS" people={students} /></section>

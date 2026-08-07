@@ -28,7 +28,7 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
 
     <header className="concept-hero" data-layer={concept.layer}>
       <div className="concept-hero-copy">
-        <p><a href="/">研究主页</a><b>›</b><a href="/#themes">{concept.layerName}</a><b>›</b><span>{concept.title}</span></p>
+        <p><a href="/">研究主页</a><b>›</b><a href="/#definitions">{concept.layerName}</a><b>›</b><span>{concept.title}</span></p>
         <span className="concept-tag">{concept.layer} · {concept.layerEnglish}</span>
         <h1>{concept.title}</h1>
         <em>{concept.englishTitle}</em>
@@ -69,7 +69,7 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
     </section>
 
     <footer className="concept-footer">
-      <div className="concept-shell"><a className={!previous ? "disabled" : ""} href={previous ? `/concepts/${previous.slug}` : "/#themes"}><span>← 上一个概念</span><strong>{previous?.title ?? "体系起点"}</strong></a><a href="/"><span>返回</span><strong>研究主页</strong></a><a className={!next ? "disabled" : ""} href={next ? `/concepts/${next.slug}` : "/framework"}><span>下一个概念 →</span><strong>{next?.title ?? "理论总图"}</strong></a></div>
+      <div className="concept-shell"><a className={!previous ? "disabled" : ""} href={previous ? `/concepts/${previous.slug}` : "/#center"}><span>← 上一个概念</span><strong>{previous?.title ?? "体系起点"}</strong></a><a href="/"><span>返回</span><strong>研究主页</strong></a><a className={!next ? "disabled" : ""} href={next ? `/concepts/${next.slug}` : "/framework"}><span>下一个概念 →</span><strong>{next?.title ?? "理论总图"}</strong></a></div>
     </footer>
   </main>;
 }

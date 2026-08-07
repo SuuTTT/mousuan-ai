@@ -33,28 +33,36 @@ test("server-renders the public knowledge hierarchy", async () => {
   const html = await response.text();
   assert.match(html, /信息世界数学原理/);
   assert.match(html, /四个科学问题/);
-  assert.match(html, /四个问题及其回答/);
   assert.doesNotMatch(html, /基本问题|基本回答/);
   assert.match(html, /四个回答/);
   assert.match(html, /信息的数学原理/);
-  assert.match(html, /信息原理/);
   assert.doesNotMatch(html, /信息世界(?:的)?(?:公理化)?科学原理/);
   assert.doesNotMatch(html, /信息的数学基础|信息基础/);
-  for (const question of ["信息是什么？信息的数学原理是什么？", "智能是什么？", "智能从哪里来？", "怎样实现智能？"]) {
+  for (const question of ["支撑人工智能科学技术的新数学是什么？", "智能是什么？", "智能从哪里来？", "怎样实现智能？"]) {
     assert.ok(html.includes(question));
   }
   assert.match(html, /智能 = 信息/);
   assert.match(html, /智能 = 谋算/);
+  assert.match(html, /智能 = 智 \+ 能/);
   assert.match(html, /智能的策略就是谋和算/);
-  assert.match(html, /谋体系结构与算体系结构/);
-  assert.match(html, /孙子模型：智能的科学—工程统一模型/);
-  assert.match(html, /智：人工智能科学原理/);
-  assert.match(html, /能：人工智能工程原理/);
-  assert.match(html, /数学实质、机器原理和实现模型三个维度/);
+  assert.match(html, /“\+”表示二者在同一智能系统中的统一/);
+  assert.match(html, /信息是人工智能的数学基础/);
+  assert.match(html, /信息渗透在人工智能的每一个步骤与过程/);
+  assert.match(html, /智 · 人工智能科学原理/);
+  assert.match(html, /能 · 人工智能工程原理/);
+  assert.match(html, /学习/);
+  assert.match(html, /系统验证/);
+  for (const sectionId of ["questions", "center", "definitions", "model", "modules"]) {
+    assert.match(html, new RegExp(`id="${sectionId}"`));
+  }
+  assert.ok(html.indexOf('id="center"') < html.indexOf('id="definitions"'));
+  assert.ok(html.indexOf('id="definitions"') < html.indexOf('id="model"'));
+  assert.ok(html.indexOf('id="model"') < html.indexOf('id="modules"'));
   assert.doesNotMatch(html, /中文“智能”|无非是谋或者算|已经蕴含实现模型/);
   assert.doesNotMatch(html, /现实世界的完备建模|COMPLETELY MODELING|complete-model/);
   assert.match(html, /href="\/themes\/information"/);
-  assert.doesNotMatch(html, /href="#theme-01"|id="theme-01"/);
+  assert.match(html, /href="\/themes\/zhi-neng-definition"/);
+  assert.doesNotMatch(html, /href="#theme-01"|id="theme-01"|id="themes"/);
   assert.doesNotMatch(html, /questions-books|主要著作/);
   assert.doesNotMatch(html, /先给出答案|首页只呈现|简单首页|分层展开|第一层|第二层|第三层|2—3 LEVELS/);
   assert.match(html, /questions-menu-toggle/);
@@ -64,7 +72,7 @@ test("server-renders the public knowledge hierarchy", async () => {
 });
 
 test("public subpages expose an explicit research-home link", async () => {
-  for (const pathname of ["/themes/information", "/concepts/physical-world", "/modules/principles", "/framework", "/team", "/theorems"]) {
+  for (const pathname of ["/themes/information", "/themes/zhi-neng-definition", "/concepts/physical-world", "/modules/principles", "/framework", "/team", "/theorems"]) {
     const response = await render(pathname);
     assert.equal(response.status, 200);
     assert.match(await response.text(), /研究主页/);
@@ -74,7 +82,9 @@ test("public subpages expose an explicit research-home link", async () => {
 test("English homepage opens with the requested information-world statement", async () => {
   const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
   assert.match(source, /kicker: "Mathematical principles of the information world"/);
-  assert.match(source, /indexLabel: \["信息的数学原理", "Mathematical principles of information"\]/);
+  assert.match(source, /What new mathematics underpins artificial intelligence science and technology\?/);
+  assert.match(source, /Mathematical principles of information, also called mathematical principles of the information world/);
+  assert.match(source, /Intelligence = Zhi \+ Neng/);
   assert.match(source, /guide: "Four questions · Four answers"/);
   assert.doesNotMatch(source, /Mathematical foundation of information|Information foundations?/i);
 });
@@ -91,6 +101,8 @@ test("terminology wiki records the canonical information-principle terms", async
   assert.match(html, />Mathematical principles of the information world</);
   assert.match(html, />战争的科学原理</);
   assert.match(html, /战争同时涉及物质与信息/);
+  assert.match(html, />智能的科学—工程定义</);
+  assert.match(html, /智能 = 智 \+ 能/);
   assert.doesNotMatch(html, /Information foundations?|Mathematical foundations? of information/i);
 });
 
@@ -185,6 +197,8 @@ test("server-renders the theorem framework with source references", async () => 
   assert.match(html, /定理 10\.9/);
   assert.match(html, /定义 34\.5/);
   assert.match(html, /信息世界数学原理/);
+  assert.match(html, /智能 = 智 \+ 能/);
+  assert.match(html, /孙子模型以信息为数学基础/);
   assert.match(html, /战争之科学原理/);
   assert.match(html, /sun-tzu-ai-principles\.pdf#page=567/);
   assert.doesNotMatch(html, /原有模块|核验原始手稿|audit-redesign/);
@@ -197,15 +211,31 @@ test("server-renders the Sun Tzu model with primary-source order and five laws",
   const html = await response.text();
   assert.match(html, /定义 34\.3–34\.4/);
   assert.match(html, /孙子五大定律/);
-  assert.match(html, /智能的科学—工程统一模型/);
+  assert.match(html, /孙子模型以信息为数学基础/);
+  assert.match(html, /信息渗透在学习、自我意识、博弈／谋算、决策、行动与系统验证的每一步/);
   assert.match(html, /战争能力 = 物质 × 信息²/);
   assert.equal(html.match(/href="\/books#artificial-intelligence-science"/g)?.length, 1);
+});
+
+test("server-renders the independent Zhi–Neng definition", async () => {
+  const response = await render("/themes/zhi-neng-definition");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /aria-label="智能 = 智 \+ 能"/);
+  assert.match(html, /结构上的统一，而不是数值相加/);
+  assert.match(html, /学习 · 自我意识 · 博弈／谋算/);
+  assert.match(html, /决策 · 行动 · 系统验证/);
+  assert.match(html, /href="\/themes\/sun-tzu-model"/);
 });
 
 test("all internal HTML anchors use lock-safe navigation while document fragments remain native", () => {
   assert.deepEqual(resolveAnchorNavigation("https://example.test/", "#modules"), {
     kind: "same-page",
     targetId: "modules",
+  });
+  assert.deepEqual(resolveAnchorNavigation("https://example.test/", "#definitions"), {
+    kind: "same-page",
+    targetId: "definitions",
   });
   assert.deepEqual(resolveAnchorNavigation("https://example.test/team", "/#modules"), {
     kind: "cross-page",
