@@ -83,6 +83,7 @@ test("team page presents contribution-led member profiles without rank prefixes"
   const response = await render("/team");
   assert.equal(response.status, 200);
   const html = await response.text();
+  const normalizedHtml = html.replaceAll("<!-- -->", "");
   for (const contribution of [
     "现实世界科学的两个世界理论",
     "信息世界十大定律",
@@ -95,6 +96,15 @@ test("team page presents contribution-led member profiles without rank prefixes"
   assert.match(html, /aria-label="智能 = 信息"/);
   assert.match(html, /aria-label="智能 = 谋算"/);
   assert.match(html, /aria-label="智能 = 智 \+ 能"/);
+  for (const work of ["《人工智能科学》", "《人工智能原理》", "《孙子兵法的人工智能原理》"]) assert.match(html, new RegExp(work));
+  for (const href of [
+    "/books#artificial-intelligence-science",
+    "/books#artificial-intelligence-principles",
+    "/books#sun-tzu-ai-principles",
+  ]) assert.match(html, new RegExp(`href="${href}"`));
+  assert.match(normalizedHtml, /《人工智能科学》<\/a>，2024<\/span><span>；/);
+  assert.match(normalizedHtml, /《人工智能原理》<\/a>，2024<\/span><span>；/);
+  assert.match(normalizedHtml, /《孙子兵法的人工智能原理》<\/a>，2026/);
   assert.doesNotMatch(html, /教授 · FACULTY|博士生 · PHD STUDENTS|李昂生教授/);
 });
 

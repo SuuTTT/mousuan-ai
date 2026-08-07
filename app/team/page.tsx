@@ -16,6 +16,7 @@ type TeamMember = {
   bio: string;
   image: string;
   links: readonly (readonly [string, string])[];
+  works?: readonly (readonly [string, string, string])[];
   featured?: boolean;
 };
 
@@ -25,6 +26,11 @@ const members: readonly TeamMember[] = [
     bio: "提出现实世界科学的两个世界理论，即物理世界和信息世界；提出包括信息世界层谱抽象范式定律在内的信息世界十大定律；创建包括信息演算理论、信息解码原理和信息生成原理的信息的数学原理；创建包括学习的信息理论、自我意识的信息理论和谋算博弈理论的智能的信息科学原理；提出智能实质的智能论题“智能 = 信息”、智能生成的谋算策略原理“智能 = 谋算”、智能的表示定律“智能 = 智 + 能”以及智能实现的孙子模型；提出物质与信息结合的孙子五大定律。",
     image: "/people/angsheng-li.jpg",
     links: [["代表论文", "https://arxiv.org/abs/2001.09637"], ["DBLP", "https://dblp.org/pid/66/4917.html"]],
+    works: [
+      ["《人工智能科学》", "2024", "/books#artificial-intelligence-science"],
+      ["《人工智能原理》", "2024", "/books#artificial-intelligence-principles"],
+      ["《孙子兵法的人工智能原理》", "2026", "/books#sun-tzu-ai-principles"],
+    ],
     featured: true,
   },
   { name: "潘祎诚", bio: "研究网络模型与算法、信息论和结构信息。", image: "/people/pan-yicheng.jpg", links: [["北航主页", "https://scse.buaa.edu.cn/info/1080/7261.htm"]] },
@@ -35,7 +41,7 @@ const members: readonly TeamMember[] = [
 ] as const;
 
 function PeopleGroup() {
-  return <section className="team-people-group"><div>{members.map((person) => <article className={person.featured ? "featured" : undefined} key={person.name}><img src={person.image} alt={`${person.name}照片`} /><div><h3>{person.name}</h3><p><MathText text={person.bio} /></p><nav>{person.links.map(([label, href]) => <a href={href} target="_blank" rel="noreferrer" key={label}>{label} ↗︎</a>)}</nav></div></article>)}</div></section>;
+  return <section className="team-people-group"><div>{members.map((person) => <article className={person.featured ? "featured" : undefined} key={person.name}><img src={person.image} alt={`${person.name}照片`} /><div><h3>{person.name}</h3><p><MathText text={person.bio} /></p>{person.works && <p className="team-member-works"><span>见：</span>{person.works.map(([title, year, href], index) => <span key={href}>{index > 0 && "；"}<a href={href}>{title}</a>，{year}</span>)}。</p>}<nav>{person.links.map(([label, href]) => <a href={href} target="_blank" rel="noreferrer" key={label}>{label} ↗︎</a>)}</nav></div></article>)}</div></section>;
 }
 
 export default function TeamPage() {

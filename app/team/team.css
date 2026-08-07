@@ -4,6 +4,9 @@
 .team-people-group article.featured>img{width:100%;height:auto;aspect-ratio:4/3;align-self:start;object-fit:contain;background:#eef0f6}
 .team-people-group article.featured h3{margin:0 0 16px;font-size:34px}
 .team-people-group article.featured p{max-width:720px;min-height:0;font-size:15px;line-height:1.82;text-wrap:pretty}
+.team-people-group article.featured .team-member-works{max-width:720px;min-height:0;margin:18px 0 0;padding-top:14px;border-top:1px solid var(--p-line);color:#39425a;font-size:13px;line-height:1.7}
+.team-member-works a{border-bottom:1px solid #727a90;color:#39425a}
+.team-member-works a:hover{color:#5044b6}
 .team-people-group article.featured nav{margin-top:23px}
 
 @media(max-width:850px){
