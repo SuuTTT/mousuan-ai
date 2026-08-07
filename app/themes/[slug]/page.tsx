@@ -15,7 +15,7 @@ export default async function ThemePage({ params }: { params: Promise<{ slug: st
   const next = themes[index + 1];
 
   return <main className="theme-page">
-    <nav className="theme-nav"><a className="theme-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/">研究主页</a><a href="/#themes">四个主题</a><a href="/framework">理论索引</a><a href="/theorems">定义定理</a><a href="/books">三部专著</a><a href="/team">团队</a></div></nav>
+    <nav className="theme-nav"><a className="theme-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/">研究主页</a><a href="/#center">信息中心</a><a href="/#definitions">三个定义</a><a href="/#model">孙子模型</a><a href="/framework">理论索引</a><a href="/theorems">定义定理</a></div></nav>
 
     <header className="theme-hero"><div className="theme-shell"><p><span>{theme.no}</span>{theme.dimension}</p><h1>{theme.question}</h1><em>{theme.englishTitle}</em><div className="theme-formula"><MathText text={theme.formula} /></div><p className="theme-lead"><MathText text={theme.lead} /></p></div></header>
 
@@ -29,6 +29,6 @@ export default async function ThemePage({ params }: { params: Promise<{ slug: st
 
     <section className="theme-deeper theme-shell"><header><p>DEEPER READING</p><h2>继续深入</h2></header><div>{theme.deeper.map((item) => <a href={item.href} key={item.title}><span>{item.title}</span><p>{item.text}</p><b>↗︎</b></a>)}</div></section>
 
-    <footer className="theme-footer"><div className="theme-shell"><a href={previous ? `/themes/${previous.slug}` : "/#themes"}><span>← 上一主题</span><strong>{previous?.title ?? "四个问题"}</strong></a><a href="/"><span>返回</span><strong>研究主页</strong></a><a href={next ? `/themes/${next.slug}` : "/framework"}><span>下一主题 →</span><strong>{next?.title ?? "理论索引"}</strong></a></div></footer>
+    <footer className="theme-footer"><div className="theme-shell"><a href={previous ? `/themes/${previous.slug}` : "/#center"}><span>← 上一层</span><strong>{previous?.title ?? "信息中心"}</strong></a><a href="/"><span>返回</span><strong>研究主页</strong></a><a href={next ? `/themes/${next.slug}` : "/framework"}><span>下一层 →</span><strong>{next?.title ?? "理论索引"}</strong></a></div></footer>
   </main>;
 }

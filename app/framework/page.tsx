@@ -4,7 +4,7 @@ const sections = [
   {
     id: "information",
     no: "01",
-    question: "信息是什么？信息的数学原理是什么？",
+    question: "支撑人工智能科学技术的新数学是什么？",
     title: "信息世界数学原理",
     statement: "信息世界数学原理研究确定性、不确定性及其相互转化，并以层谱抽象为总方法。",
     points: [
@@ -42,18 +42,31 @@ const sections = [
     href: "/books#artificial-intelligence-science",
   },
   {
-    id: "model",
+    id: "zhi-neng",
     no: "04",
-    question: "智能的模型",
-    title: "孙子模型：智与能",
-    statement: "“智”给出人工智能科学原理，“能”给出人工智能工程原理；二者共同构成机器智能的实现模型。",
+    question: "怎样实现智能？",
+    title: "智能 = 智 + 能",
+    statement: "“智”给出人工智能科学原理，“能”给出人工智能工程原理；“+”表示二者在同一智能系统中的结构统一。",
     points: [
       ["智", "学习 · 自我意识 · 博弈／谋算", "《人工智能科学——智能的数学原理》定义 34.3–34.4"],
       ["能", "决策 · 行动 · 系统验证", "《人工智能科学——智能的数学原理》定义 34.4"],
-      ["完备策略", "学习、自我意识学习和博弈／谋算", "《人工智能科学——智能的数学原理》命题 34.2"],
-      ["策略贯穿", "模型每一步以谋和算为基本策略", "《人工智能科学——智能的数学原理》定义 34.4"],
+      ["共同基础", "信息渗透人工智能的每一个步骤与过程", "《人工智能科学——智能的数学原理》定义 34.4–34.5"],
     ],
-    href: "/books#artificial-intelligence-science",
+    href: "/themes/zhi-neng-definition",
+  },
+  {
+    id: "model",
+    no: "05",
+    question: "智能的统一模型",
+    title: "孙子模型",
+    statement: "孙子模型以信息为数学基础，以谋和算为每一步的基本策略，统一人工智能的科学原理与工程原理。",
+    points: [
+      ["数学基础", "信息", "《人工智能科学——智能的数学原理》定义 34.5"],
+      ["智", "学习 · 自我意识 · 博弈／谋算", "《人工智能科学——智能的数学原理》定义 34.3–34.4"],
+      ["能", "决策 · 行动 · 系统验证", "《人工智能科学——智能的数学原理》定义 34.4"],
+      ["策略贯穿", "模型每一步以谋和算为基本策略", "《人工智能科学——智能的数学原理》定义 28.5、34.4"],
+    ],
+    href: "/themes/sun-tzu-model",
   },
 ] as const;
 
@@ -67,9 +80,9 @@ const sunLaws = [
 
 export default function FrameworkPage() {
   return <main className="principle-index">
-    <nav className="index-nav"><a className="index-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/#themes">四个主题</a><a href="#information">信息</a><a href="#intelligence">智能</a><a href="#strategy">谋算</a><a href="#sun">孙子五大定律</a><a href="/theorems">定义定理</a></div><a href="/">研究主页</a></nav>
+    <nav className="index-nav"><a className="index-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/#questions">四个问题</a><a href="#information">信息</a><a href="#intelligence">三个定义</a><a href="#model">孙子模型</a><a href="#sun">孙子五大定律</a><a href="/theorems">定义定理</a></div><a href="/">研究主页</a></nav>
 
-    <header className="index-hero"><div className="index-shell"><p>KEY PRINCIPLES & SOURCES</p><h1>关键原理索引</h1><span>只点出理解信息与智能体系所需的重要观点；定义、证明与完整论述均回到原始专著。</span><div><a href="#information">信息的数学原理</a><b>→</b><a href="#intelligence">智能论题</a><b>→</b><a href="#strategy">策略原理</a><b>→</b><a href="#model">孙子模型</a></div></div></header>
+    <header className="index-hero"><div className="index-shell"><p>KEY PRINCIPLES & SOURCES</p><h1>关键原理索引</h1><span>只点出理解信息与智能体系所需的重要观点；定义、证明与完整论述均回到原始专著。</span><div><a href="#information">信息中心</a><b>→</b><a href="#intelligence">智能 = 信息</a><b>→</b><a href="#strategy">智能 = 谋算</a><b>→</b><a href="#zhi-neng">智能 = 智 + 能</a><b>→</b><a href="#model">孙子模型</a></div></div></header>
 
     <section className="index-sections index-shell">{sections.map((section) => <article id={section.id} key={section.id}><header><span>{section.no}</span><div><p>{section.question}</p><h2><MathText text={section.title} /></h2><strong><MathText text={section.statement} /></strong></div></header><ol>{section.points.map(([kind, point, source]) => <li key={point}><small>{kind}</small><b><MathText text={point} /></b><span>{source}</span></li>)}</ol><a className="index-source" href={section.href}>进入主题与原著链接 ↗︎</a></article>)}</section>
 
