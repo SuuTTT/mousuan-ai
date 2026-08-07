@@ -43,4 +43,5 @@ next-env.d.ts
 /tmp/
 /work/
 /internal-audit/
+/.release/
 tsconfig.tsbuildinfo

@@ -1,104 +1,73 @@
-# vinext-starter
+# MouSuanAI
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+MouSuanAI 是“结构信息与机器智能”双语研究网站。网站从信息世界的数学原理出发，以四个科学问题引入人工智能的基本问题，并按照“一个中心、三个定义、一个模型、五个模块”的层次组织研究内容。
 
-## Prerequisites
+当前里程碑：`v0.9.0`（2026-08-08）。该版本用于团队审阅、学术内容校核和正式域名上线前的工程验收。
 
-- Node.js `>=22.13.0`
+## 知识结构
 
-## Quick Start
+### 四个科学问题
+
+| 问题 | 回答 |
+| --- | --- |
+| 支撑人工智能科学技术的新数学是什么？ | 信息的数学原理，也称信息世界的数学原理 |
+| 智能是什么？ | 智能 = 信息 |
+| 智能从哪里来？ | 智能 = 谋算 |
+| 怎样实现智能？ | 智能 = 智 + 能 |
+
+### 1 + 3 + 1 + 5
+
+- 一个中心：信息及信息世界的数学原理。
+- 三个定义：智能论题、智能的策略原理、智能的科学—工程定义。
+- 一个模型：孙子模型。
+- 五个模块：科学原理、机器智能技术、孙子模型、认知与设计、谋算智能机。
+
+详细的页面关系、数据来源和渲染方式见[体系结构说明](docs/ARCHITECTURE.md)。
+
+## 主要页面
+
+| 页面 | 路径 |
+| --- | --- |
+| 研究主页 | `/` |
+| 四个主题 | `/themes/*` |
+| 概念与原理 | `/concepts/*`、`/principles/*` |
+| 五大研究模块 | `/modules/*` |
+| 定义、定理与定律索引 | `/theorems` |
+| 术语表 | `/wiki/terminology` |
+| 三部专著 | `/books` |
+| 核心成员 | `/team` |
+
+## 本地开发
+
+要求 Node.js `>=22.13.0`。
 
 ```bash
-npm install
+npm ci
 npm run dev
-npm run build
 ```
 
-This starter does not use `wrangler.jsonc`.
+常用检查：
 
-## Included Shape
-
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
-
-## Workspace Auth Headers
-
-OpenAI workspace sites can read the current user's email from
-`oai-authenticated-user-email`.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
+```bash
+npm test
+npm run release:check
 ```
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+`npm test` 构建站点并运行渲染测试；`npm run release:check` 还会生成包含全部公开路由的静态发布目录 `.release/site`。
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+## 内容维护
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
+- 术语、引用、公式和人物介绍的写作规则见[内容维护规范](docs/CONTENT-GUIDE.md)。
+- 定义、定理和定律索引由原著提取数据生成，更新时须保留原书编号、页码和来源。
+- 18 页结构手稿是内部知识设计资料，不属于公开网站内容，也不得复制到公开部署目录。
 
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
+## 发布与部署
 
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
+- 发布步骤与回滚检查见[发布清单](docs/RELEASE-CHECKLIST.md)。
+- 当前审阅服务器的部署方式见[部署与回滚说明](docs/DEPLOYMENT.md)。
+- 中国大陆正式域名、阿里云和 ICP 备案流程见[阿里云上线运行手册](docs/aliyun-mousuan-ai-icp-runbook.zh-CN.md)。
+- 版本变化见[变更记录](CHANGELOG.md)和[`v0.9.0` 发布说明](docs/releases/v0.9.0.md)。
 
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
+## 权利说明
 
-## Useful Commands
-
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
-
-## Learn More
-
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
-
-## Production deployment
-
-For the Mainland China production plan, including the `mousuan.ai` purchase,
-Alibaba Cloud deployment, ICP filing, HTTPS, verification, and rollback steps,
-see [the Chinese deployment runbook](docs/aliyun-mousuan-ai-icp-runbook.zh-CN.md).
+本仓库尚未声明开源许可证。网站引用的专著、论文、人物照片和内部研究资料，其权利分别归原作者或相应权利人所有；未经授权不得将这些材料作为独立内容再分发。
