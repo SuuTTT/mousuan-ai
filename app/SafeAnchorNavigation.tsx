@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { resolveAnchorNavigation } from "./anchor-navigation";
+import { resolveAnchorNavigation } from "./anchor-navigation.mjs";
 
 const pendingAnchorKey = "mousuan-pending-anchor";
 

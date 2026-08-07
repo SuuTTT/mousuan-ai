@@ -1,15 +1,21 @@
-export type AnchorNavigation =
-  | { kind: "ignore" }
-  | { kind: "same-page"; targetId: string }
-  | { kind: "cross-page"; targetId: string; destination: string };
+/**
+ * @typedef {{ kind: "ignore" } |
+ *   { kind: "same-page", targetId: string } |
+ *   { kind: "cross-page", targetId: string, destination: string }} AnchorNavigation
+ */
 
 const documentExtension = /\.(?:pdf|docx?|xlsx?|pptx?|zip|epub)$/i;
 
-export function resolveAnchorNavigation(currentHref: string, rawHref: string): AnchorNavigation {
+/**
+ * @param {string} currentHref
+ * @param {string} rawHref
+ * @returns {AnchorNavigation}
+ */
+export function resolveAnchorNavigation(currentHref, rawHref) {
   if (!rawHref.includes("#")) return { kind: "ignore" };
 
-  let current: URL;
-  let destination: URL;
+  let current;
+  let destination;
   try {
     current = new URL(currentHref);
     destination = new URL(rawHref, current);
@@ -21,7 +27,7 @@ export function resolveAnchorNavigation(currentHref: string, rawHref: string): A
     return { kind: "ignore" };
   }
 
-  let targetId: string;
+  let targetId;
   try {
     targetId = decodeURIComponent(destination.hash.slice(1));
   } catch {

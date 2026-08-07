@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import bookIndex from "../app/theorems/book-index.json" with { type: "json" };
-import { resolveAnchorNavigation } from "../app/anchor-navigation.ts";
+import { resolveAnchorNavigation } from "../app/anchor-navigation.mjs";
 
 async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
