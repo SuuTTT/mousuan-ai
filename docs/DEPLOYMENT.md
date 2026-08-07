@@ -61,3 +61,5 @@ current -> releases/v0.9.0/site
 `.openai/hosting.json` 保存 Sites 项目标识及逻辑资源绑定。Sites 发布和海外审阅服务器发布必须使用同一个已经验证的提交；未明确授权时，不将完整源码复制到新的公共托管位置。
 
 中国大陆正式部署、HTTPS、DNS 和 ICP 流程见 `docs/aliyun-mousuan-ai-icp-runbook.zh-CN.md`。
+
+AWS、阿里云静态托管／云服务器两种方案以及未来正式 URL 规划见 `docs/CLOUD-DEPLOYMENT.md`。

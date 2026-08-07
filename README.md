@@ -65,6 +65,7 @@ npm run release:check
 
 - 发布步骤与回滚检查见[发布清单](docs/RELEASE-CHECKLIST.md)。
 - 当前审阅服务器的部署方式见[部署与回滚说明](docs/DEPLOYMENT.md)。
+- AWS、阿里云和未来正式域名的完整方案见[云部署与域名方案](docs/CLOUD-DEPLOYMENT.md)。
 - 中国大陆正式域名、阿里云和 ICP 备案流程见[阿里云上线运行手册](docs/aliyun-mousuan-ai-icp-runbook.zh-CN.md)。
 - 版本变化见[变更记录](CHANGELOG.md)和[`v0.9.0` 发布说明](docs/releases/v0.9.0.md)。
 
