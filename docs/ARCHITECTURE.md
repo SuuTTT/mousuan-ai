@@ -43,7 +43,7 @@
 - `app/MathText.tsx`：把受支持的公式表达转换为语义化 MathML。
 - `app/theorems/book-index.json`：原著编号条目的检索数据。
 - `public/`：公开图片、专著资料和社交分享图。
-- `static-overrides/audit-redesign/`：内部审稿资料，仅用于本地核验，不进入公开静态发布目录。
+- `internal-audit/audit-redesign/`：本地忽略的内部审稿资料，仅用于核验，不进入 Git 当前版本树或公开静态发布目录。
 - `scripts/`：索引提取、文档生成和静态发布脚本。
 - `tests/`：服务端渲染、术语、公式、引用、路由和安全滚动测试。
 
