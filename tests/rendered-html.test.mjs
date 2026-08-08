@@ -31,6 +31,7 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
+  assert.match(html, /目标：有原理、可解释的机器智能科学技术，智能机器，智能机器人。/);
   assert.match(html, /信息世界数学原理/);
   assert.match(html, /四个科学问题/);
   assert.doesNotMatch(html, /基本问题|基本回答/);
@@ -110,6 +111,7 @@ test("team page presents contribution-led member profiles without rank prefixes"
 
 test("English homepage opens with the requested information-world statement", async () => {
   const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  assert.match(source, /Objective: Principled and explainable machine intelligence science and technology, intelligent machines, and intelligent robots\./);
   assert.match(source, /kicker: "Mathematical principles of the information world"/);
   assert.match(source, /What new mathematics underpins artificial intelligence science and technology\?/);
   assert.match(source, /Mathematical principles of information, also called mathematical principles of the information world/);

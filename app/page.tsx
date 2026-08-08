@@ -90,6 +90,7 @@ const homeModules = [
 const ui = {
   zh: {
     nav: [["四个问题", "#questions"], ["信息中心", "#center"], ["三个定义", "#definitions"], ["孙子模型", "#model"], ["五大模块", "#modules"], ["团队", "/team"]],
+    objective: "目标：有原理、可解释的机器智能科学技术，智能机器，智能机器人。",
     kicker: "信息世界数学原理",
     title: "人工智能的\n四个科学问题",
     lead: "信息是人工智能的数学基础，渗透在人工智能的每一个步骤与过程。四个问题由此进入三个定义，并最终统一于孙子模型。",
@@ -119,6 +120,7 @@ const ui = {
   },
   en: {
     nav: [["Four questions", "#questions"], ["Information", "#center"], ["Three definitions", "#definitions"], ["Sun Tzu Model", "#model"], ["Five modules", "#modules"], ["Team", "/team"]],
+    objective: "Objective: Principled and explainable machine intelligence science and technology, intelligent machines, and intelligent robots.",
     kicker: "Mathematical principles of the information world",
     title: "Four scientific questions\nof artificial intelligence",
     lead: "Information is the mathematical foundation of artificial intelligence and permeates every step and process. The four questions lead to three definitions, unified by the Sun Tzu Model.",
@@ -168,7 +170,7 @@ export default function Home() {
       <button className="questions-menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="questions-mobile-menu" aria-label={menuOpen ? (lang === "zh" ? "关闭导航" : "Close navigation") : (lang === "zh" ? "打开导航" : "Open navigation")} onClick={() => setMenuOpen((open) => !open)}><span /><span /></button>
     </nav>
 
-    <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#center">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗︎</b></a></div></div><aside id="questions"><p>{c.guide}</p>{questions.map((item) => <a href={item.href} key={item.no}><span>{item.no}</span><div><strong>{t(item.question, lang)}</strong><small><MathText text={t(item.answer, lang)} /></small></div></a>)}</aside></div></section>
+    <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-objective">{c.objective}</p><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#center">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗︎</b></a></div></div><aside id="questions"><p>{c.guide}</p>{questions.map((item) => <a href={item.href} key={item.no}><span>{item.no}</span><div><strong>{t(item.question, lang)}</strong><small><MathText text={t(item.answer, lang)} /></small></div></a>)}</aside></div></section>
 
     <section id="center" className="questions-center"><div className="questions-shell"><header><p>{c.centerLabel}</p><h2>{c.centerTitle}</h2></header><div className="questions-center-thesis"><span>01 · CENTRE</span><strong>{c.centerFormula}</strong><p>{c.centerText}</p><a href="/themes/information">{c.centerEnter} ↗︎</a></div><ol>{informationPillars.map(([title, text], index) => <li key={title[0]}><span>0{index + 1}</span><div><strong>{t(title, lang)}</strong><p>{t(text, lang)}</p></div></li>)}</ol></div></section>
 
