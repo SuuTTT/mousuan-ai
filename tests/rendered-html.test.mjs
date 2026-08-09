@@ -32,7 +32,8 @@ test("server-renders the public knowledge hierarchy", async () => {
 
   const html = await response.text();
   assert.match(html, /目标：有原理、可解释的机器智能科学技术，智能机器，智能机器人。/);
-  assert.match(html, /信息世界数学原理/);
+  assert.match(html, /信息世界的数学原理 · 机器智能科学技术/);
+  assert.match(html, /机器智能的/);
   assert.match(html, /五个科学问题/);
   assert.doesNotMatch(html, /基本问题|基本回答/);
   assert.match(html, /五个回答/);
@@ -47,7 +48,7 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(html, /智能 = 智 \+ 能/);
   assert.match(html, /孙子模型/);
   assert.match(html, /一个中心 · 三个定义 · 一个模型/);
-  assert.match(html, /构成了人工智能科学技术体系/);
+  assert.match(html, /构成了机器智能科学技术体系/);
   assert.match(html, /智能的策略就是谋和算/);
   assert.match(html, /“\+”表示二者在同一智能系统中的统一/);
   assert.match(html, /信息是人工智能的数学基础/);
@@ -116,13 +117,15 @@ test("English homepage opens with the requested information-world statement", as
   const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
   const homeCss = await readFile(new URL("../app/home-four-questions.css", import.meta.url), "utf8");
   assert.match(source, /Objective: Principled and explainable machine intelligence science and technology, intelligent machines, and intelligent robots\./);
-  assert.match(source, /kicker: "Mathematical principles of the information world"/);
+  assert.match(source, /kicker: "Mathematical principles of the information world · Machine intelligence science and technology"/);
+  assert.match(source, /Five scientific questions\\nof machine intelligence/);
   assert.match(source, /What new mathematics underpins artificial intelligence science and technology\?/);
   assert.match(source, /Mathematical principles of information, also called mathematical principles of the information world/);
   assert.match(source, /Intelligence = Zhi \+ Neng/);
   assert.match(source, /guide: "Five questions · Five answers"/);
   assert.match(source, /What is the model of intelligence\?/);
   assert.match(source, /One centre · Three definitions · One model/);
+  assert.match(source, /system of machine intelligence science and technology/);
   assert.match(homeCss, /grid-template-columns:minmax\(72px,max-content\) minmax\(0,1fr\)/);
   assert.match(homeCss, /questions-system-summary\{grid-template-columns:1fr;gap:7px\}/);
   assert.doesNotMatch(source, /Mathematical foundation of information|Information foundations?/i);
