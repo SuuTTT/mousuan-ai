@@ -114,6 +114,7 @@ test("team page presents contribution-led member profiles without rank prefixes"
 
 test("English homepage opens with the requested information-world statement", async () => {
   const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  const homeCss = await readFile(new URL("../app/home-four-questions.css", import.meta.url), "utf8");
   assert.match(source, /Objective: Principled and explainable machine intelligence science and technology, intelligent machines, and intelligent robots\./);
   assert.match(source, /kicker: "Mathematical principles of the information world"/);
   assert.match(source, /What new mathematics underpins artificial intelligence science and technology\?/);
@@ -122,6 +123,8 @@ test("English homepage opens with the requested information-world statement", as
   assert.match(source, /guide: "Five questions · Five answers"/);
   assert.match(source, /What is the model of intelligence\?/);
   assert.match(source, /One centre · Three definitions · One model/);
+  assert.match(homeCss, /grid-template-columns:minmax\(72px,max-content\) minmax\(0,1fr\)/);
+  assert.match(homeCss, /questions-system-summary\{grid-template-columns:1fr;gap:7px\}/);
   assert.doesNotMatch(source, /Mathematical foundation of information|Information foundations?/i);
 });
 

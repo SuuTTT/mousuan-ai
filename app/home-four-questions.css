@@ -3,7 +3,7 @@
 
 /* Question-and-answer hierarchy in the home-page guide. */
 .questions-hero aside strong{display:block}.questions-hero aside small{display:block;margin-top:5px;color:#949db8;font-size:11px;line-height:1.4}
-.questions-system-summary{display:grid;grid-template-columns:42px 1fr;gap:15px;padding:20px 0 0}.questions-system-summary>span{color:var(--q-cyan);font-size:10px;font-weight:700;letter-spacing:.09em}.questions-system-summary strong{color:#f1f4ff;font-size:14px;line-height:1.45}.questions-system-summary small{color:#aeb7d0}
+.questions-system-summary{display:grid;grid-template-columns:minmax(72px,max-content) minmax(0,1fr);gap:15px;padding:20px 0 0}.questions-system-summary>span{color:var(--q-cyan);font-size:10px;font-weight:700;letter-spacing:.09em}.questions-system-summary>div{min-width:0}.questions-system-summary strong{color:#f1f4ff;font-size:14px;line-height:1.45;text-wrap:balance}.questions-system-summary small{color:#aeb7d0;text-wrap:pretty}
 
 /* Compact but complete navigation on phones and tablets. */
 .questions-menu-toggle{display:none;width:38px;height:38px;padding:0;border:1px solid rgba(230,235,255,.22);background:transparent;color:#fff;cursor:pointer}
@@ -25,6 +25,7 @@
   .questions-nav-links{top:68px;grid-template-columns:1fr;padding:9px 18px}
   .questions-nav-links a{padding:13px 4px}
   .questions-objective{margin-bottom:20px;font-size:15px;line-height:1.6}
+  .questions-system-summary{grid-template-columns:1fr;gap:7px}
   .questions-actions a{background:transparent}
   .questions-actions a:first-child{background:rgba(115,229,250,.07)}
 }
