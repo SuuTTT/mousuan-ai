@@ -32,6 +32,12 @@ const questions = [
     answer: ["智能 = 智 + 能", "Intelligence = Zhi + Neng"] as Bi,
     href: "/themes/zhi-neng-definition",
   },
+  {
+    no: "05",
+    question: ["智能的模型是什么？", "What is the model of intelligence?"] as Bi,
+    answer: ["孙子模型", "The Sun Tzu Model"] as Bi,
+    href: "/themes/sun-tzu-model",
+  },
 ] as const;
 
 const definitions = [
@@ -89,14 +95,17 @@ const homeModules = [
 
 const ui = {
   zh: {
-    nav: [["四个问题", "#questions"], ["信息中心", "#center"], ["三个定义", "#definitions"], ["孙子模型", "#model"], ["五大模块", "#modules"], ["团队", "/team"]],
+    nav: [["五个问题", "#questions"], ["信息中心", "#center"], ["三个定义", "#definitions"], ["孙子模型", "#model"], ["五大模块", "#modules"], ["团队", "/team"]],
     objective: "目标：有原理、可解释的机器智能科学技术，智能机器，智能机器人。",
     kicker: "信息世界数学原理",
-    title: "人工智能的\n四个科学问题",
-    lead: "信息是人工智能的数学基础，渗透在人工智能的每一个步骤与过程。四个问题由此进入三个定义，并最终统一于孙子模型。",
+    title: "人工智能的\n五个科学问题",
+    lead: "信息是人工智能的数学基础，渗透在人工智能的每一个步骤与过程。五个问题由此展开为一个中心、三个定义和一个模型。",
     explore: "从信息中心开始",
     reference: "查看关键原理",
-    guide: "四个问题 · 四个回答",
+    guide: "五个问题 · 五个回答",
+    summaryLabel: "总结",
+    summaryFormula: "一个中心 · 三个定义 · 一个模型",
+    summaryText: "构成了人工智能科学技术体系",
     centerLabel: "THE MATHEMATICAL FOUNDATION",
     centerTitle: "信息",
     centerFormula: "信息是人工智能的数学基础",
@@ -119,14 +128,17 @@ const ui = {
     footer: "结构信息与机器智能 · 信息的数学原理与智能科学",
   },
   en: {
-    nav: [["Four questions", "#questions"], ["Information", "#center"], ["Three definitions", "#definitions"], ["Sun Tzu Model", "#model"], ["Five modules", "#modules"], ["Team", "/team"]],
+    nav: [["Five questions", "#questions"], ["Information", "#center"], ["Three definitions", "#definitions"], ["Sun Tzu Model", "#model"], ["Five modules", "#modules"], ["Team", "/team"]],
     objective: "Objective: Principled and explainable machine intelligence science and technology, intelligent machines, and intelligent robots.",
     kicker: "Mathematical principles of the information world",
-    title: "Four scientific questions\nof artificial intelligence",
-    lead: "Information is the mathematical foundation of artificial intelligence and permeates every step and process. The four questions lead to three definitions, unified by the Sun Tzu Model.",
+    title: "Five scientific questions\nof artificial intelligence",
+    lead: "Information is the mathematical foundation of artificial intelligence and permeates every step and process. The five questions unfold into one centre, three definitions, and one model.",
     explore: "Begin with information",
     reference: "Open key principles",
-    guide: "Four questions · Four answers",
+    guide: "Five questions · Five answers",
+    summaryLabel: "SUMMARY",
+    summaryFormula: "One centre · Three definitions · One model",
+    summaryText: "Together they constitute a system of artificial intelligence science and technology.",
     centerLabel: "THE MATHEMATICAL FOUNDATION",
     centerTitle: "Information",
     centerFormula: "Information is the mathematical foundation of artificial intelligence",
@@ -170,7 +182,7 @@ export default function Home() {
       <button className="questions-menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="questions-mobile-menu" aria-label={menuOpen ? (lang === "zh" ? "关闭导航" : "Close navigation") : (lang === "zh" ? "打开导航" : "Open navigation")} onClick={() => setMenuOpen((open) => !open)}><span /><span /></button>
     </nav>
 
-    <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-objective">{c.objective}</p><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#center">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗︎</b></a></div></div><aside id="questions"><p>{c.guide}</p>{questions.map((item) => <a href={item.href} key={item.no}><span>{item.no}</span><div><strong>{t(item.question, lang)}</strong><small><MathText text={t(item.answer, lang)} /></small></div></a>)}</aside></div></section>
+    <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-objective">{c.objective}</p><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#center">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗︎</b></a></div></div><aside id="questions"><p>{c.guide}</p>{questions.map((item) => <a href={item.href} key={item.no}><span>{item.no}</span><div><strong>{t(item.question, lang)}</strong><small><MathText text={t(item.answer, lang)} /></small></div></a>)}<div className="questions-system-summary"><span>{c.summaryLabel}</span><div><strong>{c.summaryFormula}</strong><small>{c.summaryText}</small></div></div></aside></div></section>
 
     <section id="center" className="questions-center"><div className="questions-shell"><header><p>{c.centerLabel}</p><h2>{c.centerTitle}</h2></header><div className="questions-center-thesis"><span>01 · CENTRE</span><strong>{c.centerFormula}</strong><p>{c.centerText}</p><a href="/themes/information">{c.centerEnter} ↗︎</a></div><ol>{informationPillars.map(([title, text], index) => <li key={title[0]}><span>0{index + 1}</span><div><strong>{t(title, lang)}</strong><p>{t(text, lang)}</p></div></li>)}</ol></div></section>
 

@@ -33,18 +33,21 @@ test("server-renders the public knowledge hierarchy", async () => {
   const html = await response.text();
   assert.match(html, /目标：有原理、可解释的机器智能科学技术，智能机器，智能机器人。/);
   assert.match(html, /信息世界数学原理/);
-  assert.match(html, /四个科学问题/);
+  assert.match(html, /五个科学问题/);
   assert.doesNotMatch(html, /基本问题|基本回答/);
-  assert.match(html, /四个回答/);
+  assert.match(html, /五个回答/);
   assert.match(html, /信息的数学原理/);
   assert.doesNotMatch(html, /信息世界(?:的)?(?:公理化)?科学原理/);
   assert.doesNotMatch(html, /信息的数学基础|信息基础/);
-  for (const question of ["支撑人工智能科学技术的新数学是什么？", "智能是什么？", "智能从哪里来？", "怎样实现智能？"]) {
+  for (const question of ["支撑人工智能科学技术的新数学是什么？", "智能是什么？", "智能从哪里来？", "怎样实现智能？", "智能的模型是什么？"]) {
     assert.ok(html.includes(question));
   }
   assert.match(html, /智能 = 信息/);
   assert.match(html, /智能 = 谋算/);
   assert.match(html, /智能 = 智 \+ 能/);
+  assert.match(html, /孙子模型/);
+  assert.match(html, /一个中心 · 三个定义 · 一个模型/);
+  assert.match(html, /构成了人工智能科学技术体系/);
   assert.match(html, /智能的策略就是谋和算/);
   assert.match(html, /“\+”表示二者在同一智能系统中的统一/);
   assert.match(html, /信息是人工智能的数学基础/);
@@ -116,7 +119,9 @@ test("English homepage opens with the requested information-world statement", as
   assert.match(source, /What new mathematics underpins artificial intelligence science and technology\?/);
   assert.match(source, /Mathematical principles of information, also called mathematical principles of the information world/);
   assert.match(source, /Intelligence = Zhi \+ Neng/);
-  assert.match(source, /guide: "Four questions · Four answers"/);
+  assert.match(source, /guide: "Five questions · Five answers"/);
+  assert.match(source, /What is the model of intelligence\?/);
+  assert.match(source, /One centre · Three definitions · One model/);
   assert.doesNotMatch(source, /Mathematical foundation of information|Information foundations?/i);
 });
 
