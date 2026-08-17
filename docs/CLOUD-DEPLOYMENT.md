@@ -6,12 +6,12 @@
 
 | 环境 | 规划 URL | 用途 | 访问策略 |
 | --- | --- | --- | --- |
-| Production | `https://mousuan.ai` | 唯一正式主站 | 公开、HTTPS、可被索引 |
-| WWW | `https://www.mousuan.ai` | 兼容入口 | 301 跳转至 `https://mousuan.ai` |
-| Staging | `https://staging.mousuan.ai` | 甲方与团队上线前验收 | 身份验证或 IP 白名单；禁止索引 |
+| Production | `https://mousuan.net` | 唯一正式主站 | 公开、HTTPS、可被索引 |
+| WWW | `https://www.mousuan.net` | 兼容入口 | 301 跳转至 `https://mousuan.net` |
+| Staging | `https://staging.mousuan.net` | 甲方与团队上线前验收 | 身份验证或 IP 白名单；禁止索引 |
 | Current review | `http://54.179.195.54:8888/` | 现有海外审阅与临时回滚 | 不作为正式外链 |
 
-网站正文、Open Graph、邮件和正式材料最终只使用 `https://mousuan.ai`。在正式切换前，不把规划 URL 描述为已经可用。
+网站正文、Open Graph、邮件和正式材料统一使用已上线的 `https://mousuan.net`。
 
 ## 2. 共同发布基线
 
@@ -64,8 +64,8 @@ function handler(event) {
 
 ### 4.2 域名与证书
 
-1. 在 AWS Certificate Manager 申请覆盖 `mousuan.ai`、`www.mousuan.ai` 和 `staging.mousuan.ai` 的证书；CloudFront 使用的 ACM 证书放在 `us-east-1`。
-2. 将 `mousuan.ai` 和需要的子域加入 CloudFront alternate domain names。
+1. 在 AWS Certificate Manager 申请覆盖 `mousuan.net`、`www.mousuan.net` 和 `staging.mousuan.net` 的证书；CloudFront 使用的 ACM 证书放在 `us-east-1`。
+2. 将 `mousuan.net` 和需要的子域加入 CloudFront alternate domain names。
 3. 在 Route 53 建立指向 CloudFront 的 A／AAAA Alias 记录；根域可以使用 Alias，不需要普通 CNAME。
 4. 在边缘函数或独立 distribution 中把 `www` 永久跳转到根域。
 5. Staging 使用单独 distribution，并通过 WAF/IP allowlist 或身份验证限制访问。
@@ -93,7 +93,7 @@ S3 bucket versioning、GitHub Release artifact 和上一 Git tag 共同承担回
 
 ### 5.2 域名、HTTPS 与 ICP
 
-1. CDN 控制台添加 `mousuan.ai` 或 `www.mousuan.ai`，按控制台返回值配置 CNAME／域名验证。
+1. CDN 控制台添加 `mousuan.net` 或 `www.mousuan.net`，按控制台返回值配置 CNAME／域名验证。
 2. 上传或申请覆盖正式域名的证书，开启 HTTPS、HTTP/2 和强制 HTTPS。
 3. `www` 通过 CDN 边缘规则或独立入口 301 跳转至根域。
 4. 如果 OSS、ECS 或 CDN 加速区域包含中国大陆，正式开放前必须完成适用的 ICP 备案；备案主体、域名实名和接入主体应一致。
@@ -123,11 +123,11 @@ RAM role 至少需要列出、上传对象的权限；使用 `--delete` 时还�
 Caddy 示例：
 
 ```caddy
-www.mousuan.ai {
-    redir https://mousuan.ai{uri} permanent
+www.mousuan.net {
+    redir https://mousuan.net{uri} permanent
 }
 
-mousuan.ai {
+mousuan.net {
     encode zstd gzip
     root * /opt/mousuan-site/current
     try_files {path} {path}/index.html
@@ -144,7 +144,7 @@ mousuan.ai {
 3. 先部署 staging，完成桌面、Android Chrome、iOS Safari、公式、搜索、图片和锚点测试。
 4. 部署 production origin，但暂不切换公开 DNS。
 5. 通过 CloudFront／CDN 临时域名或本地 hosts 验证 production。
-6. 切换 `mousuan.ai` DNS，确认 HTTPS、根域、`www` 跳转和所有关键路由。
+6. 切换 `mousuan.net` DNS，确认 HTTPS、根域、`www` 跳转和所有关键路由。
 7. 稳定观察后再提高 TTL；现有审阅服务器至少保留一个发布周期。
 
 ## 8. 回滚

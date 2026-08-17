@@ -57,8 +57,8 @@ git diff --check
 
 ## G. 正式域名切换
 
-- [ ] 确认正式地址为 `https://mousuan.ai`，`https://www.mousuan.ai` 永久跳转至主域名。
-- [ ] `https://staging.mousuan.ai` 仅用于受限验收，不被搜索引擎收录。
+- [ ] 确认正式地址为 `https://mousuan.net`，`https://www.mousuan.net` 永久跳转至主域名。
+- [ ] 若启用 `https://staging.mousuan.net`，它仅用于受限验收且不被搜索引擎收录。
 - [ ] AWS 或阿里云生产资源、账号责任人、账单和备份策略已确认。
 - [ ] HTTPS 证书生效，HTTP 自动跳转 HTTPS。
 - [ ] 中国大陆节点启用前已完成适用的 ICP 备案。

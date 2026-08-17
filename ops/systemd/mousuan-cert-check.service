@@ -1,0 +1,9 @@
+[Unit]
+Description=Quarterly Mousuan TLS and HTTPS verification
+After=network-online.target nginx.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/mousuan-cert-check
+

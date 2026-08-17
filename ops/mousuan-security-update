@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+dnf --assumeyes --refresh upgrade-minimal --security
+nginx -t
+systemctl reload nginx
+
+if [[ -f /var/run/reboot-required ]]; then
+  echo "A reboot is required; automatic reboot is intentionally disabled."
+fi
+

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+domain="mousuan.net"
+certificate="/etc/letsencrypt/live/$domain/fullchain.pem"
+
+test -s "$certificate"
+openssl x509 -checkend $((30 * 24 * 60 * 60)) -noout -in "$certificate"
+certbot renew --dry-run --non-interactive --no-random-sleep-on-renew
+nginx -t
+curl --fail --silent --show-error --max-time 20 "https://$domain/" >/dev/null
+curl --fail --silent --show-error --max-time 20 "https://$domain/team/" >/dev/null
