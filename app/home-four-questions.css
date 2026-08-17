@@ -107,3 +107,22 @@
   .questions-model-groups{grid-template-columns:1fr;gap:38px;margin-top:38px}
   .questions-model-footer{align-items:flex-start;flex-direction:column}
 }
+
+/* The site title is longer than the former question-heading; keep each phrase legible. */
+.questions-hero h1{
+  max-width:860px;
+  font-size:clamp(42px,4.7vw,64px);
+  letter-spacing:-.06em;
+  line-height:1.04;
+  text-wrap:balance;
+}
+
+@media(max-width:700px){
+  .questions-hero h1{
+    font-size:clamp(36px,10.6vw,46px);
+    letter-spacing:-.055em;
+    line-height:1.08;
+  }
+  .questions-definition-list>a>*{min-width:0}
+  .questions-home[data-lang="en"] .questions-definition-list>a>div:nth-child(2)>strong{font-size:22px}
+}

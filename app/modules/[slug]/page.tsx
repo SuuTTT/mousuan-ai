@@ -14,7 +14,7 @@ export default async function ResearchModulePage({ params }: { params: Promise<{
   const next = researchModules[index + 1];
 
   return <main className={`module-page module-${module.no}`}>
-    <nav className="module-nav"><a className="module-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/">研究主页</a><a href="/#questions">五个问题</a><a href="/#definitions">三个定义</a><a href="/#modules">五大模块</a><a href="/team">团队介绍</a></div></nav>
+    <nav className="module-nav"><a className="module-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>MACHINE<br />INTELLIGENCE</b></a><div><a href="/">研究主页</a><a href="/#questions">五个问题</a><a href="/#definitions">三个定义</a><a href="/#modules">五大模块</a><a href="/team">团队介绍</a></div></nav>
     <header className="module-hero"><div><p><a href="/">首页</a><b>›</b><a href="/#modules">五大模块</a><b>›</b><span>{module.shortTitle}</span></p><span>MODULE {module.no}</span><h1>{module.title}</h1><em>{module.englishTitle}</em><div>{module.lead}</div></div><aside><small>模块任务</small><p>{module.thesis}</p></aside></header>
 
     <section className="module-map"><div className="module-shell"><span>FIVE RESEARCH MODULES</span><nav>{researchModules.map((item) => <a aria-current={item.slug === module.slug ? "page" : undefined} href={`/modules/${item.slug}`} key={item.slug}><b>{item.no}</b>{item.shortTitle}</a>)}</nav></div></section>

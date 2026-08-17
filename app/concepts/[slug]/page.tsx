@@ -22,7 +22,7 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
 
   return <main className={`concept-page concept-layer-${concept.layer}`}>
     <nav className="concept-nav">
-      <a className="concept-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a>
+      <a className="concept-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>MACHINE<br />INTELLIGENCE</b></a>
       <div><a href="/">研究主页</a><a href="/framework">理论总图</a><a href="/books">专著与编号</a></div>
     </nav>
 

@@ -33,8 +33,9 @@ test("server-renders the public knowledge hierarchy", async () => {
   const html = await response.text();
   assert.match(html, /目标：有原理、可解释的机器智能科学技术，智能机器，智能机器人。/);
   assert.match(html, /信息世界的数学原理 · 机器智能科学技术/);
-  assert.match(html, /机器智能的/);
-  assert.match(html, /五个科学问题/);
+  assert.match(html, /机器智能原理：/);
+  assert.match(html, /信息模型，机器原理，智能工程/);
+  assert.match(html, /五个问题/);
   assert.doesNotMatch(html, /基本问题|基本回答/);
   assert.match(html, /五个回答/);
   assert.match(html, /信息的数学原理/);
@@ -126,7 +127,7 @@ test("English homepage opens with the requested information-world statement", as
   const homeCss = await readFile(new URL("../app/home-four-questions.css", import.meta.url), "utf8");
   assert.match(source, /Objective: Principled and explainable machine intelligence science and technology, intelligent machines, and intelligent robots\./);
   assert.match(source, /kicker: "Mathematical principles of the information world · Machine intelligence science and technology"/);
-  assert.match(source, /Five scientific questions\\nof machine intelligence/);
+  assert.match(source, /Principles of Machine Intelligence:\\nInformation model, Principles of Intelligent Machines,\\nIntelligence Engineering/);
   assert.match(source, /What new mathematics underpins artificial intelligence science and technology\?/);
   assert.match(source, /Mathematical principles of information, also called mathematical principles of the information world/);
   assert.match(source, /Intelligence = Zhi \+ Neng/);

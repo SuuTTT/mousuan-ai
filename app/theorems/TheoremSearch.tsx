@@ -54,7 +54,7 @@ export default function TheoremSearch() {
   }
 
   return <main className="theorem-index">
-    <nav className="theorem-nav"><a href="/" className="theorem-brand"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/">研究主页</a><a href="/#questions">五个问题</a><a href="/#definitions">三个定义</a><a href="/framework">理论索引</a><a href="/books">三部专著</a><a href="/team">团队</a></div></nav>
+    <nav className="theorem-nav"><a href="/" className="theorem-brand"><img src="/logo-encoding-tree.svg" alt="" /><b>MACHINE<br />INTELLIGENCE</b></a><div><a href="/">研究主页</a><a href="/#questions">五个问题</a><a href="/#definitions">三个定义</a><a href="/framework">理论索引</a><a href="/books">三部专著</a><a href="/team">团队</a></div></nav>
 
     <header className="theorem-hero"><div className="theorem-shell"><p>ACADEMIC STATEMENT INDEX</p><h1>定义·定理·定律索引</h1><span>两部原著 · {entries.length} 条学术陈述</span></div></header>
 

@@ -98,7 +98,7 @@ const ui = {
     nav: [["五个问题", "#questions"], ["信息中心", "#center"], ["三个定义", "#definitions"], ["孙子模型", "#model"], ["五大模块", "#modules"], ["团队", "/team"]],
     objective: "目标：有原理、可解释的机器智能科学技术，智能机器，智能机器人。",
     kicker: "信息世界的数学原理 · 机器智能科学技术",
-    title: "机器智能的\n五个科学问题",
+    title: "机器智能原理：\n信息模型，机器原理，智能工程",
     lead: "信息是人工智能的数学基础，渗透在人工智能的每一个步骤与过程。五个问题由此展开为一个中心、三个定义和一个模型。",
     explore: "从信息中心开始",
     reference: "查看关键原理",
@@ -125,13 +125,13 @@ const ui = {
     modulesLabel: "RESEARCH PROGRAMMES",
     modulesTitle: "五大研究模块",
     modulesText: "在信息中心、三个定义与孙子模型之下，五大模块承接具体研究、应用与工程工作。",
-    footer: "结构信息与机器智能 · 信息的数学原理与智能科学",
+    footer: "机器智能原理：信息模型，机器原理，智能工程",
   },
   en: {
     nav: [["Five questions", "#questions"], ["Information", "#center"], ["Three definitions", "#definitions"], ["Sun Tzu Model", "#model"], ["Five modules", "#modules"], ["Team", "/team"]],
     objective: "Objective: Principled and explainable machine intelligence science and technology, intelligent machines, and intelligent robots.",
     kicker: "Mathematical principles of the information world · Machine intelligence science and technology",
-    title: "Five scientific questions\nof machine intelligence",
+    title: "Principles of Machine Intelligence:\nInformation model, Principles of Intelligent Machines,\nIntelligence Engineering",
     lead: "Information is the mathematical foundation of artificial intelligence and permeates every step and process. The five questions unfold into one centre, three definitions, and one model.",
     explore: "Begin with information",
     reference: "Open key principles",
@@ -158,7 +158,7 @@ const ui = {
     modulesLabel: "RESEARCH PROGRAMMES",
     modulesTitle: "Five research modules",
     modulesText: "Beneath the information centre, three definitions, and the Sun Tzu Model, five modules organise research, applications, and engineering work.",
-    footer: "Structural Information & Machine Intelligence · Mathematical principles of information and intelligence science",
+    footer: "Principles of Machine Intelligence: Information model, Principles of Intelligent Machines, Intelligence Engineering",
   },
 } as const;
 
@@ -174,9 +174,9 @@ export default function Home() {
   };
   const c = ui[lang];
 
-  return <main className="questions-home">
+  return <main className="questions-home" data-lang={lang}>
     <nav className="questions-nav" aria-label={lang === "zh" ? "研究主页导航" : "Research hub navigation"}>
-      <a className="questions-brand" href="#top" aria-label={lang === "zh" ? "返回研究主页顶部" : "Back to the research hub top"}><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a>
+      <a className="questions-brand" href="#top" aria-label={lang === "zh" ? "返回研究主页顶部" : "Back to the research hub top"}><img src="/logo-encoding-tree.svg" alt="" /><b>MACHINE<br />INTELLIGENCE</b></a>
       <div id="questions-mobile-menu" className={`questions-nav-links${menuOpen ? " is-open" : ""}`}>{c.nav.map(([label, href]) => <a href={href} key={label} onClick={() => setMenuOpen(false)}>{label}</a>)}</div>
       <div className="questions-lang"><button className={lang === "zh" ? "active" : ""} onClick={() => changeLang("zh")}>中</button><span>/</span><button className={lang === "en" ? "active" : ""} onClick={() => changeLang("en")}>EN</button></div>
       <button className="questions-menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="questions-mobile-menu" aria-label={menuOpen ? (lang === "zh" ? "关闭导航" : "Close navigation") : (lang === "zh" ? "打开导航" : "Open navigation")} onClick={() => setMenuOpen((open) => !open)}><span /><span /></button>

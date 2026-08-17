@@ -1,6 +1,8 @@
-# MouSuanAI
+# 机器智能原理：信息模型，机器原理，智能工程
 
-MouSuanAI 是“结构信息与机器智能”双语研究网站。网站从信息世界的数学原理出发，以五个科学问题引入机器智能的基本问题，并按照“一个中心、三个定义、一个模型、五个模块”的层次组织研究内容。
+**Principles of Machine Intelligence: Information model, Principles of Intelligent Machines, Intelligence Engineering**
+
+MouSuanAI 是机器智能原理双语研究网站。网站从信息世界的数学原理出发，以五个科学问题引入机器智能的基本问题，并按照“一个中心、三个定义、一个模型、五个模块”的层次组织研究内容。
 
 当前里程碑：`v0.9.0`（2026-08-08）。该版本用于团队审阅、学术内容校核和正式域名上线前的工程验收。
 

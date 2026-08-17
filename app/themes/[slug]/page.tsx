@@ -15,7 +15,7 @@ export default async function ThemePage({ params }: { params: Promise<{ slug: st
   const next = themes[index + 1];
 
   return <main className="theme-page">
-    <nav className="theme-nav"><a className="theme-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>STRUCTURAL<br />INTELLIGENCE</b></a><div><a href="/">研究主页</a><a href="/#center">信息中心</a><a href="/#definitions">三个定义</a><a href="/#model">孙子模型</a><a href="/framework">理论索引</a><a href="/theorems">定义定理</a></div></nav>
+    <nav className="theme-nav"><a className="theme-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>MACHINE<br />INTELLIGENCE</b></a><div><a href="/">研究主页</a><a href="/#center">信息中心</a><a href="/#definitions">三个定义</a><a href="/#model">孙子模型</a><a href="/framework">理论索引</a><a href="/theorems">定义定理</a></div></nav>
 
     <header className="theme-hero"><div className="theme-shell"><p><span>{theme.no}</span>{theme.dimension}</p><h1>{theme.question}</h1><em>{theme.englishTitle}</em><div className="theme-formula"><MathText text={theme.formula} /></div><p className="theme-lead"><MathText text={theme.lead} /></p></div></header>
 
