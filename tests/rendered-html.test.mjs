@@ -74,6 +74,14 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(html, /aria-label="研究主页导航"/);
   assert.doesNotMatch(html, /↗️/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
+  assert.match(html, /href="https:\/\/beian\.miit\.gov\.cn\/"/);
+  assert.match(html, /京ICP备2026052219号/);
+});
+
+test("production metadata uses the filed public domain", async () => {
+  const response = await render();
+  const html = await response.text();
+  assert.match(html, /<link rel="canonical" href="https:\/\/mousuan\.net\/?"/);
 });
 
 test("public subpages expose an explicit research-home link", async () => {

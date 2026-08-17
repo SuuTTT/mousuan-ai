@@ -192,6 +192,6 @@ export default function Home() {
 
     <section id="modules" className="questions-modules"><div className="questions-shell"><header><p>{c.modulesLabel}</p><h2>{c.modulesTitle}</h2><span>{c.modulesText}</span></header><div>{homeModules.map(([title, text, href], index) => <a href={href} key={href}><span>0{index + 1}</span><strong>{t(title, lang)}</strong><p>{t(text, lang)}</p><b>↗︎</b></a>)}</div><a className="questions-team" href="/team"><span>{lang === "zh" ? "研究主体" : "RESEARCH TEAM"}</span><strong>{lang === "zh" ? "李昂生团队" : "Angsheng Li’s team"}</strong><b>→</b></a></div></section>
 
-    <footer className="questions-footer"><div className="questions-shell"><span>{c.footer}</span><a href="#top">↑</a></div></footer>
+    <footer className="questions-footer"><div className="questions-shell"><span>{c.footer}</span><a className="questions-icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">京ICP备2026052219号</a><a className="questions-back-to-top" href="#top" aria-label={lang === "zh" ? "返回顶部" : "Back to top"}>↑</a></div></footer>
   </main>;
 }

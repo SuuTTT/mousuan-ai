@@ -20,6 +20,10 @@
   .questions-nav-links a{padding:15px 10px;border-bottom:1px solid rgba(230,235,255,.1);font-size:13px}
 }
 
+.questions-footer .questions-icp{font-size:12px;text-decoration:underline;text-underline-offset:4px}
+.questions-footer .questions-back-to-top{font-size:20px}
+@media(max-width:700px){.questions-footer>div{flex-wrap:wrap;gap:12px 18px}.questions-footer>div>span{flex:1 1 100%}.questions-footer .questions-icp{font-size:12px}.questions-footer .questions-back-to-top{margin-left:auto}}
+
 @media(max-width:700px){
   .questions-nav{gap:14px}
   .questions-nav-links{top:68px;grid-template-columns:1fr;padding:9px 18px}

@@ -54,6 +54,9 @@ const routes = [
 await rm(outputRoot, { recursive: true, force: true });
 await mkdir(outputRoot, { recursive: true });
 await cp(path.join(projectRoot, "dist/client"), outputRoot, { recursive: true });
+for (const privatePath of ["audit", "audit-redesign", "internal-audit"]) {
+  await rm(path.join(outputRoot, privatePath), { recursive: true, force: true });
+}
 
 const workerUrl = pathToFileURL(path.join(projectRoot, "dist/server/index.js"));
 workerUrl.searchParams.set("static-render", Date.now().toString());

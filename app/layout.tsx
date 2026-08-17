@@ -8,8 +8,10 @@ import "./theme-citation-fix.css";
 import SafeAnchorNavigation from "./SafeAnchorNavigation";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mousuan.net"),
   title: "Structural Information & Machine Intelligence | 结构信息与机器智能",
   description: "A bilingual research hub for structural information, MouSuan Intelligence (MSI), and Science and Technology of MouSuan Strategy.",
+  alternates: { canonical: "/" },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
     title: "Structural Information & Machine Intelligence | 结构信息与机器智能",
