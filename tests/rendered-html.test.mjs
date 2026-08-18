@@ -51,6 +51,9 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(html, /一个中心 · 三个定义 · 一个模型/);
   assert.match(html, /构成了机器智能科学技术体系/);
   assert.match(html, /智能的策略就是谋和算/);
+  assert.match(html, /智能来源于谋和算/);
+  assert.match(html, /建立谋的机器与算的机器/);
+  assert.match(html, /使谋算机器协同工作/);
   assert.match(html, /“\+”表示二者在同一智能系统中的统一/);
   assert.match(html, /信息是人工智能的数学基础/);
   assert.match(html, /信息渗透在人工智能的每一个步骤与过程/);
@@ -131,6 +134,8 @@ test("English homepage opens with the requested information-world statement", as
   assert.match(source, /What new mathematics underpins artificial intelligence science and technology\?/);
   assert.match(source, /Mathematical principles of information, also called mathematical principles of the information world/);
   assert.match(source, /Intelligence = Zhi \+ Neng/);
+  assert.match(source, /intelligence arises from Mou and Suan/);
+  assert.match(source, /build Mou machines and Suan machines and coordinate them as one system/);
   assert.match(source, /guide: "Five questions · Five answers"/);
   assert.match(source, /What is the model of intelligence\?/);
   assert.match(source, /One centre · Three definitions · One model/);

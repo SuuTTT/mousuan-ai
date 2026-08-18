@@ -6,6 +6,7 @@
 
 ### 需求变更
 
+- 首页“智能 = 谋算”补全两层含义：既说明智能来源于谋和算，也说明智能机器由谋的机器、算的机器及其协同构成的机器原理。
 - 全站统一标题为“机器智能原理：信息模型，机器原理，智能工程”；英文统一为“Principles of Machine Intelligence: Information model, Principles of Intelligent Machines, Intelligence Engineering”。
 - 首页首句新增总目标：“有原理、可解释的机器智能科学技术，智能机器，智能机器人。”，英文首页同步给出对应目标。
 - 首页由“四问四答”扩展为“五问五答”，新增“智能的模型是什么？——孙子模型”。

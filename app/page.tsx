@@ -54,7 +54,7 @@ const definitions = [
     dimension: ["机器原理", "MACHINE PRINCIPLE"] as Bi,
     title: ["智能的策略原理", "Strategy Principle of Intelligence"] as Bi,
     formula: ["智能 = 谋算", "Intelligence = MouSuan"] as Bi,
-    statement: ["智能的策略就是谋和算；一系列谋策略与算策略构成完整智能策略。", "The strategies of intelligence are Mou and Suan; a complete intelligent strategy is composed of Mou and Suan strategies."] as Bi,
+    statement: ["智能的策略就是谋和算。“智能 = 谋算”揭示两个层面：智能来源于谋和算，一系列谋策略与算策略构成完整智能策略；同时，它给出智能机器的机器原理——建立谋的机器与算的机器，并使谋算机器协同工作。", "The strategies of intelligence are Mou and Suan. “Intelligence = MouSuan” reveals two levels: intelligence arises from Mou and Suan, and a complete intelligent strategy is composed of a series of Mou and Suan strategies; it also gives the machine principle of intelligent machines—to build Mou machines and Suan machines and coordinate them as one system."] as Bi,
     href: "/themes/strategy-principle",
   },
   {
