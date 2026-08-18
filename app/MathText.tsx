@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { normaliseAcademicOCR } from "./math-normalise.mjs";
 
 const canonicalFormulae = [
   "I(X; Y) = ∑ₓ ∑ᵧ p(x, y) log₂ (p(x, y) / (p(x)p(y)))",
@@ -43,16 +44,6 @@ const subscript: Record<string, string> = {
   "₀": "0", "₁": "1", "₂": "2", "₃": "3", "₄": "4", "₅": "5", "₆": "6", "₇": "7", "₈": "8", "₉": "9",
   "ₜ": "t", "ₓ": "x", "ᵧ": "y", "ᵢ": "i", "ⱼ": "j", "ₙ": "n",
 };
-
-function normaliseAcademicOCR(text: string) {
-  const subscriptDigits: Record<string, string> = { "0": "₀", "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆", "7": "₇", "8": "₈", "9": "₉" };
-  return text
-    .replace(/\b([A-Za-z])([0-9]+)\b/g, (_, variable: string, digits: string) => variable + [...digits].map((digit) => subscriptDigits[digit]).join(""))
-    .replace(/\b([A-Za-z])n\b/g, "$1ₙ")
-    .replace(/\s*·\s*·\s*·\s*/g, " … ")
-    .replace(/log\s*2\b/g, "log₂")
-    .replace(/\s+([)\]}])/g, "$1");
-}
 
 function atom(value: string, key: string): ReactNode {
   if (/^[0-9]+$/.test(value)) return <mn key={key}>{value}</mn>;

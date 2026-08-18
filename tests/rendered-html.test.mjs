@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import bookIndex from "../app/theorems/book-index.json" with { type: "json" };
 import { resolveAnchorNavigation } from "../app/anchor-navigation.mjs";
+import { normaliseAcademicOCR } from "../app/math-normalise.mjs";
 
 async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -143,6 +144,13 @@ test("English homepage opens with the requested information-world statement", as
   assert.match(homeCss, /grid-template-columns:minmax\(72px,max-content\) minmax\(0,1fr\)/);
   assert.match(homeCss, /questions-system-summary\{grid-template-columns:1fr;gap:7px\}/);
   assert.doesNotMatch(source, /Mathematical foundation of information|Information foundations?/i);
+});
+
+test("academic OCR normalisation preserves English words ending in n", () => {
+  const prose = "The plus sign denotes their unity in one intelligent system and an intelligible machine.";
+  assert.equal(normaliseAcademicOCR(prose), prose);
+  assert.equal(normaliseAcademicOCR("x1, x2, · · ·, xn"), "x₁, x₂, … , xₙ");
+  assert.equal(normaliseAcademicOCR("An×n"), "Aₙ×n");
 });
 
 test("terminology wiki records the canonical information-principle terms", async () => {
