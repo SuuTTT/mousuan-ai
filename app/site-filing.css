@@ -1,0 +1,49 @@
+.site-filing {
+  border-top: 1px solid rgba(218, 224, 255, .12);
+  background: #03050d;
+  color: #9da4c2;
+  font-family: Arial, "Noto Sans SC", "PingFang SC", sans-serif;
+  font-size: 12px;
+}
+
+.site-filing-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 14px;
+  width: min(1160px, calc(100% - 36px));
+  min-height: 52px;
+  margin: 0 auto;
+  padding: 12px 0;
+}
+
+.site-filing a {
+  color: #bfc5da;
+  text-decoration: none;
+}
+
+.site-filing a:hover {
+  color: #73e5fa;
+}
+
+.site-filing-police {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.site-filing-police img {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.site-filing-divider { color: #59627a; }
+
+@media (max-width: 520px) {
+  .site-filing-inner { flex-direction: column; gap: 8px; padding: 15px 0; }
+  .site-filing-divider { display: none; }
+}

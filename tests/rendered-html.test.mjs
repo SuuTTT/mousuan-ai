@@ -81,6 +81,9 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
   assert.match(html, /href="https:\/\/beian\.miit\.gov\.cn\/"/);
   assert.match(html, /京ICP备2026052219号/);
+  assert.match(html, /href="https:\/\/beian\.mps\.gov\.cn\/#\/query\/webSearch\?code=11010802049850"/);
+  assert.match(html, /src="\/beian-police\.svg"/);
+  assert.match(html, /京公网安备11010802049850号/);
 });
 
 test("production metadata uses the filed public domain", async () => {
@@ -93,7 +96,9 @@ test("public subpages expose an explicit research-home link", async () => {
   for (const pathname of ["/themes/information", "/themes/zhi-neng-definition", "/concepts/physical-world", "/modules/principles", "/framework", "/team", "/theorems"]) {
     const response = await render(pathname);
     assert.equal(response.status, 200);
-    assert.match(await response.text(), /研究主页/);
+    const html = await response.text();
+    assert.match(html, /研究主页/);
+    assert.match(html, /京公网安备11010802049850号/);
   }
 });
 

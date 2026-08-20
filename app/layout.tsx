@@ -5,7 +5,9 @@ import "./section-title-fix.css";
 import "./hero-responsive-fix.css";
 import "./brand-logo.css";
 import "./theme-citation-fix.css";
+import "./site-filing.css";
 import SafeAnchorNavigation from "./SafeAnchorNavigation";
+import SiteFiling from "./SiteFiling";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mousuan.net"),
@@ -25,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-CN"><body><SafeAnchorNavigation />{children}</body></html>;
+  return <html lang="zh-CN"><body><SafeAnchorNavigation />{children}<SiteFiling /></body></html>;
 }
