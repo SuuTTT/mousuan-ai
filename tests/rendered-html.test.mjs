@@ -82,7 +82,7 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(html, /href="https:\/\/beian\.miit\.gov\.cn\/"/);
   assert.match(html, /京ICP备2026052219号/);
   assert.match(html, /href="https:\/\/beian\.mps\.gov\.cn\/#\/query\/webSearch\?code=11010802049850"/);
-  assert.match(html, /src="\/beian-police\.svg"/);
+  assert.match(html, /src="\/beian-police\.jpg"/);
   assert.match(html, /京公网安备11010802049850号/);
 });
 
