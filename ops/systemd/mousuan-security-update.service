@@ -1,0 +1,9 @@
+[Unit]
+Description=Monthly Mousuan operating-system security updates
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/mousuan-security-update
+

@@ -1,6 +1,6 @@
-# MouSuanAI 阿里云上线、`mousuan.ai` 与 ICP 备案运行手册
+# MouSuanAI 阿里云上线、`mousuan.net` 与 ICP 备案运行手册
 
-> 目标：把本仓库的网站作为中国大陆公开站点上线到 `https://mousuan.ai`，并保留现有海外站点作为上线前的审阅与回滚入口。
+> 目标：把本仓库的网站作为中国大陆公开站点上线到 `https://mousuan.net`，并保留现有海外站点作为上线前的审阅与回滚入口。
 
 ## 1. 范围、责任人与上线原则
 
@@ -24,14 +24,14 @@
 
 ```text
 浏览器
-  └─ https://mousuan.ai / https://www.mousuan.ai
+  └─ https://mousuan.net / https://www.mousuan.net
        └─ 阿里云 DNS
             └─ 阿里云 ECS（中国大陆 + EIP）
                  └─ Caddy :443 / :80
                       └─ MouSuanAI 服务 127.0.0.1:3000
 ```
 
-- **域名**：首选 `mousuan.ai`；`mou-suan.com` 可作为过渡或品牌保护域名，并 301 跳转至主域名。
+- **域名**：正式主域名为 `mousuan.net`；其他品牌保护域名应 301 跳转至主域名。
 - **服务器**：阿里云中国大陆地域的 ECS（例如华北地区），Ubuntu LTS，公网 EIP。
 - **运行方式**：Node.js 22、`npm run build`、`npm run start`、systemd 常驻服务，以及 Caddy 提供 HTTPS 反向代理。
 - **外部访问**：主域名和 `www` 使用 HTTPS；不再使用 IP 地址加端口作为公开链接。
@@ -41,16 +41,16 @@
 1. 确定最终主办者：建议为学校授权的单位或项目团队，而不是个人临时账户。
 2. 准备主办者材料：单位证件/个人身份证件、联系人手机号、邮箱和地址；以阿里云备案页面实际要求为准。
 3. 购买或确认阿里云中国大陆 ECS。只有中国大陆接入服务才可用于相应的 ICP 备案流程。
-4. 在阿里云域名控制台搜索 `mousuan.ai`；可售后再付款。`.ai` 是否可售、年限和价格以购买页实时显示为准。
+4. 在阿里云域名控制台确认 `mousuan.net` 的注册状态、实名认证与续费日期。
 5. 如需财务报销，购买前确认阿里云账号抬头和经费主体，保存订单、合同、电子发票和付款记录。
 
 阿里云要求域名注册时关联已核验的注册人信息模板；购买后域名状态显示为 `Normal` 才代表注册完成。详见[阿里云域名注册说明](https://www.alibabacloud.com/help/en/dws/user-guide/how-to-register-a-domain-name)。
 
 ## 4. 域名注册与 DNS
 
-### 4.1 注册 `mousuan.ai`
+### 4.1 管理 `mousuan.net`
 
-1. 在阿里云/万网域名控制台搜索 `mousuan.ai`。
+1. 在阿里云/万网域名控制台进入 `mousuan.net` 管理页。
 2. 使用与未来备案主办者一致的实名信息模板下单。
 3. 完成付款后，核对注册人、管理员邮箱和域名锁定状态；开启两步验证并把续费提醒交给团队邮箱。
 4. 不要在此阶段把主域名直接指向当前海外审阅服务器，避免后续切换时的内容与备案信息不一致。
@@ -65,7 +65,7 @@
 www          CNAME      @
 ```
 
-可选：将 `mou-suan.com` 的根域与 `www` 也指向同一入口，并由 Caddy 301 跳转到 `https://mousuan.ai`。
+可选：将其他品牌保护域名的根域与 `www` 也指向同一入口，并 301 跳转到 `https://mousuan.net`。
 
 ## 5. ICP 备案流程
 
@@ -75,7 +75,7 @@ www          CNAME      @
 
 1. 使用已购买的中国大陆 ECS 创建备案服务号/备案订单。
 2. 选择“首次备案”或“新增网站”（根据主办者既有备案状态选择）。
-3. 填写主办者、网站负责人、域名 `mousuan.ai`、网站名称和服务内容；内容应真实描述为“结构信息与谋算智能研究展示网站”。
+3. 填写主办者、网站负责人、域名 `mousuan.net`、网站名称和服务内容；内容应与网站实际内容一致。
 4. 按页面要求完成身份核验、真实性核验、手机核验及可能的材料补正。
 5. 等待阿里云初审和所在地通信管理局审核；期间不把网站作为中国大陆正式公开服务上线。
 6. 获得备案号后，在网站首页底部居中展示备案号，并链接至 `https://beian.miit.gov.cn/`。工信部规则要求非经营性网站在开通时展示备案编号并提供查询链接。
@@ -149,13 +149,13 @@ sudo systemctl status mousuan-site
 在域名已解析到 ECS、备案允许开通且安全组已开放 `80/443` 后，配置 `/etc/caddy/Caddyfile`：
 
 ```caddy
-mousuan.ai, www.mousuan.ai {
+mousuan.net, www.mousuan.net {
     encode zstd gzip
     reverse_proxy 127.0.0.1:3000
 }
 
 mou-suan.com, www.mou-suan.com {
-    redir https://mousuan.ai{uri} permanent
+    redir https://mousuan.net{uri} permanent
 }
 ```
 
@@ -172,7 +172,7 @@ Caddy 在有效域名、DNS 解析与 `80/443` 可达时可自动申请和续期
 
 | 检查项 | 通过标准 |
 | --- | --- |
-| 域名 | `https://mousuan.ai` 正常打开，`www` 正常打开或跳转 |
+| 域名 | `https://mousuan.net` 正常打开，`www` 跳转至根域 |
 | TLS | 浏览器无证书警告，HTTP 自动跳转 HTTPS |
 | 路由 | 首页、四大板块、研究方向、关于我们、图书、术语 Wiki、应用页面均可访问 |
 | 双语 | 首页和 Wiki 的中/EN 切换正确；英文状态返回英文首页 |
@@ -214,7 +214,7 @@ sudo systemctl restart mousuan-site
 
 - [ ] 备案主体（个人/单位）和网站负责人
 - [ ] 阿里云账号管理员、付款方式及发票抬头
-- [ ] `mousuan.ai` 是否可注册及注册年限
+- [x] `mousuan.net` 已注册并完成 ICP 备案
 - [ ] 目标 ECS 地域、规格、EIP 和安全组责任人
 - [ ] GitHub 仓库 URL 与技术管理员 SSH 公钥
 - [ ] ICP 备案号（审批后）及是否需要额外内容许可/网络安全登记

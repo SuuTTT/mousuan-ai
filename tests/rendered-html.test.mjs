@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import bookIndex from "../app/theorems/book-index.json" with { type: "json" };
 import { resolveAnchorNavigation } from "../app/anchor-navigation.mjs";
+import { normaliseAcademicOCR } from "../app/math-normalise.mjs";
 
 async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -31,20 +32,33 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /信息世界数学原理/);
-  assert.match(html, /四个科学问题/);
+  assert.match(html, /目标：有原理、可解释的机器智能科学技术，智能机器，智能机器人。/);
+  assert.match(html, /信息世界的数学原理 · 机器智能科学技术/);
+  assert.match(html, /机器智能原理：/);
+  assert.match(html, /信息模型，机器原理，智能工程/);
+  assert.match(html, /五个问题/);
   assert.doesNotMatch(html, /基本问题|基本回答/);
-  assert.match(html, /四个回答/);
+  assert.match(html, /五个回答/);
   assert.match(html, /信息的数学原理/);
   assert.doesNotMatch(html, /信息世界(?:的)?(?:公理化)?科学原理/);
   assert.doesNotMatch(html, /信息的数学基础|信息基础/);
-  for (const question of ["支撑人工智能科学技术的新数学是什么？", "智能是什么？", "智能从哪里来？", "怎样实现智能？"]) {
+  for (const question of ["支撑人工智能科学技术的新数学是什么？", "智能是什么？", "智能从哪里来？", "怎样实现智能？", "智能的模型是什么？"]) {
     assert.ok(html.includes(question));
   }
   assert.match(html, /智能 = 信息/);
   assert.match(html, /智能 = 谋算/);
   assert.match(html, /智能 = 智 \+ 能/);
+  assert.match(html, /孙子模型/);
+  assert.match(html, /一个范式 · 一个中心 · 三个定义 · 一个模型/);
+  assert.match(html, /构成了机器智能科学技术体系/);
+  assert.match(html, /信息世界范式定律/);
+  assert.match(html, /信息世界的总方法是层谱抽象/);
+  assert.match(html, /信息，也是钥匙与支点/);
+  assert.match(html, /数学实质、机器原理、科学—工程定义/);
   assert.match(html, /智能的策略就是谋和算/);
+  assert.match(html, /智能来源于谋和算/);
+  assert.match(html, /建立谋的机器与算的机器/);
+  assert.match(html, /使谋算机器协同工作/);
   assert.match(html, /“\+”表示二者在同一智能系统中的统一/);
   assert.match(html, /信息是人工智能的数学基础/);
   assert.match(html, /信息渗透在人工智能的每一个步骤与过程/);
@@ -52,9 +66,10 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(html, /能 · 人工智能工程原理/);
   assert.match(html, /学习/);
   assert.match(html, /系统验证/);
-  for (const sectionId of ["questions", "center", "definitions", "model", "modules"]) {
+  for (const sectionId of ["questions", "paradigm", "center", "definitions", "model", "modules"]) {
     assert.match(html, new RegExp(`id="${sectionId}"`));
   }
+  assert.ok(html.indexOf('id="paradigm"') < html.indexOf('id="center"'));
   assert.ok(html.indexOf('id="center"') < html.indexOf('id="definitions"'));
   assert.ok(html.indexOf('id="definitions"') < html.indexOf('id="model"'));
   assert.ok(html.indexOf('id="model"') < html.indexOf('id="modules"'));
@@ -62,6 +77,7 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.doesNotMatch(html, /现实世界的完备建模|COMPLETELY MODELING|complete-model/);
   assert.match(html, /href="\/themes\/information"/);
   assert.match(html, /href="\/themes\/zhi-neng-definition"/);
+  assert.match(html, /href="\/activities"/);
   assert.doesNotMatch(html, /href="#theme-01"|id="theme-01"|id="themes"/);
   assert.doesNotMatch(html, /questions-books|主要著作/);
   assert.doesNotMatch(html, /先给出答案|首页只呈现|简单首页|分层展开|第一层|第二层|第三层|2—3 LEVELS/);
@@ -69,13 +85,26 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(html, /aria-label="研究主页导航"/);
   assert.doesNotMatch(html, /↗️/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
+  assert.match(html, /href="https:\/\/beian\.miit\.gov\.cn\/"/);
+  assert.match(html, /京ICP备2026052219号/);
+  assert.match(html, /href="https:\/\/beian\.mps\.gov\.cn\/#\/query\/webSearch\?code=11010802049850"/);
+  assert.match(html, /src="\/beian-police\.jpg"/);
+  assert.match(html, /京公网安备11010802049850号/);
+});
+
+test("production metadata uses the filed public domain", async () => {
+  const response = await render();
+  const html = await response.text();
+  assert.match(html, /<link rel="canonical" href="https:\/\/mousuan\.net\/?"/);
 });
 
 test("public subpages expose an explicit research-home link", async () => {
-  for (const pathname of ["/themes/information", "/themes/zhi-neng-definition", "/concepts/physical-world", "/modules/principles", "/framework", "/team", "/theorems"]) {
+  for (const pathname of ["/themes/information", "/themes/zhi-neng-definition", "/concepts/physical-world", "/modules/principles", "/framework", "/team", "/theorems", "/activities"]) {
     const response = await render(pathname);
     assert.equal(response.status, 200);
-    assert.match(await response.text(), /研究主页/);
+    const html = await response.text();
+    assert.match(html, /研究主页/);
+    assert.match(html, /京公网安备11010802049850号/);
   }
 });
 
@@ -110,12 +139,50 @@ test("team page presents contribution-led member profiles without rank prefixes"
 
 test("English homepage opens with the requested information-world statement", async () => {
   const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
-  assert.match(source, /kicker: "Mathematical principles of the information world"/);
+  const homeCss = await readFile(new URL("../app/home-four-questions.css", import.meta.url), "utf8");
+  assert.match(source, /Objective: Principled and explainable machine intelligence science and technology, intelligent machines, and intelligent robots\./);
+  assert.match(source, /kicker: "Mathematical principles of the information world · Machine intelligence science and technology"/);
+  assert.match(source, /Principles of Machine Intelligence:\\nInformation model, Principles of Intelligent Machines,\\nIntelligence Engineering/);
   assert.match(source, /What new mathematics underpins artificial intelligence science and technology\?/);
   assert.match(source, /Mathematical principles of information, also called mathematical principles of the information world/);
   assert.match(source, /Intelligence = Zhi \+ Neng/);
-  assert.match(source, /guide: "Four questions · Four answers"/);
+  assert.match(source, /intelligence arises from Mou and Suan/);
+  assert.match(source, /build Mou machines and Suan machines and coordinate them as one system/);
+  assert.match(source, /guide: "Five questions · Five answers"/);
+  assert.match(source, /What is the model of intelligence\?/);
+  assert.match(source, /One paradigm · One centre · Three definitions · One model/);
+  assert.match(source, /The general method of the information world is hierarchical abstraction\./);
+  assert.match(source, /system of machine intelligence science and technology/);
+  assert.match(homeCss, /grid-template-columns:minmax\(72px,max-content\) minmax\(0,1fr\)/);
+  assert.match(homeCss, /questions-system-summary\{grid-template-columns:1fr;gap:7px\}/);
   assert.doesNotMatch(source, /Mathematical foundation of information|Information foundations?/i);
+});
+
+test("activities page lists the confirmed MouSuan Intelligence forum programme", async () => {
+  const response = await render("/activities");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /谋算智能论坛/);
+  assert.match(html, /2026 年 8 月 22 日/);
+  assert.match(html, /14:00–16:00/);
+  for (const [speaker, title] of [
+    ["段亮", "基于结构信息论的图分析技术"],
+    ["张治华", "深度学习解析单细胞染色质结构"],
+    ["潘祎诚", "Hierarchical Overlapping Clustering on Graphs – From Theory to Applications"],
+    ["殷荣", "谋算协同：多任务大模型微调的低秩融合之路"],
+    ["卫一帆", "结构信息驱动的大语言模型信息组织与智能检索"],
+  ]) {
+    assert.match(html, new RegExp(speaker));
+    assert.match(html, new RegExp(title));
+  }
+  assert.doesNotMatch(html, /硬连线语言处理器|赵永威/);
+});
+
+test("academic OCR normalisation preserves English words ending in n", () => {
+  const prose = "The plus sign denotes their unity in one intelligent system and an intelligible machine.";
+  assert.equal(normaliseAcademicOCR(prose), prose);
+  assert.equal(normaliseAcademicOCR("x1, x2, · · ·, xn"), "x₁, x₂, … , xₙ");
+  assert.equal(normaliseAcademicOCR("An×n"), "Aₙ×n");
 });
 
 test("terminology wiki records the canonical information-principle terms", async () => {
