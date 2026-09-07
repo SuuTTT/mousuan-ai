@@ -12,6 +12,7 @@ if (outputRoot === projectRoot || outputRoot === rootPath || !outputRoot.startsW
 
 const routes = [
   "/",
+  "/activities",
   "/applications/bioinformatics",
   "/applications/embodied-intelligence",
   "/applications/network-security",
