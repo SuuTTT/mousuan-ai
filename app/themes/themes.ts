@@ -16,6 +16,7 @@ export type Theme = {
     references?: readonly { number: string; title: string; content: string; href: string }[];
   }[];
   deeper: readonly { title: string; text: string; href: string }[];
+  informationLaws?: readonly { no: string; title: string; text: string; reference: string; href: string }[];
   sunLaws?: readonly { no: string; title: string; text: string; href: string }[];
 };
 
@@ -29,11 +30,23 @@ export const themes: Theme[] = [
     dimension: "信息原理",
     formula: "确定性 ⇄ 不确定性",
     lead: "信息的数学原理，也称信息世界的数学原理，是支撑人工智能科学技术的新数学。它研究现实世界的确定性、不确定性，以及二者相互转化的规律与作用。",
-    interpretation: "信息世界以层谱抽象为科学范式，以信息演算理论、信息解码原理和信息生成原理为三大支柱。",
+    interpretation: "信息世界十大定律给出信息世界的基本定律；信息演算理论、信息解码原理和信息生成原理构成信息的数学原理。",
     parts: [
-      { label: "总方法", title: "层谱抽象", text: "跨越抽象层谱组织对象、关系和系统；其数学定义与数据结构是编码树。" },
+      { label: "基本定律", title: "信息世界十大定律", text: "包括科学范式、个体、信息、运动、竞争、感知与认知、观察、知识、自我意识与系统十类基本定律。" },
       { label: "数学理论", title: "信息演算", text: "以编码树为基础，统一同一抽象层谱的逻辑推理与跨越抽象层谱的演算和推理。" },
       { label: "基本原理", title: "解码与生成", text: "解码策略使不确定性转化为确定性；生成策略使确定性转化为不确定性，二者都是可度量的信息过程。" },
+    ],
+    informationLaws: [
+      { no: "I", title: "信息世界科学范式定律", text: "信息世界的总方法，或者总策略是层谱抽象，即在多个抽象层谱分解，是分而治之这一物理世界总方法的扩充。", reference: "定义 6.2", href: "/artificial-intelligence-science.pdf#page=142" },
+      { no: "II", title: "个体定律", text: "个体是层谱抽象可定义的；个体的存在性、作用、运动性、需求和愿望是博弈的结果。", reference: "定义 6.3—6.6", href: "/artificial-intelligence-science.pdf#page=144" },
+      { no: "III", title: "信息定律", text: "现实世界的对象是一系列确定性和不确定性联合作用生成的结果；不确定性来自于运动和对象之间的相互作用；确定性、不确定性是可度量的；确定性和不确定性之间是可以相互转化的，转化是有条件的，即需要一个动作，称为策略。", reference: "定义 6.7—6.9", href: "/artificial-intelligence-science.pdf#page=146" },
+      { no: "IV", title: "运动定律", text: "没有干预的情况下，一个对象按自身规律运动；运动消耗确定性；运动可能生成不确定性，运动也可能生成确定性；信息是运动背后的数学基础。", reference: "定义 6.10—6.12", href: "/artificial-intelligence-science.pdf#page=147" },
+      { no: "V", title: "竞争定律", text: "不确定性是竞争的原因；竞争的目的是利益；竞争定义了一个对象的存在性、作用、运动性以及一个自我意识主体的需求和愿望。", reference: "定义 6.14—6.17", href: "/artificial-intelligence-science.pdf#page=148" },
+      { no: "VI", title: "感知与认知模型定律", text: "感知模型是层谱抽象；认知模型是层谱抽象；知识是感知与认知的表示；知识的标准模型是层谱抽象。", reference: "定义 6.18—6.20", href: "/artificial-intelligence-science.pdf#page=150" },
+      { no: "VII", title: "观察定律", text: "观察是学习的基本策略；观察的实质是抽象和层谱抽象；现实世界的对象是可观察的，现实世界对象之间的直接关系是可观察的。", reference: "定义 6.22—6.23", href: "/artificial-intelligence-science.pdf#page=152" },
+      { no: "VIII", title: "知识定律与学习的可解释性原理", text: "知识包括语法、语义和运动性，语法由结构定义，语义即功能；语法决定语义，即结构决定功能就是学习的可解释性准则。", reference: "第 6.8 节", href: "/artificial-intelligence-science.pdf#page=154" },
+      { no: "IX", title: "自我意识定律", text: "自我意识主体总是维护自己的利益。", reference: "第 6.9 节", href: "/artificial-intelligence-science.pdf#page=156" },
+      { no: "X", title: "系统定律", text: "信息在系统中，知识在系统中，规律在系统中；信息是知识与规律背后的数学基础；信息解码是知识发现与规律揭示的数学原理；层谱抽象是系统的解码策略。", reference: "定义 6.25—6.28", href: "/artificial-intelligence-science.pdf#page=159" },
     ],
     basis: [
       {

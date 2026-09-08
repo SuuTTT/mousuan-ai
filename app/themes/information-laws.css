@@ -1,0 +1,93 @@
+.theme-information-laws {
+  scroll-margin-top: 76px;
+  padding: 88px 0;
+  background: #eceef5;
+}
+
+.theme-information-laws header {
+  margin-bottom: 38px;
+}
+
+.theme-information-laws header > p {
+  margin: 0 0 15px;
+  color: #6255c5;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.theme-information-laws h2 {
+  margin: 0;
+  font-size: clamp(39px, 4.5vw, 59px);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 1;
+}
+
+.theme-information-laws ol {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #9ea6ba;
+  list-style: none;
+}
+
+.theme-information-law {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) 130px;
+  gap: 28px;
+  align-items: start;
+  padding: 27px 0;
+  border-bottom: 1px solid var(--t-line);
+}
+
+.theme-information-law > span {
+  color: #6255c5;
+  font: 19px Georgia, serif;
+}
+
+.theme-information-law h3 {
+  margin: 0 0 8px;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.35;
+}
+
+.theme-information-law p {
+  max-width: 750px;
+  margin: 0;
+  color: var(--t-muted);
+  font-size: 16px;
+  line-height: 1.72;
+  text-wrap: pretty;
+}
+
+.theme-information-law > a {
+  justify-self: end;
+  color: #6255c5;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.theme-information-law > a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+  .theme-information-laws {
+    scroll-margin-top: 68px;
+    padding: 68px 0;
+  }
+
+  .theme-information-law {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px 14px;
+  }
+
+  .theme-information-law > a {
+    grid-column: 2;
+    justify-self: start;
+  }
+}

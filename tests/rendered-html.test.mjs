@@ -49,12 +49,10 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(html, /智能 = 谋算/);
   assert.match(html, /智能 = 智 \+ 能/);
   assert.match(html, /孙子模型/);
-  assert.match(html, /一个范式 · 一个中心 · 三个定义 · 一个模型/);
+  assert.match(html, /一个中心 · 三个定义 · 一个模型/);
   assert.match(html, /构成了机器智能科学技术体系/);
-  assert.match(html, /信息世界范式定律/);
-  assert.match(html, /信息世界的总方法是层谱抽象/);
-  assert.match(html, /信息，也是钥匙与支点/);
-  assert.match(html, /数学实质、机器原理、科学—工程定义/);
+  assert.match(html, /信息世界十大定律/);
+  assert.match(html, /href="\/themes\/information#information-world-laws"/);
   assert.match(html, /智能的策略就是谋和算/);
   assert.match(html, /智能来源于谋和算/);
   assert.match(html, /建立谋的机器与算的机器/);
@@ -66,10 +64,10 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.match(html, /能 · 人工智能工程原理/);
   assert.match(html, /学习/);
   assert.match(html, /系统验证/);
-  for (const sectionId of ["questions", "paradigm", "center", "definitions", "model", "modules"]) {
+  for (const sectionId of ["questions", "center", "definitions", "model", "modules"]) {
     assert.match(html, new RegExp(`id="${sectionId}"`));
   }
-  assert.ok(html.indexOf('id="paradigm"') < html.indexOf('id="center"'));
+  assert.doesNotMatch(html, /id="paradigm"|href="#paradigm"/);
   assert.ok(html.indexOf('id="center"') < html.indexOf('id="definitions"'));
   assert.ok(html.indexOf('id="definitions"') < html.indexOf('id="model"'));
   assert.ok(html.indexOf('id="model"') < html.indexOf('id="modules"'));
@@ -150,12 +148,39 @@ test("English homepage opens with the requested information-world statement", as
   assert.match(source, /build Mou machines and Suan machines and coordinate them as one system/);
   assert.match(source, /guide: "Five questions · Five answers"/);
   assert.match(source, /What is the model of intelligence\?/);
-  assert.match(source, /One paradigm · One centre · Three definitions · One model/);
-  assert.match(source, /The general method of the information world is hierarchical abstraction\./);
+  assert.match(source, /One centre · Three definitions · One model/);
+  assert.match(source, /Ten Laws of the Information World/);
   assert.match(source, /system of machine intelligence science and technology/);
   assert.match(homeCss, /grid-template-columns:minmax\(72px,max-content\) minmax\(0,1fr\)/);
   assert.match(homeCss, /questions-system-summary\{grid-template-columns:1fr;gap:7px\}/);
   assert.doesNotMatch(source, /Mathematical foundation of information|Information foundations?/i);
+});
+
+test("information theme presents the ten laws as the second layer with book locations", async () => {
+  const response = await render("/themes/information");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /id="information-world-laws"/);
+  assert.equal((html.match(/class="theme-information-law"/g) ?? []).length, 10);
+  for (const [title, reference, page] of [
+    ["信息世界科学范式定律", "定义 6.2", "142"],
+    ["个体定律", "定义 6.3—6.6", "144"],
+    ["信息定律", "定义 6.7—6.9", "146"],
+    ["运动定律", "定义 6.10—6.12", "147"],
+    ["竞争定律", "定义 6.14—6.17", "148"],
+    ["感知与认知模型定律", "定义 6.18—6.20", "150"],
+    ["观察定律", "定义 6.22—6.23", "152"],
+    ["知识定律与学习的可解释性原理", "第 6.8 节", "154"],
+    ["自我意识定律", "第 6.9 节", "156"],
+    ["系统定律", "定义 6.25—6.28", "159"],
+  ]) {
+    assert.match(html, new RegExp(title));
+    assert.match(html, new RegExp(reference.replace(".", "\\.")));
+    assert.match(html, new RegExp(`/artificial-intelligence-science\\.pdf#page=${page}`));
+  }
+  assert.match(html, /信息世界的总方法，或者总策略是层谱抽象/);
+  assert.match(html, /自我意识主体总是维护自己的利益/);
+  assert.match(html, /层谱抽象是系统的解码策略/);
 });
 
 test("activities page lists the confirmed MouSuan Intelligence forum programme", async () => {
@@ -176,6 +201,7 @@ test("activities page lists the confirmed MouSuan Intelligence forum programme",
     assert.match(html, new RegExp(title));
   }
   assert.doesNotMatch(html, /硬连线语言处理器|赵永威/);
+  assert.doesNotMatch(html, /一个范式|#paradigm/);
 });
 
 test("academic OCR normalisation preserves English words ending in n", () => {
