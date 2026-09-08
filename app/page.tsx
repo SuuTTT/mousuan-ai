@@ -68,16 +68,10 @@ const definitions = [
 ] as const;
 
 const informationPillars = [
-  [["信息演算", "Information calculus"], ["跨越抽象层谱的演算与推理", "Calculus and reasoning across hierarchies of abstraction"]],
-  [["信息解码", "Information decoding"], ["由不确定性获得确定性", "Obtaining certainty from uncertainty"]],
-  [["信息生成", "Information generation"], ["由确定性生成新的可能性", "Generating new possibilities from certainty"]],
-] as const;
-
-const coreSummary = [
-  [["一个范式", "ONE PARADIGM"], ["层谱抽象", "Hierarchical abstraction"]],
-  [["一个核心", "ONE CENTRE"], ["信息，也是钥匙与支点", "Information—the key and the fulcrum"]],
-  [["三个定义", "THREE DEFINITIONS"], ["数学实质、机器原理、科学—工程定义", "Mathematical essence, machine principle, scientific–engineering definition"]],
-  [["一个模型", "ONE MODEL"], ["孙子模型", "The Sun Tzu Model"]],
+  [["信息世界十大定律", "Ten Laws of the Information World"], ["科学范式、个体、信息、运动、竞争、感知与认知、观察、知识、自我意识与系统", "Scientific paradigm, individual, information, motion, competition, perception and cognition, observation, knowledge, self-awareness, and system"], "/themes/information#information-world-laws"],
+  [["信息演算", "Information calculus"], ["跨越抽象层谱的演算与推理", "Calculus and reasoning across hierarchies of abstraction"], "/principles/information-mathematics"],
+  [["信息解码", "Information decoding"], ["由不确定性获得确定性", "Obtaining certainty from uncertainty"], "/concepts/decoding-principles"],
+  [["信息生成", "Information generation"], ["由确定性生成新的可能性", "Generating new possibilities from certainty"], "/themes/information"],
 ] as const;
 
 const modelGroups = [
@@ -101,21 +95,17 @@ const homeModules = [
 
 const ui = {
   zh: {
-    nav: [["五个问题", "#questions"], ["一个范式", "#paradigm"], ["信息中心", "#center"], ["三个定义", "#definitions"], ["孙子模型", "#model"], ["五大模块", "#modules"], ["活动与文章", "/activities"], ["团队", "/team"]],
+    nav: [["五个问题", "#questions"], ["信息中心", "#center"], ["三个定义", "#definitions"], ["孙子模型", "#model"], ["五大模块", "#modules"], ["活动与文章", "/activities"], ["团队", "/team"]],
     objective: "目标：有原理、可解释的机器智能科学技术，智能机器，智能机器人。",
     kicker: "信息世界的数学原理 · 机器智能科学技术",
     title: "机器智能原理：\n信息模型，机器原理，智能工程",
-    lead: "信息是人工智能的数学基础，渗透在人工智能的每一个步骤与过程。五个问题由此展开为一个范式、一个中心、三个定义和一个模型。",
-    explore: "从层谱抽象开始",
+    lead: "信息是人工智能的数学基础，渗透在人工智能的每一个步骤与过程。五个问题由此展开为一个中心、三个定义和一个模型。",
+    explore: "从信息中心开始",
     reference: "查看关键原理",
     guide: "五个问题 · 五个回答",
-    summaryLabel: "谋算智能核心",
-    summaryFormula: "一个范式 · 一个中心 · 三个定义 · 一个模型",
+    summaryLabel: "总结",
+    summaryFormula: "一个中心 · 三个定义 · 一个模型",
     summaryText: "构成了机器智能科学技术体系",
-    paradigmLabel: "INFORMATION WORLD PARADIGM LAW",
-    paradigmTitle: "层谱抽象",
-    paradigmLaw: "信息世界范式定律",
-    paradigmStatement: "信息世界的总方法是层谱抽象。",
     centerLabel: "THE MATHEMATICAL FOUNDATION",
     centerTitle: "信息",
     centerFormula: "信息是人工智能的数学基础",
@@ -144,21 +134,17 @@ const ui = {
     footer: "机器智能原理：信息模型，机器原理，智能工程",
   },
   en: {
-    nav: [["Five questions", "#questions"], ["Paradigm", "#paradigm"], ["Information", "#center"], ["Three definitions", "#definitions"], ["Sun Tzu Model", "#model"], ["Five modules", "#modules"], ["Activities", "/activities"], ["Team", "/team"]],
+    nav: [["Five questions", "#questions"], ["Information", "#center"], ["Three definitions", "#definitions"], ["Sun Tzu Model", "#model"], ["Five modules", "#modules"], ["Activities", "/activities"], ["Team", "/team"]],
     objective: "Objective: Principled and explainable machine intelligence science and technology, intelligent machines, and intelligent robots.",
     kicker: "Mathematical principles of the information world · Machine intelligence science and technology",
     title: "Principles of Machine Intelligence:\nInformation model, Principles of Intelligent Machines,\nIntelligence Engineering",
-    lead: "Information is the mathematical foundation of artificial intelligence and permeates every step and process. The five questions unfold into one paradigm, one centre, three definitions, and one model.",
-    explore: "Begin with hierarchical abstraction",
+    lead: "Information is the mathematical foundation of artificial intelligence and permeates every step and process. The five questions unfold into one centre, three definitions, and one model.",
+    explore: "Begin with information",
     reference: "Open key principles",
     guide: "Five questions · Five answers",
-    summaryLabel: "CORE OF MOUSUAN INTELLIGENCE",
-    summaryFormula: "One paradigm · One centre · Three definitions · One model",
+    summaryLabel: "SUMMARY",
+    summaryFormula: "One centre · Three definitions · One model",
     summaryText: "Together they constitute a system of machine intelligence science and technology.",
-    paradigmLabel: "INFORMATION WORLD PARADIGM LAW",
-    paradigmTitle: "Hierarchical Abstraction",
-    paradigmLaw: "Information World Paradigm Law",
-    paradigmStatement: "The general method of the information world is hierarchical abstraction.",
     centerLabel: "THE MATHEMATICAL FOUNDATION",
     centerTitle: "Information",
     centerFormula: "Information is the mathematical foundation of artificial intelligence",
@@ -208,11 +194,9 @@ export default function Home() {
       <button className="questions-menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="questions-mobile-menu" aria-label={menuOpen ? (lang === "zh" ? "关闭导航" : "Close navigation") : (lang === "zh" ? "打开导航" : "Open navigation")} onClick={() => setMenuOpen((open) => !open)}><span /><span /></button>
     </nav>
 
-    <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-objective">{c.objective}</p><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#paradigm">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗︎</b></a></div></div><aside id="questions"><p>{c.guide}</p>{questions.map((item) => <a href={item.href} key={item.no}><span>{item.no}</span><div><strong>{t(item.question, lang)}</strong><small><MathText text={t(item.answer, lang)} /></small></div></a>)}<div className="questions-system-summary"><span>{c.summaryLabel}</span><div><strong>{c.summaryFormula}</strong><small>{c.summaryText}</small><ol>{coreSummary.map(([label, value]) => <li key={label[0]}><b>{t(label, lang)}</b><span>{t(value, lang)}</span></li>)}</ol></div></div></aside></div></section>
+    <section id="top" className="questions-hero"><div className="questions-shell questions-hero-grid"><div><p className="questions-objective">{c.objective}</p><p className="questions-kicker">{c.kicker}</p><h1>{c.title.split("\n").map((line) => <span key={line}>{line}</span>)}</h1><p className="questions-lead">{c.lead}</p><div className="questions-actions"><a href="#center">{c.explore}<b>↓</b></a><a href="/framework">{c.reference}<b>↗︎</b></a></div></div><aside id="questions"><p>{c.guide}</p>{questions.map((item) => <a href={item.href} key={item.no}><span>{item.no}</span><div><strong>{t(item.question, lang)}</strong><small><MathText text={t(item.answer, lang)} /></small></div></a>)}<div className="questions-system-summary"><span>{c.summaryLabel}</span><div><strong>{c.summaryFormula}</strong><small>{c.summaryText}</small></div></div></aside></div></section>
 
-    <section id="paradigm" className="questions-paradigm"><div className="questions-shell"><header><p>{c.paradigmLabel}</p><h2>{c.paradigmTitle}</h2></header><div><span>01 · PARADIGM</span><strong>{c.paradigmLaw}</strong><p>{c.paradigmStatement}</p></div></div></section>
-
-    <section id="center" className="questions-center"><div className="questions-shell"><header><p>{c.centerLabel}</p><h2>{c.centerTitle}</h2></header><div className="questions-center-thesis"><span>02 · CENTRE</span><strong>{c.centerFormula}</strong><p>{c.centerText}</p><a href="/themes/information">{c.centerEnter} ↗︎</a></div><ol>{informationPillars.map(([title, text], index) => <li key={title[0]}><span>0{index + 1}</span><div><strong>{t(title, lang)}</strong><p>{t(text, lang)}</p></div></li>)}</ol></div></section>
+    <section id="center" className="questions-center"><div className="questions-shell"><header><p>{c.centerLabel}</p><h2>{c.centerTitle}</h2></header><div className="questions-center-thesis"><span>01 · CENTRE</span><strong>{c.centerFormula}</strong><p>{c.centerText}</p><a href="/themes/information">{c.centerEnter} ↗︎</a></div><ol>{informationPillars.map(([title, text, href], index) => <li key={title[0]}><span>0{index + 1}</span><a href={href}><strong>{t(title, lang)}</strong><p>{t(text, lang)}</p></a></li>)}</ol></div></section>
 
     <section id="definitions" className="questions-definitions questions-shell"><header><p>{c.definitionsLabel}</p><h2>{c.definitionsTitle}</h2><span>{c.definitionsText}</span></header><div className="questions-definition-list">{definitions.map((definition) => <a href={definition.href} key={definition.no}><div className="questions-definition-meta"><span>{definition.no}</span><small>{t(definition.dimension, lang)}</small></div><div><p>{t(definition.title, lang)}</p><strong><MathText text={t(definition.formula, lang)} /></strong></div><p><MathText text={t(definition.statement, lang)} /></p><b>{c.enter} ↗︎</b></a>)}</div></section>
 

@@ -43,7 +43,7 @@ export default function ActivitiesPage() {
   return <main className="activities-page">
     <nav className="activities-nav">
       <a className="activities-brand" href="/"><img src="/logo-encoding-tree.svg" alt="" /><b>MACHINE<br />INTELLIGENCE</b></a>
-      <div><a href="/">研究主页</a><a href="/#paradigm">一个范式</a><a href="/#center">信息中心</a><a href="/#definitions">三个定义</a><a href="/#model">孙子模型</a></div>
+      <div><a href="/">研究主页</a><a href="/#center">信息中心</a><a href="/#definitions">三个定义</a><a href="/#model">孙子模型</a></div>
     </nav>
 
     <header className="activities-hero">
