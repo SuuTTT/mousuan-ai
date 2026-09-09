@@ -93,21 +93,21 @@ export const concepts: Concept[] = [
   },
   {
     slug: "scientific-paradigm", layer: "02", layerName: "数学原理", layerEnglish: "MATHEMATICAL PRINCIPLES",
-    title: "科学范式定律", englishTitle: "Scientific paradigm law", tag: "层谱抽象",
-    lead: "物理世界以分而治之为科学范式；信息世界的科学范式，即总方法，是层谱抽象。",
-    proposition: "信息世界的科学范式，即总方法，就是层谱抽象。",
+    title: "信息世界认知模型定律", englishTitle: "Cognitive Model Law of the Information World", tag: "层谱抽象",
+    lead: "信息世界的认知模型，即总方法或总策略，是层谱抽象；它是在多个抽象层谱进行分解。",
+    proposition: "信息世界的认知模型，即总方法或总策略，是层谱抽象。",
     relation: ["复杂系统", "多层抽象与组织", "全局认知"],
     sections: [
       { label: "物理范式", title: "分而治之", text: "把复杂问题拆解为局部对象和可计算步骤，适合分析由对象自身决定的物理性质。" },
-      { label: "信息范式", title: "层谱抽象", text: "同时观察对象、群体、层级和整体，在不同抽象尺度上保持关系结构，适合认知嵌入系统的信息。" },
+      { label: "信息世界认知模型", title: "层谱抽象", text: "同时观察对象、群体、层级和整体，在不同抽象尺度上保持关系结构，适合认知嵌入系统的信息。" },
       { label: "协同关系", title: "全局与局部互补", text: "层谱抽象确定整体结构和目标，分而治之完成局部计算和推理；二者协同成为谋与算的认知基础。" },
     ],
     formal: [
       { no: "定义 6.1", title: "物理科学范式定律", text: "物理世界的科学范式是分而治之。" },
-      { no: "定义 6.2", title: "信息科学范式定律", text: "信息世界的科学范式，即总方法，是层谱抽象。" },
+      { no: "定义 6.2", title: "信息世界认知模型定律", text: "信息世界的认知模型，即总方法或总策略，是层谱抽象。" },
       { no: "定义 28.5", title: "博弈的科学方法", text: "谋采用层谱抽象，算采用分而治之；二者共同构成博弈的科学方法。" },
     ],
-    sources: [{ label: "《人工智能科学——智能的数学原理》", detail: "定义 6.1、6.2 与定义 28.5 · 两种科学范式及谋算", href: "/books#artificial-intelligence-science" }],
+    sources: [{ label: "《人工智能科学——智能的数学原理》", detail: "定义 6.1、6.2 与定义 28.5 · 分而治之、层谱抽象及谋算", href: "/books#artificial-intelligence-science" }],
   },
   {
     slug: "structural-information", layer: "02", layerName: "数学原理", layerEnglish: "MATHEMATICAL PRINCIPLES",

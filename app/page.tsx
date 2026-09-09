@@ -68,7 +68,7 @@ const definitions = [
 ] as const;
 
 const informationPillars = [
-  [["信息世界十大定律", "Ten Laws of the Information World"], ["科学范式、个体、信息、运动、竞争、感知与认知、观察、知识、自我意识与系统", "Scientific paradigm, individual, information, motion, competition, perception and cognition, observation, knowledge, self-awareness, and system"], "/themes/information#information-world-laws"],
+  [["信息世界十大定律", "Ten Laws of the Information World"], ["认知模型、个体、信息、运动、竞争、感知与认知、观察、知识、自我意识与系统", "Cognitive model, individual, information, motion, competition, perception and cognition, observation, knowledge, self-awareness, and system"], "/themes/information#information-world-laws"],
   [["信息演算", "Information calculus"], ["跨越抽象层谱的演算与推理", "Calculus and reasoning across hierarchies of abstraction"], "/principles/information-mathematics"],
   [["信息解码", "Information decoding"], ["由不确定性获得确定性", "Obtaining certainty from uncertainty"], "/concepts/decoding-principles"],
   [["信息生成", "Information generation"], ["由确定性生成新的可能性", "Generating new possibilities from certainty"], "/themes/information"],

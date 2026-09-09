@@ -32,12 +32,12 @@ export const themes: Theme[] = [
     lead: "信息的数学原理，也称信息世界的数学原理，是支撑人工智能科学技术的新数学。它研究现实世界的确定性、不确定性，以及二者相互转化的规律与作用。",
     interpretation: "信息世界十大定律给出信息世界的基本定律；信息演算理论、信息解码原理和信息生成原理构成信息的数学原理。",
     parts: [
-      { label: "基本定律", title: "信息世界十大定律", text: "包括科学范式、个体、信息、运动、竞争、感知与认知、观察、知识、自我意识与系统十类基本定律。" },
+      { label: "基本定律", title: "信息世界十大定律", text: "包括认知模型、个体、信息、运动、竞争、感知与认知、观察、知识、自我意识与系统十类基本定律。" },
       { label: "数学理论", title: "信息演算", text: "以编码树为基础，统一同一抽象层谱的逻辑推理与跨越抽象层谱的演算和推理。" },
       { label: "基本原理", title: "解码与生成", text: "解码策略使不确定性转化为确定性；生成策略使确定性转化为不确定性，二者都是可度量的信息过程。" },
     ],
     informationLaws: [
-      { no: "I", title: "信息世界科学范式定律", text: "信息世界的总方法，或者总策略是层谱抽象，即在多个抽象层谱分解，是分而治之这一物理世界总方法的扩充。", reference: "定义 6.2", href: "/artificial-intelligence-science.pdf#page=142" },
+      { no: "I", title: "信息世界认知模型定律", text: "信息世界的总方法，或者总策略是层谱抽象，即在多个抽象层谱分解，是分而治之这一物理世界总方法的扩充。", reference: "定义 6.2", href: "/artificial-intelligence-science.pdf#page=142" },
       { no: "II", title: "个体定律", text: "个体是层谱抽象可定义的；个体的存在性、作用、运动性、需求和愿望是博弈的结果。", reference: "定义 6.3—6.6", href: "/artificial-intelligence-science.pdf#page=144" },
       { no: "III", title: "信息定律", text: "现实世界的对象是一系列确定性和不确定性联合作用生成的结果；不确定性来自于运动和对象之间的相互作用；确定性、不确定性是可度量的；确定性和不确定性之间是可以相互转化的，转化是有条件的，即需要一个动作，称为策略。", reference: "定义 6.7—6.9", href: "/artificial-intelligence-science.pdf#page=146" },
       { no: "IV", title: "运动定律", text: "没有干预的情况下，一个对象按自身规律运动；运动消耗确定性；运动可能生成不确定性，运动也可能生成确定性；信息是运动背后的数学基础。", reference: "定义 6.10—6.12", href: "/artificial-intelligence-science.pdf#page=147" },
