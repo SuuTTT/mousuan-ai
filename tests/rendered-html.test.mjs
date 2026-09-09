@@ -163,7 +163,7 @@ test("information theme presents the ten laws as the second layer with book loca
   assert.match(html, /id="information-world-laws"/);
   assert.equal((html.match(/class="theme-information-law"/g) ?? []).length, 10);
   for (const [title, reference, page] of [
-    ["信息世界科学范式定律", "定义 6.2", "142"],
+    ["信息世界认知模型定律", "定义 6.2", "142"],
     ["个体定律", "定义 6.3—6.6", "144"],
     ["信息定律", "定义 6.7—6.9", "146"],
     ["运动定律", "定义 6.10—6.12", "147"],
