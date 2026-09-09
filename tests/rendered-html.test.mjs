@@ -178,7 +178,7 @@ test("information theme presents the ten laws as the second layer with book loca
     assert.match(html, new RegExp(reference.replace(".", "\\.")));
     assert.match(html, new RegExp(`/artificial-intelligence-science\\.pdf#page=${page}`));
   }
-  assert.match(html, /信息世界的总方法，或者总策略是层谱抽象/);
+  assert.match(html, /信息世界的认知模型、总策略或总方法是层谱抽象/);
   assert.match(html, /自我意识主体总是维护自己的利益/);
   assert.match(html, /层谱抽象是系统的解码策略/);
 });
