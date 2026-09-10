@@ -188,6 +188,9 @@ test("activities page lists the confirmed MouSuan Intelligence forum programme",
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /谋算智能论坛/);
+  assert.match(html, /机器智能科学技术体系建设历程/);
+  assert.match(html, /活动 · 获奖 · 人才项目 · 文章/);
+  assert.match(html, /https:\/\/mp\.weixin\.qq\.com\/s\/fGP_HgXwtBWgaghsM5-9og/);
   assert.match(html, /2026 年 8 月 22 日/);
   assert.match(html, /14:00–16:00/);
   for (const [speaker, title] of [
