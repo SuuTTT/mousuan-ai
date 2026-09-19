@@ -65,6 +65,52 @@ html[data-theme="dark"] .site-theme-toggle .site-theme-icon-moon{opacity:0;trans
   .principle-sources a,.activities-source
 ):hover b{transform:translateX(4px)}
 
+/* Navigation text receives the same tactile response without changing its spacing. */
+:where(
+  .questions-nav-links a,.theme-nav a,.module-nav a,.team-nav a,.activities-nav a,
+  .books-nav a,.concept-nav a,.index-nav a,.principle-nav a,.theorem-nav a,.wiki-nav a
+){
+  position:relative;display:inline-block;
+  transition:color var(--polish-motion),transform var(--polish-motion),opacity var(--polish-motion);
+}
+:where(
+  .questions-nav-links a,.theme-nav a,.module-nav a,.team-nav a,.activities-nav a,
+  .books-nav a,.concept-nav a,.index-nav a,.principle-nav a,.theorem-nav a,.wiki-nav a
+)::after{
+  content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;
+  background:currentColor;opacity:.72;transform:scaleX(0);transform-origin:left;
+  transition:transform var(--polish-motion);
+}
+:where(
+  .questions-nav-links a,.theme-nav a,.module-nav a,.team-nav a,.activities-nav a,
+  .books-nav a,.concept-nav a,.index-nav a,.principle-nav a,.theorem-nav a,.wiki-nav a
+):hover{transform:translateY(-2px)}
+:where(
+  .questions-nav-links a,.theme-nav a,.module-nav a,.team-nav a,.activities-nav a,
+  .books-nav a,.concept-nav a,.index-nav a,.principle-nav a,.theorem-nav a,.wiki-nav a
+):hover::after{transform:scaleX(1)}
+:where(
+  .questions-nav-links a,.theme-nav a,.module-nav a,.team-nav a,.activities-nav a,
+  .books-nav a,.concept-nav a,.index-nav a,.principle-nav a,.theorem-nav a,.wiki-nav a
+):active{transform:translateY(0) scale(.96);opacity:.82}
+
+/* Full-row links, including the five questions, move as a unit when selected. */
+:where(
+  .questions-hero aside>a,.questions-theme-list>a,.questions-center li>a,.questions-definition-list>a,
+  .questions-modules>.questions-shell>div>a,.questions-updates>a,
+  .team-directions .team-shell>div>a,.book-index-card
+){transition:transform var(--polish-motion),background-color var(--polish-motion),border-color var(--polish-motion),box-shadow var(--polish-motion)}
+:where(
+  .questions-hero aside>a,.questions-theme-list>a,.questions-center li>a,.questions-definition-list>a,
+  .questions-modules>.questions-shell>div>a,.questions-updates>a,
+  .team-directions .team-shell>div>a,.book-index-card
+):hover{transform:translateX(6px)}
+:where(
+  .questions-hero aside>a,.questions-theme-list>a,.questions-center li>a,.questions-definition-list>a,
+  .questions-modules>.questions-shell>div>a,.questions-updates>a,
+  .team-directions .team-shell>div>a,.book-index-card
+):active{transform:translateX(2px) scale(.992)}
+
 /* Each page family receives a distinct, content-related hero motif. */
 :where(.questions-hero,.theme-hero,.module-hero,.team-hero,.books-hero,.activities-hero,.theorem-hero,.principle-hero,.index-hero){position:relative;isolation:isolate;overflow:hidden}
 :where(.questions-hero,.theme-hero,.module-hero,.team-hero,.books-hero,.activities-hero,.theorem-hero,.principle-hero,.index-hero)>*{position:relative;z-index:1}
