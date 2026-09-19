@@ -1,0 +1,138 @@
+:root{
+  --polish-navy:#0d1a2a;
+  --polish-navy-soft:#102238;
+  --polish-navy-raised:#172d46;
+  --polish-paper:#f7f4ed;
+  --polish-paper-soft:#eee9df;
+  --polish-gold:#d1b379;
+  --polish-text:#f6f1e7;
+  --polish-muted:#aeb8c3;
+  --polish-line:rgba(224,211,184,.22);
+  --polish-motion:180ms cubic-bezier(.2,.7,.2,1);
+}
+
+html{color-scheme:light}
+html[data-theme="dark"]{color-scheme:dark;background:var(--polish-navy)}
+body{transition:background-color .24s ease,color .24s ease}
+
+.site-theme-toggle{
+  position:fixed;z-index:1000;right:22px;bottom:22px;
+  display:grid;place-items:center;width:46px;height:46px;padding:0;
+  border:1px solid rgba(15,29,46,.2);border-radius:50%;
+  background:rgba(247,244,237,.94);color:#17283b;
+  box-shadow:0 10px 28px rgba(4,10,22,.18);cursor:pointer;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  transition:transform var(--polish-motion),background-color var(--polish-motion),border-color var(--polish-motion),box-shadow var(--polish-motion);
+}
+.site-theme-toggle:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(4,10,22,.23)}
+.site-theme-toggle:active{transform:translateY(0) scale(.96)}
+.site-theme-toggle:focus-visible{outline:2px solid var(--polish-gold);outline-offset:4px}
+.site-theme-icon{position:absolute;width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:opacity var(--polish-motion),transform var(--polish-motion)}
+.site-theme-icon-sun{opacity:0;transform:rotate(-35deg) scale(.65)}
+.site-theme-icon-moon{opacity:1;transform:rotate(0) scale(1)}
+html[data-theme="dark"] .site-theme-toggle{border-color:rgba(224,211,184,.34);background:rgba(13,26,42,.94);color:var(--polish-gold)}
+html[data-theme="dark"] .site-theme-toggle .site-theme-icon-sun{opacity:1;transform:rotate(0) scale(1)}
+html[data-theme="dark"] .site-theme-toggle .site-theme-icon-moon{opacity:0;transform:rotate(35deg) scale(.65)}
+
+/* One restrained response language for buttons and calls to action. */
+:where(
+  .button,.text-link,.questions-actions a,.questions-center-thesis>a,.questions-model-footer a,
+  .questions-updates>a b,.books-index-link,.book-download,.wiki-pdf-link,.activities-source,
+  .module-list article>a,.module-return a,.theme-basis a,.theme-deeper a,.concept-sources a,
+  .principle-sources a,.index-source,.theorem-more
+){transition:transform var(--polish-motion),color var(--polish-motion),background-color var(--polish-motion),border-color var(--polish-motion),box-shadow var(--polish-motion)}
+:where(
+  .button,.text-link,.questions-actions a,.questions-center-thesis>a,.questions-model-footer a,
+  .books-index-link,.book-download,.wiki-pdf-link,.activities-source,.module-list article>a,
+  .module-return a,.theme-basis a,.theme-deeper a,.concept-sources a,.principle-sources a,
+  .index-source,.theorem-more
+):hover{transform:translateY(-2px)}
+:where(
+  .button,.text-link,.questions-actions a,.questions-center-thesis>a,.questions-model-footer a,
+  .books-index-link,.book-download,.wiki-pdf-link,.activities-source,.module-list article>a,
+  .module-return a,.theme-basis a,.theme-deeper a,.concept-sources a,.principle-sources a,
+  .index-source,.theorem-more
+):active{transform:translateY(0) scale(.985)}
+:where(a,button,input,select):focus-visible{outline:2px solid var(--polish-gold);outline-offset:4px}
+:where(
+  .button,.text-link,.questions-actions a,.questions-model-footer a,.questions-updates>a,
+  .module-list article>a,.module-return a,.theme-basis a,.theme-deeper a,.concept-sources a,
+  .principle-sources a,.activities-source
+) b{display:inline-block;transition:transform var(--polish-motion)}
+:where(
+  .button,.text-link,.questions-actions a,.questions-model-footer a,.questions-updates>a,
+  .module-list article>a,.module-return a,.theme-basis a,.theme-deeper a,.concept-sources a,
+  .principle-sources a,.activities-source
+):hover b{transform:translateX(4px)}
+
+/* Each page family receives a distinct, content-related hero motif. */
+:where(.questions-hero,.theme-hero,.module-hero,.team-hero,.books-hero,.activities-hero,.theorem-hero,.principle-hero,.index-hero){position:relative;isolation:isolate;overflow:hidden}
+:where(.questions-hero,.theme-hero,.module-hero,.team-hero,.books-hero,.activities-hero,.theorem-hero,.principle-hero,.index-hero)>*{position:relative;z-index:1}
+:where(.questions-hero,.theme-hero,.module-hero,.team-hero,.books-hero,.activities-hero,.theorem-hero,.principle-hero,.index-hero)::after{
+  content:"";position:absolute;z-index:0;right:-4%;top:8%;width:min(42vw,560px);height:84%;pointer-events:none;opacity:.28;
+  mask-image:linear-gradient(90deg,transparent,#000 24%,#000);-webkit-mask-image:linear-gradient(90deg,transparent,#000 24%,#000);
+}
+.questions-hero::after{background:repeating-radial-gradient(circle at 56% 52%,transparent 0 28px,rgba(209,179,121,.5) 29px 30px,transparent 31px 55px)}
+.theme-hero::after{background:radial-gradient(circle at 25% 25%,var(--polish-gold) 0 3px,transparent 4px),radial-gradient(circle at 72% 22%,var(--polish-gold) 0 3px,transparent 4px),radial-gradient(circle at 50% 53%,var(--polish-gold) 0 5px,transparent 6px),radial-gradient(circle at 20% 80%,var(--polish-gold) 0 3px,transparent 4px),radial-gradient(circle at 82% 78%,var(--polish-gold) 0 3px,transparent 4px),linear-gradient(32deg,transparent 49.6%,rgba(209,179,121,.55) 50%,transparent 50.4%),linear-gradient(148deg,transparent 49.6%,rgba(209,179,121,.55) 50%,transparent 50.4%)}
+.module-hero::after{background:repeating-linear-gradient(90deg,transparent 0 58px,rgba(209,179,121,.32) 59px 60px),repeating-linear-gradient(0deg,transparent 0 58px,rgba(209,179,121,.22) 59px 60px)}
+.team-hero::after{background:radial-gradient(circle at 20% 30%,var(--polish-gold) 0 6px,transparent 7px),radial-gradient(circle at 50% 18%,var(--polish-gold) 0 6px,transparent 7px),radial-gradient(circle at 80% 31%,var(--polish-gold) 0 6px,transparent 7px),radial-gradient(circle at 35% 72%,var(--polish-gold) 0 6px,transparent 7px),radial-gradient(circle at 68% 72%,var(--polish-gold) 0 6px,transparent 7px),repeating-radial-gradient(circle at 50% 48%,transparent 0 48px,rgba(209,179,121,.32) 49px 50px)}
+.books-hero::after{border:1px solid rgba(209,179,121,.58);box-shadow:-28px 24px 0 -1px rgba(13,26,42,.7),-28px 24px 0 0 rgba(209,179,121,.4),-56px 48px 0 -1px rgba(13,26,42,.7),-56px 48px 0 0 rgba(209,179,121,.25);transform:rotate(-6deg) scale(.7)}
+.activities-hero::after{background:linear-gradient(90deg,transparent 11%,rgba(209,179,121,.55) 11.2% 11.5%,transparent 11.7%),repeating-radial-gradient(circle at 11.35% 18%,var(--polish-gold) 0 4px,transparent 5px 72px)}
+.theorem-hero::after{background:repeating-linear-gradient(0deg,transparent 0 42px,rgba(209,179,121,.3) 43px 44px),linear-gradient(90deg,rgba(209,179,121,.52),rgba(209,179,121,0))}
+.principle-hero::after{background:repeating-radial-gradient(circle at 70% 50%,transparent 0 34px,rgba(209,179,121,.4) 35px 36px,transparent 37px 67px)}
+.index-hero::after{background:conic-gradient(from 90deg at 50% 50%,transparent 0 12%,rgba(209,179,121,.45) 12.5% 13%,transparent 13.5% 37%,rgba(209,179,121,.45) 37.5% 38%,transparent 38.5% 62%,rgba(209,179,121,.45) 62.5% 63%,transparent 63.5% 87%,rgba(209,179,121,.45) 87.5% 88%,transparent 88.5%)}
+
+/* Dark mode: preserve the layout and typography while adopting the review palette. */
+html[data-theme="dark"] body{background:var(--polish-navy);color:var(--polish-text)}
+html[data-theme="dark"] :is(.questions-home,.theme-page,.module-page,.team-page,.activities-page,.books-page,.wiki-page,.concept-page,.theorem-index,.principle-page,.principle-index,.theory-page){
+  color:var(--polish-text);background:var(--polish-navy);
+}
+html[data-theme="dark"] .questions-home{--q-void:#08131f;--q-deep:#102238;--q-cyan:var(--polish-gold);--q-violet:#d7c08e;--q-ink:var(--polish-text);--q-muted:var(--polish-muted);--q-line:var(--polish-line)}
+html[data-theme="dark"] .theme-page{--t-void:#08131f;--t-deep:#102238;--t-cyan:var(--polish-gold);--t-violet:#d7c08e;--t-ink:var(--polish-text);--t-muted:var(--polish-muted);--t-line:var(--polish-line)}
+html[data-theme="dark"] .module-page{--m-void:#08131f;--m-deep:#102238;--m-cyan:var(--polish-gold);--m-violet:#d7c08e;--m-ink:var(--polish-text);--m-muted:var(--polish-muted);--m-line:var(--polish-line)}
+html[data-theme="dark"] .team-page{--p-void:#08131f;--p-deep:#102238;--p-cyan:var(--polish-gold);--p-violet:#d7c08e;--p-ink:var(--polish-text);--p-muted:var(--polish-muted);--p-line:var(--polish-line)}
+html[data-theme="dark"] .activities-page{--a-void:#08131f;--a-deep:#102238;--a-cyan:var(--polish-gold);--a-violet:#d7c08e;--a-ink:var(--polish-text);--a-muted:var(--polish-muted);--a-line:var(--polish-line)}
+html[data-theme="dark"] .theorem-index{--x-void:#08131f;--x-violet:var(--polish-gold);--x-cyan:var(--polish-gold);--x-ink:var(--polish-text);--x-muted:var(--polish-muted);--x-line:var(--polish-line)}
+html[data-theme="dark"] .concept-page{--paper:var(--polish-navy);--ink:var(--polish-text);--muted:var(--polish-muted);--rule:var(--polish-line);--accent:var(--polish-gold);--wash:var(--polish-navy-soft)}
+
+html[data-theme="dark"] :is(
+  .questions-center,.questions-definitions,.questions-modules,.questions-books,.questions-updates,
+  .theme-interpretation,.theme-structure,.theme-basis,.theme-deeper,
+  .module-map,.module-content,.team-programmes,.team-members,
+  .activities-event,.activities-archive,.book-index,.wiki-body,
+  .concept-position,.concept-explanation,.concept-sources,
+  .theorem-search,.theorem-results,.principle-body,.index-sections,.index-books,.theory-section,.theory-books
+){background:var(--polish-navy);color:var(--polish-text)}
+html[data-theme="dark"] :is(.questions-modules,.questions-books,.activities-archive,.theme-interpretation,.theme-basis,.module-map,.concept-position,.index-books,.theory-books){background:var(--polish-navy-soft)}
+
+html[data-theme="dark"] :is(
+  .questions-theme-list>a:hover,.questions-definition-list>a:hover,.questions-center li,
+  .theme-deeper a,.book-index-card,.activities-categories>div,.team-people-group article,
+  .wiki-table-wrap,.wiki-table-wrap tbody tr:nth-child(even),.theorem-search input,.theorem-search select,
+  .definition-orbit article,.law-axis article,.sun-law-system article,.theory-books a
+){background:var(--polish-navy-soft);color:var(--polish-text);border-color:var(--polish-line)}
+html[data-theme="dark"] .book-index-card:nth-child(2),html[data-theme="dark"] .book-index-card:nth-child(3){background:var(--polish-navy-raised)}
+html[data-theme="dark"] .book-parts span{background:var(--polish-navy-raised);color:#d9d1c1}
+html[data-theme="dark"] .wiki-table-wrap thead th{background:#07111d;color:var(--polish-text)}
+html[data-theme="dark"] .wiki-table-wrap :is(th,td){border-color:var(--polish-line)}
+
+html[data-theme="dark"] :is(
+  .questions-home,.theme-page,.module-page,.team-page,.activities-page,.books-page,.wiki-page,
+  .concept-page,.theorem-index,.principle-page,.principle-index,.theory-page
+) :is(p,small,em,dd){color:var(--polish-muted)}
+html[data-theme="dark"] :is(
+  .questions-kicker,.questions-center header>p,.questions-definitions>header>p,.questions-model header>p,
+  .questions-modules header>p,.questions-updates header>p,.theme-structure>header>p,.theme-basis header>p,
+  .theme-deeper>header>p,.module-content>header>p,.team-programmes>header>p,.team-members>header>p,
+  .activities-event>header p,.activities-archive p,.book-index-top,.wiki-hero .overline,
+  .concept-position header>span,.concept-explanation>header>p,.concept-sources>header>p,
+  .theorem-search label>span,.principle-sources .overline,.index-sections article>header>span
+){color:var(--polish-gold)}
+html[data-theme="dark"] :is(.questions-theme-list,.questions-definition-list,.questions-updates>a,.module-list,.activities-event dl,.activities-talks,.concept-relation,.concept-sources>div,.theorem-results ol,.principle-sections){border-color:var(--polish-line)}
+html[data-theme="dark"] :is(.questions-theme-list>a,.questions-definition-list>a,.questions-updates>a,.module-list article,.activities-event dl>div,.activities-talks li,.concept-sections article,.concept-sources>div>a,.theorem-results ol>li,.principle-sections article,.principle-sources a){border-color:var(--polish-line)}
+html[data-theme="dark"] :is(.book-index-meta,.activities-event dd,.wiki-note,.wiki-table-wrap tbody th,.concept-sections p,.theorem-results article h2,.theorem-results article>div,.principle-sources a){color:var(--polish-text)}
+
+@media(max-width:700px){.site-theme-toggle{right:14px;bottom:14px;width:42px;height:42px}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}

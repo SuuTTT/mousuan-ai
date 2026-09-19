@@ -81,6 +81,9 @@ test("server-renders the public knowledge hierarchy", async () => {
   assert.doesNotMatch(html, /先给出答案|首页只呈现|简单首页|分层展开|第一层|第二层|第三层|2—3 LEVELS/);
   assert.match(html, /questions-menu-toggle/);
   assert.match(html, /aria-label="研究主页导航"/);
+  assert.match(html, /site-theme-toggle/);
+  assert.match(html, /aria-label="切换网页明暗模式"/);
+  assert.match(html, /localStorage\.getItem\('mousuan-theme'\)/);
   assert.doesNotMatch(html, /↗️/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
   assert.match(html, /href="https:\/\/beian\.miit\.gov\.cn\/"/);

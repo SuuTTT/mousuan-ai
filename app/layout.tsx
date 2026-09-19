@@ -6,8 +6,10 @@ import "./hero-responsive-fix.css";
 import "./brand-logo.css";
 import "./theme-citation-fix.css";
 import "./site-filing.css";
+import "./theme-polish.css";
 import SafeAnchorNavigation from "./SafeAnchorNavigation";
 import SiteFiling from "./SiteFiling";
+import ThemeToggle from "./ThemeToggle";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mousuan.net"),
@@ -27,5 +29,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-CN"><body><SafeAnchorNavigation />{children}<SiteFiling /></body></html>;
+  const themeScript = `(function(){try{var t=localStorage.getItem('mousuan-theme');document.documentElement.dataset.theme=t==='dark'?'dark':'light'}catch(e){document.documentElement.dataset.theme='light'}})()`;
+  return <html lang="zh-CN" suppressHydrationWarning>
+    <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
+    <body><SafeAnchorNavigation /><ThemeToggle />{children}<SiteFiling /></body>
+  </html>;
 }
